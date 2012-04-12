@@ -1,45 +1,93 @@
-/* =============================================================================
-   Base
-   ========================================================================== */
 
-body { }
-
+/* ============================================================== */
+/*	BASE */
+/* ============================================================== */
 
 
-/* =============================================================================
-   Header
-   ========================================================================== */
+/* apply a natural box layout model to all elements
+   http://paulirish.com/2012/box-sizing-border-box-ftw/  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	-webkit-font-smoothing: antialiased; 
+	font-smoothing: antialiased; 
+	text-rendering: optimizeLegibility; 
+	background: #eef0f1 url('../texture.png') repeat;
+}
+
+/* DEFAULT FONT SETTINGS */
+/* ============================================================== */
+body, button, input, select, textarea {
+	font: 16px/24px 'PT Serif',Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif; 
+	color: #2e4f5c;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+}
+
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, img {
+	margin: 0 0 1.5em; 
+	padding: 0
+}
+
+/* TYPOGRAPHY */
+/* ============================================================== */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'PT Sans Narrow', sans-serif;
+	color: #2e4f5c;
+}
+
+/*h1 {margin: 0; font-size: 3.75em; line-height: 1.2em; margin-bottom: 0.4em}*/ /* 60px / 72px */
+h1 {margin: 0; font-size: 3em; line-height: 1em; margin-bottom: 0.5em} /* 48px / 48px */
+h2 {margin: 0; font-size: 2.25em; line-height: 1.3333333333333333333333333333333em; margin-bottom: 0.6667em} /* 36px / 48px */ 
+h3 {margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em} /* 24px / 24px */
+
+p, ul, blockquote, pre, td, th, label {
+	margin: 0; 
+	font-size: 1em; 
+	line-height: 1.5em; 
+	margin-bottom: 1.5em
+}
+
+
+/* LINKS */
+/* ============================================================== */
+a, a:visited {
+	text-decoration: none; 
+	color: #3a9085;
+}
+
+a:hover { background: #fff; }
+
+
+/* GRID OVERWRITES */
+/* ============================================================== */
+.container { padding: 0 4%; }
+
+
+/* ============================================================== */
+/*	HEADER */
+/* ============================================================== */
 
 #banner { }
 
 
-/* =============================================================================
-   Content
-   ========================================================================== */
+/* ============================================================== */
+/*	CONTENT */
+/* ============================================================== */
 
 #content { }
 
 
 
-/* =============================================================================
-   Primary Content
-   ========================================================================== */
+/* ============================================================== */
+/*	PRIMARY CONTENT */
+/* ============================================================== */
 
 #main { }
 
 
-
-/* =============================================================================
-   Sidebar
-   ========================================================================== */
-
-#sidebar { }
-
-
-
-/* =============================================================================
-   Posts
-   ========================================================================== */
+/* ============================================================== */
+/*	POSTS */
+/* ============================================================== */
 
 .hentry header { }
 .hentry h2 a { text-decoration: none; }
@@ -49,26 +97,23 @@ body { }
 
 
 
-/* =============================================================================
-   Post Comments
-   ========================================================================== */
+/* ============================================================== */
+/*	COMMENTS */
+/* ============================================================== */
 
 #comments, #respond, #submit { clear: both; display: block; }
 ol.commentlist img.avatar { float: left; margin-right: 10px; }
 
 
 
-/* =============================================================================
-   Footer
-   ========================================================================== */
+/* ============================================================== */
+/*	FOOTER */
+/* ============================================================== */
 
 #content-info {
-  margin-top: 45px;
-  padding: 35px 0 36px;
-  border-top: 1px solid #e5e5e5;
 }
 
-#content-info p small { font-size: 13px; }
+#content-info p small {  }
 
 
 
@@ -83,10 +128,109 @@ ol.commentlist img.avatar { float: left; margin-right: 10px; }
 
 
 
-/* =============================================================================
-   Media Queries
-   ========================================================================== */
+/* ============================================================== */
+/*	MEDIA QUERIES */
+/* ============================================================== */
 
-@media (max-width: 979px) {
+@media only screen and (min-width: 600px) {
+	body {
+		
+	}
+	
+	nav[role="navigation"] li a {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+	
+	/* GLOBAL SEARCH */
+	.assistive-text {
+		position: absolute !important;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px, 1px, 1px, 1px);
+	}
+	
+	#menubar #s {
+		float: right;
+		-webkit-transition-duration: 400ms;
+		-webkit-transition-property: width, background;
+		-webkit-transition-timing-function: ease;
+		-moz-transition-duration: 400ms;
+		-moz-transition-property: width, background;
+		-moz-transition-timing-function: ease;
+		-o-transition-duration: 400ms;
+		-o-transition-property: width, background;
+		-o-transition-timing-function: ease;
+		width: 72px;
+	}
+	
+	#menubar #s:focus {
+		width: 200px;
+	}
+	
+	input#s {
+	}
+	
+	#menubar #searchsubmit {
+		display: none;
+	}
+	
+	.post-content { max-width: 35em; }
+	
+}
 
+@media only screen and (min-width: 768px) { 
+	body {
+		
+	}
+	
+	.row {
+		max-width: 51.5em;
+	}
+	
+	.col1, 
+	.col2, 
+	.col3, 
+	.col4, 
+	.col5, 
+	.col6,
+	.grid2-col2,
+	.grid2-col1:first-child {
+		padding-right: 2%; }
+	
+	.col1:last-child,
+	.col2:last-child,
+	.col3:last-child,
+	.col4:last-child,
+	.col5:last-child,
+	.col6:last-child,
+	.grid2-col2:last-child,
+	.grid2-col1:last-child {
+		padding-right: 0; }
+
+}
+
+		
+/* LANDSCAPE TABLET/NETBOOK/LAPTOP */
+@media only screen and (min-width: 1024px) { 
+	body {
+
+	}
+
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 1280px) { 
+
+	body {
+
+	}
+}
+
+/* WIDESCREEN */
+@media only screen and (min-width: 1400px) { 
+	
+	body {
+		font-size: 116.75%;
+	} /* 18.5px / 28px */
+	
 }
