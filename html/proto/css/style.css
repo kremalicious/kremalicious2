@@ -101,7 +101,7 @@ a:hover {background: #fff; }
 /*GRID OVERWRITES*/
 .container { padding: 0 4%; }
 
-.single section[role="main"] { margin: 0 auto; float: none; }
+//.single section[role="main"] { margin: 0 auto; float: none; }
 
 #menubar {
 	border-bottom: 1px solid #ccc;
@@ -214,6 +214,8 @@ article > footer {
 		display: none;
 	}
 	
+	.post-content { max-width: 35em; }
+	
 }
 
 @media only screen and (min-width: 768px) { 
@@ -245,7 +247,7 @@ article > footer {
 	.grid2-col1:last-child {
 		padding-right: 0; }
 	
-	section[role="main"] { max-width: 35em; }
+	
 	
 }
 
