@@ -14,10 +14,15 @@
 	<?php /* Start loop */ ?>
 	<?php while (have_posts()) : the_post(); ?>
 	
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" class="hentry">
 			
-			<header>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			<header class="clearfix">
+				<div class="col1">
+					<img class="teaserImage" src="<?php echo catch_that_image() ?>" />
+				</div>
+				<div class="col5">
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				</div>
 			</header>
 			
 		</article>
@@ -26,10 +31,10 @@
 	
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
 	<?php if ($wp_query->max_num_pages > 1) { ?>
-	  <nav id="post-nav" class="pager">
-	    <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></div>
-	    <div class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></div>
-	  </nav>
+		<nav id="post-nav" class="pager">
+			<p class="previous alignleft"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></p>
+			<p class="next alignright"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></p>
+		</nav>
 	<?php } ?>
 
 </section>
