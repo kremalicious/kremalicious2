@@ -38,22 +38,6 @@ h2 {margin: 0; font-size: 2.25em; line-height: 1.3333333333333333333333333333333
 h3,
 #home article h1 {margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em} /* 24px / 24px */
 
-/*h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	color: #e8d1b8;
-	text-shadow: 
-		0 1px 0 #a68f78, 
-		0 2px 0 #a68f78, 
-		0 3px 0 #907d68, 
-		0 4px 0 #776757, 
-		0 5px 1px rgba(0, 0, 0, .1), 
-		0 0 5px rgba(0, 0, 0, .1), 
-		0 1px 3px rgba(0, 0, 0, .3), 
-		0 3px 5px rgba(0, 0, 0, .2), 
-		0 5px 10px rgba(0, 0, 0, .25), 
-		0 10px 10px rgba(0, 0, 0, .2), 
-		0 20px 20px rgba(0, 0, 0, .15)
-}*/
-
 p, ul, blockquote, pre, td, th, label {
 	margin: 0; 
 	font-size: 1em; 
@@ -104,9 +88,14 @@ a:hover {background: #fff; }
 //.single section[role="main"] { margin: 0 auto; float: none; }
 
 #menubar {
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 	margin-top: 0;
+	padding: 0 1em;
+	background: rgba(49, 98, 125, .1);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-top: -1%;
+	box-shadow: 0px 1px 4px #777, inset 0 -4px 0 rgba(49, 98, 125, .3);
 }
 
 header[role="banner"] h1 {
