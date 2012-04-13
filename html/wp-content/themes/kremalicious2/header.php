@@ -19,3 +19,26 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<div class="container" id="menubar-wrap">
+		<div class="row" id="menubar">
+			<header role="banner" class="col2">
+				<h1>kremalicious</h1>
+			</header>
+			<nav role="navigation" class="col4">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Goodies</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		<!--	<form method="get" id="searchform" class="col1">
+				<label for="s" class="assistive-text">Search</label>
+				<input type="text" class="field" name="s" id="s" placeholder="Search">
+				<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+			</form>-->
+		</div>
+	</div>
+	
+	<div class="container" role="document">
+		

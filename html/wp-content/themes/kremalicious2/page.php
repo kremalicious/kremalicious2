@@ -1,8 +1,5 @@
 <?php get_header(); ?>
-    <div id="content">
-      <div id="main" role="main">
+	<section role="main" class="row">
         <?php get_template_part('loop', 'page'); ?>
-      </div><!-- /#main -->
-
-    </div><!-- /#content -->
+	</section>
 <?php get_footer(); ?>
