@@ -1,7 +1,7 @@
 
 <?php if ( is_archive() ) { ?>
 	
-	<aside role="complementary" class="col2 grid2-col1">
+	<aside role="complementary" class="col2">
 		<h1>
 			<?php
 				$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
@@ -26,7 +26,7 @@
 	
 <?php } else { ?>
 
-	<aside role="complementary" class="col2 grid2-col1">
+	<aside role="complementary" class="col2">
 		<p>Blog of web &amp; ui designer/developer hybrid Matthias Kretschmann, who massages pixels all day.</p>
 		<p><a class="btn" href="#"> RSS</a></p>
 		<p><a class="btn" href="#"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn" href="#">Google+</a> <a class="btn" href="#"><i class="icon-facebook-sign"></i> Facebook</a></p>

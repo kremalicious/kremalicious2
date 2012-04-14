@@ -1,28 +1,38 @@
-<?php function roots_comment($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment; ?>
-  <li <?php comment_class(); ?>>
-    <article id="comment-<?php comment_ID(); ?>">
-      <header class="comment-author vcard">
-        <?php echo get_avatar($comment, $size = '32'); ?>
-        <?php printf(__('<cite class="fn">%s</cite>', 'roots'), get_comment_author_link()); ?>
-        <time datetime="<?php echo comment_date('c'); ?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s', 'roots'), get_comment_date(),  get_comment_time()); ?></a></time>
-        <?php edit_comment_link(__('(Edit)', 'roots'), '', ''); ?>
-      </header>
+<?php function krlc2_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?>>
+		<article id="comment-<?php comment_ID(); ?>">
+			
+			<header class="comment-author vcard">
+				<span id="leAvatar">
+					<?php echo get_avatar($comment, $size = '80'); ?>
+				</span>
+				<?php printf(__('<cite class="fn">%s</cite>', 'roots'), get_comment_author_link()); ?>
+			</header>
+			
+			<?php if ($comment->comment_approved == '0') { ?>
+				<div class="alert alert-block fade in">
+				<a class="close" data-dismiss="alert">&times;</a>
+				<p><?php _e('Your comment is awaiting moderation.', 'roots'); ?></p>
+				</div>
+			<?php } ?>
+			
+			<section class="comment-content">
+				<?php comment_text() ?>
+			</section>
+			
+			<footer>
+				
+				<?php edit_comment_link(__('(Edit)', 'roots'), '', ''); ?>
+				
+				<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+				
+				<time datetime="<?php echo comment_date('c'); ?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s', 'roots'), get_comment_date(),  get_comment_time()); ?></a></time>
 
-      <?php if ($comment->comment_approved == '0') { ?>
-        <div class="alert alert-block fade in">
-          <a class="close" data-dismiss="alert">&times;</a>
-          <p><?php _e('Your comment is awaiting moderation.', 'roots'); ?></p>
-        </div>
-      <?php } ?>
-
-      <section class="comment">
-        <?php comment_text() ?>
-      </section>
-
-      <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-
-    </article>
+			</footer>
+			
+		</article>
+	</li>
 <?php } ?>
 
 <?php if (post_password_required()) { ?>
@@ -37,30 +47,35 @@
 } ?>
 
 <?php if (have_comments()) { ?>
-  <section id="comments">
-    <h3 id="commentShow">
-    	<?php printf(_n('One Response', '%1$s Responses', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()) ); ?>
-    </h3>
 
-    <ol class="commentlist">
-      <?php wp_list_comments(array('callback' => 'roots_comment')); ?>
-    </ol>
-
-    <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?>
-      <nav id="comments-nav" class="pager">
-        <div class="previous"><?php previous_comments_link(__('&larr; Older comments', 'roots')); ?></div>
-        <div class="next"><?php next_comments_link(__('Newer comments &rarr;', 'roots')); ?></div>
-      </nav>
-
-    <?php } // check for comment navigation ?>
-
-    <?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>
-      <div class="alert alert-block fade in">
-        <a class="close" data-dismiss="alert">&times;</a>
-        <p><?php _e('Comments are closed.', 'roots'); ?></p>
-      </div>
-    <?php } ?>
-  </section><!-- /#comments -->
+	<section id="comments">
+		<h2 id="commentShow">
+			<i class="icon-comments"></i>
+			<?php printf(_n('One Response', '%1$s Responses', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()) ); ?>
+			<i class="icon-chevron-down"></i>
+		</h2>
+		
+		<ol class="commentlist">
+			<?php wp_list_comments(array('callback' => 'krlc2_comment')); ?>
+		</ol>
+		
+		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?>
+		
+			<nav id="comments-nav" class="pager">
+			<div class="previous"><?php previous_comments_link(__('&larr; Older comments', 'roots')); ?></div>
+			<div class="next"><?php next_comments_link(__('Newer comments &rarr;', 'roots')); ?></div>
+			</nav>
+		
+		<?php } // check for comment navigation ?>
+		
+		<?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>
+			<div class="alert alert-block fade in">
+			<a class="close" data-dismiss="alert">&times;</a>
+			<p><?php _e('Comments are closed.', 'roots'); ?></p>
+			</div>
+		<?php } ?>
+	</section><!-- /#comments -->
+  
 <?php } ?>
 
 <?php if (!have_comments() && !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>

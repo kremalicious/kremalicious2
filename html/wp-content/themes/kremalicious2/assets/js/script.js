@@ -20,7 +20,8 @@ var siteEffects = {
 		commentTrigger.addClass('btn');
 		
 		commentTrigger.click (function() {
-			commentList.fadeToggle();
+			commentList.slideToggle().css({'overflow':'visible'});
+			commentTrigger.toggleClass('open');
 			$('html, body').animate({scrollTop: $(this).offset().top}, 500);
 		});
 	},

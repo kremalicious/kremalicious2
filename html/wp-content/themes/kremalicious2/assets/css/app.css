@@ -3,11 +3,6 @@
 /*	BASE */
 /* ============================================================== */
 
-
-/* apply a natural box layout model to all elements
-   http://paulirish.com/2012/box-sizing-border-box-ftw/  */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
 body {
 	-webkit-font-smoothing: antialiased; 
 	font-smoothing: antialiased; 
@@ -46,7 +41,9 @@ h1, h2, h3, h4, h5, h6,
 nav[role="navigation"] a,
 .btn,
 .pager a,
-.inline-download {
+.inline-download,
+.comment header cite,
+.comment-reply-link {
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -56,9 +53,14 @@ h1, h2, h3, h4, h5, h6 {
 	color: #2e4f5c;
 }
 
-h1 {margin: 0; font-size: 3em; line-height: 1em; margin-bottom: 0.5em}
+h1, 
+.blog .hentry.hero header h2 {margin: 0; font-size: 3em; line-height: 1em; margin-bottom: 0.5em}
+
 h2 {margin: 0; font-size: 2.25em; line-height: 1em; margin-bottom: 0.6667em}
-h3 {margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em}
+
+h3,
+.blog .hentry header h2,
+.archive .hentry header h2 {margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em}
 
 p, ul, blockquote, pre, td, th, label {
 	margin: 0; 
@@ -90,7 +92,8 @@ a:hover {
 
 .btn,
 .pager a,
-.inline-download {
+.inline-download,
+.comment-reply-link {
 	font-size: 1.1em;
 	display: inline-block;
 	padding: .5em 1em;
@@ -103,7 +106,8 @@ a:hover {
 
 	.btn:hover,
 	.pager a:hover,
-	.inline-download:hover {
+	.inline-download:hover,
+	.comment-reply-link:hover {
 		background-color: rgba(255,255,255,.2);
 	}
 
@@ -137,7 +141,7 @@ a:hover {
 
 /* GRID OVERWRITES */
 /* ============================================================== */
-.container { padding: 0 4%; }
+.container { padding: 0 2em; }
 
 
 /* ============================================================== */
@@ -226,6 +230,8 @@ nav[role="navigation"] li a {
 	background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
 	background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 );
+	background-size: 100% 10em;
+	background-repeat: no-repeat;
 }
 
 
@@ -255,6 +261,11 @@ nav[role="navigation"] li a {
 	border-top: 1px dashed #fff;
 }
 
+.blog .hentry header h2,
+.archive .hentry header h2 {
+	margin-bottom: 0;
+}
+
 .hentry > header { 
 	display: block;
 	padding: 1em 0;
@@ -267,8 +278,19 @@ nav[role="navigation"] li a {
 
 .hentry time { display: block; }
 .hentry p.byline { }
-.hentry footer { clear: both; }
 
+
+/* First Post */
+.hentry.hero,
+.hentry.hero header {
+	border: none;
+	padding: 0;
+}
+
+.single .hentry header {
+	padding-top: 0;
+	padding-bottom: 0;
+}
 
 .pager {
 	border-top: 1px solid #afc3cb;
@@ -290,9 +312,125 @@ nav[role="navigation"] li a {
 
 #commentShow {
 	display: block;
+	font-size: 1.5em;
+	margin: 1.5em 0;
 }
 
-ol.commentlist img.avatar { float: left; margin-right: 10px; }
+.js #commentShow {
+	cursor: pointer;
+}
+
+#commentShow .icon-comments {
+	margin-right: 1em;
+}
+
+#commentShow i[class^="icon-chevron"] {
+	float: right;
+	color: #a9b7bd;
+	color: rgba(46, 79, 92, .4);
+}
+
+#commentShow.open i[class^="icon-chevron"]:before {
+	content: "\f077";
+}
+
+.comment {
+	padding: 1.5em 0;
+	border-bottom: 1px dashed #afc3cb;
+}
+
+.comment header {
+	text-align: center;
+	width: 15%;
+	margin-left: -25%;
+	float: left;
+}
+
+#leAvatar,
+#leAvatar:before,
+#leAvatar:after,
+#leAvatar img.avatar {
+	border-radius: 80px;
+}
+
+#leAvatar {
+	width: 80px;
+	height: 80px;
+	display: block;
+	margin: 0 auto;
+	background-color: #eee;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.05)));
+	padding: 4px;
+	box-shadow: 0 1px 0 #fff, 0 -1px 0 rgba(0,0,0,0.4);
+	border: 1px solid #c0d6e0;
+	position: relative;
+	-webkit-transition: background .3s ease-in-out 0s;
+}
+
+	#leAvatar:before,
+	#leAvatar:after {
+		content: "";
+		width: 68px;
+		height: 68px;
+		position: absolute;
+		left: 4px;
+		top: 4px;
+	}
+
+	#leAvatar:before {
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
+		box-shadow: inset 0 1px 0 #fff;
+		border: 1px solid #afc3cb;
+	}
+	
+	#leAvatar:after {
+		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0.1)), color-stop(44%,rgba(255,255,255,0.2)), color-stop(45%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
+	}
+	
+	.comment:hover #leAvatar {
+		background-color: #fff;
+	}
+
+#leAvatar img.avatar {
+	margin: 0;
+}
+
+.comment header cite {
+	font-style: normal;
+}
+
+.comment footer time,
+.comment footer a {
+	display: inline-block;
+}
+
+.comment footer time {
+	font-size: .9em;
+	float: right;
+}
+
+.comment footer time a {
+	color: rgba(46, 79, 92, .5);
+}
+
+	.comment:hover footer time a {
+		color: #40A296;
+	}
+
+.comment-reply-link {
+	font-size: 1em;
+	padding-top: 0;
+	padding-bottom: 0;
+	opacity: 0;
+}
+
+	.comment:hover .comment-reply-link {
+		opacity: 1;
+	}
+	
+	.touch .comment-reply-link {
+		opacity: 1;
+	}
 
 
 /* ============================================================== */
@@ -315,15 +453,18 @@ aside[role="complementary"] .btn {
 
 
 
-/* =============================================================================
-   WordPress Generated Classes
-   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
-   ========================================================================== */
+/* ============================================================== */
+/*  WordPress Generated Classes 
+    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes */
+/* ============================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
 .alignleft { margin: 0 20px 20px 0; float: left; }
 .alignright { margin: 0 0 20px 20px; float: right; }
 
+.wp-smiley {
+	display: inline;
+}
 
 
 /* ============================================================== */
@@ -333,6 +474,12 @@ aside[role="complementary"] .btn {
 @media only screen and (min-width: 600px) {
 	body {
 		
+	}
+	
+	.row {
+		max-width: 33.8em;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	
 	/* GLOBAL SEARCH */
@@ -366,9 +513,7 @@ aside[role="complementary"] .btn {
 	#menubar #searchsubmit {
 		display: none;
 	}
-	
-	.post-content { max-width: 35em; }
-	
+		
 }
 
 @media only screen and (min-width: 768px) { 
@@ -378,6 +523,7 @@ aside[role="complementary"] .btn {
 	
 	.row {
 		max-width: 51.5em;
+		
 	}
 	
 	.col1, 
@@ -385,9 +531,7 @@ aside[role="complementary"] .btn {
 	.col3, 
 	.col4, 
 	.col5, 
-	.col6,
-	.grid2-col2,
-	.grid2-col1:first-child {
+	.col6 {
 		padding-right: 2%; }
 	
 	.col1:last-child,
@@ -395,9 +539,7 @@ aside[role="complementary"] .btn {
 	.col3:last-child,
 	.col4:last-child,
 	.col5:last-child,
-	.col6:last-child,
-	.grid2-col2:last-child,
-	.grid2-col1:last-child {
+	.col6:last-child {
 		padding-right: 0; }
 
 }

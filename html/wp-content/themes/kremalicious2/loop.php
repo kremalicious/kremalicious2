@@ -1,6 +1,6 @@
 <?php get_sidebar(); ?>
 
-<section role="main" class="col4 grid2-col1">
+<section role="main" class="col4">
 	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>
 	<?php if (!have_posts()) { ?>
@@ -12,20 +12,38 @@
 	<?php } ?>
 
 	<?php /* Start loop */ ?>
-	<?php while (have_posts()) : the_post(); ?>
-	
-		<article id="post-<?php the_ID(); ?>" class="hentry">
-			
-			<header class="clearfix">
-				<div class="col1">
-					<img class="teaserImage" src="<?php echo catch_that_image() ?>" />
-				</div>
-				<div class="col5">
+	<?php 
+		$first = true;
+		while (have_posts()) : the_post(); ?>
+		
+		<?php if ( $first && is_front_page() && !is_paged() ) { ?>
+		
+			<article id="post-<?php the_ID(); ?>" class="hentry hero">
+				<header>
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</div>
-			</header>
+				</header>
+		    	<div class="entry-content">
+		    		<?php the_content(); ?>
+		    	</div>
+		    	<?php $first = false; ?>
+			</article>
+		
+		<?php } else { ?>
+		
+			<article id="post-<?php the_ID(); ?>" class="hentry">
+		    	<header class="clearfix">
+		    		<div class="col1">
+		    			<i class="icon-flag"></i>
+		    		</div>
+		    		<div class="col5">
+		    			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		    		</div>
+		    	</header>
+			</article>
 			
-		</article>
+		<?php } ?>
+			
+		
 	    
 	<?php endwhile; /* End loop */ ?>
 	
