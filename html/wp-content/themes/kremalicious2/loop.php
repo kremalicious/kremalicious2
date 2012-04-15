@@ -13,38 +13,44 @@
 
 	<?php /* Start loop */ ?>
 	<?php 
-		$first = true;
 		while (have_posts()) : the_post(); ?>
-		
-		<?php if ( $first && is_front_page() && !is_paged() ) { ?>
-		
-			<article id="post-<?php the_ID(); ?>" class="hentry hero">
-				<header>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</header>
-		    	<div class="entry-content">
-		    		<?php the_content(); ?>
-		    	</div>
-		    	<?php $first = false; ?>
+
+			<article id="post-<?php the_ID(); ?>" class="hentry clearfix">
+				
+				<?php if (has_post_format( 'link' )) { ?>
+					
+					<div class="col1 posttype">
+						<i class="icon-bookmark"></i>
+					</div>
+					<div class="col5">
+						<header>
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
+						</header>
+						<?php the_content(); ?>
+					</div>
+					
+				<?php } else { ?>
+					
+					<div class="col1 posttype">
+						<i class="icon-asterisk"></i>
+					</div>
+					<div class="col5">
+						<header>
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						</header>
+						<?php if ( has_post_thumbnail() ) { ?>
+							<a href="<?php the_permalink(); ?>">
+								<img class="featureImage" src="http://placekitten.com/450/140" />
+							</a>
+						<?php } ?>
+						<?php the_excerpt(); ?>
+					</div>
+					
+				<?php } ?>
+				
+		    	
 			</article>
-		
-		<?php } else { ?>
-		
-			<article id="post-<?php the_ID(); ?>" class="hentry">
-		    	<header class="clearfix">
-		    		<div class="col1">
-		    			<i class="icon-flag"></i>
-		    		</div>
-		    		<div class="col5">
-		    			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		    		</div>
-		    	</header>
-			</article>
-			
-		<?php } ?>
-			
-		
-	    
+
 	<?php endwhile; /* End loop */ ?>
 	
 	<?php /* Display navigation to next/previous pages when applicable */ ?>

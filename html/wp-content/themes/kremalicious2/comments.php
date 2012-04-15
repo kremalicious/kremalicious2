@@ -76,6 +76,23 @@
 		<?php } ?>
 	</section><!-- /#comments -->
   
+<?php } else { ?>
+	
+	<section id="comments">
+		<h2 id="commentShow">
+			<i class="icon-comments"></i>
+			<?php printf(_n('One Response', '%1$s Responses', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()) ); ?>
+			<i class="icon-chevron-down"></i>
+		</h2>
+		
+		<?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>
+			<div class="alert alert-block fade in">
+			<a class="close" data-dismiss="alert">&times;</a>
+			<p><?php _e('Comments are closed.', 'roots'); ?></p>
+			</div>
+		<?php } ?>
+	</section><!-- /#comments -->
+	
 <?php } ?>
 
 <?php if (!have_comments() && !comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>

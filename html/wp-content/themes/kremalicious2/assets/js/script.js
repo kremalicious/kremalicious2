@@ -1,12 +1,20 @@
-/* Author:
 
-*/
 /*	Main js by Matthias Kretschmann | mkretschmann.com */
 
 $(ASAP = function(){
 
 	siteEffects.init();
 	
+});
+
+$(window).load( AfterLoad = function() {
+	
+	if (Modernizr.touch) {
+		MBP.scaleFix();
+		MBP.autogrow();
+		MBP.enableActive();
+	}
+
 });
 
 

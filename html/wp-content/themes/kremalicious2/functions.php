@@ -19,7 +19,7 @@ function kremalicious2_setup() {
   // set_post_thumbnail_size(150, 150, false);
 
   // http://codex.wordpress.org/Post_Formats
-  // add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
+  add_theme_support('post-formats', array('link', 'image'));
 
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus(array(
