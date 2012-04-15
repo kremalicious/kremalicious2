@@ -36,17 +36,17 @@
 				</header>
 			</div>
 			<div class="col4">
-				<nav role="navigation" >
+				<nav role="navigation" class="clearfix alignleft">
 					<ul>
 						<li><a href="/goodies"><i class="icon-gift"></i> Goodies</a></li>
 						<li><a href="/about"> <i class="icon-user"></i> About</a></li>
 					</ul>
 				</nav>
-			<!--	<form method="get" id="searchform" class="col1">
-					<label for="s" class="assistive-text">Search</label>
-					<input type="text" class="field" name="s" id="s" placeholder="Search">
+				<form method="get" id="globalSearch" class="icon-search alignright">
+					<label for="searchfield" class="assistive-text">Search</label>
+					<input type="text" class="field" name="searchfield" id="searchfield" placeholder="Search">
 					<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
-				</form>-->
+				</form>
 			</div>
 		</div>
 	</div>
