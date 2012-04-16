@@ -365,7 +365,7 @@ nav[role="navigation"] li a:hover {
 
 #content {
 	margin-top: 0;
-	padding-top: 4em;
+	padding-top: 2em;
 	background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(40%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
 	background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
@@ -736,6 +736,8 @@ aside[role="complementary"] .btn {
 	.col5:last-child,
 	.col6:last-child {
 		padding-right: 0; }
+	
+	#content { padding-top: 4em; }
 	
 	.single .hentry header {
 		text-align: left;
