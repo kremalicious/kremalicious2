@@ -10,7 +10,7 @@ $(ASAP = function(){
 $(window).load( AfterLoad = function() {
 	
 	if (Modernizr.touch) {
-		MBP.scaleFix();
+		//MBP.scaleFix();
 		MBP.autogrow();
 		MBP.enableActive();
 	}
