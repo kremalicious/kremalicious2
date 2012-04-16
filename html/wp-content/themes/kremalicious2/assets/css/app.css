@@ -111,6 +111,7 @@ button,
 input[type="submit"],
 .pager a,
 .inline-download,
+.download,
 .comment-reply-link,
 .more-link,
 a[rel="tag"] {
@@ -127,7 +128,6 @@ a[rel="tag"] {
 	button:hover,
 	input[type="submit"]:hover,
 	.pager a:hover,
-	.inline-download:hover,
 	.comment-reply-link:hover,
 	.more-link:hover,
 	a[rel="tag"]:hover {
@@ -135,7 +135,8 @@ a[rel="tag"] {
 	}
 
 .btn-primary,
-.inline-download:link {
+.inline-download:link,
+.download:link {
 	font-size: 1.1em;
 	background-color: #3a9085;
 	color: #133832;
@@ -146,7 +147,8 @@ a[rel="tag"] {
 }
 
 	.btn-primary:hover,
-	.inline-download:hover {
+	.inline-download:hover,
+	.download:hover, {
 		background-color: #3e9e92;
 		color: #133832;
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
@@ -162,14 +164,14 @@ a[rel="tag"] {
 /* Old Download Button Overwrites */
 
 .inline-download:link,
-.btn.download {
+.download {
 	display: block;
 	text-align: center;
 	font-size: 1.3em;
 }
 
 	.inline-download:before,
-	.btn.download:before {
+	.download:before {
 		font-family: FontAwesome;
 		font-weight: normal;
 		font-style: normal;
