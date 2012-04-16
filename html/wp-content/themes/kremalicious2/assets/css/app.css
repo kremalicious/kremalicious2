@@ -719,10 +719,7 @@ aside[role="complementary"] .btn {
 		
 	}
 	
-	.row {
-		max-width: 51.5em;
-		
-	}
+	.row { max-width: 51.5em; }
 	
 	.col1, 
 	.col2, 
@@ -821,6 +818,8 @@ aside[role="complementary"] .btn {
 	
 	body {
 		font-size: 116.75%;
-	} /* 18.5px / 28px */
+	}
+	
+	.row { max-width: 52.85em; }
 	
 }
