@@ -711,6 +711,8 @@ aside[role="complementary"] .btn {
 		
 	}
 	
+	#content { padding-top: 4em; }
+	
 	.row { max-width: 33.8em; }
 		
 }
@@ -738,8 +740,6 @@ aside[role="complementary"] .btn {
 	.col5:last-child,
 	.col6:last-child {
 		padding-right: 0; }
-	
-	#content { padding-top: 4em; }
 	
 	.single .hentry header {
 		text-align: left;
