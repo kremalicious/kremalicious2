@@ -715,7 +715,8 @@ aside[role="complementary"] .btn {
 		
 }
 
-@media only screen and (min-width: 768px) { 
+/*using 769px here so iPad/portrait gets different view from landscape*/
+@media only screen and (min-width: 769px) { 
 	body {
 		
 	}

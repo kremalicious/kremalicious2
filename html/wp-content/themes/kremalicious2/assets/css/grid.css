@@ -83,7 +83,9 @@ img, svg, video, audio, embed, object {
 
 /*   768px and up */
 /*  ============================================================== */
-@media only screen and (min-width: 768px) {
+
+/*using 769px here so iPad/portrait gets a different view as in landscape*/
+@media only screen and (min-width: 769px) {
 	
 	.row {
 	    max-width: 1000px;		/* fluid til 1000px max */
