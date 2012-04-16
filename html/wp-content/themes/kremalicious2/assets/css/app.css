@@ -185,6 +185,16 @@ a[rel="tag"] {
 	display: none;
 }
 
+
+/* IMAGES */
+/* ============================================================== */
+
+img {
+	border-radius: 5px;
+	border-top: 1px solid rgba(255,255,255,.5);
+	box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+
 /* GRID OVERWRITES */
 /* ============================================================== */
 .container { padding: 0 2em; }
@@ -465,13 +475,6 @@ a[rel="tag"] {
 	padding-bottom: .4em;
 	border-radius: 20px;
 	line-height: 1em;
-}
-
-.featureImage,
-.wp-post-image {
-	border-radius: 5px;
-	border-top: 1px solid rgba(255,255,255,.5);
-	box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 
 #byline {
