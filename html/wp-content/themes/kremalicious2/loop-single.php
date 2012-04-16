@@ -8,7 +8,7 @@
 				<header class="row featureTitle">
 					<div class="col6">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<img class="featureImage" src="http://placekitten.com/960/300" />
+						<?php the_post_thumbnail( 'featureImageBig' ); ?>
 					</div>
 				</header>
 				<div class="row">

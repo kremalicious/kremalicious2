@@ -40,7 +40,7 @@
 						</header>
 						<?php if ( has_post_thumbnail() ) { ?>
 							<a href="<?php the_permalink(); ?>">
-								<img class="featureImage" src="http://placekitten.com/540/169" />
+								<?php the_post_thumbnail( 'featureImageStream' ); ?>
 							</a>
 						<?php } ?>
 						<?php the_excerpt(); ?>
