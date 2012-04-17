@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($){
 	
 	var acs_action = 'krlc2_autocompletesearch';
-	$("#searchfield").autocomplete({
+	$("#s").autocomplete({
 		source: function(req, response){
 			$.getJSON(krlc2LiveSearch.url+'?callback=?&action='+acs_action, req, response);
 		},

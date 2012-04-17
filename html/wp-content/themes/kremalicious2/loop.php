@@ -26,7 +26,9 @@
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
-						<?php the_content(); ?>
+						<?php if (!is_search()) { ?>
+							<?php the_content(); ?>
+						<?php } ?>
 					</div>
 					
 				<?php } else { ?>
@@ -38,12 +40,16 @@
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</header>
-						<?php if ( has_post_thumbnail() ) { ?>
-							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail( 'featureImageStream' ); ?>
-							</a>
+						<?php if (!is_search()) { ?>
+							
+							<?php if ( has_post_thumbnail() ) { ?>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail( 'featureImageStream' ); ?>
+								</a>
+							<?php } ?>
+							<?php the_excerpt(); ?>
+							
 						<?php } ?>
-						<?php the_excerpt(); ?>
 					</div>
 					
 				<?php } ?>

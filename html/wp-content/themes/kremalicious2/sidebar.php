@@ -24,6 +24,12 @@
 		</h1>
 	</aside>
 	
+<?php } elseif ( is_search() ) { ?>
+	
+	<header class="col2">
+	    <h1><?php _e('Search Results for', 'roots'); ?> <?php echo get_search_query(); ?></h1>
+	</header>
+
 <?php } else { ?>
 
 	<aside role="complementary" class="col2">

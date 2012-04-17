@@ -42,11 +42,7 @@
 						<li><a href="/about"> <i class="icon-user"></i> About</a></li>
 					</ul>
 				</nav>
-				<form method="get" id="globalSearch" class="icon-search alignright">
-					<label for="searchfield" class="assistive-text">Search</label>
-					<input type="text" class="field" name="searchfield" id="searchfield" placeholder="Search">
-					<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
-				</form>
+				<?php get_search_form(); ?>
 			</div>
 		</div>
 	</div>

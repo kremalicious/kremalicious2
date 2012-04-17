@@ -285,7 +285,7 @@ header[role="banner"] h1 {
 	}
 
 nav[role="navigation"],
-#globalSearch {
+#searchform {
 	margin-bottom: 0;
 }
 
@@ -315,10 +315,6 @@ nav[role="navigation"] li a:hover {
 	margin-bottom: .1em;
 }
 
-#globalSearch {
-	
-}
-
 /* GLOBAL SEARCH */
 .assistive-text {
 	position: absolute !important;
@@ -326,7 +322,7 @@ nav[role="navigation"] li a:hover {
 	clip: rect(1px, 1px, 1px, 1px);
 }
 
-#globalSearch {
+#menubar #searchform {
 	position: relative;
 	padding: .5em ;
 	border-right: 1px solid #a1aeb2;
@@ -334,7 +330,7 @@ nav[role="navigation"] li a:hover {
 	box-shadow: -1px 0 0 #a1aeb2, 1px 0 0 rgba(255,255,255,.3);
 }
 
-	#globalSearch:before {
+	#menubar #searchform:before {
 		position: absolute;
 		display: block;
 		left: .6em;
@@ -342,7 +338,7 @@ nav[role="navigation"] li a:hover {
 		font-size: 20px;
 	}
 
-#globalSearch input#searchfield {
+#menubar #searchform input#s {
 	width: 20px;
 	float: right;
 	padding-left: 24px;
@@ -361,13 +357,13 @@ nav[role="navigation"] li a:hover {
 	-o-transition-timing-function: ease;
 }
 
-#globalSearch #searchfield:focus {
+#menubar #searchform #s:focus {
 	width: 200px;
 	background: #fff;
 	background: rgba(255,255,255,.5);
 }
 
-#globalSearch #searchsubmit {
+#menubar #searchform #searchsubmit {
 	display: none;
 }
 
@@ -409,7 +405,8 @@ nav[role="navigation"] li a:hover {
 	padding: 3em 0;
 }
 
-	.hentry:first-child {
+	.hentry:first-child,
+	.search-results .hentry:first-child {
 		border-top: none;
 		padding-top: 0;
 	}
@@ -685,6 +682,17 @@ aside[role="complementary"] .btn {
 #content-info p small {  }
 
 
+/* ============================================================== */
+/*	SEARCH RESULTS */
+/* ============================================================== */
+
+.search-results .hentry {
+	padding: 2em 0;
+}
+
+.search-results .hentry header h2 {
+	margin-bottom: 0;
+}
 
 /* ============================================================== */
 /*  WordPress Generated Classes 
