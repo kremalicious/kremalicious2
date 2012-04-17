@@ -402,7 +402,7 @@ nav[role="navigation"] li a:hover {
 	clear: both;
 	border-bottom: 1px dashed #afc3cb;
 	border-top: 1px dashed #fff;
-	padding: 3em 0;
+	padding: 1.5em 0;
 }
 
 	.hentry:first-child,
@@ -411,9 +411,13 @@ nav[role="navigation"] li a:hover {
 		padding-top: 0;
 	}
 	
-	.home .hentry p:last-child {
-		margin-bottom: 0;
-	}
+.home .hentry p:last-child {
+	margin-bottom: 0;
+}
+
+.hentry header {
+	text-align: center;
+}
 
 .hentry time { display: block; }
 .hentry p.byline { }
@@ -429,7 +433,6 @@ nav[role="navigation"] li a:hover {
 	padding-top: 0;
 	padding-bottom: 0;
 	border: none;
-	text-align: center;
 }
 
 .pager {
@@ -493,6 +496,8 @@ a[rel="tag"] {
 .posttype {
 	font-size: 1.3em;
 	color: #a9b8bd;
+	text-align: center;
+	margin-bottom: 1em;
 }
 
 h2 i.icon-external-link {
@@ -754,7 +759,11 @@ aside[role="complementary"] .btn {
 	.col6:last-child {
 		padding-right: 0; }
 	
-	.single .hentry header {
+	.hentry {
+		padding: 3em 0;
+	}
+	
+	.hentry header {
 		text-align: left;
 	}
 	
