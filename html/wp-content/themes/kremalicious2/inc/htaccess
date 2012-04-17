@@ -1,5 +1,7 @@
 # BEGIN CUSTOM WP STUFF
 
+# Remove date from post permalinks
+RedirectMatch 301 ^/([0-9]+)/([0-9]+)/(.*)$ http://kremalicious.com/$3
 
 
 # END CUSTOM WP STUFF
