@@ -492,11 +492,14 @@ a[rel="tag"] {
 	color: #95a6ae;
 }
 
-.posttype a {
+.posttype {
 	font-size: 1.3em;
-	color: #a9b8bd;
 	text-align: center;
 	margin-bottom: 1em;
+}
+
+.posttype a {
+	color: #a9b8bd;
 	display: inline-block;
 }
 
@@ -848,6 +851,10 @@ aside[role="complementary"] .btn {
 	}
 	
 	.hentry header {
+		text-align: left;
+	}
+	
+	.posttype {
 		text-align: left;
 	}
 	
