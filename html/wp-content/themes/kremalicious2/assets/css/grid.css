@@ -40,7 +40,7 @@
 .container, .row { *zoom: 1; }
 
 /* Responsive Media */
-img, svg, video, audio, embed, object {
+img, figure, svg, video, audio, embed, object {
 	max-width: 100%;	/* never wider as containing column */
 	height: auto;		/* proportional scaling */
 	margin: 0 auto;		/* center in column */

@@ -43,7 +43,8 @@ nav[role="navigation"] a,
 .pager a,
 .inline-download,
 .comment header cite,
-.comment-reply-link {
+.comment-reply-link,
+.photoPost figcaption {
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -113,7 +114,6 @@ input[type="submit"],
 .inline-download,
 .download,
 .comment-reply-link,
-.more-link,
 a[rel="tag"] {
 	display: inline-block;
 	padding: .5em 1em;
@@ -129,7 +129,6 @@ a[rel="tag"] {
 	input[type="submit"]:hover,
 	.pager a:hover,
 	.comment-reply-link:hover,
-	.more-link:hover,
 	a[rel="tag"]:hover {
 		background-color: rgba(255,255,255,.2);
 	}
@@ -493,17 +492,102 @@ a[rel="tag"] {
 	color: #95a6ae;
 }
 
-.posttype {
+.posttype a {
 	font-size: 1.3em;
 	color: #a9b8bd;
 	text-align: center;
 	margin-bottom: 1em;
+	display: inline-block;
 }
 
-h2 i.icon-external-link {
+.hentry:hover .posttype a,
+.touch .posttype a {
+	color: #3a9085;
+}
+
+h2 i.icon-external-link,
+h1 i.icon-external-link {
 	font-size: .6em;
 	color: #a9b8bd;
 	margin-left: .3em;
+}
+
+.photoPost figure,
+a.photopost {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.photoPost figure {
+	position: relative;
+	padding: .55em;
+	background: #fcfeff;
+	border: 1px solid rgba(158, 170, 178, .6);
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+	-webkit-transition: all .3s ease-in-out 0s;
+}
+	
+	.photoPost figure:before,
+	.photoPost figure:after {
+		content: "";
+		position: absolute;
+		z-index: -2;
+	}
+	
+	.photoPost figure:before {
+		top: 0;
+		bottom: 0;
+		left: 10px;
+		right: 10px;
+		border-radius: 100px / 10px;
+		box-shadow: 0 0 15px rgba(0,0,0,0.3);
+	}
+	
+	.single .photoPost figure {
+		margin-bottom: 1.5em;
+	}
+
+.photoPost figure img {
+	box-shadow: none;
+	border-radius: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+.photoPost figcaption {
+	text-align: center;
+	margin-bottom: .5em;
+	color: rgba(46, 79, 92, .7);
+}
+
+a.photoPost {
+	max-width: 100%;
+}
+
+a.photoPost:hover figure {
+	background: #c4e4df;
+}
+
+#exif {
+	font-size: .9em;
+}
+
+#exif dt {
+	width: 35%;
+	float: left;
+	padding-top: .3em;
+	color: #95a6ae;
+}
+
+#exif dd {
+	padding-left: 35%;
+	border-bottom: 1px solid rgba(175, 195, 203, .3);
+	margin-left: 0;
+	padding-top: .3em;
+	padding-bottom: .3em;
 }
 
 /* ============================================================== */

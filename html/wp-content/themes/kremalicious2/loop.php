@@ -22,21 +22,36 @@
 					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 					
 					<div class="col1 posttype">
-						<i class="icon-bookmark"></i>
+						<a class="icon-bookmark" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
 					</div>
 					<div class="col5">
 						<header>
 							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
-							<?php the_content('Read more'); ?>
+							<?php the_content('Read more &hellip;'); ?>
 						<?php } ?>
+					</div>
+				
+				<?php } elseif ( has_post_format( 'image' ) ) { ?>
+					
+					<div class="col1 posttype">
+						<a class="icon-camera-retro" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+					</div>
+					<div class="col5">
+						<a class="photoPost" href="<?php the_permalink(); ?>">
+							<figure>
+								<?php the_post_thumbnail('photoStream'); ?>
+								<figcaption><?php the_title(); ?></figcaption>
+							</figure>
+							<?php the_content(); ?>
+						</a>
 					</div>
 					
 				<?php } else { ?>
 					
 					<div class="col1 posttype">
-						<i class="icon-asterisk"></i>
+						<a class="icon-asterisk" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
 					</div>
 					<div class="col5">
 						<header>

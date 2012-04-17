@@ -20,6 +20,8 @@ function kremalicious2_setup() {
   // set_post_thumbnail_size(150, 150, false);
   add_image_size( 'featureImageBig', 960, 300, true );
   add_image_size( 'featureImageStream', 540, 169, true );
+  add_image_size( 'photoStream', 520, 9999 );
+  add_image_size( 'photoBig', 960, 9999 );
 
   // http://codex.wordpress.org/Post_Formats
   add_theme_support('post-formats', array('link', 'image'));
