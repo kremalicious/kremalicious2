@@ -54,12 +54,11 @@ h1, h2, h3, h4, h5, h6 {
 	color: #2e4f5c;
 }
 
-h1 {margin: 0; font-size: 2.25em; line-height: 1em; margin-bottom: 0.6667em}
+h1 { margin: 0; font-size: 2.25em; line-height: 1em; margin-bottom: 0.6667em}
 
 h2 { font-size: 1.625em; line-height: 1; margin: 0.8462em 0; }
 
-h3,
-.hentry header h2 {margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em}
+h3 { margin: 0; font-size: 1.5em; line-height: 1em; margin-bottom: 1em}
 
 p, ul, blockquote, pre, td, th, label {
 	margin: 0; 
@@ -416,6 +415,10 @@ nav[role="navigation"] li a:hover {
 
 .hentry header {
 	text-align: center;
+}
+
+.hentry header h2 {
+	margin-top: 0;
 }
 
 .hentry time { display: block; }
