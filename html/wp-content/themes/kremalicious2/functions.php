@@ -2,11 +2,12 @@
 
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 
-require_once locate_template('/inc/krlc2-cleanup.php');     // cleanup
-require_once locate_template('/inc/krlc2-scripts.php');     // modified scripts output
-require_once locate_template('/inc/krlc2-admin.php');     	// admin stuff
-require_once locate_template('/inc/krlc2-content.php');     	// content stuff
-require_once locate_template('/inc/krlc2-livesearch.php');     	// live search
+require_once locate_template('/inc/krlc2-cleanup.php');
+require_once locate_template('/inc/krlc2-scripts.php');
+require_once locate_template('/inc/krlc2-admin.php');
+require_once locate_template('/inc/krlc2-content.php');
+require_once locate_template('/inc/krlc2-livesearch.php');
+require_once locate_template('/inc/krlc2-htaccess.php');
 
 function kremalicious2_setup() {
 
