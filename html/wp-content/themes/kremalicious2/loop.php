@@ -17,14 +17,16 @@
 
 			<article id="post-<?php the_ID(); ?>" class="hentry clearfix">
 				
-				<?php if (has_post_format( 'link' )) { ?>
+				<?php if (has_post_format( 'link' )) { 
+					
+					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 					
 					<div class="col1 posttype">
 						<i class="icon-bookmark"></i>
 					</div>
 					<div class="col5">
 						<header>
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
+							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
 							<?php the_content('Read more'); ?>
