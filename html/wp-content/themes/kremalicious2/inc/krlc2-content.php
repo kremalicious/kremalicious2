@@ -89,9 +89,9 @@ function krlc2_feed_post_thumb( $content ) {
     global $post;
      
     if ( has_post_thumbnail($post->ID) && !has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'featureImageBig', array('class' => 'center') ) . '</div>' . $content;
+    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') ) . '</div>' . $content;
     } elseif ( has_post_thumbnail($post->ID) && has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'photoBig', array('class' => 'center') ) . '</div>' . $content;    
+    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') ) . '</div>' . $content;    
     } else {
         $content = $content;
     }
