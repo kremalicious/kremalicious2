@@ -27,7 +27,7 @@
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
-							<?php the_content(); ?>
+							<?php the_content('Read more'); ?>
 						<?php } ?>
 					</div>
 					
@@ -47,7 +47,7 @@
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
 								</a>
 							<?php } ?>
-							<?php the_excerpt(); ?>
+							<?php the_content('Read more'); ?>
 							
 						<?php } ?>
 					</div>

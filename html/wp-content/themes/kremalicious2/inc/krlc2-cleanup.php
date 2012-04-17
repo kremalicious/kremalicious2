@@ -12,6 +12,13 @@ function roots_nice_search_redirect() {
 add_action('template_redirect', 'roots_nice_search_redirect');
 
 
+// excerpt cleanup
+function krlc2_excerpt_more($more) {
+  return '<p><a href="' . get_permalink() . '">' . __( 'Read More', 'roots' ) . '</a></p>';
+}
+add_filter('excerpt_more', 'krlc2_excerpt_more');
+
+
 // remove WordPress version from RSS feed
 function roots_no_generator() { return ''; }
 add_filter('the_generator', 'roots_no_generator');
