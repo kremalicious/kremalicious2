@@ -29,7 +29,7 @@
 							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
-							<?php the_content('Read more &hellip;'); ?>
+							<?php the_content('Read On'); ?>
 						<?php } ?>
 					</div>
 				
@@ -64,7 +64,7 @@
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
 								</a>
 							<?php } ?>
-							<?php the_content('Read more'); ?>
+							<?php the_content('Read On'); ?>
 							
 						<?php } ?>
 					</div>

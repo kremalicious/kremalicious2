@@ -14,7 +14,7 @@ add_action('template_redirect', 'roots_nice_search_redirect');
 
 // excerpt cleanup
 function krlc2_excerpt_more($more) {
-  return '<p><a href="' . get_permalink() . '">' . __( 'Read More', 'roots' ) . '</a></p>';
+  return '<p><a class="more-link" href="' . get_permalink() . '">' . __( 'Read On', 'roots' ) . '</a></p>';
 }
 add_filter('excerpt_more', 'krlc2_excerpt_more');
 
