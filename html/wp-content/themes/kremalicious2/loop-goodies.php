@@ -20,7 +20,7 @@
 
 	<?php 
 	
-	$goodiesQuery = new WP_Query( 'category_name=goodies' ); 
+	$goodiesQuery = new WP_Query( 'category_name=goodies&posts_per_page=-1' ); 
 	
 	while ( $goodiesQuery->have_posts() ) : $goodiesQuery->the_post(); 
 		
@@ -40,8 +40,8 @@
 			</footer>
 		</article>
 		
-	<?php endwhile; 
+	<?php endwhile; ?>
 	
-	wp_reset_postdata(); ?>
+	<?php wp_reset_postdata(); ?>
 
 </div>
