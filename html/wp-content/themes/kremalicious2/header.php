@@ -30,14 +30,13 @@
 	<div class="container" id="menubar-wrap">
 		<div class="row" id="menubar">
 			
-			<div class="col2">
-				<header role="banner">
-					<h1><a href="/">kremalicious</a></h1>
-				</header>
-			</div>
-			<div class="col4">
+			<header role="banner">
+				<h1><a href="/">kremalicious</a></h1>
+			</header>
+			<div class="col6">
 				<nav role="navigation" class="clearfix alignleft">
 					<ul>
+						<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
 						<li><a href="/goodies"><i class="icon-gift"></i> Goodies</a></li>
 						<li><a href="/about"> <i class="icon-user"></i> About</a></li>
 					</ul>
