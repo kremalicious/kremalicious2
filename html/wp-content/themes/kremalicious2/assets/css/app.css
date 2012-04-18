@@ -447,7 +447,7 @@ nav[role="navigation"] li a:hover {
 .hentry footer {
 	border-top: 1px dashed #afc3cb;
 	border-bottom: 1px dashed #afc3cb;
-	padding: 2em 0;
+	padding: 1em 0;
 	margin: 2em 0;
 	position: relative;
 }
@@ -461,6 +461,7 @@ nav[role="navigation"] li a:hover {
 		position: absolute;
 		left: 0;
 		top: 0;
+		z-index: -1;
 	}
 
 .hentry footer p:last-child {
@@ -475,8 +476,8 @@ nav[role="navigation"] li a:hover {
 
 a[rel="tag"] {
 	font-size: .9em;
-	padding-top: .3em;
-	padding-bottom: .4em;
+	padding-top: .1em;
+	padding-bottom: .2em;
 	border-radius: 20px;
 	line-height: 1em;
 }
@@ -594,6 +595,28 @@ a.photoPost:hover figure {
 	margin-left: 0;
 	padding-top: .3em;
 	padding-bottom: .3em;
+}
+
+#share li {
+	width: 25%;
+	display: inline-block;
+	
+}
+
+	#share li:before {
+		text-indent: 0;
+		margin-right: .5em;
+	}
+
+#share .btn {
+	padding: .1em .3em;
+	border: none;
+	box-shadow: none;
+	background: transparent;
+}
+
+#share i {
+	color: #95a6ae;
 }
 
 /* ============================================================== */

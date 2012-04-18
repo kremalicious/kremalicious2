@@ -32,7 +32,6 @@
 			</footer>
 			
 		</article>
-	</li>
 <?php } ?>
 
 <?php if (post_password_required()) { ?>

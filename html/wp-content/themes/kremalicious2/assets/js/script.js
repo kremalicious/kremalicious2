@@ -34,8 +34,15 @@ var siteEffects = {
 		});
 	},
 	
+	socialiteButtons: function() {
+		$('#share').one('mouseenter', function() {
+			Socialite.load($(this)[0]);
+		});
+	},
+	
 	init: function(){
 		this.commentShowup();
+		this.socialiteButtons();
 	}
 	
 }
