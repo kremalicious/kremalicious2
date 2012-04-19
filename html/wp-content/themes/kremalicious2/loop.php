@@ -47,6 +47,50 @@
 							<?php the_content(); ?>
 						</a>
 					</div>
+				
+				<?php } elseif (in_category('goodies') && is_category('goodies')) { ?>
+					
+					<div class="col1 posttype">
+						<a class="icon-gift" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+					</div>
+					<div class="col5">
+						<header>
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						</header>
+					</div>
+					<div class="col6">
+						
+						<?php if ( has_post_thumbnail() ) { ?>
+							<p><a href="<?php the_permalink(); ?>" class="goodieImage">
+								<?php the_post_thumbnail( 'goodieImage' ); ?>
+							</a></p>
+						<?php } else { ?>
+							<?php the_content('Read On'); ?>
+						<?php } ?>
+						<footer>
+							<p class="col3"><a class="btn download" href="#">Download</a></p>
+							<p class="col3"><a href="<?php the_permalink(); ?>">Release Post</a></p>
+						</footer>
+					</div>
+					
+				<?php } elseif ( in_category('goodies') ) { ?>
+					
+					<div class="col1 posttype">
+						<a class="icon-gift" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+					</div>
+					<div class="col5">
+						<header>
+							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						</header>
+						<?php if ( has_post_thumbnail() ) { ?>
+							<p><a href="<?php the_permalink(); ?>" class="goodieImage">
+								<?php the_post_thumbnail( 'goodieImage' ); ?>
+							</a></p>
+							<?php echo krlc2_excerpt_more(); ?>
+						<?php } else { ?>
+							<?php the_content('Read On'); ?>
+						<?php } ?>
+					</div>
 					
 				<?php } else { ?>
 					
