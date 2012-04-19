@@ -3,6 +3,10 @@
 /*	BASE */
 /* ============================================================== */
 
+html {
+	background: #e7eef4;
+}
+
 body {
 	-webkit-font-smoothing: antialiased; 
 	font-smoothing: antialiased; 
@@ -235,7 +239,7 @@ img {
 		display: block;
 		width: 100%;
 		height: 5px;
-		background-color: #d0d9de;
+		background-color: #d8e2ea;
 		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(15%,rgba(255,255,255,1)), color-stop(23%,rgba(255,255,255,0)), color-stop(51%,rgba(255,255,255,.6)), color-stop(63%,rgba(255,255,255,0)), color-stop(74%,rgba(255,255,255,.4)), color-stop(100%,rgba(255,255,255,0)));
 		background-repeat: repeat;
 		background-size: 100% 320px;
@@ -261,19 +265,14 @@ header[role="banner"] h1 {
 	position: absolute;
 	left: 0;
 	top: -1px;
-	background-color: #d0d9de;
-	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.1) 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(35%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1)));
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
-	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
-	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
-	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
+	background-color: #d8e2ea;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(35%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.15)));
 	border: 1px solid #6f838b;
 	border-top: none;
-	box-shadow: 0 2px 4px rgba(111, 131, 139, .8);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	padding: 1em;
+	box-shadow: 0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7);
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	padding: .6em 0 .7em 0;
 	width: 100%;
 	z-index: 0;
 }
@@ -282,8 +281,8 @@ header[role="banner"] h1 {
 		content: "";
 		width: 100%;
 		height: 109%;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 7px;
+		border-bottom-right-radius: 7px;
 		position: absolute;
 		left: 0;
 		top: -6px;
@@ -291,9 +290,42 @@ header[role="banner"] h1 {
 		z-index: -1;
 	}
 
-header[role="banner"] h1 a {
+#logo {
 	display: block;
+	background: url(../img/logo.png) no-repeat center .3em;
+	text-indent: -999px;
+	min-height: 41px;
+	padding: .3em 0 .2em 0;
+	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box; 
+	box-sizing: content-box; 
+	border-top: 1px solid #9bb6c3;
+	border-bottom: 1px solid #8ea8b6;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2);
+	position: relative;
 }
+	
+	#logo:before,
+	#logo:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 2px;
+	}
+	
+	#logo:before {
+		top: -5px;
+		border-top: 1px solid #9bb6c3;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,.9)
+	}
+	
+	#logo:after {
+		bottom: -5px;
+		border-bottom: 1px solid #8ea8b6;
+		box-shadow: 0 1px 0 rgba(255,255,255,.7)
+	}
 
 nav[role="navigation"],
 #searchform {
@@ -887,11 +919,11 @@ aside[role="complementary"] .btn {
    	transform: translateY(0);
  }
  to {
-    -webkit-transform: translateY(-72px);
-   	-moz-transform: translateY(-72px);
-   	-o-transform: translateY(-72px);
-   	-ms-transform: translateY(-72px);
-   	transform: translateY(-72px);
+    -webkit-transform: translateY(-82px);
+   	-moz-transform: translateY(-82px);
+   	-o-transform: translateY(-82px);
+   	-ms-transform: translateY(-82px);
+   	transform: translateY(-82px);
  }
 
 }
@@ -902,8 +934,8 @@ aside[role="complementary"] .btn {
    transform: translateY(0);
  }
  to {
-   -moz-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -moz-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
 
 }
@@ -914,8 +946,8 @@ aside[role="complementary"] .btn {
    transform: translateY(0);
  }
  to {
-   -webkit-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -webkit-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
 
 }
@@ -926,8 +958,8 @@ aside[role="complementary"] .btn {
    transform: translateY(0);
  }
  to {
-   -ms-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -ms-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
 
 }
@@ -938,19 +970,19 @@ aside[role="complementary"] .btn {
    transform: translateY(0);
  }
  to {
-   -o-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -o-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
 
 }
 
 @keyframes "bannerFallDown" {
  0% {
-    -webkit-transform: translateY(-72px);
-   	-moz-transform: translateY(-72px);
-   	-o-transform: translateY(-72px);
-   	-ms-transform: translateY(-72px);
-   	transform: translateY(-72px);
+    -webkit-transform: translateY(-82px);
+   	-moz-transform: translateY(-82px);
+   	-o-transform: translateY(-82px);
+   	-ms-transform: translateY(-82px);
+   	transform: translateY(-82px);
  }
  50% {
     -webkit-transform: translateY(0);
@@ -978,8 +1010,8 @@ aside[role="complementary"] .btn {
 
 @-moz-keyframes bannerFallDown {
  0% {
-   -moz-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -moz-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
  50% {
    -moz-transform: translateY(0);
@@ -998,8 +1030,8 @@ aside[role="complementary"] .btn {
 
 @-webkit-keyframes "bannerFallDown" {
  0% {
-   -webkit-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -webkit-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
  50% {
    -webkit-transform: translateY(0);
@@ -1018,8 +1050,8 @@ aside[role="complementary"] .btn {
 
 @-ms-keyframes "bannerFallDown" {
  0% {
-   -ms-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -ms-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
  50% {
    -ms-transform: translateY(0);
@@ -1038,8 +1070,8 @@ aside[role="complementary"] .btn {
 
 @-o-keyframes "bannerFallDown" {
  0% {
-   -o-transform: translateY(-72px);
-   transform: translateY(-72px);
+   -o-transform: translateY(-82px);
+   transform: translateY(-82px);
  }
  50% {
    -o-transform: translateY(0);
@@ -1074,7 +1106,7 @@ aside[role="complementary"] .btn {
 		
 	}
 	
-	#content { padding-top: 4em; }
+	#content { padding-top: 5em; }
 	
 	.row { max-width: 33.8em; }
 		
@@ -1199,3 +1231,25 @@ aside[role="complementary"] .btn {
 	.row { max-width: 52.85em; }
 	
 }
+
+/* ========================================== */
+/* high pixel ratio devices   */
+/* ========================================== */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+  	
+  	body {
+  		background-size: 11px 6px;
+  	}
+  	
+	#logo {	
+		background-image: url(../img/logo@2x.png); 
+		background-size: 188px 41px
+	}
+  
+}
+
+

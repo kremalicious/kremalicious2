@@ -30,7 +30,7 @@ var siteEffects = {
 			if (Modernizr.cssanimations) {
 				$banner.addClass('bannerSlideUp').removeClass('bannerFallDown');
 			} else {
-				$banner.stop().animate({'top':'-72px'}, 100, 'easeInCubic');
+				$banner.stop().animate({'top':'-82px'}, 100, 'easeInCubic');
 			}
 
 		}, function() {
