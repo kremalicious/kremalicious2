@@ -4,14 +4,13 @@
 /* ============================================================== */
 
 html {
-	background: #e7eef4;
+	background: #e7eef4 url(../img/texture.png) left top repeat;
 }
 
 body {
 	-webkit-font-smoothing: antialiased; 
 	font-smoothing: antialiased; 
 	text-rendering: optimizeLegibility;
-	background: #e7eef4 url(../img/texture.png) left top repeat;
 }
 
 /* DEFAULT FONT SETTINGS */
@@ -1241,12 +1240,13 @@ only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
   	
-  	body {
-  		background-size: 11px 6px;
+  	html {
+  		background-image: url(../img/texture@2x.png);
+  		background-size: 23px 12px;
   	}
   	
 	#logo {	
-		background-image: url(../img/logo@2x.png); 
+		background-image: url(../img/logo@2x.png);
 		background-size: 188px 41px
 	}
   
