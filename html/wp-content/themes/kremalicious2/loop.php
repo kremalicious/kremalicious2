@@ -91,12 +91,19 @@
 							<?php the_content('Read On'); ?>
 						<?php } ?>
 					</div>
-					
+				
 				<?php } else { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-asterisk" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+						<?php if ( in_category('design') ) { ?>
+							<a class="icon-leaf" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+						<?php } elseif ( in_category('personal') ) { ?>
+							<a class="icon-user" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+						<?php } else { ?>
+							<a class="icon-asterisk" href="<?php the_permalink(); ?>" title="Permalink for this post"></a>
+						<?php } ?>
 					</div>
+					
 					<div class="col5">
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -112,7 +119,7 @@
 							
 						<?php } ?>
 					</div>
-					
+
 				<?php } ?>
 				
 		    	

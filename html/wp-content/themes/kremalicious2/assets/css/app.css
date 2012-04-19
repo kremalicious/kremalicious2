@@ -47,7 +47,9 @@ nav[role="navigation"] a,
 .inline-download,
 .comment header cite,
 .comment-reply-link,
-.photoPost figcaption {
+.photoPost figcaption,
+a[rel="tag"],
+#topics a {
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -116,7 +118,8 @@ input[type="submit"],
 .inline-download,
 .download,
 .comment-reply-link,
-a[rel="tag"] {
+a[rel="tag"],
+#topics a {
 	display: inline-block;
 	padding: .5em 1em;
 	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -131,7 +134,8 @@ a[rel="tag"] {
 	input[type="submit"]:hover,
 	.pager a:hover,
 	.comment-reply-link:hover,
-	a[rel="tag"]:hover {
+	a[rel="tag"]:hover,
+	#topics a:hover {
 		background-color: rgba(255,255,255,.2);
 	}
 
@@ -830,8 +834,9 @@ ol.commentlist ul.children {
 /*	SIDEBAR */
 /* ============================================================== */
 
-aside[role="complementary"] .btn {
-	font-size: .9em;
+aside[role="complementary"] .btn,
+#topics a {
+	font-size: .8em;
 	padding-top: 0;
 	padding-bottom: 0;
 	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -872,6 +877,10 @@ aside[role="complementary"] .btn {
 	display: inline;
 }
 
+/*holy shit, WordPress!*/
+aside[role="complementary"] br {
+	display: none;
+}
 
 /* ============================================================== */
 /*	ANIMATIONS */
