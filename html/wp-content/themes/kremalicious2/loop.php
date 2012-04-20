@@ -130,7 +130,7 @@
 						<?php if ( in_category('design') ) { ?>
 							<a class="icon-leaf" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
 						<?php } elseif ( in_category('personal') ) { ?>
-							<a class="icon-user" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in 'personal'"></a>
+							<a class="icon-user" rel="tooltip" href="/personal" title="Show all posts in 'personal'"></a>
 						<?php } elseif ( in_category('photography') ) { ?>
 							<a class="icon-camera" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
 						<?php } else { ?>
