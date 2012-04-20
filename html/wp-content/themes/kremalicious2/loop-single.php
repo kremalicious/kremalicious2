@@ -65,7 +65,7 @@
 					<?php 
 					$tags = get_the_tags(); 
 					if ($tags) { ?>
-						<footer>
+						<footer class="hoverbuttons divider-top divider-bottom">
 							<p id="tags"><i class="icon-tags"></i><?php the_tags('', ' ', ''); ?></p>
 						</footer>
 					<?php } ?>

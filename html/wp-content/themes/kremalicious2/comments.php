@@ -1,6 +1,6 @@
 <?php function krlc2_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
+	<li <?php comment_class('divider-bottom'); ?>>
 		<article id="comment-<?php comment_ID(); ?>">
 			
 			<header class="comment-author vcard">

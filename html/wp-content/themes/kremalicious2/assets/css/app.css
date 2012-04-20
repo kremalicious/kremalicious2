@@ -129,6 +129,16 @@ a[rel="tag"],
 	border: 2px solid rgba(255,255,255,.3);
 }
 
+.btn-tag,
+a[rel="tag"],
+#topics a {
+	font-size: .9em;
+	border-radius: 20px;
+	border: none;
+	margin-bottom: .5em;
+	padding: .1em .8em 0 .8em;
+}
+
 	.btn:hover,
 	button:hover,
 	input[type="submit"]:hover,
@@ -192,6 +202,31 @@ a[rel="tag"],
 	display: none;
 }
 
+/* Hover buttons */
+.hoverbuttons {
+	-webkit-transition: all 0.2s ease-in-out;
+}
+
+.hoverbuttons .btn,
+.hoverbuttons#topics a,
+.hoverbuttons a[rel="tag"] {
+	box-shadow: none;
+	background: transparent;
+}
+
+	.hoverbuttons:hover .btn,
+	.touch .hoverbuttons .btn,
+	.touch .hoverbuttons#topics a,
+	.hoverbuttons#topics:hover a,
+	.hoverbuttons:hover a[rel="tag"] {
+		box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
+	}
+	
+	.hoverbuttons .btn:hover,
+	.hoverbuttons#topics a:hover {
+		background-color: rgba(255,255,255,.2);
+	}
 
 /* IMAGES */
 /* ============================================================== */
@@ -211,7 +246,7 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
-
+	
 
 /* ============================================================== */
 /*	HEADER */
@@ -448,14 +483,11 @@ nav[role="navigation"] li a:hover {
 
 .hentry {
 	clear: both;
-	border-bottom: 1px dashed #afc3cb;
-	border-top: 1px dashed #fff;
 	padding: 1.5em 0;
 }
 
 	.hentry:first-child,
 	.search-results .hentry:first-child {
-		border-top: none;
 		padding-top: 0;
 	}
 	
@@ -496,24 +528,9 @@ nav[role="navigation"] li a:hover {
 }
 
 .hentry footer {
-	border-top: 1px dashed #afc3cb;
-	border-bottom: 1px dashed #afc3cb;
-	padding: 1em 0;
 	margin: 2em 0;
-	position: relative;
+	padding: .5em 0 .3em 0;
 }
-
-	.hentry footer:before {
-		content: "";
-		width: 100%;
-		height: 100%;
-		border-top: 1px dashed #fff;
-		border-bottom: 1px dashed #fff;
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -1;
-	}
 
 .hentry footer p:last-child {
 	margin-bottom: 0;
@@ -523,14 +540,6 @@ nav[role="navigation"] li a:hover {
 	margin-right: .5em;
 	color: #a9b7bd;
 	color: rgba(46, 79, 92, .4);
-}
-
-a[rel="tag"] {
-	font-size: .9em;
-	padding-top: .1em;
-	padding-bottom: .2em;
-	border-radius: 20px;
-	line-height: 1em;
 }
 
 #byline {
@@ -543,9 +552,6 @@ a[rel="tag"] {
 	font-style: normal;
 }
 
-.dimmed {
-	color: #95a6ae;
-}
 
 /*	POST FORMATS & TYPES */
 /* ============================================================== */
@@ -725,9 +731,8 @@ ol.commentlist ul.children {
 	list-style: none;
 }
 
-.comment {
+li.comment {
 	padding: 2em 0;
-	border-bottom: 1px dashed #afc3cb;
 }
 
 .single .hentry .comment header {
@@ -850,15 +855,23 @@ ol.commentlist ul.children {
 /*	SIDEBAR */
 /* ============================================================== */
 
-aside[role="complementary"] .btn,
-#topics a {
-	font-size: .8em;
-	padding-top: 0;
-	padding-bottom: 0;
-	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+#archiveSidebar h1 a {
+	color: #a9b8bd;
 	border: none;
+	margin-right: .1em;
+	padding-right: .2em;
 }
 
+	#archiveSidebar:hover h1 a {
+		color: #40A296;
+	}
+
+#topics {
+	
+	
+}
+
+	
 /* ============================================================== */
 /*	FOOTER */
 /* ============================================================== */
@@ -879,6 +892,47 @@ aside[role="complementary"] .btn,
 .search-results .hentry header h2 {
 	margin-bottom: 0;
 }
+
+/* ============================================================== */
+/* UNIVERSAL STUFF */
+/* ============================================================== */
+
+.dimmed {
+	color: #95a6ae;
+}
+
+/* universal divider classes */
+.divider-top {
+	position: relative;
+	border-top: 1px dashed #afc3cb;
+	padding-top: 1em;
+}
+
+	.divider-top:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 1px;
+		border-top: 1px dashed #fff;
+	}
+
+.divider-bottom {
+	position: relative;
+	border-bottom: 1px dashed #afc3cb;
+	padding-bottom: 1em;
+}
+
+	.divider-bottom:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 100%;
+		height: 1px;
+		border-bottom: 1px dashed #fff;
+	}
 
 /* ============================================================== */
 /*  WordPress Generated Classes 

@@ -15,9 +15,15 @@
 	<?php 
 		while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" class="hentry clearfix">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix divider-bottom'); ?>>
 				
-				<?php if (has_post_format( 'link' )) { 
+				<?php 
+				
+				/* ===================================================== */
+				/* Post Format - Link */
+				/* ===================================================== */
+				
+				if (has_post_format( 'link' )) { 
 					
 					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 					
@@ -29,11 +35,17 @@
 							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
-							<?php the_content('Read On'); ?>
+							<?php the_content('Continue reading&hellip;'); ?>
 						<?php } ?>
 					</div>
 				
-				<?php } elseif ( has_post_format( 'image' ) ) { ?>
+				<?php } 
+				
+				/* ===================================================== */
+				/* Post Format - Image */
+				/* ===================================================== */
+				
+				elseif ( has_post_format( 'image' ) ) { ?>
 					
 					<div class="col1 posttype">
 						<a class="icon-camera-retro" href="/photos" title="Show all posts in 'photos'"></a>
@@ -48,7 +60,14 @@
 						</a>
 					</div>
 				
-				<?php } elseif (in_category('goodies') && is_category('goodies')) { ?>
+				<?php } 
+				
+				
+				/* ===================================================== */
+				/* Goodies Post */
+				/* ===================================================== */
+				
+				elseif (in_category('goodies') && is_category('goodies')) { ?>
 					
 					<div class="col1 posttype">
 						<a class="icon-gift" href="/goodies" title="Show all Goodies"></a>
@@ -65,7 +84,7 @@
 								<?php the_post_thumbnail( 'goodieImage' ); ?>
 							</a></p>
 						<?php } else { ?>
-							<?php the_content('Read On'); ?>
+							<?php the_content('Continue reading&hellip;'); ?>
 						<?php } ?>
 						<footer>
 							<p class="col3"><a class="btn download" href="#">Download</a></p>
@@ -73,7 +92,14 @@
 						</footer>
 					</div>
 					
-				<?php } elseif ( in_category('goodies') ) { ?>
+				<?php } 
+				
+				
+				/* ===================================================== */
+				/* Goodies Archive */
+				/* ===================================================== */
+				
+				elseif ( in_category('goodies') ) { ?>
 					
 					<div class="col1 posttype">
 						<a class="icon-gift" href="/goodies" title="Show all Goodies"></a>
@@ -88,11 +114,17 @@
 							</a></p>
 							<?php echo krlc2_excerpt_more(); ?>
 						<?php } else { ?>
-							<?php the_content('Read On'); ?>
+							<?php the_content('Continue reading&hellip;'); ?>
 						<?php } ?>
 					</div>
 				
-				<?php } else { ?>
+				<?php } 
+				
+				/* ===================================================== */
+				/* All the rest */
+				/* ===================================================== */
+				
+				else { ?>
 					
 					<div class="col1 posttype">
 						<?php if ( in_category('design') ) { ?>
@@ -117,7 +149,7 @@
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
 								</a>
 							<?php } ?>
-							<?php the_content('Read On'); ?>
+							<?php the_content('Continue reading&hellip;'); ?>
 							
 						<?php } ?>
 					</div>
