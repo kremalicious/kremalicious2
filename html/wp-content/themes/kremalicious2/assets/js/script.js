@@ -14,6 +14,8 @@ $(window).load( AfterLoad = function() {
 		MBP.autogrow();
 		MBP.enableActive();
 	}
+	
+	$('#content [rel="tooltip"]').tooltip();
 
 });
 

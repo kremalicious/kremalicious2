@@ -28,7 +28,7 @@
 					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-bookmark" href="/links" title="Show all posts in 'links'"></a>
+						<a class="icon-bookmark" rel="tooltip" href="/links" title="Show all posts in 'links'"></a>
 					</div>
 					<div class="col5">
 						<header>
@@ -48,7 +48,7 @@
 				elseif ( has_post_format( 'image' ) ) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-camera-retro" href="/photos" title="Show all posts in 'photos'"></a>
+						<a class="icon-camera-retro" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
 					</div>
 					<div class="col5">
 						<a class="photoPost" href="<?php the_permalink(); ?>">
@@ -70,7 +70,7 @@
 				elseif (in_category('goodies') && is_category('goodies')) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-gift" href="/goodies" title="Show all Goodies"></a>
+						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all Goodies"></a>
 					</div>
 					<div class="col5">
 						<header>
@@ -102,7 +102,7 @@
 				elseif ( in_category('goodies') ) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-gift" href="/goodies" title="Show all Goodies"></a>
+						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all Goodies"></a>
 					</div>
 					<div class="col5">
 						<header>
@@ -128,13 +128,13 @@
 					
 					<div class="col1 posttype">
 						<?php if ( in_category('design') ) { ?>
-							<a class="icon-leaf" href="/design" title="Show all posts in 'design'"></a>
+							<a class="icon-leaf" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
 						<?php } elseif ( in_category('personal') ) { ?>
-							<a class="icon-user" href="<?php the_permalink(); ?>" title="Show all posts in 'personal'"></a>
+							<a class="icon-user" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in 'personal'"></a>
 						<?php } elseif ( in_category('photography') ) { ?>
-							<a class="icon-camera" href="/photography" title="Show all posts in 'photography'"></a>
+							<a class="icon-camera" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
 						<?php } else { ?>
-							<a class="icon-asterisk" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
+							<a class="icon-asterisk" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
 						<?php } ?>
 					</div>
 					
