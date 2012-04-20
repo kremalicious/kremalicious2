@@ -18,7 +18,7 @@
 					$author_id = $post->post_author;
 					printf(__('Author Archives: %s', 'roots'), get_the_author_meta('user_nicename', $author_id));
 				} else {
-					single_cat_title('<a class="tooltip" title="Back To Home" href="/">/</a>');
+					single_cat_title('<a rel="tooltip" title="Back To Home" href="/">/</a>');
 				}
 			?>
 		</h1>
