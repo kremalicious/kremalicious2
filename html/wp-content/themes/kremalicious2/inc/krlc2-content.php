@@ -7,7 +7,7 @@ function krlc2_add_post_content($content) {
 	$post_title = $post->post_title;
 	$post_link = get_permalink($post->ID);
 		
-	if(!is_home()) {
+	if( !is_home() && !is_archive() && !is_search() ) {
 		$content .= '<p id="share">
 						<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($post_title) .'&url='. urlencode($post_link) .'&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
 					</p>';
