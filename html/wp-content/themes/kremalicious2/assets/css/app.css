@@ -475,8 +475,9 @@ nav[role="navigation"] li a:hover {
 .hentry p.byline { }
 
 
+/*	SINGLE VIEW */
+/* ============================================================== */
 
-/* Single View */
 .single .hentry {
 	border: none;
 }
@@ -546,6 +547,9 @@ a[rel="tag"] {
 	color: #95a6ae;
 }
 
+/*	POST FORMATS & TYPES */
+/* ============================================================== */
+
 .posttype {
 	font-size: 1.3em;
 	text-align: center;
@@ -562,12 +566,24 @@ a[rel="tag"] {
 	color: #3a9085;
 }
 
-h2 i.icon-external-link,
-h1 i.icon-external-link {
+
+/*	LINK POST */
+/* ============================================================== */
+
+h1 i.icon-external-link,
+h2 i.icon-external-link {
 	font-size: .6em;
 	color: #a9b8bd;
 	margin-left: .3em;
 }
+
+h1 a:hover i.icon-external-link,
+h2 a:hover i.icon-external-link {
+	color: #2e4f5c;
+}
+
+/*	PHOTO POST */
+/* ============================================================== */
 
 .photoPost figure,
 a.photopost {
