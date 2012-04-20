@@ -36,6 +36,10 @@
 						</header>
 						<?php if (!is_search()) { ?>
 							<?php the_content('Continue reading&hellip;'); ?>
+							<p>
+								<a class="more-link" href="<?php echo $linkURL ?>">Go to Article <i class="icon-external-link"></i></a>
+								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink"><i class="icon-pushpin"></i></a>
+							</p>
 						<?php } ?>
 					</div>
 				
@@ -48,7 +52,7 @@
 				elseif ( has_post_format( 'image' ) ) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-camera-retro" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
+						<a class="icon-picture" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
 					</div>
 					<div class="col5">
 						<a class="photoPost" href="<?php the_permalink(); ?>">
@@ -132,7 +136,7 @@
 						<?php } elseif ( in_category('personal') ) { ?>
 							<a class="icon-user" rel="tooltip" href="/personal" title="Show all posts in 'personal'"></a>
 						<?php } elseif ( in_category('photography') ) { ?>
-							<a class="icon-camera" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
+							<a class="icon-camera-retro" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
 						<?php } else { ?>
 							<a class="icon-asterisk" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
 						<?php } ?>

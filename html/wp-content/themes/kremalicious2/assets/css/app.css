@@ -605,6 +605,14 @@ h2 a:hover i.icon-external-link {
 	color: #2e4f5c;
 }
 
+.more-link i.icon-external-link {
+	font-size: .8em;
+}
+
+.permalink-link {
+	float: right;
+}
+
 /*	PHOTO POST */
 /* ============================================================== */
 
