@@ -48,7 +48,7 @@ nav[role="navigation"] a,
 .comment header cite,
 .comment-reply-link,
 .photoPost figcaption,
-a[rel="tag"],
+a[rel*="tag"],
 #topics a {
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
@@ -70,6 +70,11 @@ p, ul, blockquote, pre, td, th, label {
 	font-size: 1em; 
 	line-height: 1.5em; 
 	margin-bottom: 1.5em
+}
+
+i {
+	color: #a9b7bd;
+	color: rgba(46, 79, 92, .4);
 }
 
 /* QUOTES */
@@ -118,7 +123,7 @@ input[type="submit"],
 .inline-download,
 .download,
 .comment-reply-link,
-a[rel="tag"],
+a[rel*="tag"],
 #topics a {
 	display: inline-block;
 	padding: .5em 1em;
@@ -130,7 +135,7 @@ a[rel="tag"],
 }
 
 .btn-tag,
-a[rel="tag"],
+a[rel*="tag"],
 #topics a {
 	font-size: .9em;
 	border-radius: 20px;
@@ -144,7 +149,7 @@ a[rel="tag"],
 	input[type="submit"]:hover,
 	.pager a:hover,
 	.comment-reply-link:hover,
-	a[rel="tag"]:hover,
+	a[rel*="tag"]:hover,
 	#topics a:hover {
 		background-color: rgba(255,255,255,.2);
 	}
@@ -209,7 +214,7 @@ a[rel="tag"],
 
 .hoverbuttons .btn,
 .hoverbuttons#topics a,
-.hoverbuttons a[rel="tag"] {
+.hoverbuttons a[rel*="tag"] {
 	box-shadow: none;
 	background: transparent;
 }
@@ -218,7 +223,7 @@ a[rel="tag"],
 	.touch .hoverbuttons .btn,
 	.touch .hoverbuttons#topics a,
 	.hoverbuttons#topics:hover a,
-	.hoverbuttons:hover a[rel="tag"] {
+	.hoverbuttons:hover a[rel*="tag"] {
 		box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 	}
@@ -397,6 +402,10 @@ nav[role="navigation"] li a:hover {
 	margin-bottom: .1em;
 }
 
+nav[role="navigation"] i {
+	color: #2e4f5c;
+}
+
 
 /* GLOBAL SEARCH */
 .assistive-text {
@@ -503,7 +512,6 @@ nav[role="navigation"] li a:hover {
 	margin-top: 0;
 }
 
-.hentry time { display: block; }
 .hentry p.byline { }
 
 
@@ -530,26 +538,35 @@ nav[role="navigation"] li a:hover {
 .hentry footer {
 	margin: 2em 0;
 	padding: .5em 0 .3em 0;
+	border-top: 1px dashed #afc3cb;
 }
 
 .hentry footer p:last-child {
 	margin-bottom: 0;
 }
 
-#tags i {
-	margin-right: .5em;
-	color: #a9b7bd;
-	color: rgba(46, 79, 92, .4);
+#meta p {
+	margin-bottom: 0;
 }
 
-#byline {
+#topic i,
+#tags i {
+	margin-right: .5em;
+}
+
+.byline {
 	text-align: center;
 	font-style: italic;
 }
 
-#byline span {
+.byline a {
 	display: block;
 	font-style: normal;
+}
+
+#pubdate {
+	text-align: right;
+	font-size: .9em;
 }
 
 
@@ -1277,7 +1294,7 @@ aside[role="complementary"] br {
 	
 	
 	
-	#byline {
+	.byline {
 		text-align: left;
 	}
 

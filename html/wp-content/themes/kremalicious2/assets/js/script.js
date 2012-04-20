@@ -59,7 +59,7 @@ var siteEffects = {
 	},
 	
 	socialiteButtons: function() {
-		$('#share').one('mouseenter', function() {
+		$('#meta').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},

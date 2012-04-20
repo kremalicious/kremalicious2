@@ -10,7 +10,7 @@
 			<div class="row">
 				<header class="col2">
 					<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
-					<p id="byline" class="dimmed">by <span class="author"><?php the_author() ?></span></p>
+					<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 				</header>
 		
 		<?php } elseif ( has_post_format( 'image' ) ) { ?>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<p id="byline" class="col2 dimmed">by <span class="author"><?php the_author() ?></span></p>
+				<p class="byline author vcard dimmed col2">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 			
 		<?php } else { ?>
 			
@@ -37,14 +37,14 @@
 					</div>
 				</header>
 				<div class="row">
-					<p id="byline" class="col2 dimmed">by <span class="author"><?php the_author() ?></span></p>
+					<p class="byline author vcard dimmed col2">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 					
 			<?php } else { ?>
 			
 				<div class="row">
 					<header class="col2">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<p id="byline" class="dimmed">by <span class="author"><?php the_author() ?></span></p>
+						<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 					</header>
 					
 			<?php } ?>
@@ -62,13 +62,15 @@
 						?>
 					</section>
 					
-					<?php 
-					$tags = get_the_tags(); 
-					if ($tags) { ?>
-						<footer class="hoverbuttons divider-top divider-bottom">
-							<p id="tags"><i class="icon-tags"></i><?php the_tags('', ' ', ''); ?></p>
-						</footer>
-					<?php } ?>
+					<footer id="meta" class="hoverbuttons clearfix divider-bottom">
+						<p id="share" class="col2 grid2-col1">
+							<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
+						</p>
+						<p id="topic" class="col2 grid2-col1"><i class="icon-tags"></i><?php the_category(' '); ?></p>
+						<p id="pubdate" class="col2 dimmed">
+							<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
+						</p>
+					</footer>
 					
 					<aside>
 						<?php comments_template(); ?>
