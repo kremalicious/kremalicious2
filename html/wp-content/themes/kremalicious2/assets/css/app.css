@@ -490,9 +490,9 @@ nav[role="navigation"] i {
 /*	POSTS */
 /* ============================================================== */
 
-.hentry {
+article.hentry {
 	clear: both;
-	padding: 1.5em 0;
+	padding: 2em 0;
 }
 
 	.hentry:first-child,
