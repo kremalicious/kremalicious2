@@ -60,7 +60,6 @@
 								<?php the_post_thumbnail('photoStream'); ?>
 								<figcaption><?php the_title(); ?></figcaption>
 							</figure>
-							<?php the_content(); ?>
 						</a>
 					</div>
 				
