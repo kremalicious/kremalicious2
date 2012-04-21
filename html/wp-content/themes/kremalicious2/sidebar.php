@@ -1,10 +1,12 @@
 
-<?php if ( is_archive() ) { ?>
-	
-	<aside role="complementary" id="archiveSidebar" class="col2">
+<aside role="complementary" class="col2">
+
+	<?php if ( is_archive() ) { ?>
+		
 		<h1>
 			<?php
 				$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+				
 				if ($term) {
 					echo $term->name;
 				} elseif (is_day()) {
@@ -17,8 +19,13 @@
 					global $post;
 					$author_id = $post->post_author;
 					printf(__('Author Archives: %s', 'roots'), get_the_author_meta('user_nicename', $author_id));
+				} elseif ( is_paged() ) {
+					global $page, $paged;
+					echo '<a rel="tooltip" title="Back To Home" href="/">/</a> <a href="../../">'.single_cat_title('', false).' /</a>'. sprintf( __( ' Page %s', 'twentyeleven' ), max( $paged, $page ) );
+					
 				} else {
 					single_cat_title('<a rel="tooltip" title="Back To Home" href="/">/</a>');
+					
 				}
 			?>
 		</h1>
@@ -26,23 +33,24 @@
 		<footer id="topics" class="hoverbuttons divider-top divider-bottom">
 			<?php wp_list_categories('orderby=slug&style=none&depth=1&title_li='); ?>
 		</footer>
-	</aside>
-	
-<?php } elseif ( is_search() ) { ?>
-	
-	<header class="col2">
-	    <h1><?php _e('Search Results for', 'roots'); ?> <?php echo get_search_query(); ?></h1>
-	</header>
-
-<?php } else { ?>
-
-	<aside role="complementary" class="col2">
+		
+	<?php } elseif ( is_search() ) { ?>
+		<header>
+			<h1>
+				<a rel="tooltip" title="Back To Home" href="/">/</a> Search Results for <?php echo get_search_query(); ?>
+			</h1>
+		</header>
+	<?php } else { ?>
+		
+		<?php 
+		global $page, $paged;
+		if ( $paged >= 2 || $page >= 2 )
+			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
+		
 		<p>Blog of web &amp; ui designer/developer hybrid Matthias Kretschmann, masseur of fine pixels.</p>
 		<p class="hoverbuttons divider-top divider-bottom">
 			<a class="btn btn-tag" href="#"> RSS</a> <a class="btn btn-tag" href="#"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag" href="#">Google+</a> <a class="btn btn-tag" href="#"><i class="icon-facebook-sign"></i> Facebook</a>
 		</p>
-	</aside>
-	
-	
-	
-<?php } ?>
+
+	<?php } ?>
+</aside>

@@ -880,14 +880,13 @@ li.comment {
 /*	SIDEBAR */
 /* ============================================================== */
 
-#archiveSidebar h1 a {
+aside[role="complementary"] h1 a {
 	color: #a9b8bd;
 	border: none;
-	margin-right: .1em;
-	padding-right: .2em;
+	padding-right: .1em;
 }
 
-	#archiveSidebar:hover h1 a {
+	aside[role="complementary"]:hover h1 a {
 		color: #40A296;
 	}
 
