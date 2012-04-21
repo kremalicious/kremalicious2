@@ -512,7 +512,14 @@ article.hentry {
 	margin-top: 0;
 }
 
-.hentry p.byline { }
+.more-link {
+	display: block;
+}
+
+.more-link i {
+	margin-left: .2em;
+	font-size: .9em;
+}
 
 
 /*	SINGLE VIEW */
@@ -880,19 +887,25 @@ li.comment {
 /*	SIDEBAR */
 /* ============================================================== */
 
+aside[role="complementary"] {
+	margin-bottom: 2em;
+}
+
 aside[role="complementary"] h1 a {
 	color: #a9b8bd;
 	border: none;
 	padding-right: .1em;
 }
 
-	aside[role="complementary"]:hover h1 a {
+	aside[role="complementary"]:hover h1 a,
+	.touch aside[role="complementary"] h1 a {
 		color: #40A296;
 	}
 
+
+
 #topics {
-	
-	
+		
 }
 
 	

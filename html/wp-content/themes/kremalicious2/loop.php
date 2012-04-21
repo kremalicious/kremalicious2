@@ -35,7 +35,7 @@
 							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
-							<?php the_content('Continue reading&hellip;'); ?>
+							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 							<p>
 								<a class="more-link" href="<?php echo $linkURL ?>">Go to Article <i class="icon-external-link"></i></a>
 								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink"><i class="icon-pushpin"></i></a>
@@ -88,7 +88,7 @@
 								<?php the_post_thumbnail( 'goodieImage' ); ?>
 							</a></p>
 						<?php } else { ?>
-							<?php the_content('Continue reading&hellip;'); ?>
+							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
 						<footer>
 							<p class="col3"><a class="btn download" href="#">Download</a></p>
@@ -118,7 +118,7 @@
 							</a></p>
 							<?php echo krlc2_excerpt_more(); ?>
 						<?php } else { ?>
-							<?php the_content('Continue reading&hellip;'); ?>
+							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
 					</div>
 				
@@ -153,7 +153,7 @@
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
 								</a>
 							<?php } ?>
-							<?php the_content('Continue reading&hellip;'); ?>
+							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 							
 						<?php } ?>
 					</div>
