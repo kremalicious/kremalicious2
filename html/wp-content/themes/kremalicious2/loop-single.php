@@ -3,7 +3,13 @@
 	
 	<article id="post-<?php the_ID(); ?>" class="hentry">
 		
-		<?php if (has_post_format( 'link' )) { 
+		<?php 
+		
+		/* ===================================================== */
+		/* Post Format - Link */
+		/* ===================================================== */
+		
+		if (has_post_format( 'link' )) { 
 			
 			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 			
@@ -13,7 +19,13 @@
 					<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 				</header>
 		
-		<?php } elseif ( has_post_format( 'image' ) ) { ?>
+		<?php } 
+		
+		/* ===================================================== */
+		/* Post Format - Image */
+		/* ===================================================== */
+		
+		elseif ( has_post_format( 'image' ) ) { ?>
 			
 			<div class="row">
 				<div class="col6 photoPost">
