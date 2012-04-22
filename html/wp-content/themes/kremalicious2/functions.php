@@ -22,6 +22,7 @@ function kremalicious2_setup() {
   add_image_size( 'featureImageStream', 540, 169, true );
   add_image_size( 'goodieImage', 650, 203, true );
   add_image_size( 'photoStream', 520, 9999 );
+  add_image_size( 'photoArchive', 300, 9999 );
   add_image_size( 'photoBig', 960, 960 );
 
   // http://codex.wordpress.org/Post_Formats

@@ -49,21 +49,36 @@
 				/* Post Format - Image */
 				/* ===================================================== */
 				
-				elseif ( has_post_format( 'image' ) ) { ?>
+				elseif ( has_post_format( 'image' ) ) { 
 					
-					<div class="col1 posttype">
-						<a class="icon-picture" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
-					</div>
-					<div class="col5">
-						<a class="photoPost" href="<?php the_permalink(); ?>">
-							<figure>
-								<?php the_post_thumbnail('photoStream'); ?>
-								<figcaption><?php the_title(); ?></figcaption>
-							</figure>
-						</a>
-					</div>
-				
+					if ( is_category('photos') ) { ?>
+					
+						<div class="col6">
+							<a class="photoPost" href="<?php the_permalink(); ?>">
+								<figure>
+									<?php the_post_thumbnail('photoArchive'); ?>
+									<figcaption><?php the_title(); ?></figcaption>
+								</figure>
+							</a>
+						</div>
+						
+					<?php } else { ?>
+					
+						<div class="col1 posttype">
+							<a class="icon-picture" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
+						</div>
+						<div class="col5">
+							<a class="photoPost" href="<?php the_permalink(); ?>">
+								<figure>
+									<?php the_post_thumbnail('photoStream'); ?>
+									<figcaption><?php the_title(); ?></figcaption>
+								</figure>
+							</a>
+						</div>
+					
 				<?php } 
+				
+				}
 				
 				
 				/* ===================================================== */
