@@ -6,7 +6,6 @@ require_once locate_template('/inc/krlc2-cleanup.php');
 require_once locate_template('/inc/krlc2-scripts.php');
 require_once locate_template('/inc/krlc2-admin.php');
 require_once locate_template('/inc/krlc2-content.php');
-require_once locate_template('/inc/krlc2-livesearch.php');
 require_once locate_template('/inc/krlc2-htaccess.php');
 
 function kremalicious2_setup() {
