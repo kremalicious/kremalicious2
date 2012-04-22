@@ -5,6 +5,8 @@ $(ASAP = function(){
 
 	siteEffects.init();
 	
+	$('#respond label').inFieldLabels();
+	
 });
 
 $(window).load( AfterLoad = function() {
@@ -50,11 +52,11 @@ var siteEffects = {
 		var $commentList 	= $('#comments .commentlist, #respond'),
 			$commentTrigger = $('#comments #commentShow');
 		
-		$commentList.hide();
+		//$commentList.hide();
 		$commentTrigger.addClass('btn');
 		
 		$commentTrigger.click (function() {
-			$commentList.slideToggle().css({'overflow':'visible'});
+			$commentList.fadeToggle().css({'overflow':'visible'});
 			$commentTrigger.toggleClass('open');
 			$('html, body').animate({scrollTop: $(this).offset().top}, 500);
 		});

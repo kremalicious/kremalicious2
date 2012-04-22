@@ -49,7 +49,8 @@ nav[role="navigation"] a,
 .comment-reply-link,
 .photoPost figcaption,
 a[rel*="tag"],
-#topics a {
+#topics a,
+#cancel-comment-reply-link {
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -89,11 +90,16 @@ a:visited {
 	text-decoration: none; 
 	color: #3a9085;
 	-webkit-transition: all .3s ease-in-out 0s;
+	position: relative;
 }
 
 a:hover {
 	color: #40a296;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
+}
+
+a:active {
+	top: 1px;
 }
 
 h1 a:link,
@@ -112,19 +118,41 @@ h3 a:visited {
 input, textarea {
 	background: #fff;
 	background: rgba(255,255,255,.2);
-	border: 1px solid #AFC3CB;
-	border-radius: 5px;
+	border: 0;
+	border-bottom: 1px solid #AFC3CB;
+	box-shadow: 0 1px 0 #fff;
+	padding: .5em;
+	width: 100%;
+	-webkit-transition: all .3s ease-in-out;
 }
 
+	input:focus,
+	textarea:focus {
+		background: rgba(255,255,255,.4);
+		border-bottom-color: #78868c;
+		outline: none;
+	}
+
+label,
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	display: block;
+	color: rgba(46, 79, 92, .7);
+	margin-bottom: 0;
+}
+
+/* infield labels */
+.js form p { position: relative; }
+.js form p label { position: absolute; top: .5em; left: .5em;}
+
 .btn,
-button,
-input[type="submit"],
 .pager a,
 .inline-download,
 .download,
 .comment-reply-link,
 a[rel*="tag"],
-#topics a {
+#topics a,
+#cancel-comment-reply-link {
 	display: inline-block;
 	padding: .5em 1em;
 	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -132,6 +160,7 @@ a[rel*="tag"],
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 	-webkit-transition: all 0.2s ease-in-out;
 	border: 2px solid rgba(255,255,255,.3);
+	position: relative;
 }
 
 .btn-tag,
@@ -145,16 +174,19 @@ a[rel*="tag"],
 }
 
 	.btn:hover,
-	button:hover,
-	input[type="submit"]:hover,
 	.pager a:hover,
 	.comment-reply-link:hover,
 	a[rel*="tag"]:hover,
 	#topics a:hover {
 		background-color: rgba(255,255,255,.2);
 	}
+	
+	.btn:active {
+		-webkit-transition: none;
+		top: 1px;
+	}
 
-.btn-primary,
+.btn.btn-primary,
 .inline-download:link,
 .download:link {
 	font-size: 1.1em;
@@ -166,12 +198,18 @@ a[rel*="tag"],
 	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
 }
 
-	.btn-primary:hover,
+	.btn.btn-primary:hover,
 	.inline-download:hover,
-	.download:hover, {
+	.download:hover {
 		background-color: #3e9e92;
 		color: #133832;
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
+	}
+	
+	.btn.btn-primary:active,
+	.inline-download:active,
+	.download:active {
+		box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
 	}
 
 .btn span,
@@ -205,6 +243,10 @@ a[rel*="tag"],
 
 .inline-download img {
 	display: none;
+}
+
+#cancel-comment-reply-link {
+	color: #7f2924;
 }
 
 /* Hover buttons */
@@ -416,7 +458,7 @@ nav[role="navigation"] i {
 
 #menubar #searchform {
 	position: relative;
-	padding: .5em ;
+	padding: .5em;
 	border-right: 1px solid #a1aeb2;
 	border-left: 1px solid rgba(255,255,255,.3);
 	box-shadow: -1px 0 0 #a1aeb2, 1px 0 0 rgba(255,255,255,.3);
@@ -431,28 +473,24 @@ nav[role="navigation"] i {
 	}
 
 #menubar #searchform input#s {
-	width: 20px;
+	width: 10px;
 	float: right;
 	padding-left: 24px;
 	background: transparent;
-	border: none;
+	border-bottom-color: transparent;
 	position: relative;
 	z-index: 2;
-	-webkit-transition-duration: 400ms;
-	-webkit-transition-property: width, background;
-	-webkit-transition-timing-function: ease;
-	-moz-transition-duration: 400ms;
-	-moz-transition-property: width, background;
-	-moz-transition-timing-function: ease;
-	-o-transition-duration: 400ms;
-	-o-transition-property: width, background;
-	-o-transition-timing-function: ease;
+	padding: .1em 0 .1em 24px;
+	box-shadow: 0 1px 0 rgba(255,255,255,.3);
 }
-
 #menubar #searchform #s:focus {
-	width: 200px;
+	width: 300px;
 	background: #fff;
-	background: rgba(255,255,255,.5);
+	background: rgba(255,255,255,.3);
+	border: 0;
+	border-bottom: 1px solid #AFC3CB;
+	box-shadow: 0 1px 0 rgba(255,255,255,.5);
+	padding-right: .5em;
 }
 
 #menubar #searchform #searchsubmit {
@@ -899,6 +937,13 @@ li.comment {
 		opacity: 1;
 	}
 
+#respond {
+	margin: 4em 0;
+}
+
+#respond h2 {
+	
+}
 
 /* ============================================================== */
 /*	SIDEBAR */
