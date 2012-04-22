@@ -698,27 +698,18 @@ a.photoPost:hover figure {
 
 #exif {
 	font-size: .9em;
+	color: #b9c3c9;
+	text-align: center;
+	margin-bottom: .5em;
 }
 
-#exif dt {
-	width: 35%;
-	float: left;
-	padding-top: .3em;
-	color: #95a6ae;
-}
-
-#exif dd {
-	padding-left: 35%;
-	border-bottom: 1px solid rgba(175, 195, 203, .3);
-	margin-left: 0;
-	padding-top: .3em;
-	padding-bottom: .3em;
-}
+	#exif span {
+		margin-right: 2em;
+	}
 
 #share li {
 	width: 25%;
 	display: inline-block;
-	
 }
 
 	#share li:before {

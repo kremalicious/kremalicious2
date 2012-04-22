@@ -32,7 +32,9 @@
 					<figure>
 						<?php the_post_thumbnail('photoBig'); ?>
 						<figcaption><?php the_title(); ?></figcaption>
+						<?php krlc2_post_thumbnail_exif_data(); ?>
 					</figure>
+					
 				</div>
 			</div>
 			<div class="row">
@@ -65,13 +67,7 @@
 		
 				<div class="col4">
 					<section class="entry-content">
-						<?php 
-							the_content(); 
-							
-							if ( has_post_format( 'image' ) ) { 
-								krlc2_post_thumbnail_exif_data(); 
-							}
-						?>
+						<?php the_content();  ?>
 					</section>
 					
 					<footer id="meta" class="hoverbuttons clearfix divider-bottom">

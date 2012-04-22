@@ -103,45 +103,18 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
                 or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 1.5
                 or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 1.6
                 or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 2.5) {
-                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1, '.', '') . " second";
+                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1, '.', '') . "s";
                 } else {
-                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 0, '.', '') . " second";
+                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 0, '.', '') . "s";
                 }
             } else {
                 $photoShutterSpeed = $photoMeta['image_meta']['shutter_speed'] . " seconds";
             }
             // print our definition list
         ?>
-        	<h2>Image Metadata</h2>
-            <dl id="exif">
-            	<?php if ( $photoMeta['image_meta']['title'] ) { ?>
-            		<dt>Title</dt>
-            		<dd><?php echo $photoMeta['image_meta']['title']; ?></dd>
-            	<?php } ?>
-            	
-            	<?php if ( $photoMeta['image_meta']['caption'] ) { ?>
-            		<dt>Caption</dt>
-            		<dd><?php echo $photoMeta['image_meta']['caption']; ?></dd>
-            	<?php } ?>
-            	
-            	<?php if ( $photoMeta['image_meta']['copyright'] ) { ?>
-            		<dt>Copyright</dt>
-            		<dd><?php echo $photoMeta['image_meta']['copyright']; ?></dd>
-            	<?php } ?>
-            	
-                <dt>Date Taken</dt>
-                <dd><?php echo date("d M Y, H:i:s", $photoMeta['image_meta']['created_timestamp']); ?></dd>
-                <dt>Camera</dt>
-                <dd><?php echo $photoMeta['image_meta']['camera']; ?></dd>
-                <dt>Focal Length</dt>
-                <dd><?php echo $photoMeta['image_meta']['focal_length']; ?>mm</dd>
-                <dt>Aperture</dt>
-                <dd>f/<?php echo $photoMeta['image_meta']['aperture']; ?></dd>
-                <dt>ISO</dt>
-                <dd><?php echo $photoMeta['image_meta']['iso']; ?></dd>
-                <dt>Shutter Speed</dt>
-                <dd><?php echo $photoShutterSpeed; ?></dd>
-            </dl>
+        	
+        <p id="exif"><span>ISO<?php echo $photoMeta['image_meta']['iso']; ?></span>  <span><?php echo $photoMeta['image_meta']['focal_length']; ?>mm</span>  <span>&fnof;/<?php echo $photoMeta['image_meta']['aperture']; ?></span>  <span><?php echo $photoShutterSpeed; ?></span></p>
+        	
         <?php
         // if shutter speed exif is 0 then echo error message
         } else {
