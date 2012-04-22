@@ -284,6 +284,10 @@ img {
 	box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 
+
+::-moz-selection { background: #2e4f5c; color: #fff; text-shadow: none; }
+::selection { background: #2e4f5c; color: #fff; text-shadow: none; }
+
 /* GRID OVERWRITES */
 /* ============================================================== */
 .container { padding: 0 2em; }
