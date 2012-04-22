@@ -52,7 +52,7 @@ var siteEffects = {
 		var $commentList 	= $('#comments .commentlist, #respond'),
 			$commentTrigger = $('#comments #commentShow');
 		
-		//$commentList.hide();
+		$commentList.hide();
 		$commentTrigger.addClass('btn');
 		
 		$commentTrigger.click (function() {
