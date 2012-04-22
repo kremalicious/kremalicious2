@@ -3,5 +3,11 @@
 # Remove date from post permalinks
 RedirectMatch 301 ^/([0-9]+)/([0-9]+)/(.*)$ /$3
 
+# Shock Teenage Gangsters
+Redirect 301 /wp-config.php http://svr.gov.ru/
+
+# Old Content Redirects
+Redirect 301 /csspaperstack /lab/csspaperstack
+
 
 # END CUSTOM WP STUFF
