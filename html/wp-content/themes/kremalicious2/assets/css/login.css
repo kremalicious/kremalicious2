@@ -120,25 +120,25 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	margin: 1em auto;
 }
 
-	.login form:before {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -2px;
-		width: 100%;
-		height: 1px;
-		border-bottom: 1px dashed #fff;
-	}
+.login form:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px dashed #fff;
+}
 
-	.login form:after {
-		content: "";
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 1px;
-		border-top: 1px dashed #fff;
-	}
+.login form:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 1px;
+	border-top: 1px dashed #fff;
+}
 
 #login form p.submit {
 	overflow: hidden;
@@ -146,20 +146,20 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
-	
 	body.login {
-		background-image: url(../img/texture@2x.png);
-		-webkit-background-size: 23px 12px;
-		-moz-background-size: 23px 12px;
-		background-size: 23px 12px;
+	background-image: url(../img/texture@2x.png);
 
-	}
-	
-	.login h1 {
-		background-image: url(../img/logo@2x.png);
-		-webkit-background-size: 188px 41px;
-		-moz-background-size: 188px 41px;
-		background-size: 188px 41px;
-	}
+	-webkit-background-size: 23px 12px;
+	-moz-background-size: 23px 12px;
+	background-size: 23px 12px;
+}
+
+.login h1 {
+	background-image: url(../img/logo@2x.png);
+
+	-webkit-background-size: 188px 41px;
+	-moz-background-size: 188px 41px;
+	background-size: 188px 41px;
+}
 
 }

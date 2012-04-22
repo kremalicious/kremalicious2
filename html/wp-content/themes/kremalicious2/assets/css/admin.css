@@ -1,10 +1,12 @@
-
-html, .wp-dialog {
+html,.wp-dialog {
 	background: #e7eef4 url(../img/texture.png) left top repeat;
 }
 
 #adminmenuback {
 	background: transparent url(../img/whitey.png) left top repeat;
+
+	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
+	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
 	box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
 }
 
@@ -16,22 +18,87 @@ html, .wp-dialog {
 	background: transparent;
 }
 
-body, #wpbody, .form-table .pre {
+body,#wpbody,.form-table .pre {
 	color: #2e4f5c;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 }
 
+@font-face {
+	font-family: 'QlassikBoldRegular';
+	src: url('../fonts/QlassikBold_TB-webfont.eot');
+	src: url('../fonts/QlassikBold_TB-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/QlassikBold_TB-webfont.woff') format('woff'), url('../fonts/QlassikBold_TB-webfont.ttf') format('truetype'), url('../fonts/QlassikBold_TB-webfont.svg#QlassikBoldRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
+	color: rgba(46, 79, 92, .7);
+	font-family: 'QlassikBoldRegular', sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1,.wrap h2 {
+	margin: 0;
+	font-size: 2.25em;
+	line-height: 1em;
+	margin-bottom: 0.6667em;
+}
+
+h2 {
+	font-size: 1.625em;
+	line-height: 1;
+	margin: 0.8462em 0;
+}
+
+h3 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin: 1em 0;
+}
 
 /*Links*/
-a, #adminmenu a, #the-comment-list p.comment-author strong a, #media-upload a.del-link, #media-items a.delete, .plugins a.delete, .ui-tabs-nav a {
-	text-decoration: none; 
+a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a {
+	text-decoration: none;
 	color: #3a9085;
+
 	-webkit-transition: color .3s ease-in-out 0s;
+	-moz-transition: color .3s ease-in-out 0s;
+	-o-transition: color .3s ease-in-out 0s;
+	-ms-transition: color .3s ease-in-out 0s;
+	transition: color .3s ease-in-out 0s;
 	position: relative;
 }
 
-/*Buttons*/
+textarea,input[type="text"],input[type="password"],input[type="file"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],select {
+	background: #fff;
+	background: rgba(255,255,255,.4);
+	border: 0;
 
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border-bottom: 1px solid #AFC3CB;
+
+	-webkit-box-shadow: 0 1px 0 #fff;
+	-moz-box-shadow: 0 1px 0 #fff;
+	box-shadow: 0 1px 0 #fff;
+	padding: .5em;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+input:focus,textarea:focus {
+	background: rgba(255,255,255,.8);
+	border-bottom-color: #78868c;
+	outline: none;
+}
+
+/*Buttons*/
 input.button-primary,button.button-primary,a.button-primary,.login .button-primary {
 	display: inline-block;
 	padding: .5em 3em;
@@ -84,18 +151,25 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
 }
 
-
-#adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .wp-submenu .wp-submenu-head {
+#adminmenu a.menu-top,.folded #adminmenu li.menu-top,#adminmenu .wp-submenu .wp-submenu-head {
 	border-bottom-color: #bebebe;
 }
 
+#post-body,.widefat {
+	background: transparent;
+}
+
+.alternate,.alt {
+	background: rgba(255,255,255,.5);
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
-	
-	html, .wp-dialog {
-		background-image: url(../img/texture@2x.png);
-		-webkit-background-size: 23px 12px;
-		-moz-background-size: 23px 12px;
-		background-size: 23px 12px;
-	}
+	html,.wp-dialog {
+	background-image: url(../img/texture@2x.png);
+
+	-webkit-background-size: 23px 12px;
+	-moz-background-size: 23px 12px;
+	background-size: 23px 12px;
+}
 
 }

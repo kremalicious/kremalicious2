@@ -9,5 +9,9 @@ Redirect 301 /wp-config.php http://svr.gov.ru/
 # Old Content Redirects
 Redirect 301 /csspaperstack /lab/csspaperstack
 
+Redirect 301 /new-goodies-aperture-file-types-icons /aperture-file-types
+Redirect 301 /goodie-updated-aperture-file-types-v11 /aperture-file-types
+Redirect 301 /aperture-file-types-v12-released /aperture-file-types
+
 
 # END CUSTOM WP STUFF
