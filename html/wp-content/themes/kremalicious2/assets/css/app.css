@@ -543,7 +543,7 @@ article.hentry {
 }
 
 .hentry footer {
-	margin: 2em 0;
+	margin: 4em 0;
 	padding: .5em 0 .3em 0;
 	border-top: 1px dashed #afc3cb;
 }
@@ -556,11 +556,6 @@ article.hentry {
 	margin-bottom: 0;
 }
 
-#topic i,
-#tags i {
-	margin-right: .5em;
-}
-
 .byline {
 	text-align: center;
 	font-style: italic;
@@ -571,10 +566,29 @@ article.hentry {
 	font-style: normal;
 }
 
+
 #pubdate {
 	text-align: right;
 	font-size: .9em;
 }
+
+/* FontAwesome Extensions for Category Buttons */
+
+a[rel^="category "]:before {
+	margin-right: .5em;
+	color: #a9b8bd;
+}
+
+#topic a[class^="icon-"]:before {
+	font-size: 1.1em;
+}
+
+.cat-design:before 		{ content: "\f06c"; }
+.cat-goodies:before 	{ content: "\f06b"; }
+.cat-personal:before 	{ content: "\f007"; }
+.cat-photos:before 		{ content: "\f03e"; }
+.cat-photography:before { content: "\f083"; }
+.cat-links:before 		{ content: "\f02e"; }
 
 
 /*	POST FORMATS & TYPES */
@@ -979,7 +993,8 @@ aside[role="complementary"] h1 a {
 }
 
 /*holy shit, WordPress!*/
-aside[role="complementary"] br {
+aside[role="complementary"] br,
+#topics br {
 	display: none;
 }
 
@@ -1291,6 +1306,8 @@ aside[role="complementary"] br {
 @media only screen and (min-width: 480px) {
 
 	.row { max-width: 25em; }
+	
+	#topic { text-align: right; }
 
 }
 
@@ -1302,6 +1319,8 @@ aside[role="complementary"] br {
 	#content { padding-top: 5em; }
 	
 	.row { max-width: 33.8em; }
+	
+	article.hentry { padding: 3.5em 0; }
 		
 }
 
@@ -1328,10 +1347,6 @@ aside[role="complementary"] br {
 	.col5:last-child,
 	.col6:last-child {
 		padding-right: 0; }
-	
-	article.hentry {
-		padding: 3.5em 0;
-	}
 	
 	.hentry header {
 		text-align: left;
@@ -1388,12 +1403,9 @@ aside[role="complementary"] br {
 	.single .featureTitle h2 {
 		font-size: 2.5em;
 	}
-	
-	
-	
-	.byline {
-		text-align: left;
-	}
+		
+	.byline,
+	#topic { text-align: left; }
 
 }
 

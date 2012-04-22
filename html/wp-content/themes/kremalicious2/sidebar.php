@@ -31,7 +31,18 @@
 		</h1>
 		<p><?php echo category_description(); ?></p>
 		<footer id="topics" class="hoverbuttons divider-top divider-bottom">
-			<?php wp_list_categories('orderby=slug&style=none&depth=1&title_li='); ?>
+		
+			<?php 
+			
+				$cats 		= get_categories('orderby=slug&style=none&depth=1&title_li=');
+				
+                foreach ($cats as $cat) {
+                	if ( !$cat->category_parent > 0 ) {
+                		echo '<a class="icon- cat-'.$cat->slug.'" rel="category tag" href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a>';
+                	}
+                }
+			
+			?>
 		</footer>
 		
 	<?php } elseif ( is_search() ) { ?>
