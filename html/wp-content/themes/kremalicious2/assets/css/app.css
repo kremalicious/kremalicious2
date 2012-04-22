@@ -672,6 +672,7 @@ a.photopost {
 	
 	.single .photoPost figure {
 		margin-bottom: 1.5em;
+		float: right;
 	}
 
 .photoPost figure img {
