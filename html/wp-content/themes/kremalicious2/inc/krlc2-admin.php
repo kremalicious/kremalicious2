@@ -12,20 +12,6 @@ function roots_remove_dashboard_widgets() {
 add_action('admin_init', 'roots_remove_dashboard_widgets');
 
 
-//Custom Login Screen CSS
-function krlc2_login_style() {
-	echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/assets/css/login.css" />';
-}
-add_action('login_head', 'krlc2_login_style');
-
-
-//Custom Admin Area CSS
-function krlc2_admin_style() {
-   echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/assets/css/admin.css" />';
-}
-add_action('admin_head', 'krlc2_admin_style');
-
-
 // allow more tags in TinyMCE including <iframe> and <script>
 function roots_change_mce_options($options) {
   $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
