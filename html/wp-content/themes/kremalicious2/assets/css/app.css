@@ -97,8 +97,7 @@ blockquote > p {
 
 /* LINKS */
 /* ============================================================== */
-a,
-a:visited {
+a {
 	text-decoration: none;
 	color: #3a9085;
 	-webkit-transition: all .3s ease-in-out 0s;
@@ -120,10 +119,7 @@ a:active {
 
 h1 a,
 h2 a,
-h3 a,
-h1 a:visited,
-h2 a:visited,
-h3 a:visited {
+h3 a {
 	color: #2e4f5c;
 	border-bottom: 1px dotted rgba(58, 144, 133, .3);
 }
@@ -137,7 +133,10 @@ input, textarea {
 	background: rgba(255,255,255,.2);
 	border: 0;
 	border-bottom: 1px solid #AFC3CB;
+	-webkit-box-shadow: 0 1px 0 #fff;
+	-moz-box-shadow: 0 1px 0 #fff;
 	box-shadow: 0 1px 0 #fff;
+
 	padding: .5em;
 	width: 100%;
 	-webkit-transition: all .3s ease-in-out;
