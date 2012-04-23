@@ -78,6 +78,10 @@ i {
 	color: rgba(46, 79, 92, .4);
 }
 
+strong {
+	font-weight: 700;
+}
+
 /* QUOTES */
 /* ============================================================== */
 blockquote { font-style: italic; padding-left: 1em; border-left: 2px solid #a9b8bd; color: rgba(46, 79, 92, .7); }
@@ -598,6 +602,10 @@ article.hentry {
 	margin-bottom: 0;
 }
 
+#meta a[rel*="tag"] {
+	font-size: 1em;
+}
+
 .byline {
 	text-align: center;
 	font-style: italic;
@@ -619,10 +627,6 @@ article.hentry {
 a[rel^="category "]:before {
 	margin-right: .5em;
 	color: #a9b8bd;
-}
-
-#topic a[class^="icon-"]:before {
-	font-size: 1.1em;
 }
 
 .cat-design:before 		{ content: "\f06c"; }
@@ -968,6 +972,11 @@ aside[role="complementary"] h1 a {
 		color: #40A296;
 	}
 
+aside[role="complementary"] strong,
+footer[role="contentinfo"] strong  {
+	color: #829098;
+	font-style: italic;
+}
 	
 /* ============================================================== */
 /*	FOOTER */

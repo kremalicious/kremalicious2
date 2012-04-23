@@ -20,6 +20,7 @@
 	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 	
 	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
+	<link rel="alternate"  href="http://feeds.feedburner.com/kremalicious" type="application/rss+xml" title="RSS Feed"/>
 	
   	<?php wp_head(); ?>
 
