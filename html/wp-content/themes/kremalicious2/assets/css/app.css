@@ -1279,14 +1279,14 @@ aside[role="complementary"] br,
 /* ============================================================== */
 
 .tooltip {
-	  position: absolute;
-	  z-index: 1020;
-	  display: block;
-	  visibility: visible;
-	  padding: 5px;
-	  font-size: 12px;
-	  opacity: 0;
-	  filter: alpha(opacity=0);
+	position: absolute;
+	z-index: 1020;
+	display: block;
+	visibility: visible;
+	padding: 5px;
+	font-size: 12px;
+	opacity: 0;
+	filter: alpha(opacity=0);
 	-webkit-transition: opacity .2s ease-in-out 0s;
 	-moz-transition: opacity .2s ease-in-out 0s;
 	-o-transition: opacity .2s ease-in-out 0s;
@@ -1294,8 +1294,8 @@ aside[role="complementary"] br,
 	transition: opacity .2s ease-in-out 0s;
 }
 .tooltip.in {
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+  opacity: 0.85;
+  filter: alpha(opacity=85);
 }
 .tooltip.top {
   margin-top: -2px;
@@ -1315,7 +1315,7 @@ aside[role="complementary"] br,
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #2e4f5c;
+  border-top: 5px solid #183030;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
@@ -1323,7 +1323,7 @@ aside[role="complementary"] br,
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #2e4f5c;
+  border-left: 5px solid #183030;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
@@ -1331,7 +1331,7 @@ aside[role="complementary"] br,
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #2e4f5c;
+  border-bottom: 5px solid #183030;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
@@ -1339,17 +1339,32 @@ aside[role="complementary"] br,
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #2e4f5c;
+  border-right: 5px solid #183030;
 }
 
 .tooltip-inner {
 	max-width: 200px;
 	padding: 3px 8px;
 	color: #ffffff;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 11px;
 	text-shadow: 0 1px 0 #000;
 	text-align: center;
 	text-decoration: none;
-	background-color: #2e4f5c;
+	background: #2e4f5c;
+	background: -moz-linear-gradient(top, #2e4f5c 0%, #183030 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e4f5c), color-stop(100%,#183030));
+	background: -webkit-linear-gradient(top, #2e4f5c 0%,#183030 100%);
+	background: -o-linear-gradient(top, #2e4f5c 0%,#183030 100%);
+	background: -ms-linear-gradient(top, #2e4f5c 0%,#183030 100%);
+	background: linear-gradient(top, #2e4f5c 0%,#183030 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e4f5c', endColorstr='#183030',GradientType=0 );
+	border: 1px solid #2e4f5c;
+	border-bottom-color: #183030;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 3px rgba(0,0,0,.3), 0 1px 5px rgba(0,0,0,.3), 0 -2px 8px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 3px rgba(0,0,0,.3), 0 1px 5px rgba(0,0,0,.3), 0 -2px 8px rgba(0,0,0,.2);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 3px rgba(0,0,0,.3), 0 1px 5px rgba(0,0,0,.3), 0 -2px 8px rgba(0,0,0,.2);
+
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
