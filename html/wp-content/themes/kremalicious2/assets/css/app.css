@@ -1013,6 +1013,8 @@ a.photoPost:hover figure {
 #goodiesDownload .btn.releasePost {
 	font-size: 1.1em;
 	padding: .6em 1em .7em 1em;
+	display: block;
+	text-align: center;
 }
 
 /* ============================================================== */

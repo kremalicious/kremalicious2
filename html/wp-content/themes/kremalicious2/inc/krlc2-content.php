@@ -126,21 +126,4 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
     }
 }
 
-// GOODIES STUFF
-////////////////////////////////////////////
-
-// get the first zip attached to the current post
-// from http://johnford.is/programmatically-pull-attachments-from-wordpress-posts/
-function krlc2_get_post_zip() {
-	global $post;
-
-	$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
-
-	if ($attachments) {
-		$attachment = array_shift($attachments);
-		return wp_get_attachment_url($attachment->ID);
-	}
-	return false;
-}
-
 ?>

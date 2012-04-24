@@ -104,8 +104,16 @@
 						<?php } else { ?>
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
+						
 						<footer id="goodiesDownload" class="clearfix">
-							<p class="col3"><a class="btn btn-primary download" href="<?php echo krlc2_get_post_zip(); ?>">Download <span>zip</span></a></p>
+							
+							<?php 
+								$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
+								
+								if ($attachments) {
+									$attachment = array_shift($attachments); ?>
+									<p class="col3"><a class="btn btn-primary download" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
+							<?php } ?>
 							<p class="col3"><a class="btn releasePost" href="<?php the_permalink(); ?>">Release Post</a></p>
 						</footer>
 					</div>
