@@ -4,8 +4,7 @@
 $(ASAP = function(){
 
 	siteEffects.init();
-	codeSnippets.init();
-	
+
 	$('#respond label').inFieldLabels();
 	
 });
@@ -17,30 +16,34 @@ $(window).load( AfterLoad = function() {
 		MBP.enableActive();
 	}
 	
+	codeSnippets.init();
+	
 	$('#content [rel="tooltip"]').tooltip();
 
 });
 
 
-
 var codeSnippets = {
 
-	addPrettyPrint: function() {
+	addCodeAttributes: function() {
 		
-		var codeBlocks = $('#content pre');
+		var codeBlocks = $('#content pre code');
 		
 		if (codeBlocks.length) {
+		
 			codeBlocks.each(function() {
-	            if (  !$(this).hasClass('prettyprint') ) {
-	                $(this).addClass('prettyprint');
-	            }
+	        	if ( $(this).find(':contains(<?php)') ) {
+	        		$(this).attr('data-language', 'php');
+	        	} else {
+	        		$(this).attr('data-language', 'generic');
+	        	}
 	        });
-	        prettyPrint();
+	        
         }
 	},
 	
 	init: function(){
-		this.addPrettyPrint();
+		this.addCodeAttributes();
 	}
 	
 }

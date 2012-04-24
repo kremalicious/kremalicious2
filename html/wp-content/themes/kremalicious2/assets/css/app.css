@@ -38,7 +38,8 @@ p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
 
 h1,h2,h3,h4,h5,h6,
 nav[role="navigation"] a,
-.btn,.pager a,
+.btn,
+.pager a,
 .inline-download,
 .comment header cite,
 .comment-reply-link,
@@ -1559,13 +1560,19 @@ aside[role="complementary"] br,
 
 
 /* ============================================================== */
-/* Pretty printing styles. Used with prettify.js. */
+/* Pretty Code */
+/* Rainbow v1.1.8 rainbowco.de */
 /* ============================================================== */
 
-/*default code and pre stuff for non-js*/ 
-
-code {
-	
+pre, code {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	color: #333;
+	background: #f8f8f8;
+	background: rgba(255,255,255,.6);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 18px;
 }
 
 pre {
@@ -1575,14 +1582,11 @@ pre {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 
-	background: #192b33;
-	background: rgba(25, 43, 51, .75);
-	color: #fff;
-	border: 1px solid #242c30;
+	border: 1px solid #c9d7e4;
+	word-wrap: break-word;
+	margin-bottom: 1.5em;
 	
-	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
-	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
-	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
+	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
 
 	display: block;
 	width: auto;
@@ -1590,8 +1594,6 @@ pre {
 	max-height: 600px;
 	white-space: pre;
 	word-wrap: normal;
-	text-shadow: none;
-	font-size: .9em;
 	
 	-webkit-transition: all .3s ease-in-out 0s;
 	-moz-transition: all .3s ease-in-out 0s;
@@ -1600,108 +1602,72 @@ pre {
 	transition: all .3s ease-in-out 0s;
 }
 
-	pre:hover {
-		background: rgba(25, 43, 51, .85);
-		margin-left: -10%;
-		margin-right: -10%;
-	}
-
-pre > code {
-	
+code {
+    border: 1px solid #eaeaea;
+    font-size: 12px;
 }
 
-pre.prettyprint { 
-	
+pre code {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: none;
 }
 
-.str {
-    color: #EC7600;
-}
-.kwd {
-    color: #93C763;
-}
-.com {
-    color: #778992;
-}
-.typ {
-    color: #678CB1;
-}
-.lit {
-    color: #FACD22;
-}
-.pun {
-    color: #F1F2F3;
-}
-.pln {
-    color: #F1F2F3;
-}
-.tag {
-    color: #8AC763;
-}
-.atn {
-    color: #E0E2E4;
-}
-.atv {
-    color: #EC7600;
-}
-.dec {
-    color: purple;
+pre:hover {
+	margin-left: -10%;
+	margin-right: -10%;
+	background: #fff;
+	background: rgba(255,255,255,.85);
 }
 
-ol.linenums {
-    margin-top: 0;
-    margin-bottom: 0;
+pre .comment {
+    color: #998;
 }
 
-li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
-    color: #555;
-    list-style-type: decimal;
+pre .support {
+    color: #0086B3;
 }
 
-@media print {
-    .str {
-        color: #060;
-    }
-    .kwd
-    {
-        color: #006;
-        font-weight: bold;
-    }
-    .com
-    {
-        color: #600;
-        font-style: italic;
-    }
-    .typ
-    {
-        color: #404;
-        font-weight: bold;
-    }
-    .lit
-    {
-        color: #044;
-    }
-    .pun
-    {
-        color: #440;
-    }
-    .pln
-    {
-        color: #000;
-    }
-    .tag
-    {
-        color: #006;
-        font-weight: bold;
-    }
-    .atn
-    {
-        color: #404;
-    }
-    .atv
-    {
-        color: #060;
-    }
+pre .tag, pre .tag-name {
+    color: navy;
+}
+
+pre .keyword, pre .css-property, pre .vendor-prefix, pre .sass, pre .class, pre .id, pre .css-value, pre .entity.function, pre .storage.function {
+    font-weight: bold;
+}
+
+pre .css-property, pre .css-value, pre .vendor-prefix, pre .support.namespace {
+    color: #333;
+}
+
+pre .constant.numeric, pre .keyword.unit, pre .hex-color {
+    font-weight: normal;
+    color: #099;
+}
+
+pre .entity.class {
+    color: #458;
+}
+
+pre .entity.id, pre .entity.function {
+    color: #900;
+}
+
+pre .attribute, pre .variable {
+    color: teal;
+}
+
+pre .string, pre .support.value  {
+    font-weight: normal;
+    color: #d14;
+}
+
+pre .regexp {
+    color: #009926;
 }
 
 /* ============================================================== */
