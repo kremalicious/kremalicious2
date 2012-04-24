@@ -4,7 +4,7 @@ html,.wp-dialog {
 
 #adminmenuback {
 	background: transparent url(../img/fabric_plaid.png) left top repeat;
-
+	
 	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
 	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
 	box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
@@ -12,6 +12,11 @@ html,.wp-dialog {
 
 #adminmenushadow {
 	display: none;
+}
+
+#adminmenuback,
+#adminmenuwrap {
+	border-color: #bbc4cb;
 }
 
 #adminmenuwrap {
@@ -38,6 +43,10 @@ h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
 	font-style: normal;
 }
 
+.postbox h3 {
+	color: rgba(46, 79, 92, .7);
+}
+
 h1,.wrap h2 {
 	margin: 0;
 	font-size: 2.25em;
@@ -57,17 +66,25 @@ h3 {
 	margin: 1em 0;
 }
 
+h4 {
+	font-size: 1.3em;
+}
+
 /*Links*/
 a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a {
 	text-decoration: none;
 	color: #3a9085;
+	-webkit-transition: all .3s ease-in-out 0s;
+	-moz-transition: all .3s ease-in-out 0s;
+	-o-transition: all .3s ease-in-out 0s;
+	-ms-transition: all .3s ease-in-out 0s;
+	transition: all .3s ease-in-out 0s;
+}
 
-	-webkit-transition: color .3s ease-in-out 0s;
-	-moz-transition: color .3s ease-in-out 0s;
-	-o-transition: color .3s ease-in-out 0s;
-	-ms-transition: color .3s ease-in-out 0s;
-	transition: color .3s ease-in-out 0s;
-	position: relative;
+a:hover,
+#adminmenu a:hover {
+	color: #40a296;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
 }
 
 textarea,input[type="text"],input[type="password"],input[type="file"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],select,
@@ -157,6 +174,16 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	border-bottom-color: #cbcdcd;
 }
 
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow div {
+	background: #2e4f5c;
+	border-color: #2e4f5c;
+}
+
+#adminmenu .wp-submenu ul {
+	background-color: rgba(255,255,255,0.9);
+}
+
 #post-body,.widefat {
 	background: transparent;
 }
@@ -194,6 +221,10 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 #titlediv #title {
 	padding: 8px;
 	font-size: 2em;
+}
+
+#titlediv #title-prompt-text, #wp-fullscreen-title-prompt-text {
+	padding: 15px 10px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
