@@ -32,10 +32,12 @@ var codeSnippets = {
 		if (codeBlocks.length) {
 		
 			codeBlocks.each(function() {
-	        	if ( $(this).find(':contains(<?php)') ) {
-	        		$(this).attr('data-language', 'php');
-	        	} else {
-	        		$(this).attr('data-language', 'generic');
+				if ( !$(this).is('[data-language]') ) {
+		        	if ( $(this).is(':contains(<?php)') ) {
+		        		$(this).attr('data-language', 'php');
+		        	} else {
+		        		$(this).attr('data-language', 'generic');
+		        	}
 	        	}
 	        });
 	        
