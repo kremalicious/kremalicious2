@@ -75,7 +75,7 @@ add_filter('posts_where', 'publish_later_on_feed');
 function encode_code_in_comment($source) {
 	$encoded = preg_replace_callback('/<code>(.*?)<\/code>/ims',
 	create_function('$matches', '$matches[1] = preg_replace(array("/^[\r|\n]+/i", "/[\r|\n]+$/i"), "", $matches[1]); 
-	return "<code>" . htmlentities($matches[1]) . "</"."code>";'), $source);
+	return "<pre><code>" . htmlentities($matches[1]) . "</"."code></pre>";'), $source);
 	if ($encoded)
 		return $encoded;
 	else
@@ -126,18 +126,21 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
     }
 }
 
+// GOODIES STUFF
+////////////////////////////////////////////
 
+// get the first zip attached to the current post
+// from http://johnford.is/programmatically-pull-attachments-from-wordpress-posts/
+function krlc2_get_post_zip() {
+	global $post;
 
-// http://www.wprecipes.com/how-to-get-the-first-image-from-the-post-and-display-it
-//function catch_that_image() {
-//	global $post, $posts;
-//	$first_img = '';
-//	ob_start();
-//	ob_end_clean();
-//	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-//	$first_img = $matches [1] [0];
-//	
-//	return $first_img;
-//}
+	$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
+
+	if ($attachments) {
+		$attachment = array_shift($attachments);
+		return wp_get_attachment_url($attachment->ID);
+	}
+	return false;
+}
 
 ?>

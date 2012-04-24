@@ -82,7 +82,7 @@
 				
 				
 				/* ===================================================== */
-				/* Goodies Post */
+				/* Goodies Post/Goodies Archive */
 				/* ===================================================== */
 				
 				elseif (in_category('goodies') && is_category('goodies')) { ?>
@@ -104,9 +104,9 @@
 						<?php } else { ?>
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
-						<footer>
-							<p class="col3"><a class="btn download" href="#">Download</a></p>
-							<p class="col3"><a href="<?php the_permalink(); ?>">Release Post</a></p>
+						<footer id="goodiesDownload" class="clearfix">
+							<p class="col3"><a class="btn btn-primary download" href="<?php echo krlc2_get_post_zip(); ?>">Download <span>zip</span></a></p>
+							<p class="col3"><a class="btn releasePost" href="<?php the_permalink(); ?>">Release Post</a></p>
 						</footer>
 					</div>
 					
@@ -114,7 +114,7 @@
 				
 				
 				/* ===================================================== */
-				/* Goodies Archive */
+				/* Goodies Post Only */
 				/* ===================================================== */
 				
 				elseif ( in_category('goodies') ) { ?>

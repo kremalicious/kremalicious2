@@ -999,6 +999,22 @@ a.photoPost:hover figure {
 }
 
 
+/*	GOODIES POST */
+/* ============================================================== */
+
+#goodiesDownload {
+	margin: 1em 0 0 0;
+}
+
+#goodiesDownload p {
+	margin-bottom: 0;
+}
+
+#goodiesDownload .btn.releasePost {
+	font-size: 1.1em;
+	padding: .6em 1em .7em 1em;
+}
+
 /* ============================================================== */
 /*	COMMENTS */
 /* ============================================================== */
@@ -1663,11 +1679,14 @@ pre code {
 }
 
 pre:hover {
-	margin-left: -10%;
-	margin-right: -10%;
 	background: #fff;
 	background: rgba(255,255,255,.85);
 }
+
+	.no-touch .entry-content pre:hover {
+		margin-left: -10%;
+		margin-right: -10%;
+	}
 
 pre .comment {
     color: #998;
@@ -2079,7 +2098,7 @@ pre .regexp {
 		margin-right: 0;
 	}
 	
-	pre:hover {
+	.no-touch .entry-content pre:hover {
 		margin-left: -20%;
 		margin-right: -5%;
 	}
@@ -2093,7 +2112,7 @@ pre .regexp {
 
 	}
 	
-	pre:hover {
+	.no-touch .entry-content pre:hover {
 		margin-right: -10%;
 	}
 
@@ -2106,7 +2125,7 @@ pre .regexp {
 
 	}
 	
-	pre:hover {
+	.no-touch .entry-content pre:hover {
 		margin-right: -20%;
 	}
 	
