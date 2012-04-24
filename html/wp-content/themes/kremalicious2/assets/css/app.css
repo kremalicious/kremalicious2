@@ -39,7 +39,7 @@ p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
 h1,h2,h3,h4,h5,h6,
 nav[role="navigation"] a,
 .btn,
-.pager a,
+nav a,
 .inline-download,
 .comment header cite,
 .comment-reply-link,
@@ -724,21 +724,12 @@ article.hentry {
 }
 
 .hentry footer {
-	margin: 4em 0;
+	margin: 4em 0 1.5em 0;
 	padding: .5em 0 .3em 0;
-	border-top: 1px dashed #afc3cb;
 }
 
 .hentry footer p:last-child {
 	margin-bottom: 0;
-}
-
-#meta p {
-	margin-bottom: 0;
-}
-
-#meta a[rel*="tag"] {
-	font-size: 1em;
 }
 
 .byline {
@@ -751,10 +742,14 @@ article.hentry {
 	font-style: normal;
 }
 
+#meta p {
+	margin-bottom: 0;
+	float: left;
+	width: 33%;
+}
 
-#pubdate {
-	text-align: right;
-	font-size: .9em;
+#meta a[rel*="tag"] {
+	font-size: 1em;
 }
 
 #share .btn {
@@ -769,6 +764,52 @@ article.hentry {
 
 #share i {
 	color: #95a6ae;
+}
+
+#pubdate {
+	font-size: .9em;
+	text-align: center;
+}
+
+#topic {
+	text-align: right;
+}
+
+#post-nav-single p {
+	width: 48%;
+	margin: 0;
+	position: relative;
+	font-size: .95em;
+}
+
+#post-nav-single a {
+	display: block;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	color: #95a6ae;
+}
+
+#post-nav-single i {
+	position: absolute;
+	left: 0;
+	top: .5em;
+}
+
+#post-nav-single .alignright {
+	text-align: right;
+}
+
+#post-nav-single .alignleft a {
+	padding-left: 1.5em;
+}
+
+#post-nav-single .alignright a {
+	padding-right: 1.5em;
+}
+
+#post-nav-single .alignright i {
+	left: auto;
+	right: 0;
 }
 
 /* FontAwesome Extensions for Category Buttons */
@@ -2015,8 +2056,7 @@ pre .regexp {
 		font-size: 2.5em;
 	}
 		
-	.byline,
-	#topic { text-align: left; }
+	.byline { text-align: left; }
 	
 	/* Comments */
 	.hentry .children .comment {

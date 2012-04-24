@@ -71,29 +71,36 @@
 						<?php the_content();  ?>
 					</section>
 					
-					<footer id="meta" class="hoverbuttons clearfix divider-bottom">
-						<p id="share" class="col2 grid2-col1">
-							<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
-						</p>
-						<p id="topic" class="col2 grid2-col1">
-							<?php 
-								$parentscategory ="";
-								foreach((get_the_category()) as $category) {
-									if ($category->category_parent == 0) {
-										$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
+					<footer id="meta" class="hoverbuttons divider-bottom divider-top">
+						<div class="clearfix">
+							<p id="share">
+								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
+							</p>
+							<p id="pubdate" class="dimmed">
+								<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
+							</p>
+							<p id="topic">
+								<?php 
+									$parentscategory ="";
+									foreach((get_the_category()) as $category) {
+										if ($category->category_parent == 0) {
+											$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
+										}
 									}
-								}
-								echo substr($parentscategory,0,-2);
-							?>
-						</p>
-						<p id="pubdate" class="col2 dimmed">
-							<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
-						</p>
+									echo substr($parentscategory,0,-2);
+								?>
+							</p>
+						</div>
 					</footer>
 					
 					<aside>
-						<?php comments_template(); ?>
+						<nav id="post-nav-single" class="clearfix">
+							<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
+							<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
+						</nav>
 					</aside>
+					
+					<?php comments_template(); ?>
 				</div>
 			</div>
 			
