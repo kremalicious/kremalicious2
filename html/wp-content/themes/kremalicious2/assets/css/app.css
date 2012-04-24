@@ -1557,6 +1557,153 @@ aside[role="complementary"] br,
   height: 0;
 }
 
+
+/* ============================================================== */
+/* Pretty printing styles. Used with prettify.js. */
+/* ============================================================== */
+
+/*default code and pre stuff for non-js*/ 
+
+code {
+	
+}
+
+pre {
+	padding: .5em;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	background: #192b33;
+	background: rgba(25, 43, 51, .75);
+	color: #fff;
+	border: 1px solid #242c30;
+	
+	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
+	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.3);
+
+	display: block;
+	width: auto;
+	overflow: auto;
+	max-height: 600px;
+	white-space: pre;
+	word-wrap: normal;
+	text-shadow: none;
+	font-size: .9em;
+	
+	-webkit-transition: all .3s ease-in-out 0s;
+	-moz-transition: all .3s ease-in-out 0s;
+	-o-transition: all .3s ease-in-out 0s;
+	-ms-transition: all .3s ease-in-out 0s;
+	transition: all .3s ease-in-out 0s;
+}
+
+	pre:hover {
+		background: rgba(25, 43, 51, .85);
+		margin-left: -10%;
+		margin-right: -10%;
+	}
+
+pre > code {
+	
+}
+
+pre.prettyprint { 
+	
+}
+
+.str {
+    color: #EC7600;
+}
+.kwd {
+    color: #93C763;
+}
+.com {
+    color: #778992;
+}
+.typ {
+    color: #678CB1;
+}
+.lit {
+    color: #FACD22;
+}
+.pun {
+    color: #F1F2F3;
+}
+.pln {
+    color: #F1F2F3;
+}
+.tag {
+    color: #8AC763;
+}
+.atn {
+    color: #E0E2E4;
+}
+.atv {
+    color: #EC7600;
+}
+.dec {
+    color: purple;
+}
+
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+    color: #555;
+    list-style-type: decimal;
+}
+
+@media print {
+    .str {
+        color: #060;
+    }
+    .kwd
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .com
+    {
+        color: #600;
+        font-style: italic;
+    }
+    .typ
+    {
+        color: #404;
+        font-weight: bold;
+    }
+    .lit
+    {
+        color: #044;
+    }
+    .pun
+    {
+        color: #440;
+    }
+    .pln
+    {
+        color: #000;
+    }
+    .tag
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .atn
+    {
+        color: #404;
+    }
+    .atv
+    {
+        color: #060;
+    }
+}
+
 /* ============================================================== */
 /*	ANIMATIONS */
 /* ============================================================== */
@@ -1921,6 +2068,11 @@ aside[role="complementary"] br,
 	.hentry .children .comment header {
 		margin-right: 0;
 	}
+	
+	pre:hover {
+		margin-left: -20%;
+		margin-right: -5%;
+	}
 
 }
 
@@ -1929,6 +2081,10 @@ aside[role="complementary"] br,
 @media only screen and (min-width: 1024px) { 
 	body {
 
+	}
+	
+	pre:hover {
+		margin-right: -10%;
 	}
 
 }
@@ -1939,6 +2095,11 @@ aside[role="complementary"] br,
 	body {
 
 	}
+	
+	pre:hover {
+		margin-right: -20%;
+	}
+	
 }
 
 /* WIDESCREEN */

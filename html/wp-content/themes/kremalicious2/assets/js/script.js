@@ -4,6 +4,7 @@
 $(ASAP = function(){
 
 	siteEffects.init();
+	codeSnippets.init();
 	
 	$('#respond label').inFieldLabels();
 	
@@ -12,7 +13,6 @@ $(ASAP = function(){
 $(window).load( AfterLoad = function() {
 	
 	if (Modernizr.touch) {
-		//MBP.scaleFix();
 		MBP.autogrow();
 		MBP.enableActive();
 	}
@@ -21,6 +21,29 @@ $(window).load( AfterLoad = function() {
 
 });
 
+
+
+var codeSnippets = {
+
+	addPrettyPrint: function() {
+		
+		var codeBlocks = $('#content pre');
+		
+		if (codeBlocks.length) {
+			codeBlocks.each(function() {
+	            if (  !$(this).hasClass('prettyprint') ) {
+	                $(this).addClass('prettyprint');
+	            }
+	        });
+	        prettyPrint();
+        }
+	},
+	
+	init: function(){
+		this.addPrettyPrint();
+	}
+	
+}
 
 var siteEffects = {
 	
