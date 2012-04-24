@@ -32,7 +32,7 @@
 		<div class="row" id="menubar">
 			
 			<header role="banner">
-				<h1><a id="logo" href="/">kremalicious</a></h1>
+				<h1><a id="logo" class="ir" href="/">kremalicious</a></h1>
 			</header>
 			<div class="col6">
 				<nav role="navigation" class="clearfix alignleft">
