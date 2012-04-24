@@ -49,14 +49,14 @@ var siteEffects = {
 	},
 	
 	commentShowup: function(){
-		var $commentList 	= $('#comments .commentlist, #respond'),
+		var $commentStuff 	= $('#commentlistWrap, #respond'),
 			$commentTrigger = $('#comments #commentShow');
 		
-		$commentList.hide();
+		$commentStuff.hide();
 		$commentTrigger.addClass('btn');
 		
 		$commentTrigger.click (function() {
-			$commentList.fadeToggle().css({'overflow':'visible'});
+			$commentStuff.fadeToggle().css({'overflow':'visible'});
 			$commentTrigger.toggleClass('open');
 			$('html, body').animate({scrollTop: $(this).offset().top}, 500);
 		});

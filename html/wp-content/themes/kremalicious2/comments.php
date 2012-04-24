@@ -23,7 +23,7 @@
 			
 			<footer>
 				
-				<?php edit_comment_link(__('(Edit)', 'roots'), '', ''); ?>
+				<?php edit_comment_link('Edit', '', ''); ?>
 				
 				<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 				
@@ -48,31 +48,41 @@
 <?php if (have_comments()) { ?>
 
 	<section id="comments">
+		
 		<h2 id="commentShow">
 			<i class="icon-comments"></i>
 			<?php printf(_n('One Response', '%1$s Responses', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()) ); ?>
 			<i class="icon-chevron-down"></i>
 		</h2>
 		
-		<ol class="commentlist">
-			<?php wp_list_comments(array('callback' => 'krlc2_comment')); ?>
-		</ol>
-		
-		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?>
-		
-			<nav id="comments-nav" class="pager">
-			<div class="previous"><?php previous_comments_link(__('&larr; Older comments', 'roots')); ?></div>
-			<div class="next"><?php next_comments_link(__('Newer comments &rarr;', 'roots')); ?></div>
-			</nav>
-		
-		<?php } // check for comment navigation ?>
-		
-		<?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>
-			<div class="alert alert-block fade in">
-			<a class="close" data-dismiss="alert">&times;</a>
-			<p><?php _e('Comments are closed.', 'roots'); ?></p>
-			</div>
-		<?php } ?>
+		<div id="commentlistWrap">
+			<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?>
+			
+				<nav id="comments-nav-top" class="pager comments-nav clearfix">
+					<div class="aligncenter"><?php paginate_comments_links(); ?></div>
+				</nav>
+			
+			<?php } // check for comment navigation ?>
+			
+			<ol class="commentlist divider-top">
+				<?php wp_list_comments(array('callback' => 'krlc2_comment')); ?>
+			</ol>
+			
+			<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?>
+			
+				<nav id="comments-nav-bottom" class="pager comments-nav clearfix">
+					<div class="aligncenter"><?php paginate_comments_links(); ?></div>
+				</nav>
+			
+			<?php } // check for comment navigation ?>
+			
+			<?php if (!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) { ?>
+				<div class="alert alert-block fade in">
+				<a class="close" data-dismiss="alert">&times;</a>
+				<p><?php _e('Comments are closed.', 'roots'); ?></p>
+				</div>
+			<?php } ?>
+		</div>
 	</section><!-- /#comments -->
   
 <?php } else { ?>
