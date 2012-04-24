@@ -187,6 +187,10 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0)));
 }
 
+.widget, .postbox, .stuffbox {
+	margin-bottom: 60px;
+}
+
 #titlediv #title {
 	padding: 8px;
 	font-size: 2em;
