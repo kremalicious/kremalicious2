@@ -56,10 +56,19 @@ var siteEffects = {
 		$commentTrigger.addClass('btn');
 		
 		$commentTrigger.click (function() {
+			showTheComments();
+			$('html, body').animate({scrollTop: $commentTrigger.offset().top}, 500);
+		});
+		
+		if (location.href.indexOf('#comments') != -1) {
+			showTheComments();
+		}
+		
+		function showTheComments() {
 			$commentStuff.fadeToggle().css({'overflow':'visible'});
 			$commentTrigger.toggleClass('open');
-			$('html, body').animate({scrollTop: $(this).offset().top}, 500);
-		});
+		}
+
 	},
 	
 	socialiteButtons: function() {
