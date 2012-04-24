@@ -35,6 +35,8 @@ var codeSnippets = {
 				if ( !$(this).is('[data-language]') ) {
 		        	if ( $(this).is(':contains(<?php)') ) {
 		        		$(this).attr('data-language', 'php');
+		        	} else if ( $(this).hasClass('css') ) {
+		        		$(this).attr('data-language', 'css');
 		        	} else {
 		        		$(this).attr('data-language', 'generic');
 		        	}
