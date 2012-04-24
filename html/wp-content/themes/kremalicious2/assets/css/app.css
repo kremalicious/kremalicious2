@@ -1394,14 +1394,21 @@ aside[role="complementary"] br,
 .alert {
 	padding: 8px 35px 8px 14px;
 	margin-bottom: 18px;
-	color: #c09853;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	color: #8a6d3d;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 	background-color: #fcf8e3;
-	border: 1px solid #fbeed5;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	border: 1px solid #d7cab9;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	position: relative;
+	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 }
 
 .alert-heading {
@@ -1418,20 +1425,20 @@ aside[role="complementary"] br,
 .alert-success {
 	color: #468847;
 	background-color: #dff0d8;
-	border-color: #d6e9c6;
+	border-color: #b5c6a8;
 }
 
 .alert-danger,
 .alert-error {
 	color: #b94a48;
 	background-color: #f2dede;
-	border-color: #eed3d7;
+	border-color: #dcc5ca;
 }
 
 .alert-info {
 	color: #3a87ad;
 	background-color: #d9edf7;
-	border-color: #bce8f1;
+	border-color: #a6ced8;
 }
 
 .alert-block {
