@@ -108,7 +108,8 @@ blockquote > p {
 
 /* LINKS */
 /* ============================================================== */
-a {
+a,
+a:visited {
 	text-decoration: none;
 	color: #3a9085;
 	-webkit-transition: all .3s ease-in-out 0s;
@@ -119,7 +120,10 @@ a {
 	position: relative;
 }
 
-a:hover {
+a:hover,
+h1 a:visited:hover,
+h2 a:visited:hover,
+h3 a:visited:hover {
 	color: #40a296;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
 }
@@ -130,7 +134,10 @@ a:active {
 
 h1 a,
 h2 a,
-h3 a {
+h3 a,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited {
 	color: #2e4f5c;
 	border-bottom: 1px dotted rgba(58, 144, 133, .3);
 }
