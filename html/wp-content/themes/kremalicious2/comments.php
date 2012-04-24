@@ -138,6 +138,9 @@
           </p>
         <?php } ?>
         <p>
+        	<small class="dimmed">Be nice, don't spam. You can just use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>. Code snippets should be wrapped in <code>&lt;code&gt;</code> tags. Everything in between gets automatically encoded to HTML entities, wrapped in pre tags and syntax highlighted.</small>
+        </p>
+        <p>
         	<label for="comment"><?php _e('Comment', 'roots'); ?></label>
         	<textarea name="comment" id="comment" tabindex="4"></textarea>
         </p>
