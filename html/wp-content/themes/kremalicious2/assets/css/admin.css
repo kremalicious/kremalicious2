@@ -3,7 +3,7 @@ html,.wp-dialog {
 }
 
 #adminmenuback {
-	background: transparent url(../img/whitey.png) left top repeat;
+	background: transparent url(../img/fabric_plaid.png) left top repeat;
 
 	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
 	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
@@ -32,7 +32,7 @@ body,#wpbody,.form-table .pre {
 }
 
 h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
-	color: rgba(46, 79, 92, .7);
+	color: rgba(46, 79, 92, .9);
 	font-family: 'QlassikBoldRegular', sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -70,7 +70,8 @@ a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-l
 	position: relative;
 }
 
-textarea,input[type="text"],input[type="password"],input[type="file"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],select {
+textarea,input[type="text"],input[type="password"],input[type="file"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],select,
+#titlediv #title {
 	background: #fff;
 	background: rgba(255,255,255,.4);
 	border: 0;
@@ -92,7 +93,8 @@ textarea,input[type="text"],input[type="password"],input[type="file"],input[type
 	transition: all .3s ease-in-out;
 }
 
-input:focus,textarea:focus {
+input:focus,textarea:focus,
+#titlediv #title:focus {
 	background: rgba(255,255,255,.8);
 	border-bottom-color: #78868c;
 	outline: none;
@@ -152,7 +154,7 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 }
 
 #adminmenu a.menu-top,.folded #adminmenu li.menu-top,#adminmenu .wp-submenu .wp-submenu-head {
-	border-bottom-color: #bebebe;
+	border-bottom-color: #cbcdcd;
 }
 
 #post-body,.widefat {
@@ -161,6 +163,33 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 
 .alternate,.alt {
 	background: rgba(255,255,255,.5);
+}
+
+.widget, #widget-list .widget-top, .postbox, .menu-item-settings,
+div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs li.tabs, .wp-tab-active {
+	background: transparent;
+}
+
+.widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox,
+.widefat {
+	border: none;
+}
+
+.widefat td {
+	padding: 15px 7px 5px;
+}
+
+.widefat th input {
+	margin: 6px 0 0 8px;
+}
+
+.widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle, #fullscreen-topbar {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0)));
+}
+
+#titlediv #title {
+	padding: 8px;
+	font-size: 2em;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
