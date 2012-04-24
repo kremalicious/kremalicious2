@@ -1,10 +1,14 @@
 # BEGIN CUSTOM WP STUFF
 
+# Block access to WordPress files that reveal version information.
+<FilesMatch "^(wp-config\.php|readme\.html|license\.txt)">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
 # Remove date from post permalinks
 RedirectMatch 301 ^/([0-9]+)/([0-9]+)/(.*)$ /$3
-
-# Shock Teenage Gangsters
-Redirect 301 /wp-config.php http://svr.gov.ru/
 
 # Old Content Redirects
 Redirect 301 /csspaperstack /lab/csspaperstack
