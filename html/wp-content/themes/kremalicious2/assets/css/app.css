@@ -1007,7 +1007,7 @@ a.photoPost:hover figure {
 }
 
 #goodiesDownload p {
-	margin-bottom: 0;
+	margin-bottom: 1em;
 }
 
 #goodiesDownload .btn.releasePost {
