@@ -138,10 +138,9 @@
 							<p><a href="<?php the_permalink(); ?>" class="goodieImage">
 								<?php the_post_thumbnail( 'goodieImage' ); ?>
 							</a></p>
-							<?php echo krlc2_excerpt_more(); ?>
-						<?php } else { ?>
-							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
+						
+						<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 					</div>
 				
 				<?php } 
