@@ -134,16 +134,18 @@
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</header>
-						<?php if ( has_post_thumbnail() ) { ?>
-							<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-								<?php the_post_thumbnail( 'goodieImage' ); ?>
-							</a></p>
+						<?php if ( !is_search() ) { ?>
+							<?php if ( has_post_thumbnail() ) { ?>
+								<p><a href="<?php the_permalink(); ?>" class="goodieImage">
+									<?php the_post_thumbnail( 'goodieImage' ); ?>
+								</a></p>
+							<?php } ?>
+							
+							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 						<?php } ?>
-						
-						<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 					</div>
 				
-				<?php } 
+				<?php }
 				
 				/* ===================================================== */
 				/* All the rest */
@@ -167,13 +169,14 @@
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</header>
-						<?php if (!is_search()) { ?>
+						<?php if ( !is_search() ) { ?>
 							
 							<?php if ( has_post_thumbnail() ) { ?>
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
 								</a>
 							<?php } ?>
+							
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 							
 						<?php } ?>
