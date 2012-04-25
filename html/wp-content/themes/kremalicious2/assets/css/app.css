@@ -192,6 +192,8 @@ a[rel*="tag"],
 #topics a,
 #cancel-comment-reply-link,
 .comment-edit-link {
+	font-size: 1.1em;
+	text-align: center;
 	display: inline-block;
 	padding: .5em 1em;
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -224,7 +226,6 @@ a[rel*="tag"],
 a[rel*="tag"],
 #topics a {
 	font-size: .9em;
-
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
@@ -251,33 +252,25 @@ a[rel*="tag"]:hover,
 	top: 1px;
 }
 
-.btn.btn-primary,
-.inline-download:link,
-.download:link {
-	font-size: 1.1em;
+.btn-primary {
 	background-color: #3a9085;
 	color: #133832;
 	border: 1px solid #3c9e91;
-	border-bottom-color: #2e796f;
-	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-
-	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
-	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
-	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
+	border-bottom-color: #246059;
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
+	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
+	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
 }
 
 
-	.btn.btn-primary:hover,
-	.inline-download:hover,
-	.download:hover {
+	.btn-primary:hover {
 		background-color: #3e9e92;
 		color: #133832;
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
 	}
 	
-	.btn.btn-primary:active,
-	.inline-download:active,
-	.download:active {
+	.btn-primary:active {
 		-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
 		-moz-box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
 		box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
@@ -292,24 +285,21 @@ a[rel*="tag"]:hover,
 
 /* Old Download Button Overwrites */
 
-.inline-download:link,
-.download {
+.inline-download:link {
 	display: block;
 	text-align: center;
-	font-size: 1.3em;
 }
 
-	.inline-download:before,
-	.download:before {
+	.inline-download:before {
 		font-family: FontAwesome;
 		font-weight: normal;
 		font-style: normal;
 		text-decoration: inherit;
-		content: "\f01a";
-		font-size: 32px;
+		content: "\f019";
+		font-size: inherit;
 		margin-right: .5em;
 		line-height: 1em;
-		vertical-align: middle;
+		vertical-align: baseline;
 	}
 
 .inline-download img {
@@ -1010,11 +1000,12 @@ a.photoPost:hover figure {
 	margin-bottom: 1em;
 }
 
-#goodiesDownload .btn.releasePost {
-	font-size: 1.1em;
-	padding: .6em 1em .7em 1em;
+#goodiesDownload .btn {
 	display: block;
-	text-align: center;
+}
+
+#goodiesDownload .btn:before {
+	margin-right: .5em;
 }
 
 /* ============================================================== */
@@ -1026,6 +1017,9 @@ a.photoPost:hover figure {
 #commentShow {
 	display: block;
 	margin: 2em 0;
+	text-align: left;
+	font-size: 1.625em;
+	line-height: 1;
 }
 
 .js #commentShow {

@@ -73,12 +73,11 @@ input.button-primary,button.button-primary,a.button-primary,.login .button-prima
 	background-color: #3a9085;
 	color: #133832;
 	border: 1px solid #3c9e91;
-	border-bottom-color: #2e796f;
-	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-
-	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
-	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
-	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.6);
+	border-bottom-color: #246059;
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
+	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
+	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
 }
 
 input.button-primary:hover,button.button-primary:hover,a.button-primary:hover,.login .button-primary:hover {
@@ -86,6 +85,7 @@ input.button-primary:hover,button.button-primary:hover,a.button-primary:hover,.l
 	color: #133832;
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
 	border: 1px solid #3c9e91;
+	border-bottom-color: #246059;
 }
 
 input.button-primary:active,button.button-primary:active,a.button-primary:active,.login .button-primary:active {
@@ -99,6 +99,7 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	-ms-transition: none;
 	transition: none;
 	border: 1px solid #3c9e91;
+	border-bottom-color: #246059;
 	top: 1px;
 
 	-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
