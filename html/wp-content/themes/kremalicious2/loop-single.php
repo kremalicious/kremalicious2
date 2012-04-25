@@ -93,6 +93,8 @@
 						</div>
 					</footer>
 					
+					<?php comments_template(); ?>
+					
 					<aside>
 						<nav id="post-nav-single" class="clearfix">
 							<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
@@ -100,7 +102,6 @@
 						</nav>
 					</aside>
 					
-					<?php comments_template(); ?>
 				</div>
 			</div>
 			

@@ -88,7 +88,7 @@
 				elseif (in_category('goodies') && is_category('goodies')) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all Goodies"></a>
+						<i class="icon-gift"></i>
 					</div>
 					<div class="col5">
 						<header>
