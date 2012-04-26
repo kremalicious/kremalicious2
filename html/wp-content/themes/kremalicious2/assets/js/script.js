@@ -107,10 +107,29 @@ var siteEffects = {
 		});
 	},
 	
+	searchFancySchmanzy: function() {
+		
+		// topbar search field fancy schmanzy
+		var hiddenMenus 	  = $('#menubar nav[role="navigation"]'),
+			globalSearch 	  = $('#menubar #s'),
+			searchPlaceholder = globalSearch.attr('placeholder');
+		
+		globalSearch.attr('placeholder', '');
+		globalSearch.blur(function(){
+			globalSearch.attr('placeholder', '');
+			hiddenMenus.toggleClass('in');
+		}).focus(function() {                
+		    hiddenMenus.addClass('fade').removeClass('in');
+		    globalSearch.attr('placeholder', searchPlaceholder );
+		});
+		
+	},
+	
 	init: function(){
 		this.commentShowup();
 		this.socialiteButtons();
 		this.bannerHomeLink();
+		this.searchFancySchmanzy();
 	}
 	
 }

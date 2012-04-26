@@ -448,8 +448,9 @@ header[role="banner"] {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 15em;
-	height: 150%;
+	width: 100%;
+	height: 100%;
+	margin-top: -40%;
 	z-index: 1;
 }
 
@@ -472,7 +473,8 @@ header[role="banner"] h1 {
 	box-shadow: 0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7);
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
-	padding: .6em 0 .7em 0;
+	padding: .6em 0 .4em 0;
+	margin-bottom: 0;
 	width: 100%;
 	z-index: 0;
 }
@@ -497,7 +499,7 @@ header[role="banner"] h1 {
 
 #logo {
 	display: block;
-	background: url(../img/logo.png) no-repeat center 8px;
+	background: url(../img/logo.png) no-repeat center 18px;
 	min-height: 41px;
 	padding: 8px 0 5px 0;
 	-moz-box-sizing: content-box; 
@@ -542,27 +544,13 @@ header[role="banner"] h1 {
 nav[role="navigation"],
 #searchform {
 	margin-bottom: 0;
+	margin-right: 0;
 }
 
 nav[role="navigation"] li {
 	display: block;
 	float: left;
-	border-right: 1px solid #a1aeb2;
-	border-left: 1px solid rgba(255,255,255,.3);
 }
-
-	nav[role="navigation"] li:first-child {
-		-webkit-box-shadow: -1px 0 0 #a1aeb2;
-		-moz-box-shadow: -1px 0 0 #a1aeb2;
-		box-shadow: -1px 0 0 #a1aeb2;
-	}
-	
-	nav[role="navigation"] li:last-child {
-		-webkit-box-shadow: 1px 0 0 rgba(255,255,255,.3);
-		-moz-box-shadow: 1px 0 0 rgba(255,255,255,.3);
-		box-shadow: 1px 0 0 rgba(255,255,255,.3);
-	}
-
 
 nav[role="navigation"] li a {
 	display: block;
@@ -573,11 +561,15 @@ nav[role="navigation"] li a {
 
 nav[role="navigation"] li a:hover {
 	background: rgba(255,255,255,.1);
-	margin-bottom: .1em;
 }
 
 nav[role="navigation"] i {
 	color: #2e4f5c;
+}
+
+nav[role="navigation"] li#home {
+	width: 100%;
+	margin-bottom: .5em;
 }
 
 
@@ -589,14 +581,10 @@ nav[role="navigation"] i {
 }
 
 #menubar #searchform {
-	position: relative;
-	padding: .5em;
-	border-right: 1px solid #a1aeb2;
-	border-left: 1px solid rgba(255,255,255,.3);
-
-	-webkit-box-shadow: -1px 0 0 #a1aeb2, 1px 0 0 rgba(255,255,255,.3);
-	-moz-box-shadow: -1px 0 0 #a1aeb2, 1px 0 0 rgba(255,255,255,.3);
-	box-shadow: -1px 0 0 #a1aeb2, 1px 0 0 rgba(255,255,255,.3);
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: .4em .5em;
 }
 
 
@@ -624,9 +612,9 @@ nav[role="navigation"] i {
 }
 
 #menubar #searchform #s:focus {
-	width: 300px;
+	width: 320px;
 	background: #fff;
-	background: rgba(255,255,255,.3);
+	background: rgba(255,255,255,.6);
 	border: 0;
 	border-bottom: 1px solid #AFC3CB;
 
@@ -1747,7 +1735,7 @@ pre .regexp {
 
 
 #home a {
-	width: 17em;
+	width: 100%;
 	position: relative;
 }
 
@@ -1759,7 +1747,7 @@ pre .regexp {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 170%;
+	height: 100%;
 }
 
 .bannerSlideUp {
@@ -1968,6 +1956,10 @@ pre .regexp {
 	.row { max-width: 25em; }
 	
 	#topic { text-align: right; }
+	
+	#menubar #searchform #s:focus {
+		width: 390px;
+	}
 
 }
 
@@ -1995,7 +1987,52 @@ pre .regexp {
 		margin-left: 2em;
 		margin-right: 0;
 	}
+	
+	header[role="banner"] {
+		width: 15em;
+		height: 150%;
+		margin-top: 0;
+	}
+	
+	header[role="banner"] h1 {
+		padding-bottom: .7em;
+	}
+	
+	#logo {
+		background-position: center 8px;
+	}
+	
+	#home span {
+		height: 170%;
+	}
+	
+	nav[role="navigation"] li {
+		border-right: 1px solid #a1aeb2;
+		border-left: 1px solid rgba(255,255,255,.3);
+	}
+	
+		nav[role="navigation"] li:first-child {
+			-webkit-box-shadow: -1px 0 0 #a1aeb2;
+			-moz-box-shadow: -1px 0 0 #a1aeb2;
+			box-shadow: -1px 0 0 #a1aeb2;
+		}
 		
+		nav[role="navigation"] li:last-child {
+			-webkit-box-shadow: 1px 0 0 rgba(255,255,255,.3);
+			-moz-box-shadow: 1px 0 0 rgba(255,255,255,.3);
+			box-shadow: 1px 0 0 rgba(255,255,255,.3);
+		}
+	
+	nav[role="navigation"] li#home,
+	#home a {
+		width: 16em;
+		margin-bottom: 0;
+	}
+	
+	#menubar #searchform #s:focus {
+		width: 280px;
+	}
+	
 }
 
 /*using 769px here so iPad/portrait gets different view from landscape*/
@@ -2021,6 +2058,11 @@ pre .regexp {
 	.col5:last-child,
 	.col6:last-child {
 		padding-right: 0; }
+	
+	nav[role="navigation"] li#home,
+	#home a {
+		width: 17em;
+	}
 	
 	.hentry header {
 		text-align: left;
@@ -2108,6 +2150,10 @@ pre .regexp {
 		margin-left: -20%;
 		margin-right: -5%;
 	}
+	
+	#menubar #searchform #s:focus {
+		width: 450px;
+	}
 
 }
 
@@ -2145,6 +2191,10 @@ pre .regexp {
 	}
 	
 	.row { max-width: 52.85em; }
+	
+	#menubar #searchform #s:focus {
+		width: 540px;
+	}
 	
 }
 
