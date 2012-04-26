@@ -58,7 +58,7 @@
 		if ( $paged >= 2 || $page >= 2 )
 			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
 		
-		<p><strong>Blog of designer, developer, consultant Matthias Kretschmann.</strong></p>
+		<p>Blog of designer &amp; developer Matthias Kretschmann.</p>
 		<p class="hoverbuttons divider-top divider-bottom">
 			<a class="btn btn-tag rss" href="http://feeds.feedburner.com/kremalicious"> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremalicious"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/u/0/b/100015950464424503954/100015950464424503954/posts">Google+</a> <a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i> Facebook</a>
 		</p>

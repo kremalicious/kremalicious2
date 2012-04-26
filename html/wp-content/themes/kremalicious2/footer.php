@@ -8,7 +8,7 @@
 			<?php if ( is_singular() OR is_archive() ) { ?>
 				<div class="row divider-top hoverbuttons">
 					<div class="col2">
-						<p><strong>Blog of designer, developer, consultant Matthias Kretschmann.</strong></p>
+						<p>Blog of designer &amp; developer Matthias Kretschmann.</p>
 						
 					</div>
 					
