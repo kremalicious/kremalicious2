@@ -3,8 +3,6 @@
 
 $(ASAP = function(){
 
-	siteEffects.init();
-
 	$('#respond label').inFieldLabels();
 	
 });
@@ -16,6 +14,7 @@ $(window).load( AfterLoad = function() {
 		MBP.enableActive();
 	}
 	
+	siteEffects.init();
 	codeSnippets.init();
 	
 	$('#content [rel="tooltip"]').tooltip();
@@ -123,6 +122,15 @@ var siteEffects = {
 		    globalSearch.attr('placeholder', searchPlaceholder );
 		});
 		
+	},
+	
+	searchFancySchmanzy: function() {
+		$('#tweets').tweet({
+	        username: "kremalicious",
+	        count: 1,
+	        template: '{text}{time}',
+	        loading_text: "loading tweets..."
+	    });
 	},
 	
 	init: function(){

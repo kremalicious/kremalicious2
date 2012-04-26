@@ -21,8 +21,10 @@ function krlc2_scripts_styles() {
 	
 	// Scripts
 	wp_register_script('krlc2_plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, false);
+	wp_register_script('krlc2_tweet', get_template_directory_uri() . '/assets/js/libs/tweet/tweet/jquery.tweet.js', false, null, false);
 	wp_register_script('krlc2_script', get_template_directory_uri() . '/assets/js/script.js', false, null, false);
 	wp_enqueue_script('krlc2_plugins');
+	wp_enqueue_script('krlc2_tweet');
 	wp_enqueue_script('krlc2_script');
 	
 }
