@@ -11,6 +11,7 @@
 RedirectMatch 301 ^/([0-9]+)/([0-9]+)/(.*)$ /$3
 
 # Old Content Redirects
+Redirect 301 /lab http://lab.kremalicious.com
 Redirect 301 /csspaperstack /lab/csspaperstack
 Redirect 301 /download /media
 
