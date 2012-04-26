@@ -47,7 +47,7 @@ function krlc2_feed_content( $content ) {
     				<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($postTitle) .'&url='. urlencode($postLink) .'&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>. And you should follow me on Twitter <a href="https://twitter.com/kremalicious">here</a>.
     			   </p>';
     
-    if ( has_post_thumbnail($post->ID)  ) {
+    if ( has_post_thumbnail($post->ID) && !has_post_format( 'image', $post->ID ) ) {
     	$content = '<div>' . $featuredImage . '</div>' . $content . $shareStuff;
     } elseif ( has_post_thumbnail($post->ID) && has_post_format( 'image', $post->ID ) ) {
     	$content = '<div>' . $photoImage . '</div>' . $content . $shareStuff;    
