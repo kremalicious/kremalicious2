@@ -84,6 +84,35 @@ function encode_html_code_in_comment($source) {
 add_filter('pre_comment_content', 'encode_html_code_in_comment');
 
 
+// Goodies Download Button Shortcode
+function krlc2_goodie_download_shortcode( $atts, $content = null ) {
+ 	
+ 	extract( shortcode_atts( array(
+      'version' => ''
+    ), $atts ) );
+  	
+  	if ($version) { 
+  		$packageVersion = 'v'.$version.' | '; 
+  	} else {
+  		$packageVersion = '';
+  	}
+  	
+ 	$attachments = get_children( array('post_parent' => get_the_ID(), 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
+ 	
+ 	if ($attachments) {
+ 		$attachment = array_shift($attachments);
+ 		
+ 		$attachment = '<p>
+ 						 <a class="btn btn-block icon-download-alt" href="'.wp_get_attachment_url($attachment->ID) .'">Download <span>'.$packageVersion.' zip</span></a>
+ 					   </p>';
+ 
+		return $attachment;
+	}
+ 
+}
+add_shortcode('download_button', 'krlc2_goodie_download_shortcode');
+
+
 // Grab EXIF Metadata from featured image
 function krlc2_post_thumbnail_exif_data($postID = NULL) {
     // if $postID not specified, then get global post and assign ID

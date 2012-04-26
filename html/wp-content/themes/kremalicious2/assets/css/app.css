@@ -276,6 +276,14 @@ a[rel*="tag"]:hover,
 		box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
 	}
 
+.btn.btn-block {
+	display: block;
+}
+
+.btn:before {
+	margin-right: .5em;
+}
+
 .btn span,
 .inline-download span {
 	font-size: .7em;
