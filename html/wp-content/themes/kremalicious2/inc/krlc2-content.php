@@ -1,22 +1,5 @@
 <?php
 
-// add custom post content
-function krlc2_add_post_content($content) {
-	
-	global $post;
-	$post_title = $post->post_title;
-	$post_link = get_permalink($post->ID);
-		
-	if( is_feed() ) {
-		$content .= '<p id="share">
-						<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($post_title) .'&url='. urlencode($post_link) .'&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
-					</p>';
-	}
-	return $content;
-}
-add_filter('the_content', 'krlc2_add_post_content');
-
-
 // Add stuff to the RSS Feed items like post thumbnails, custom fields etc.
 
 // Construct the source linked title for link posts
@@ -29,22 +12,53 @@ function krlc2_feed_linked_title($permalink) {
 }
 add_filter('the_permalink_rss', 'krlc2_feed_linked_title');
 
+// add arrow to link posts in feed
+function krlc2_feed_title_arrow($title) {
+	
+	global $post;
+	
+	if ( has_post_format( 'link', $post->ID ) ) {
+		$title = $title.' &#187;';
+	} else {
+		$title = $title;
+	}
+
+    return $title;
+}
+add_filter('the_title_rss', 'krlc2_feed_title_arrow');
+
 // show post thumbnails in feeds
 // modified from http://digwp.com/2010/06/show-post-thumbnails-in-feeds/
-function krlc2_feed_post_thumb( $content ) {
+function krlc2_feed_content( $content ) {
 
     global $post;
-     
-    if ( has_post_thumbnail($post->ID) && !has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') ) . '</div>' . $content;
+    $postTitle 		= $post->post_title;
+    $postLink 		= get_permalink($post->ID);
+    $featuredImage 	= get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') );
+    $photoImage		= get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') );
+    $linkURL 		= get_post_meta($post->ID, '_format_link_url', true);
+    
+    $linkPostStuff = '<p>
+    					<a class="more-link" href="'.$linkURL.'">Go to Article &#187;</a> <br />
+    					<a href="'. $postLink .'" title="Permalink for this post">&#8734;</a>
+    				  </p>';
+    				  
+    $shareStuff = '<br /><hr /><p id="share">
+    				<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($postTitle) .'&url='. urlencode($postLink) .'&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>. And you should follow me on Twitter <a href="https://twitter.com/kremalicious">here</a>.
+    			   </p>';
+    
+    if ( has_post_thumbnail($post->ID)  ) {
+    	$content = '<div>' . $featuredImage . '</div>' . $content . $shareStuff;
     } elseif ( has_post_thumbnail($post->ID) && has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') ) . '</div>' . $content;    
+    	$content = '<div>' . $photoImage . '</div>' . $content . $shareStuff;    
+    } elseif ( has_post_format( 'link' ) ) {
+    	$content = $content . $linkPostStuff . $shareStuff;
     } else {
-        $content = $content;
+        $content = $content . $shareStuff;
     }
     return $content;
 }
-add_filter( 'the_content_feed', 'krlc2_feed_post_thumb' );
+add_filter( 'the_content_feed', 'krlc2_feed_content' );
 
 
 // delay feed update
