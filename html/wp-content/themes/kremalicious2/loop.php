@@ -82,21 +82,15 @@
 				
 				
 				/* ===================================================== */
-				/* Goodies Post/Goodies Archive */
+				/* Goodies Archive */
 				/* ===================================================== */
 				
 				elseif (in_category('goodies') && is_category('goodies')) { ?>
-					
-					<div class="col1 posttype">
-						<i class="icon-gift"></i>
-					</div>
-					<div class="col5">
+
+					<div class="col6">
 						<header>
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</header>
-					</div>
-					<div class="col6">
-						
 						<?php if ( has_post_thumbnail() ) { ?>
 							<p><a href="<?php the_permalink(); ?>" class="goodieImage">
 								<?php the_post_thumbnail( 'goodieImage' ); ?>
