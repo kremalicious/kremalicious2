@@ -2058,13 +2058,17 @@ pre .regexp {
 		}
 	
 	nav[role="navigation"] li a {
-		padding: .5em 1.5em .4em 1.5em;
+		padding: .6em 1.5em .6em 1.5em;
 	}
 	
 	nav[role="navigation"] li#home,
 	#home a {
 		width: 16em;
 		margin-bottom: 0;
+	}
+	
+	#menubar #searchform {
+		bottom: .2em;
 	}
 	
 	#menubar #searchform #s:focus {

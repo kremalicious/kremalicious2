@@ -124,7 +124,7 @@ var siteEffects = {
 		
 	},
 	
-	searchFancySchmanzy: function() {
+	latestTweet: function() {
 		$('#tweets').tweet({
 	        username: "kremalicious",
 	        count: 1,
@@ -138,6 +138,7 @@ var siteEffects = {
 		this.socialiteButtons();
 		this.bannerHomeLink();
 		this.searchFancySchmanzy();
+		this.latestTweet();
 	}
 	
 }
