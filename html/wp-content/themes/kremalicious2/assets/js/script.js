@@ -119,6 +119,8 @@ var siteEffects = {
 		$container.imagesLoaded( function(){
 			$container.masonry({
 				itemSelector : 'article',
+				isResizable: true,
+				isAnimated: !Modernizr.csstransitions,
 				columnWidth : function( containerWidth ) {
 					return containerWidth / 2;
 				}
