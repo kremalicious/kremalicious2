@@ -988,9 +988,14 @@ a.photoPost:hover figure {
 	margin-left: 1%;
 	margin-right: 1%;
 	padding-top: 0;
-	padding-bottom: 2em;
-	margin-bottom: 2em;
+	padding-bottom: 0;
+	margin-bottom: 2%;
+	border: none;
 }
+
+	.archive.category-photos article.hentry:before {
+		display: none;
+	}
 
 
 /*	GOODIES POST */
