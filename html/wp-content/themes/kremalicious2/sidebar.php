@@ -29,7 +29,8 @@
 				}
 			?>
 		</h1>
-		<p><?php echo category_description(); ?></p>
+		<p class="dimmed"><?php echo category_description(); ?></p>
+		
 		<footer id="topics" class="hoverbuttons divider-top divider-bottom">
 		
 			<?php 
