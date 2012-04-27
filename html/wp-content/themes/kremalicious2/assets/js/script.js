@@ -113,10 +113,26 @@ var siteEffects = {
 	    });
 	},
 	
+	photoGrid: function() {
+		var $container = $('#content section[role="main"]');
+		
+		$container.imagesLoaded( function(){
+			$container.masonry({
+				itemSelector : 'article',
+				columnWidth : function( containerWidth ) {
+					return containerWidth / 2;
+				}
+			});
+		});
+	},
+	
 	init: function(){
 		this.socialiteButtons();
 		this.searchFancySchmanzy();
 		this.latestTweet();
+		if ( $('body.archive.category-photos').length > 0 ) {
+		    this.photoGrid();
+		}
 	}
 	
 }
