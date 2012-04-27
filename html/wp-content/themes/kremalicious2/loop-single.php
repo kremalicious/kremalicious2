@@ -28,7 +28,7 @@
 		elseif ( has_post_format( 'image' ) ) { ?>
 			
 			<div class="row">
-				<div class="col6">
+				<div class="col6 photoPostWrap">
 					<div class="photoPost">
 						<figure>
 							<?php the_post_thumbnail('photoBig'); ?>

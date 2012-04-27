@@ -942,6 +942,11 @@ a.photoPost:hover figure {
 }
 
 /* Photo Single View */
+.single .photoPostWrap {
+	width: 120%;
+	margin-left: -10%;
+}
+
 .single .photoPost {
 	margin: 0 auto;
 	display: inline-table;
@@ -1993,6 +1998,11 @@ pre .regexp {
 	
 	#menubar #searchform #s:focus {
 		width: 390px;
+	}
+	
+	.single .photoPostWrap {
+		width: 100%;
+		margin-left: 0;
 	}
 
 }
