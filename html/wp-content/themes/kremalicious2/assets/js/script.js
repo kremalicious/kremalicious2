@@ -3,12 +3,9 @@
 
 $(ASAP = function(){
 	
+	photoGrid.init();
 	interface.init();
 	$('#respond label').inFieldLabels();
-	
-	if ( $('body.archive.category-photos').length > 0 ) {
-	    photoGrid.init();
-	}
 	
 });
 
@@ -28,6 +25,14 @@ $(window).load( AfterLoad = function() {
 
 var photoGrid = {
 	
+	photoStreamGridSetup: function() {
+		var photoPosts 		= $('#content article.format-image'),
+			photoPostsIcons	= photoPosts.not(':first-child').find('.posttype');
+		
+		photoPosts.wrapAll('<div class="masonryWrap divider-bottom" />');
+		photoPostsIcons.hide();
+	},
+	
 	masonryLayout: function() {
 		var $container = $('#content .masonryWrap');
 		
@@ -44,7 +49,14 @@ var photoGrid = {
 	},
 	
 	init: function(){
-		this.masonryLayout();
+		// fire only if there are a multiple siblings of image posts
+		if ( $('#content article.format-image').next('article.format-image').length > 0 ) {
+			this.photoStreamGridSetup();
+		}
+		
+		if ( $('#content .masonryWrap').length > 0 ) {
+			this.masonryLayout();
+		}
 	}
 		
 }

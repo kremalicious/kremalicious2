@@ -941,7 +941,7 @@ a.photoPost:hover figure {
 	background: #c4e4df;
 }
 
-/* Photo Single View */
+/* Single View */
 
 .single .photoPostWrap,
 .masonryWrap {
@@ -982,8 +982,12 @@ a.photoPost:hover figure {
 	}
 
 
-/* Photo Archives */
-.archive.category-photos article.hentry {
+/* Photo Grid Masonry Layout */
+.masonryWrap {
+	margin-bottom: 3em;
+}
+
+.masonryWrap article.hentry {
 	width: 48%;
 	float: left;
 	clear: none;
@@ -995,13 +999,42 @@ a.photoPost:hover figure {
 	border: none;
 }
 
-	.archive.category-photos article.hentry:before {
+	.masonryWrap article.hentry:before {
 		display: none;
 	}
 
-.archive.category-photos .masonryWrap {
-	
+/* Stream View */
+
+.blog .masonryWrap {
+	margin-top: 3em;
+	margin-bottom: 0;
 }
+
+.blog .masonryWrap article.format-image:first-child .posttype {
+	width: 100%;
+	float: none;
+	margin-top: -2.15em;
+}
+
+.blog .masonryWrap article.format-image .col5 {
+	width: 100%;
+	margin: 0;
+}
+
+.blog .masonryWrap article.format-image:last-child {
+	margin-bottom: 3em;
+}
+
+/* Photo Archives */
+
+.archive.category-photos .masonryWrap {
+	border: none;
+}
+
+.archive.category-photos .masonryWrap:before {
+	display: none;
+}
+
 
 /*	GOODIES POST */
 /* ============================================================== */
