@@ -3,7 +3,7 @@
 <section role="main" class="col4">
 	
 	<?php if ( is_category('photos') ) { ?>
-	<div id="masonryWrap">
+	<div class="masonryWrap">
 	<?php } ?>
 	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>

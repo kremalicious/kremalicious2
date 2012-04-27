@@ -875,7 +875,7 @@ a.photopost {
 
 .photoPost figure {
 	position: relative;
-	padding: .55em;
+	padding: .4em;
 	background: #fcfeff;
 	border: 1px solid rgba(158, 170, 178, .6);
 	-webkit-border-radius: 2px;
@@ -942,7 +942,9 @@ a.photoPost:hover figure {
 }
 
 /* Photo Single View */
-.single .photoPostWrap {
+
+.single .photoPostWrap,
+.masonryWrap {
 	width: 120%;
 	margin-left: -10%;
 }
@@ -997,6 +999,9 @@ a.photoPost:hover figure {
 		display: none;
 	}
 
+.archive.category-photos .masonryWrap {
+	
+}
 
 /*	GOODIES POST */
 /* ============================================================== */
@@ -2026,11 +2031,6 @@ pre .regexp {
 	#menubar #searchform #s:focus {
 		width: 390px;
 	}
-	
-	.single .photoPostWrap {
-		width: 100%;
-		margin-left: 0;
-	}
 
 }
 
@@ -2232,6 +2232,12 @@ pre .regexp {
 	
 	#menubar #searchform #s:focus {
 		width: 450px;
+	}
+	
+	.single .photoPostWrap,
+	.masonryWrap {
+		width: 100%;
+		margin-left: 0;
 	}
 
 }
