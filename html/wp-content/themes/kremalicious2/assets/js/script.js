@@ -29,7 +29,7 @@ $(window).load( AfterLoad = function() {
 var photoGrid = {
 	
 	masonryLayout: function() {
-		var $container = $('#content section[role="main"]');
+		var $container = $('#masonryWrap');
 		
 		$container.imagesLoaded( function(){
 			$container.masonry({

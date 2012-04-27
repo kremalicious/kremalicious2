@@ -2,6 +2,10 @@
 
 <section role="main" class="col4">
 	
+	<?php if ( is_category('photos') ) { ?>
+	<div id="masonryWrap">
+	<?php } ?>
+	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>
 	<?php if (!have_posts()) { ?>
 	  <div class="alert alert-block fade in">
@@ -182,6 +186,10 @@
 			</article>
 
 	<?php endwhile; /* End loop */ ?>
+	
+	<?php if ( is_category('photos') ) { ?>
+	</div> <!--END #masonryWrap-->
+	<?php } ?>
 	
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
 	<?php if ($wp_query->max_num_pages > 1) { ?>
