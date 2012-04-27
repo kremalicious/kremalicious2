@@ -2,7 +2,8 @@
 /*	Main js by Matthias Kretschmann | mkretschmann.com */
 
 $(ASAP = function(){
-
+	
+	interface.init();
 	$('#respond label').inFieldLabels();
 	
 });
@@ -21,40 +22,10 @@ $(window).load( AfterLoad = function() {
 
 });
 
-
-var codeSnippets = {
-
-	addCodeAttributes: function() {
-		
-		var codeBlocks = $('#content pre code');
-		
-		if (codeBlocks.length) {
-		
-			codeBlocks.each(function() {
-				if ( !$(this).is('[data-language]') ) {
-		        	if ( $(this).is(':contains(<?php)') ) {
-		        		$(this).attr('data-language', 'php');
-		        	} else if ( $(this).hasClass('css') ) {
-		        		$(this).attr('data-language', 'css');
-		        	} else {
-		        		$(this).attr('data-language', 'generic');
-		        	}
-	        	}
-	        });
-	        
-        }
-	},
-	
-	init: function(){
-		this.addCodeAttributes();
-	}
-	
-}
-
-var siteEffects = {
+var interface = {
 	
 	bannerHomeLink: function() {
-		
+			
 		var $bannerTrigger  = $('#home span'),
 			$banner			= $('header[role="banner"]');
 			
@@ -100,6 +71,15 @@ var siteEffects = {
 
 	},
 	
+	init: function(){
+		this.commentShowup();
+		this.bannerHomeLink();
+	}
+		
+}
+
+var siteEffects = {
+	
 	socialiteButtons: function() {
 		$('#meta').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
@@ -134,11 +114,38 @@ var siteEffects = {
 	},
 	
 	init: function(){
-		this.commentShowup();
 		this.socialiteButtons();
-		this.bannerHomeLink();
 		this.searchFancySchmanzy();
 		this.latestTweet();
+	}
+	
+}
+
+var codeSnippets = {
+
+	addCodeAttributes: function() {
+		
+		var codeBlocks = $('#content pre code');
+		
+		if (codeBlocks.length) {
+		
+			codeBlocks.each(function() {
+				if ( !$(this).is('[data-language]') ) {
+		        	if ( $(this).is(':contains(<?php)') ) {
+		        		$(this).attr('data-language', 'php');
+		        	} else if ( $(this).hasClass('css') ) {
+		        		$(this).attr('data-language', 'css');
+		        	} else {
+		        		$(this).attr('data-language', 'generic');
+		        	}
+	        	}
+	        });
+	        
+        }
+	},
+	
+	init: function(){
+		this.addCodeAttributes();
 	}
 	
 }
