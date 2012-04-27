@@ -981,7 +981,6 @@ a.photoPost:hover figure {
 		margin-right: 2em;
 	}
 
-
 /* Photo Grid Masonry Layout */
 .masonryWrap {
 	margin-bottom: 3em;
@@ -1003,6 +1002,10 @@ a.photoPost:hover figure {
 		display: none;
 	}
 
+.masonryWrap article.format-image:last-child {
+	margin-bottom: 3em;
+}
+
 /* Stream View */
 
 .blog .masonryWrap {
@@ -1021,19 +1024,8 @@ a.photoPost:hover figure {
 	margin: 0;
 }
 
-.blog .masonryWrap article.format-image:last-child {
-	margin-bottom: 3em;
-}
-
 /* Photo Archives */
 
-.archive.category-photos .masonryWrap {
-	border: none;
-}
-
-.archive.category-photos .masonryWrap:before {
-	display: none;
-}
 
 
 /*	GOODIES POST */

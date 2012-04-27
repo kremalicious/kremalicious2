@@ -49,8 +49,8 @@ var photoGrid = {
 	},
 	
 	init: function(){
-		// fire only if there are a multiple siblings of image posts
-		if ( $('#content article.format-image').next('article.format-image').length > 0 ) {
+		// fire only if there are a multiple siblings of image posts in the blog stream
+		if ( $('body.blog #content article.format-image').next('article.format-image').length > 0 ) {
 			this.photoStreamGridSetup();
 		}
 		
