@@ -1335,6 +1335,10 @@ p#copyright {  }
 	margin-bottom: 0;
 }
 
+.search-results aside header h1 ins {
+	padding: 0 .2em;
+}
+
 
 /* ============================================================== */
 /*	404 */

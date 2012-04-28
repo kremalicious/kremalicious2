@@ -21,7 +21,7 @@
 					printf(__('Author Archives: %s', 'roots'), get_the_author_meta('user_nicename', $author_id));
 				} elseif ( is_paged() ) {
 					global $page, $paged;
-					echo '<a rel="tooltip" title="Back To Home" href="/">/</a> <a href="../../">'.single_cat_title('', false).' /</a>'. sprintf( __( ' Page %s', 'twentyeleven' ), max( $paged, $page ) );
+					echo '<a rel="tooltip" title="Back to home" href="/">/</a> <a rel="tooltip" title="Back to first page" href="../../">'.single_cat_title('', false).' /</a>'. sprintf( __( ' Page %s', 'twentyeleven' ), max( $paged, $page ) );
 					
 				} else {
 					single_cat_title('<a rel="tooltip" title="Back To Home" href="/">/</a>');
@@ -51,7 +51,13 @@
 	<?php } elseif ( is_search() ) { ?>
 		<header>
 			<h1>
-				<a rel="tooltip" title="Back To Home" href="/">/</a> Search Results for <?php echo get_search_query(); ?>
+				<?php if ( is_paged() ) { ?>
+					<a rel="tooltip" title="Back to home" href="/">/</a> 
+					<a rel="tooltip" title="Back to first page" href="../../">Search Results for <ins><?php echo get_search_query(); ?></ins> /</a> 
+					<?php global $page, $paged; echo sprintf( __( ' Page %s', 'twentyeleven' ), max( $paged, $page )); ?>
+				<?php } else { ?>
+					<a rel="tooltip" title="Back To Home" href="/">/</a> Search Results for <ins><?php echo get_search_query(); ?></ins>
+				<?php } ?>
 			</h1>
 		</header>
 	<?php } else { ?>
