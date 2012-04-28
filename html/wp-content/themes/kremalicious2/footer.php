@@ -22,7 +22,7 @@
 			
 			<div class="row">
 				<div class="col6 divider-top">
-					<p id="copyright" class="dimmed"><small>© 2008-2012 Matthias Kretschmann</small></p>
+					<p id="copyright" class="dimmed"><small>Site design/photos: © 2007-<?php echo date('Y'); ?> Matthias Kretschmann. Code: <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. Article images/goodies: <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY NC SA</a>.</small></p>
 				</div>
 			</div>
 		</footer>

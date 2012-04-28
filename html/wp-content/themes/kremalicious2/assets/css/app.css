@@ -1478,6 +1478,8 @@ aside[role="complementary"] br,
 }
 
 .alert {
+	font-size: .95em;
+	line-height: 22px;
 	padding: 8px 35px 8px 14px;
 	margin-bottom: 18px;
 	color: #8a6d3d;
@@ -1539,6 +1541,19 @@ aside[role="complementary"] br,
 
 .alert-block p + p {
 	margin-top: 5px;
+}
+
+#devWarning {
+	
+}
+
+#devWarning p {
+	padding-left: 15%;
+}
+
+#devWarning i {
+	margin-left: -2.2em;
+	margin-right: 1.1em;
 }
 
 /* ============================================================== */

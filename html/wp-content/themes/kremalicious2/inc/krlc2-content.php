@@ -84,6 +84,49 @@ function publish_later_on_feed($where) {
 add_filter('posts_where', 'publish_later_on_feed');
 
 
+// Redirect all feeds to Feedburner
+// taken from FeedBurner FeedSmith plugin http://support.google.com/feedburner/bin/answer.py?hl=en&answer=78483
+function krlc2_feed_redirect() {
+	global $wp, $feed;
+	if ( is_feed() && $feed != 'comments-rss2' && !is_single() && $wp->query_vars['category_name'] == '') {
+		if (function_exists('status_header')) status_header( 302 );
+		header("Location:http://feeds.feedburner.com/kremalicious");
+		header("HTTP/1.1 302 Temporary Redirect");
+		exit();
+	} elseif (is_feed() && ($feed == 'comments-rss2') ) {
+		if (function_exists('status_header')) status_header( 302 );
+		header("Location:http://feeds.feedburner.com/kremalicious_comments");
+		header("HTTP/1.1 302 Temporary Redirect");
+		exit();
+	}
+}
+
+function krlc2_check_url() {
+	switch (basename($_SERVER['PHP_SELF'])) {
+		case 'wp-rss.php':
+		case 'wp-rss2.php':
+		case 'wp-atom.php':
+		case 'wp-rdf.php':
+			if (function_exists('status_header')) status_header( 302 );
+			header("Location:http://feeds.feedburner.com/kremalicious");
+			header("HTTP/1.1 302 Temporary Redirect");
+			exit();
+			break;
+		case 'wp-commentsrss2.php':
+			if (function_exists('status_header')) status_header( 302 );
+			header("Location:http://feeds.feedburner.com/kremalicious_comments");
+			header("HTTP/1.1 302 Temporary Redirect");
+			exit();
+			break;
+	}
+}
+
+if (!preg_match("/feedburner|feedvalidator/i", $_SERVER['HTTP_USER_AGENT'])) {
+	add_action('template_redirect', 'krlc2_feed_redirect');
+	add_action('init','krlc2_check_url');
+}
+
+
 // escape html entities in comments
 // thanks http://digwp.com/2010/04/wordpress-custom-functions-php-template-part-2/
 function encode_html_code_in_comment($source) {

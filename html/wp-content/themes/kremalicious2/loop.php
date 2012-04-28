@@ -2,6 +2,22 @@
 
 <section role="main" class="col4">
 	
+	<?php 
+	
+	/* ===================================================== */
+	/* The Dev Warning */
+	/* ===================================================== */
+	
+	if ( is_front_page() && !is_paged() ) { ?>
+		
+		<div id="devWarning" class="alert alert-block">
+			<p>
+				<i class="icon-warning-sign icon-large"></i>This site is currently undergoing heavy restructuring &amp; maintenance. Please excuse if some parts of it behave somehow funky for you. Oh, and welcome to <a href="/welcome-to-kremalicious2">the new site</a>!
+			</p>
+		</div>
+		
+	<?php } ?>
+	
 	<?php if ( is_category('photos') ) { ?>
 	<div class="masonryWrap clearfix">
 	<?php } ?>
