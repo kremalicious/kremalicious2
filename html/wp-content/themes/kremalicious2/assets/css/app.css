@@ -858,6 +858,7 @@ h2 a:hover i.icon-external-link {
 
 .permalink-link {
 	float: right;
+	margin-top: -1.7em;
 }
 
 /*	PHOTO POST */
@@ -1556,11 +1557,15 @@ aside[role="complementary"] br,
 
 #devWarning p {
 	padding-left: 15%;
+	position: relative;
 }
 
 #devWarning i {
-	margin-left: -2.2em;
-	margin-right: 1.1em;
+	font-size: 2em;
+	position: absolute;
+	left: .7em;
+	top: .8em;
+	color: rgba(138, 109, 61, .5);
 }
 
 /* ============================================================== */

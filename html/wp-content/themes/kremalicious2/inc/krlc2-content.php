@@ -39,7 +39,7 @@ function krlc2_feed_content( $content ) {
     $linkURL 		= get_post_meta($post->ID, '_format_link_url', true);
     
     $linkPostStuff = '<p>
-    					<a class="more-link" href="'.$linkURL.'">Go to Article &#187;</a> <br />
+    					<a class="more-link" href="'.$linkURL.'">Go to source &#187;</a> <br />
     					<a href="'. $postLink .'" title="Permalink for this post">&#8734;</a>
     				  </p>';
     				  

@@ -10,8 +10,8 @@
 	
 	if ( is_front_page() && !is_paged() ) { ?>
 		
-		<div id="devWarning" class="alert alert-block">
-			<p>
+		<div id="devWarning" class="divider-bottom">
+			<p class="alert alert-block">
 				<i class="icon-warning-sign icon-large"></i>This site is currently undergoing heavy restructuring &amp; maintenance. Please excuse if some parts of it behave somehow funky for you. Oh, and welcome to <a href="/welcome-to-kremalicious2">the new site</a>!
 			</p>
 		</div>
@@ -57,7 +57,7 @@
 						<?php if (!is_search()) { ?>
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 							<p>
-								<a class="more-link" href="<?php echo $linkURL ?>">Go to Article <i class="icon-external-link"></i></a>
+								<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
 								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
 							</p>
 						<?php } else { ?>
