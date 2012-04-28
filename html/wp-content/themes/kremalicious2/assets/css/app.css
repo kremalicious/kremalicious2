@@ -1014,19 +1014,21 @@ body.single-format-image .photoPostWrap {
 
 .blog .masonryWrap {
 	margin-top: 3em;
-	padding-top: 2.15em;
-}
-
-.blog .masonryWrap article.format-image + article.format-image .posttype {
-	display: none;
+	padding-top: 2.25em;
 }
 
 .blog .masonryWrap article.format-image:first-child .posttype {
 	width: 200%;
 	float: none;
 	text-align: center;
-	margin-top: -2.15em;
+	margin-top: -2.25em;
 }
+
+.blog .masonryWrap article.format-image + article.format-image .posttype {
+	display: none;
+}
+
+
 
 /* Photo Archives */
 
@@ -2224,14 +2226,24 @@ pre .regexp {
 		width: 450px;
 	}
 	
-	.blog .masonryWrap .col5 {
-		width: 100%;
-		margin: 0;
+	.blog .masonryWrap {
+		width: 83%;
+		float: right;
+		padding-top: 0;
 	}
 	
 	.blog .masonryWrap article.format-image:first-child .posttype {
 		width: 100%;
 		text-align: left;
+		position: absolute;
+		top: -.4em;
+		left: -4em;
+		margin-top: 0;
+	}
+	
+	.blog .masonryWrap .col5 {
+		width: 100%;
+		margin: 0;
 	}
 
 }
