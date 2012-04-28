@@ -3,7 +3,9 @@
 
 $(ASAP = function(){
 	
-	photoGrid.init();
+	if ( $('#content .format-image').length > 0 ) {
+		photoGrid.init();
+	}
 	interface.init();
 	$('#respond label').inFieldLabels();
 	
@@ -26,11 +28,12 @@ $(window).load( AfterLoad = function() {
 var photoGrid = {
 	
 	photoStreamGridSetup: function() {
-		var photoPosts 		= $('#content article.format-image'),
-			photoPostsIcons	= photoPosts.not(':first-child').find('.posttype');
 		
-		photoPosts.wrapAll('<div class="masonryWrap divider-bottom" />');
-		photoPostsIcons.hide();
+		var photoPostSiblings 	= $('#content article.format-image + article.format-image'),
+			photoPostGroup		= photoPostSiblings.last().prevAll('article.format-image').andSelf();
+			
+			photoPostGroup.wrapAll('<div class="masonryWrap clearfix divider-bottom" />');
+			
 	},
 	
 	masonryLayout: function() {
@@ -49,11 +52,7 @@ var photoGrid = {
 	},
 	
 	init: function(){
-		// fire only if there are a multiple siblings of image posts in the blog stream
-		if ( $('body.blog #content article.format-image').next('article.format-image').length > 0 ) {
-			this.photoStreamGridSetup();
-		}
-		
+		this.photoStreamGridSetup();
 		if ( $('#content .masonryWrap').length > 0 ) {
 			this.masonryLayout();
 		}
