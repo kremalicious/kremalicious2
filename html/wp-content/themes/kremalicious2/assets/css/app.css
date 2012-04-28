@@ -986,7 +986,8 @@ a.photoPost:hover figure {
 	
 }
 
-.masonryWrap article.hentry {
+.masonryWrap article.hentry,
+.blog article.format-image {
 	width: 48%;
 	float: left;
 	clear: none;
@@ -999,7 +1000,8 @@ a.photoPost:hover figure {
 	border: none;
 }
 
-	.masonryWrap article.hentry:before {
+	.masonryWrap article.hentry:before,
+	.blog article.format-image:before {
 		display: none;
 	}
 
@@ -1028,7 +1030,7 @@ a.photoPost:hover figure {
 	text-align: center;
 }
 
-.blog .masonryWrap article.format-image .col5 {
+.blog article.format-image .col5 {
 	width: 100%;
 	margin: 0;
 }
