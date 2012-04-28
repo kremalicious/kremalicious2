@@ -987,7 +987,7 @@ body.single-format-image .photoPostWrap {
 		margin-right: 2em;
 	}
 
-/* Masonry Layout for Stream & Archive */
+/* Masonry Layout for Stream, Search & Archive */
 
 .masonryWrap article.hentry {
 	width: 48%;
@@ -1012,19 +1012,22 @@ body.single-format-image .photoPostWrap {
 
 /* Stream View */
 
-.blog .masonryWrap {
+.blog .masonryWrap,
+.search .masonryWrap {
 	margin-top: 3em;
 	padding-top: 2.25em;
 }
 
-.blog .masonryWrap article.format-image:first-child .posttype {
+.blog .masonryWrap article.format-image:first-child .posttype,
+.search .masonryWrap article.format-image:first-child .posttype {
 	width: 200%;
 	float: none;
 	text-align: center;
 	margin-top: -2.25em;
 }
 
-.blog .masonryWrap article.format-image + article.format-image .posttype {
+.blog .masonryWrap article.format-image + article.format-image .posttype,
+.search .masonryWrap article.format-image + article.format-image .posttype {
 	display: none;
 }
 
@@ -1061,7 +1064,7 @@ body.single-format-image .photoPostWrap {
 
 #commentShow {
 	display: block;
-	margin: 2em 0;
+	margin-bottom: 2em;
 	text-align: left;
 	font-size: 1.625em;
 	line-height: 1;
@@ -2241,13 +2244,15 @@ pre .regexp {
 		width: 450px;
 	}
 	
-	.blog .masonryWrap {
+	.blog .masonryWrap,
+	.search .masonryWrap {
 		width: 83%;
 		float: right;
 		padding-top: 0;
 	}
 	
-	.blog .masonryWrap article.format-image:first-child .posttype {
+	.blog .masonryWrap article.format-image:first-child .posttype,
+	.search .masonryWrap article.format-image:first-child .posttype {
 		width: 100%;
 		text-align: left;
 		position: absolute;
@@ -2256,7 +2261,8 @@ pre .regexp {
 		margin-top: 0;
 	}
 	
-	.blog .masonryWrap .col5 {
+	.blog .masonryWrap .col5,
+	.search .masonryWrap .col5 {
 		width: 100%;
 		margin: 0;
 	}

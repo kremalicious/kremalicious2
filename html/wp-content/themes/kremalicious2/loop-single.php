@@ -71,7 +71,7 @@
 						<?php the_content();  ?>
 					</section>
 					
-					<footer id="meta" class="hoverbuttons divider-bottom divider-top">
+					<footer id="meta" class="hoverbuttons clearfix">
 						<div class="clearfix">
 							<p id="share">
 								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>
