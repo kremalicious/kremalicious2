@@ -26,5 +26,8 @@ Redirect 301 /first-wallpaper-chives /chives
 Redirect 301 /new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph /niepces-camera-obscura-and-the-history-of-the-first-photograph
 Redirect 301 /4-more-icons-niepces-camera-obscura-v11 /niepces-camera-obscura-and-the-history-of-the-first-photograph
 
+# Easy WordPress Login
+Redirect 301 /login /wp-login.php
+
 
 # END CUSTOM WP STUFF
