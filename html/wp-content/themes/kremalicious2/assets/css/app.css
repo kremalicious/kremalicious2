@@ -982,7 +982,7 @@ a.photoPost:hover figure {
 		margin-right: 2em;
 	}
 
-/* Masonry Layout */
+/* Masonry Layout for Stream & Archive */
 .masonryWrap {
 	
 }
@@ -1012,6 +1012,7 @@ a.photoPost:hover figure {
 
 .blog .masonryWrap {
 	margin-top: 3em;
+	padding-top: 2.15em;
 }
 
 .blog article.format-image {
@@ -1023,9 +1024,10 @@ a.photoPost:hover figure {
 }
 
 .blog .masonryWrap article.format-image:first-child .posttype {
-	//width: 200%;
+	width: 200%;
 	float: none;
 	text-align: center;
+	margin-top: -2.15em;
 }
 
 /* Photo Archives */
