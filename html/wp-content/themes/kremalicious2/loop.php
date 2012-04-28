@@ -60,6 +60,10 @@
 								<a class="more-link" href="<?php echo $linkURL ?>">Go to Article <i class="icon-external-link"></i></a>
 								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
 							</p>
+						<?php } else { ?>
+							<p>
+								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
+							</p>
 						<?php } ?>
 					</div>
 				
