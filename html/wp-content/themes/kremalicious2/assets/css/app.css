@@ -2015,10 +2015,7 @@ pre .regexp {
 }
 
 @media only screen and (min-width: 600px) {
-	body {
-		
-	}
-	
+
 	#content { padding-top: 5em; }
 	
 	.row { max-width: 33.8em; }
@@ -2095,6 +2092,16 @@ pre .regexp {
 	.single .photoPostWrap,
 	.masonryWrap {
 		width: 100%;
+		margin-left: 0;
+	}
+	
+	#goodiesDownload p {
+		width: 49%;
+		float: left;
+		margin-left: 2%;
+	}
+	
+	#goodiesDownload p:first-child {
 		margin-left: 0;
 	}
 	

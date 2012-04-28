@@ -110,9 +110,9 @@
 								
 								if ($attachments) {
 									$attachment = array_shift($attachments); ?>
-									<p class="col3"><a class="btn icon-download-alt" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
+									<p><a class="btn icon-download-alt" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
 							<?php } ?>
-							<p class="col3"><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
+							<p><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
 						</footer>
 					</div>
 					
