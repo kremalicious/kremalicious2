@@ -2258,6 +2258,10 @@ pre .regexp {
 /* WIDESCREEN */
 @media only screen and (min-width: 1400px) { 
 	
+	body {
+		font-size: 116.75%;
+	}
+	
 	.row { max-width: 52.85em; }
 	
 	#menubar #searchform #s:focus {
