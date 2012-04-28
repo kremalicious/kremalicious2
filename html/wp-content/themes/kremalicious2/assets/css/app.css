@@ -194,7 +194,8 @@ textarea::-webkit-input-placeholder {
 a[rel*="tag"],
 #topics a,
 #cancel-comment-reply-link,
-.comment-edit-link {
+.comment-edit-link,
+#post-nav-single a {
 	font-size: 1.1em;
 	text-align: center;
 	display: inline-block;
@@ -242,7 +243,8 @@ a[rel*="tag"],
 .comment-reply-link:hover,
 a[rel*="tag"]:hover,
 #topics a:hover,
-.comment-edit-link:hover {
+.comment-edit-link:hover,
+#post-nav-single a:hover {
 	background-color: rgba(255,255,255,.2);
 }
 
@@ -776,17 +778,10 @@ article.hentry {
 	font-size: .95em;
 }
 
-#post-nav-single a {
-	display: block;
-	padding-top: .5em;
-	padding-bottom: .5em;
-	color: #95a6ae;
-}
-
 #post-nav-single i {
 	position: absolute;
-	left: 0;
-	top: .5em;
+	left: .7em;
+	top: .6em;
 }
 
 #post-nav-single .alignright {
@@ -803,7 +798,7 @@ article.hentry {
 
 #post-nav-single .alignright i {
 	left: auto;
-	right: 0;
+	right: .7em;
 }
 
 /* FontAwesome Extensions for Category Buttons */
