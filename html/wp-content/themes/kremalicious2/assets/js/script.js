@@ -30,16 +30,26 @@ var photoGrid = {
 	photoStreamGridSetup: function() {
 		
 		if ( $('body.blog').length > 0 ) {
-		// a bit weird logic because we have no dividers we can throw at nextUntil()
-		// but it works
-		var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
-			
-			noPhotoPhosts.each(function() {
-				$(this).nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');		       
-			});
-			
+			// a bit weird logic because we have no dividers we can throw at nextUntil()
+			// but it works, so who would complain
+			var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
+
+		    	noPhotoPhosts.each(function() {
+		    		// only fire when has image sibling
+		    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
+		    			$(this).nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+		    		}
+		    	});
+
 			// used when there's no non-image post before image group on a page
-			$('#content article.format-image:first + article.format-image').prevAll('article.format-image').andSelf().nextAll('article.format-image').andSelf().wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+			var photoPostSibling = $('#content').find('article.format-image:first + article.format-image');
+			
+			if ( !photoPostSibling.parent('.masonryWrap').length > 0 ) {
+				photoPostSibling
+					.prevAll('article.format-image').andSelf()
+					.nextAll('article.format-image').andSelf()
+					.wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+			}
 		}
 	},
 	
@@ -58,6 +68,7 @@ var photoGrid = {
 	},
 	
 	init: function(){
+						
 		this.photoStreamGridSetup();
 		if ( $('#content .masonryWrap').length > 0 ) {
 			this.masonryLayout();
