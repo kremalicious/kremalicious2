@@ -14,6 +14,7 @@ RedirectMatch 301 ^/([0-9]+)/([0-9]+)/(.*)$ /$3
 Redirect 301 /lab http://lab.kremalicious.com
 Redirect 301 /csspaperstack /lab/csspaperstack
 Redirect 301 /download /media
+Redirect 301 /about/contact /about
 
 Redirect 301 /new-goodies-aperture-file-types-icons /aperture-file-types
 Redirect 301 /goodie-updated-aperture-file-types-v11 /aperture-file-types
@@ -22,6 +23,8 @@ Redirect 301 /new-goodie-niepces-camera-obscura-wallpaper-pack /niepces-camera-o
 Redirect 301 /new-goodie-icy-box-icons /icy-box-icons
 Redirect 301 /new-goodie-futurama-mars-university-wallpaper /futurama-mars-university-wallpaper
 Redirect 301 /first-wallpaper-chives /chives
+Redirect 301 /new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph /niepces-camera-obscura-and-the-history-of-the-first-photograph
+Redirect 301 /4-more-icons-niepces-camera-obscura-v11 /niepces-camera-obscura-and-the-history-of-the-first-photograph
 
 
 # END CUSTOM WP STUFF
