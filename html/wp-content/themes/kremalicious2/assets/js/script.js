@@ -29,11 +29,18 @@ var photoGrid = {
 	
 	photoStreamGridSetup: function() {
 		
-		var photoPostSiblings 	= $('#content article.format-image + article.format-image'),
-			photoPostGroup		= photoPostSiblings.last().prevAll('article.format-image').andSelf();
+		if ( $('body.blog').length > 0 ) {
+		// a bit weird logic because we have no dividers we can throw at nextUntil()
+		// but it works
+		var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
 			
-			photoPostGroup.wrapAll('<div class="masonryWrap clearfix divider-bottom" />');
+			noPhotoPhosts.each(function() {
+				$(this).nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');		       
+			});
 			
+			// used when there's no non-image post before image group on a page
+			$('#content article.format-image:first + article.format-image').prevAll('article.format-image').andSelf().nextAll('article.format-image').andSelf().wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+		}
 	},
 	
 	masonryLayout: function() {
@@ -42,7 +49,6 @@ var photoGrid = {
 		$container.imagesLoaded( function(){
 			$container.masonry({
 				itemSelector : 'article',
-				isResizable: true,
 				isAnimated: !Modernizr.csstransitions,
 				columnWidth : function( containerWidth ) {
 					return containerWidth / 2;

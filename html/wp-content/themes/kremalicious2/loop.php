@@ -3,7 +3,7 @@
 <section role="main" class="col4">
 	
 	<?php if ( is_category('photos') ) { ?>
-	<div class="masonryWrap">
+	<div class="masonryWrap clearfix">
 	<?php } ?>
 	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>
@@ -190,13 +190,13 @@
 	<?php if ( is_category('photos') ) { ?>
 	</div> <!--END #masonryWrap-->
 	<?php } ?>
-	
-	<?php /* Display navigation to next/previous pages when applicable */ ?>
-	<?php if ($wp_query->max_num_pages > 1) { ?>
-		<nav id="post-nav" class="pager">
-			<p class="previous alignleft"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></p>
-			<p class="next alignright"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></p>
-		</nav>
-	<?php } ?>
 
 </section>
+
+<?php /* Display navigation to next/previous pages when applicable */ ?>
+<?php if ($wp_query->max_num_pages > 1) { ?>
+	<nav id="post-nav" class="pager divider-top">
+		<p class="previous alignleft"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></p>
+		<p class="next alignright"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></p>
+	</nav>
+<?php } ?>

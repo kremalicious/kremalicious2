@@ -702,6 +702,7 @@ article.hentry {
 
 .single .hentry {
 	border: none;
+	padding-bottom: 1.5em;
 }
 
 .single .hentry header {
@@ -986,8 +987,7 @@ a.photoPost:hover figure {
 	
 }
 
-.masonryWrap article.hentry,
-.blog article.format-image {
+.masonryWrap article.hentry {
 	width: 48%;
 	float: left;
 	clear: none;
@@ -1000,8 +1000,7 @@ a.photoPost:hover figure {
 	border: none;
 }
 
-	.masonryWrap article.hentry:before,
-	.blog article.format-image:before {
+	.masonryWrap article.hentry:before {
 		display: none;
 	}
 
@@ -1019,20 +1018,14 @@ a.photoPost:hover figure {
 	
 }
 
-.blog article.format-image + article.format-image .posttype {
+.blog .masonryWrap article.format-image + article.format-image .posttype {
 	display: none;
 }
 
-.blog article.format-image:first-child .posttype {
-	width: 200%;
+.blog .masonryWrap article.format-image:first-child .posttype {
+	//width: 200%;
 	float: none;
-	margin-top: -2.15em;
 	text-align: center;
-}
-
-.blog article.format-image .col5 {
-	width: 100%;
-	margin: 0;
 }
 
 /* Photo Archives */
@@ -2276,9 +2269,12 @@ pre .regexp {
 		width: 450px;
 	}
 	
+	.blog .masonryWrap .col5 {
+		width: 100%;
+		margin: 0;
+	}
 	
-	
-	.blog article.format-image:first-child .posttype {
+	.blog .masonryWrap article.format-image:first-child .posttype {
 		width: 100%;
 		text-align: left;
 	}
