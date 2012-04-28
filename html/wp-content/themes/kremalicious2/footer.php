@@ -3,7 +3,7 @@
 	
 	<div class="container">
 		
-		<footer role="contentinfo">
+		<footer role="contentinfo" id="content-info">
 			
 			<?php if ( is_singular() OR is_archive() ) { ?>
 				<div class="row divider-top hoverbuttons">

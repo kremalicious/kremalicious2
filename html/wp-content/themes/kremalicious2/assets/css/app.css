@@ -4,10 +4,11 @@
 /* ============================================================== */
 
 html {
-	background: #e7eef4 url(../img/texture.png) left top repeat;
+	background: #e7eef4;
 }
 
 body {
+	background: #e7eef4 url(../img/texture.png) left top repeat;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -971,6 +972,15 @@ a.photoPost:hover figure {
 	width: 100%;
 }
 
+/* some filter magic for photo single view */
+body.single-format-image {
+	-webkit-filter: invert();
+}
+
+body.single-format-image .photoPostWrap {
+	-webkit-filter: invert(); /* invert the invert for the actual photo */
+}
+
 #exif {
 	font-size: .9em;
 	color: #b9c3c9;
@@ -983,9 +993,6 @@ a.photoPost:hover figure {
 	}
 
 /* Masonry Layout for Stream & Archive */
-.masonryWrap {
-	
-}
 
 .masonryWrap article.hentry {
 	width: 48%;
@@ -993,7 +1000,7 @@ a.photoPost:hover figure {
 	clear: none;
 	padding-top: 0;
 	padding-bottom: 0;
-	margin-bottom: 2%;
+	margin-bottom: .7em;
 	margin-top: 0;
 	margin-left: 1%;
 	margin-right: 1%;
@@ -1013,10 +1020,6 @@ a.photoPost:hover figure {
 .blog .masonryWrap {
 	margin-top: 3em;
 	padding-top: 2.15em;
-}
-
-.blog article.format-image {
-	
 }
 
 .blog .masonryWrap article.format-image + article.format-image .posttype {
@@ -1082,7 +1085,6 @@ a.photoPost:hover figure {
 
 #commentShow i[class^="icon-chevron"] {
 	float: right;
-	
 }
 
 #commentShow.open i[class^="icon-chevron"]:before {
@@ -1245,10 +1247,6 @@ li.comment {
 	margin: 4em 0;
 }
 
-#respond h2 {
-	
-}
-
 .comments-nav .page-numbers.next {
 	float: right;
 }
@@ -1322,7 +1320,7 @@ aside[role="complementary"] h1 a {
 
 #content-info { }
 
-#content-info p small {  }
+p#copyright {  }
 
 
 /* ============================================================== */
@@ -1419,59 +1417,6 @@ aside[role="complementary"] h1 a {
 	}
 
 
-/* The Dark Interface */
-
-body.theDarkInterface {
-	background: #191919;
-	color: #fff;
-	text-shadow: none;
-}
-
-body.theDarkInterface #menubar-wrap {
-	background: #2d2d2d;
-	background: -moz-linear-gradient(top, #2d2d2d 0%, #000000 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d2d2d), color-stop(100%,#000000));
-	background: -webkit-linear-gradient(top, #2d2d2d 0%,#000000 100%);
-	background: -o-linear-gradient(top, #2d2d2d 0%,#000000 100%);
-	background: -ms-linear-gradient(top, #2d2d2d 0%,#000000 100%);
-	background: linear-gradient(top, #2d2d2d 0%,#000000 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#000000',GradientType=0 );
-	border-bottom: 1px solid #000;
-	-webkit-box-shadow: 0 1px 8px #000;
-	-moz-box-shadow: 0 1px 8px #000;
-	box-shadow: 0 1px 8px #000;
-}
-
-body.theDarkInterface #menubar a {
-	color: #fff;
-	text-shadow: none;
-}
-
-body.theDarkInterface #content {
-	background: none;
-}
-
-body.theDarkInterface h1,
-body.theDarkInterface h2,
-body.theDarkInterface h3,
-body.theDarkInterface h4 {
-	color: #fff;
-}
-
-body.theDarkInterface a {
-	text-shadow: none;
-}
-
-body.theDarkInterface .divider-top,
-body.theDarkInterface .divider-bottom {
-	border-color: #000;
-}
-
-body.theDarkInterface .divider-top:after,
-body.theDarkInterface .divider-bottom:before {
-	border-color: #333;
-}
-
 /* ============================================================== */
 /*  WordPress Generated Classes 
     See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes */
@@ -1483,6 +1428,14 @@ body.theDarkInterface .divider-bottom:before {
 
 .wp-smiley {
 	display: inline;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	margin: 0;
+	vertical-align: baseline;
 }
 
 /*holy shit, WordPress!*/
@@ -1827,6 +1780,7 @@ pre .regexp {
 	top: 0;
 	width: 100%;
 	height: 100%;
+	cursor: pointer;
 }
 
 .bannerSlideUp {
@@ -2153,10 +2107,7 @@ pre .regexp {
 
 /*using 769px here so iPad/portrait gets different view from landscape*/
 @media only screen and (min-width: 769px) { 
-	body {
-		
-	}
-	
+
 	.row { max-width: 51.5em; }
 	
 	.col1, 
@@ -2286,9 +2237,6 @@ pre .regexp {
 		
 /* LANDSCAPE TABLET/NETBOOK/LAPTOP */
 @media only screen and (min-width: 1024px) { 
-	body {
-
-	}
 	
 	.no-touch .entry-content pre:hover {
 		margin-right: -10%;
@@ -2299,10 +2247,6 @@ pre .regexp {
 /* DESKTOP */
 @media only screen and (min-width: 1280px) { 
 
-	body {
-
-	}
-	
 	.no-touch .entry-content pre:hover {
 		margin-right: -20%;
 	}
@@ -2311,10 +2255,6 @@ pre .regexp {
 
 /* WIDESCREEN */
 @media only screen and (min-width: 1400px) { 
-	
-	body {
-		font-size: 116.75%;
-	}
 	
 	.row { max-width: 52.85em; }
 	
