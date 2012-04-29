@@ -22,6 +22,13 @@
 	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="alternate"  href="http://feeds.feedburner.com/kremalicious" type="application/rss+xml" title="RSS Feed"/>
 	
+	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+	<link rel="shortcut icon" href="/favicon.ico">
+	
   	<?php wp_head(); ?>
 
 </head>
