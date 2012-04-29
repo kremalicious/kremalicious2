@@ -1,5 +1,18 @@
 <!doctype html>
-<!--[if IE 7]>    		<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--
+		      ___           ___     
+		     /__/\         /__/|    
+		    |  |::\       |  |:|    
+		    |  |:|:\      |  |:|    
+		  __|__|:|\:\   __|  |:|    
+		 /__/::::| \:\ /__/\_|:|____
+		 \  \:\~~\__\/ \  \:\/:::::/
+		  \  \:\        \  \::/~~~~ 
+		   \  \:\        \  \:\     
+		    \  \:\        \  \:\    
+		     \__\/         \__\/ 
+-->
+
 <!--[if IE 8]>    		<html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IEMobile 7 ]> 	<html class="no-js iem7" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> 	<html class="no-js" lang="en"> <!--<![endif]-->
