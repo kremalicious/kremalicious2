@@ -1314,6 +1314,30 @@ aside[role="complementary"] h1 a {
 	font-style: italic;
 }
 
+#subscribe i {
+	-webkit-transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-o-transition: color .3s ease-in-out;
+	-ms-transition: color .3s ease-in-out;
+	transition: color .3s ease-in-out;
+}
+
+#subscribe:hover .rss i {
+	color: #e15a00;
+}
+
+#subscribe:hover .twitter i {
+	color: #019ad2;
+}
+
+#subscribe:hover .google i {
+	
+}
+
+#subscribe:hover .facebook i {
+	color: #3b5998;
+}
+
 	
 /* ============================================================== */
 /*	FOOTER */
