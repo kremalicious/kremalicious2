@@ -615,7 +615,7 @@ nav[role="navigation"] li#home {
 }
 
 #menubar #searchform #s:focus {
-	width: 320px;
+	width: 300px;
 	background: #fff;
 	background: rgba(255,255,255,.6);
 	border: 0;
@@ -1813,6 +1813,14 @@ pre .regexp {
 /*	ANIMATIONS */
 /* ============================================================== */
 
+/* Buttery Smooth(tm) */
+.bannerSlideUp,
+.bannerFallDown,
+.masonry,
+.masonry .masonry-brick,
+#menubar input#s {
+	-webkit-transform: translate3d(0,0,0); }
+	
 
 #home a {
 	width: 100%;
