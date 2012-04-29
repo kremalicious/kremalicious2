@@ -8,8 +8,7 @@
 			<?php if ( is_singular() OR is_archive() ) { ?>
 				<div class="row divider-top hoverbuttons">
 					<div class="col2">
-						<p>Blog of designer &amp; developer Matthias Kretschmann.</p>
-						
+						<p id="description"><?php bloginfo('description'); ?></p>
 					</div>
 					
 					<div class="col2">
