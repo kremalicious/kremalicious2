@@ -1277,13 +1277,17 @@ aside[role="complementary"] h1 a {
 		color: #40A296;
 	}
 
+#description  {
+	font-weight: 700;
+}
+
 #topics {
 	margin-bottom: 1.5em;
 }
 
 #tweets li,
 #tweets a {
-	color: #95a6ae;
+	color: #86949d; /*the .dimmed color*/
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
@@ -1410,7 +1414,7 @@ p#copyright {  }
 /* ============================================================== */
 
 .dimmed {
-	color: #95a6ae;
+	color: #86949d;
 }
 
 /* universal divider classes */
