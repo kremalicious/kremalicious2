@@ -5,15 +5,20 @@ body.login {
 	text-rendering: optimizeLegibility;
 }
 
+#login {
+	padding-top: 10%;
+}
+
+
 .login h1 a {
 	display: none;
 }
 
 .login h1 {
 	background: url(../img/logo.png) no-repeat center center;
-	width: 188px;
-	height: 44px;
-	margin: 0 auto;
+	width: 190px;
+	height: 31px;
+	margin: 16px auto;
 }
 
 .login #nav a,.login #backtoblog a {
@@ -27,7 +32,7 @@ body.login {
 
 .login form .input {
 	background: #fff;
-	background: rgba(255,255,255,.2);
+	background: rgba(255,255,255,.4);
 	border: 0;
 	border-bottom: 1px solid #AFC3CB;
 
@@ -49,7 +54,7 @@ body.login {
 }
 
 .login form .input:focus {
-	background: rgba(255,255,255,.4);
+	background: rgba(255,255,255,.8);
 	border-bottom-color: #78868c;
 	outline: none;
 }
@@ -117,7 +122,6 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	border-bottom: 1px dashed #afc3cb;
 	border-top: 1px dashed #afc3cb;
 	padding: 2em 0;
-	width: 280px;
 	margin: 1em auto;
 }
 
@@ -146,6 +150,10 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	padding-bottom: .5em;
 }
 
+#login_error, .login .message {
+	margin-left: 0;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
 	body.login {
 	background-image: url(../img/texture@2x.png);
@@ -158,9 +166,9 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 .login h1 {
 	background-image: url(../img/logo@2x.png);
 
-	-webkit-background-size: 188px 41px;
-	-moz-background-size: 188px 41px;
-	background-size: 188px 41px;
+	-webkit-background-size: 190px 31px;
+	-moz-background-size: 190px 31px;
+	background-size: 190px 31px;
 }
 
 }
