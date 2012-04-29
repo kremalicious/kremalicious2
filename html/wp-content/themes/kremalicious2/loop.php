@@ -48,7 +48,7 @@
 					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-bookmark" rel="tooltip" href="/links" title="Show all posts in 'links'"></a>
+						<a class="icon-bookmark" rel="tooltip" href="/links" title="Show all link posts"></a>
 					</div>
 					<div class="col5">
 						<header>
@@ -89,7 +89,7 @@
 					<?php } else { ?>
 					
 						<div class="col1 posttype">
-							<a class="icon-picture" rel="tooltip" href="/photos" title="Show all posts in 'photos'"></a>
+							<a class="icon-picture" rel="tooltip" href="/photos" title="Show all photo posts"></a>
 						</div>
 						<div class="col5">
 							<a class="photoPost" href="<?php the_permalink(); ?>">
@@ -146,7 +146,7 @@
 				elseif ( in_category('goodies') ) { ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all Goodies"></a>
+						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all goodies"></a>
 					</div>
 					<div class="col5">
 						<header>

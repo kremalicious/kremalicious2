@@ -100,14 +100,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col6">
-					<aside>
-						<nav id="post-nav-single" class="clearfix divider-top">
-							<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
-							<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
-						</nav>
-					</aside>
-				</div>
+				<aside class="col6">
+					<nav id="post-nav-single">
+						<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
+						<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
+					</nav>
+				</aside>
 			</div>
 			
 	</article>
