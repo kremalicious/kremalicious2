@@ -24,8 +24,9 @@
 			<?php } ?>
 			
 			<div class="row">
-				<div class="col6 divider-top">
-					<p id="copyright" class="dimmed"><small>Site design/photos: © 2007-<?php echo date('Y'); ?> Matthias Kretschmann. Code: <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. Article images/goodies: <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY NC SA</a>.</small></p>
+				<div id="siteMeta" class="col6 divider-top dimmed">
+					<p id="copyright">© 2007-<?php echo date('Y'); ?> <a href="http://matthiaskretschmann.com" rel="me">Matthias Kretschmann</a>.</p>
+					<p>Code snippets: <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. Article images/goodies: <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY NC SA</a>. Hosted by <a href="http://www.mediatemple.net#a_aid=4f37f8fe3e47e" title="Media Temple">(mt)</a></p>
 				</div>
 			</div>
 		</footer>

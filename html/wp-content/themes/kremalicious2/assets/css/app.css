@@ -1488,7 +1488,13 @@ footer[role="contentinfo"]:hover .facebook i,
 
 #content-info { }
 
-p#copyright {  }
+#siteMeta {
+	font-size: .8em;
+}
+
+#siteMeta p {
+	margin-bottom: 0;
+}
 
 
 /* ============================================================== */
