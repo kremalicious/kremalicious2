@@ -656,6 +656,11 @@ nav[role="navigation"] li#home {
 	margin-bottom: .5em;
 }
 
+nav[role="navigation"] li.current_page_item a {
+	background: -webkit-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
+	box-shadow: inset 0 -1px 0 rgba(255,255,255,.5), inset 0 1px 4px rgba(0,0,0,.2), inset 0 1px 10px rgba(0,0,0,.1);
+}
+
 
 /* GLOBAL SEARCH */
 .assistive-text {
@@ -695,7 +700,7 @@ nav[role="navigation"] li#home {
 }
 
 #menubar #searchform #s:focus {
-	width: 280px;
+	width: 260px;
 	background: #fff;
 	background: rgba(255,255,255,.6);
 	border: 0;
