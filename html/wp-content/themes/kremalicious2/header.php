@@ -19,7 +19,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+	<title><?php wp_title('&brvbar;', true, 'right'); bloginfo('name'); ?></title>
 	
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
