@@ -15,6 +15,12 @@ Redirect 301 /lab http://lab.kremalicious.com
 Redirect 301 /csspaperstack /lab/csspaperstack
 Redirect 301 /download /media
 Redirect 301 /about/contact /about
+Redirect 301 /portfolio http://matthiaskretschmann.com
+Redirect 301 /blog /
+Redirect 301 /topics/goodies /goodies
+Redirect 301 /topics/design-articles /design
+Redirect 301 /topics/howto-and-tutorial /
+Redirect 301 /topics/news-and-links /links
 
 Redirect 301 /new-goodies-aperture-file-types-icons /aperture-file-types
 Redirect 301 /goodie-updated-aperture-file-types-v11 /aperture-file-types
