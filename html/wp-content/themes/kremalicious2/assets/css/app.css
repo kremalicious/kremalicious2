@@ -1051,13 +1051,13 @@ a.photoPost:hover figure {
 }
 
 /* some filter magic for photo single view */
-body.single-format-image {
+/*body.single-format-image {
 	-webkit-filter: invert();
 }
 
 body.single-format-image .photoPostWrap {
-	-webkit-filter: invert(); /* invert the invert for the actual photo */
-}
+	-webkit-filter: invert(); /* invert the invert for the actual photo *!/
+}*/
 
 #exif {
 	font-size: .9em;
@@ -2493,6 +2493,11 @@ pre .regexp {
 	aside[role="complementary"] .facebook {
 		margin-left: 0;
 	}
+	
+	aside[role="complementary"] #tweetsWrap {
+		padding-top: 3.4em;
+	}
+	
 	
 	aside[role="complementary"] .btn.btn-tag {
 		
