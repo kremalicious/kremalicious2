@@ -1,5 +1,5 @@
 
-<aside role="complementary" class="col2">
+<aside role="complementary" class="col2 hoverbuttons">
 
 	<?php if ( is_archive() ) { ?>
 		
@@ -33,7 +33,7 @@
 			<?php echo category_description(); ?>
 		</div>
 		
-		<footer id="topics" class="hoverbuttons divider-top divider-bottom">
+		<footer id="topics" class="divider-top divider-bottom">
 		
 			<?php 
 			
@@ -68,10 +68,14 @@
 			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
 		
 		<p id="description" class="dimmed divider-top"><?php bloginfo('description'); ?></p>
-		<p id="subscribe" class="hoverbuttons divider-bottom">
-			<a class="btn btn-tag rss" href="http://feeds.feedburner.com/kremalicious"> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremalicious"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/u/0/b/100015950464424503954/100015950464424503954/posts">Google+</a> <a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i> Facebook</a>
+		<p id="subscribe">
+			<a class="btn btn-tag rss" href="http://feeds.feedburner.com/kremalicious"><i class="icon-rss-sign"></i>RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremalicious"><i class="icon-twitter-sign"></i>Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/u/0/b/100015950464424503954/100015950464424503954/posts"><i class="icon-google-sign"></i>Google+</a> <!--<a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i>Facebook</a>-->
 		</p>
-		<div id="tweets" class="dimmed"></div>
+		<div id="tweetsWrap" class="divider-top">
+			<div id="tweets" class="dimmed"></div>
+			<a class="btn socialite twitter follow" href="https://twitter.com/kremalicious" data-show-count="false"><i class="icon-twitter-button"></i> Follow @kremalicious</a>
+		</div>
+		
 
 	<?php } ?>
 </aside>

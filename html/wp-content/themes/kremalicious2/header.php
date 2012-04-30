@@ -58,8 +58,8 @@
 				<nav role="navigation" class="clearfix alignleft">
 					<ul>
 						<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
-						<li><a href="/goodies"> <i class="icon-gift"></i> Goodies</a></li>
-						<li><a href="/about"> <i class="icon-user"></i> About</a></li>
+						<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"> <i class="icon-gift"></i> Goodies</a></li>
+						<!--<li><a href="/about"> <i class="icon-user"></i> About</a></li>-->
 					</ul>
 				</nav>
 				<?php get_search_form(); ?>

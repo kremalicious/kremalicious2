@@ -136,14 +136,13 @@ var interface = {
 var siteEffects = {
 	
 	socialiteButtons: function() {
-		$('#meta').one('mouseenter', function() {
+		$('#meta, #tweetsWrap').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},
 	
 	searchFancySchmanzy: function() {
 		
-		// topbar search field fancy schmanzy
 		var hiddenMenus 	  = $('#menubar nav[role="navigation"]'),
 			globalSearch 	  = $('#menubar #s'),
 			searchPlaceholder = globalSearch.attr('placeholder');
