@@ -12,7 +12,7 @@
 		
 		<div id="devWarning" class="divider-bottom">
 			<p class="alert alert-block">
-				<i class="icon-warning-sign icon-large"></i>This site is currently undergoing heavy restructuring &amp; maintenance. Please excuse if some parts of it behave somehow funky for you. Oh, and welcome to <a href="/welcome-to-kremalicious2">the new site</a>!
+				<i class="icon-warning-sign icon-large"></i>This site is currently undergoing heavy restructuring &amp; maintenance. Please excuse if some parts of it behave somehow funky for you. Oh, and welcome to the new site!
 			</p>
 		</div>
 		
