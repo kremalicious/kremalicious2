@@ -104,10 +104,10 @@ var interface = {
 	},
 	
 	commentShowup: function(){
-		var $commentStuff 	= $('#commentlistWrap, #respond'),
-			$commentTrigger = $('#comments #commentShow');
+		var $commentStuff 		= $('#commentlistWrap, #respond'),
+			$commentStuffHidden = $commentStuff.detach();
+			$commentTrigger 	= $('#comments #commentShow');
 		
-		$commentStuff.hide();
 		$commentTrigger.addClass('btn');
 		
 		$commentTrigger.click (function() {
@@ -120,8 +120,15 @@ var interface = {
 		}
 		
 		function showTheComments() {
-			$commentStuff.fadeToggle().css({'overflow':'visible'});
+			
+			if ( $commentStuffHidden ) {
+				$commentStuffHidden.appendTo('#comments');
+				$commentStuffHidden = null;
+			} else {
+				$commentStuffHidden = $commentStuff.detach();
+			}
 			$commentTrigger.toggleClass('open');
+			
 		}
 
 	},
