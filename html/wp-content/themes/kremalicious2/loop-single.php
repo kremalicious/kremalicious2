@@ -68,7 +68,14 @@
 		
 				<div class="col4">
 					<section class="entry-content">
-						<?php the_content();  ?>
+						<?php if (has_post_format( 'link' )) {
+								the_content(); ?>
+								<p>
+									<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
+								</p>
+							<?php } else {
+								the_content();
+							} ?>
 					</section>
 					
 					<footer id="meta" class="hoverbuttons clearfix">
