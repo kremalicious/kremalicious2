@@ -108,7 +108,7 @@
 			</div>
 			<div class="row">
 				<aside class="col6">
-					<nav id="post-nav-single">
+					<nav id="post-nav-single" class="clearfix">
 						<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
 						<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
 					</nav>

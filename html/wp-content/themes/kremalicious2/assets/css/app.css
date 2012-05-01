@@ -672,15 +672,15 @@ nav[role="navigation"] li.current_page_item a {
 #menubar #searchform {
 	position: absolute;
 	right: 0;
-	bottom: 0;
-	padding: .4em .5em;
+	bottom: .4em;
+	padding: 0;
 }
 
 	#menubar #searchform:before {
 		position: absolute;
 		display: block;
-		left: .6em;
-		top: .4em;
+		left: .3em;
+		top: .2em;
 		font-size: 20px;
 	}
 
@@ -692,11 +692,10 @@ nav[role="navigation"] li.current_page_item a {
 	border-bottom-color: transparent;
 	position: relative;
 	z-index: 2;
-	padding: .1em 0 .1em 24px;
-
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.3);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.3);
-	box-shadow: 0 1px 0 rgba(255,255,255,.3);
+	padding: .3em 0 .3em 24px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 #menubar #searchform #s:focus {
@@ -705,10 +704,6 @@ nav[role="navigation"] li.current_page_item a {
 	background: rgba(255,255,255,.6);
 	border: 0;
 	border-bottom: 1px solid #AFC3CB;
-
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.5);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.5);
-	box-shadow: 0 1px 0 rgba(255,255,255,.5);
 	padding-right: .5em;
 }
 
@@ -748,6 +743,45 @@ nav[role="navigation"] li.current_page_item a {
 
 #main { }
 
+.pager {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.pager p {
+	width: 48%;
+	margin: 0;
+	position: relative;
+	font-size: .95em;
+}
+
+.pager i {
+	position: absolute;
+	left: .7em;
+	top: .5em;
+}
+
+.pager .alignright,
+.pager .alignright a {
+	text-align: right;
+}
+
+.pager .alignleft,
+.pager .alignleft a {
+	text-align: left;
+}
+
+.pager .alignleft a {
+	padding-left: 1.5em;
+}
+.pager .alignright a {
+	padding-right: 1.5em;
+}
+
+.pager .alignright i {
+	left: auto;
+	right: .7em;
+}
 
 /* ============================================================== */
 /*	POSTS */
@@ -762,7 +796,7 @@ article.hentry {
 	.search-results .hentry:first-child {
 		padding-top: 0;
 	}
-	
+
 .home .hentry p:last-child {
 	margin-bottom: 0;
 }
@@ -797,11 +831,6 @@ article.hentry {
 	padding-top: 0;
 	padding-bottom: 0;
 	border: none;
-}
-
-.pager {
-	margin: 2em 0;
-	clear: both;
 }
 
 .hentry footer {
@@ -842,46 +871,6 @@ article.hentry {
 	text-align: right;
 }
 
-#post-nav-single {
-	overflow: hidden;
-	padding-top: 2px;
-}
-
-#post-nav-single p {
-	width: 48%;
-	margin: 0;
-	position: relative;
-	font-size: .95em;
-}
-
-#post-nav-single i {
-	position: absolute;
-	left: .7em;
-	top: .6em;
-}
-
-#post-nav-single .alignright,
-#post-nav-single .alignright a {
-	text-align: right;
-}
-
-#post-nav-single .alignleft,
-#post-nav-single .alignleft a {
-	text-align: left;
-}
-
-#post-nav-single .alignleft a {
-	padding-left: 1.5em;
-}
-
-#post-nav-single .alignright a {
-	padding-right: 1.5em;
-}
-
-#post-nav-single .alignright i {
-	left: auto;
-	right: .7em;
-}
 
 /* FontAwesome Extensions for Category Buttons */
 
@@ -2333,10 +2322,6 @@ pre .regexp {
 		margin-bottom: 0;
 	}
 	
-	#menubar #searchform {
-		bottom: .2em;
-	}
-	
 	#menubar #searchform #s:focus {
 		width: 280px;
 	}
@@ -2385,11 +2370,9 @@ pre .regexp {
 		width: 17em;
 	}
 	
-	.hentry header {
-		text-align: left;
-	}
-	
-	.posttype {
+	.hentry header,
+	.posttype,
+	.byline {
 		text-align: left;
 	}
 	
@@ -2447,8 +2430,6 @@ pre .regexp {
 	.single .featureTitle h2 {
 		font-size: 2.5em;
 	}
-		
-	.byline { text-align: left; }
 	
 	/* Comments */
 	.hentry .children .comment {
