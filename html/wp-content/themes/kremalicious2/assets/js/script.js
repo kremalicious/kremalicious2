@@ -13,11 +13,6 @@ $(ASAP = function(){
 
 $(window).load( AfterLoad = function() {
 	
-	if (Modernizr.touch) {
-		MBP.autogrow();
-		MBP.enableActive();
-	}
-	
 	siteEffects.init();
 	codeSnippets.init();
 	
@@ -167,10 +162,10 @@ var siteEffects = {
 	
 	latestTweet: function() {
 		$('#tweets').tweet({
-	        username: "kremalicious",
+	        username: 'kremalicious',
 	        count: 1,
 	        template: '{text}{time}',
-	        loading_text: "loading tweets..."
+	        loading_text: 'loading tweets...'
 	    });
 	},
 	
