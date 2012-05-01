@@ -943,6 +943,12 @@ h2 a:hover i.icon-external-link {
 	margin-top: -1.7em;
 }
 
+.format-link header h2 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin-bottom: .6em;
+}
+
 /*	PHOTO POST */
 /* ============================================================== */
 
@@ -2493,6 +2499,10 @@ pre .regexp {
 		margin: 0;
 	}
 	
+	.format-link .posttype {
+		line-height: .5em;
+	}
+	
 	aside[role="complementary"] {
 		padding-right: 3%;
 	}
@@ -2503,11 +2513,6 @@ pre .regexp {
 	
 	aside[role="complementary"] #tweetsWrap {
 		padding-top: 3.4em;
-	}
-	
-	
-	aside[role="complementary"] .btn.btn-tag {
-		
 	}
 
 }
