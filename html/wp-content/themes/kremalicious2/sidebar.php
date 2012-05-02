@@ -69,11 +69,11 @@
 		
 		<p id="description" class="dimmed divider-top"><?php bloginfo('description'); ?></p>
 		<p id="subscribe">
-			<a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss-sign"></i>RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter-sign"></i>Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/u/0/b/100015950464424503954/100015950464424503954/posts"><i class="icon-google-sign"></i>Google+</a> <!--<a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i>Facebook</a>-->
+			<a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss-sign"></i> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/u/0/b/100015950464424503954/100015950464424503954/posts"><i class="icon-google-plus-sign"></i> Google+</a> <!--<a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i>Facebook</a>-->
 		</p>
 		<div id="tweetsWrap" class="divider-top">
 			<div id="tweets" class="dimmed"></div>
-			<a class="btn socialite twitter follow" href="https://twitter.com/kremalicious" data-show-count="false"><i class="icon-twitter-button"></i> Follow @kremalicious</a>
+			<a class="btn socialite twitter follow" href="https://twitter.com/kremalicious" data-show-count="false"><i class="icon-twitter-alt"></i> Follow @kremalicious</a>
 		</div>
 		
 
