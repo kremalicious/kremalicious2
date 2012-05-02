@@ -176,8 +176,10 @@ var siteEffects = {
 		$('#tweets').tweet({
 	        username: 'kremalicious',
 	        count: 1,
+	        fetch: 10,
 	        template: '{text}{time}',
-	        loading_text: 'loading tweets...'
+	        loading_text: 'loading tweets...',
+	        filter: function(t){ return ! /^@\w+/.test(t.tweet_raw_text); }
 	    });
 	},
 	
