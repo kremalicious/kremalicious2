@@ -26,6 +26,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+	position: relative;
 }
 
 /* DEFAULT FONT SETTINGS */
@@ -2234,11 +2235,29 @@ pre .regexp {
 }
 
 @media only screen and (min-width: 600px) {
-
-	#content { padding-top: 5em; }
 	
 	.row { max-width: 33.8em; }
 	
+	body {
+		padding-bottom: 50px;
+	}
+	
+	body:after {
+		content: "";
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 50px;
+		background: -webkit-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+		background: -moz-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+		background: -o-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+		background: -ms-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+		background: linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+	}
+	
+	#content { padding-top: 5em; }
+
 	article.hentry { padding: 3.5em 0; }
 	
 	.hentry .children .comment {
