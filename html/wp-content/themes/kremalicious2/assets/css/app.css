@@ -1387,7 +1387,8 @@ aside[role="complementary"] h1 a {
 	transition: all .3s ease-in-out;
 }
 
-#tweets li:hover a {
+#tweets li:hover a,
+.touch #tweets li a {
 	color: #40A296;
 }
 
