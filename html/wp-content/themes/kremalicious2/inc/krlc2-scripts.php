@@ -11,7 +11,7 @@ function krlc2_scripts_styles() {
 	// Deregister default jquery, manual call in header.php
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', '', '', '', false);
+		wp_register_script('jquery', '', '', '', true);
 	}
 	
 	// comment reply script
@@ -20,12 +20,12 @@ function krlc2_scripts_styles() {
 	}
 	
 	// Scripts
-	wp_register_script('krlc2_plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, false);
-	wp_register_script('krlc2_tweet', get_template_directory_uri() . '/assets/js/libs/tweet/tweet/jquery.tweet.js', false, null, false);
-	wp_register_script('krlc2_script', get_template_directory_uri() . '/assets/js/script.js', false, null, false);
-	wp_enqueue_script('krlc2_plugins');
-	wp_enqueue_script('krlc2_tweet');
-	wp_enqueue_script('krlc2_script');
+	wp_register_script('krlc2_plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, true);
+	wp_register_script('krlc2_tweet', get_template_directory_uri() . '/assets/js/libs/tweet/tweet/jquery.tweet.js', false, null, true);
+	wp_register_script('krlc2_script', get_template_directory_uri() . '/assets/js/script.js', false, null, true);
+	wp_enqueue_script('krlc2_plugins','','','', true);
+	wp_enqueue_script('krlc2_tweet','','','', true);
+	wp_enqueue_script('krlc2_script','','','', true);
 	
 }
 add_action('wp_enqueue_scripts', 'krlc2_scripts_styles', 100);
