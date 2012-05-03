@@ -45,7 +45,9 @@ function krlc2_robots() {
 	echo "Disallow: /trackback\n";
 	echo "Disallow: /feed\n";
 	echo "Disallow: /comments\n";
-	echo "Disallow: /category/*/*\n";
+	echo "Disallow: /category\n";
+	echo "Disallow: /tag\n";
+	echo "Disallow: /type\n";
 	echo "Disallow: */trackback\n";
 	echo "Disallow: */feed\n";
 	echo "Disallow: */comments\n";
