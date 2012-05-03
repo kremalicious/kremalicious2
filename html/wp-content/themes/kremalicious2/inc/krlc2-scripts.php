@@ -11,7 +11,7 @@ function krlc2_scripts_styles() {
 	// Deregister default jquery, manual call in header.php
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', '', '', '', true);
+		wp_register_script('jquery', '', '', '', false);
 	}
 	
 	// comment reply script

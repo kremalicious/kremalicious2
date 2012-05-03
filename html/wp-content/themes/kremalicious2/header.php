@@ -40,6 +40,9 @@
 	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
 	<link rel="shortcut icon" href="/favicon.ico">
 	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+	
   	<?php wp_head(); ?>
 
 </head>
