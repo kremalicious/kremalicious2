@@ -73,7 +73,7 @@
 		</p>
 		<div id="tweetsWrap" class="divider-top">
 			<div id="tweets" class="dimmed"></div>
-			<a class="btn socialite twitter follow" href="https://twitter.com/kremalicious" data-show-count="false"><i class="icon-twitter-alt"></i> Follow @kremalicious</a>
+			<a class="btn socialite twitter follow" href="https://twitter.com/kremalicious"><i class="icon-twitter-alt"></i> Follow @kremalicious</a>
 		</div>
 		
 
