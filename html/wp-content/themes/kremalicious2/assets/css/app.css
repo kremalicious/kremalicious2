@@ -1570,8 +1570,13 @@ footer[role="contentinfo"]:hover .facebook i,
 
 /* Socialite.js */
 
-/* replicate twitter button, but dim everything */
-.btn.socialite.twitter {
+#share .socialised {
+	float: left;
+	width: 48%;
+}
+
+/* replicate social buttons, but dim everything */
+.btn.socialite {
 	font: normal normal normal 11px/18px 'Helvetica Neue',Arial,sans-serif;
 	position: relative;
 	background-color: rgba(255,255,255,.4);
@@ -1598,10 +1603,25 @@ footer[role="contentinfo"]:hover .facebook i,
 	box-shadow: none;
 }
 
-.btn.socialite.twitter i {
+.btn.socialite i {
 	font-size: 1.4em;
 	margin-right: .1em;
 	vertical-align: text-bottom;
+}
+
+.btn.socialite.googleplus {
+	padding-left: 1.4em;
+	overflow: hidden;
+	margin-left: 1em;
+}
+
+.btn.socialite.googleplus i {
+	position: absolute;
+	font-size: 2.2em;
+	left: -2px;
+	bottom: -5px;
+	width: 12px;
+	overflow: hidden;
 }
 
 /* ============================================================== */

@@ -82,6 +82,7 @@
 						<div class="clearfix">
 							<p id="share">
 								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
+								<a class="btn socialite googleplus" href="https://plus.google.comshare?url=<?php the_permalink(); ?>" data-size="medium"><i class="icon-google-plus"></i> +1</a>
 							</p>
 							<p id="pubdate" class="dimmed">
 								<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
