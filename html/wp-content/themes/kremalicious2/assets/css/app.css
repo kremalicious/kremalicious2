@@ -1885,7 +1885,7 @@ aside[role="complementary"] br,
   opacity: 1;
 }
 
-.close {
+.alert .close {
   float: right;
   font-size: 24px;
   font-weight: bold;
@@ -1896,7 +1896,7 @@ aside[role="complementary"] br,
   filter: alpha(opacity=20);
 }
 
-.close:hover {
+.alert .close:hover {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
