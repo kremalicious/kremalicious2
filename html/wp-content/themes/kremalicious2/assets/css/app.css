@@ -1698,6 +1698,19 @@ aside[role="complementary"] br,
 	display: none;
 }
 
+/* ============================================================== */
+/*  Old Article Fixes */
+/* ============================================================== */
+
+/* text-shadow article */
+/* fluid examples*/
+#post-39 .entry-content > div,
+#post-39 .entry-content img {
+	max-width: 100%;
+	height: auto !important;
+	margin-left: 0 !important;
+}
+
 
 /* ============================================================== */
 /*  ALERTS */
