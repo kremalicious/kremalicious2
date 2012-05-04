@@ -4,29 +4,34 @@ Description:        Used to style the TinyMCE editor
 */
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  color: #333333;
-  background-color: #ffffff;
+	background: #e7eef4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
+
+body,
+p {
+	font: 16px/24px Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
+	color: #2e4f5c;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+}
+
+p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
 a {
-  color: #0088cc;
   text-decoration: none;
+  color: #3a9085;
 }
 a:hover {
-  color: #005580;
-  text-decoration: underline;
-}
-p {
-  margin: 0 0 9px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  color: #40a296;
+  text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
 }
 p small {
-  font-size: 11px;
-  color: #999999;
+  font-size: .9em;
 }
 .lead {
   margin-bottom: 18px;
@@ -34,64 +39,47 @@ p small {
   font-weight: 200;
   line-height: 27px;
 }
+
+@font-face {
+	font-family: 'QlassikBoldRegular';
+	src: url('../fonts/QlassikBold_TB-webfont.eot');
+	src: url('../fonts/QlassikBold_TB-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/QlassikBold_TB-webfont.woff') format('woff'), url('../fonts/QlassikBold_TB-webfont.ttf') format('truetype'), url('../fonts/QlassikBold_TB-webfont.svg#QlassikBoldRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  font-weight: bold;
-  color: #333333;
-  text-rendering: optimizelegibility;
-}
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small {
+  font-family: 'QlassikBoldRegular', sans-serif;
   font-weight: normal;
-  color: #999999;
+  font-style: normal;
+  color: #2e4f5c;
 }
+
 h1 {
-  font-size: 30px;
-  line-height: 36px;
-}
-h1 small {
-  font-size: 18px;
+  margin: 0;
+  font-size: 2.25em;
+  line-height: 1.1111em;
+  margin-bottom: 0.6667em;
+  margin-top: 0;
 }
 h2 {
-  font-size: 24px;
-  line-height: 36px;
+	font-size: 2em; /* 32px */
+	line-height: 1.5em; /* 48px */
+	margin: 0.75em 0;
 }
-h2 small {
-  font-size: 18px;
-}
+
 h3 {
-  line-height: 27px;
-  font-size: 18px;
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 1em;
+	margin-bottom: 1em;
 }
-h3 small {
-  font-size: 14px;
-}
-h4, h5, h6 {
-  line-height: 18px;
-}
-h4 {
-  font-size: 14px;
-}
-h4 small {
-  font-size: 12px;
-}
-h5 {
-  font-size: 12px;
-}
-h6 {
-  font-size: 11px;
-  color: #999999;
-  text-transform: uppercase;
-}
+
 .page-header {
   padding-bottom: 17px;
   margin: 18px 0;
@@ -100,10 +88,12 @@ h6 {
 .page-header h1 {
   line-height: 1;
 }
+
 ul, ol {
   padding: 0;
   margin: 0 0 9px 25px;
 }
+
 ul ul,
 ul ol,
 ol ol,
@@ -156,35 +146,18 @@ abbr {
   border-bottom: 1px dotted #ddd;
   cursor: help;
 }
+
 blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 18px;
-  border-left: 5px solid #eeeeee;
+	font-style: italic;
+	padding-left: 1em;
+	border-left: 2px solid #a9b8bd;
+	color: rgba(46, 79, 92, .7);
 }
-blockquote p {
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 22.5px;
+
+blockquote > p {
+	padding: 0;
 }
-blockquote small {
-  display: block;
-  line-height: 18px;
-  color: #999999;
-}
-blockquote small:before {
-  content: '\2014 \00A0';
-}
-blockquote.pull-right {
-  float: right;
-  padding-left: 0;
-  padding-right: 15px;
-  border-left: 0;
-  border-right: 5px solid #eeeeee;
-}
-blockquote.pull-right p, blockquote.pull-right small {
-  text-align: right;
-}
+
 q:before,
 q:after,
 blockquote:before,
@@ -197,47 +170,55 @@ address {
   line-height: 18px;
   font-style: normal;
 }
-small {
-  font-size: 100%;
-}
+
 cite {
   font-style: normal;
 }
-code, pre {
-  padding: 0 3px 2px;
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 12px;
-  color: #333333;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+
+pre, code {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	color: #333;
+	background: #f8f8f8;
+	background: rgba(255,255,255,.6);
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 18px;
 }
-code {
-  padding: 3px 4px;
-  color: #d14;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
-}
+
 pre {
-  display: block;
-  padding: 8.5px;
-  margin: 0 0 9px;
-  font-size: 12px;
-  line-height: 18px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
+	padding: .5em;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	border: 1px solid #c9d7e4;
+	word-wrap: break-word;
+	margin-bottom: 1.5em;
+	
+	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+
+	display: block;
+	width: auto;
+	overflow: auto;
+	white-space: pre;
+	word-wrap: normal;
 }
-pre.prettyprint {
-  margin-bottom: 18px;
+
+code {
+    border: 1px solid #eaeaea;
+    font-size: 12px;
 }
+
 pre code {
-  padding: 0;
-  background-color: transparent;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: none;
 }
