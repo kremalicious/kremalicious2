@@ -1415,6 +1415,11 @@ aside[role="complementary"] h1 a {
 	margin-bottom: 1em;
 }
 
+	.touch #subscribe {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
 aside[role="complementary"] i,
 footer[role="contentinfo"] i {
 	-webkit-transition: color .3s ease-in-out;
