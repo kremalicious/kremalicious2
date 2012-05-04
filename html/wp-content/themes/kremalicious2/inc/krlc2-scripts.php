@@ -5,7 +5,6 @@ function krlc2_scripts_styles() {
 	// Styles
 	wp_enqueue_style('krlc2_h5bp', get_template_directory_uri() . '/assets/css/h5bp.css', false, null);
 	wp_enqueue_style('krlc2_grid', get_template_directory_uri() . '/assets/css/grid.css', false, null);
-	wp_enqueue_style('krlc2_fontawesome_more', get_template_directory_uri() . '/assets/fonts/fontawesome-more/css/font-awesome.css', false, null);
 	wp_enqueue_style('krlc2_app', get_template_directory_uri() . '/assets/css/app.css', false, null);
 	
 	// Deregister default jquery, manual call in header.php
