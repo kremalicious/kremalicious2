@@ -1880,12 +1880,13 @@ pre {
 	word-wrap: break-word;
 	margin-bottom: 1.5em;
 	
+	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
 	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
 
 	display: block;
 	width: auto;
 	overflow: auto;
-	max-height: 600px;
 	white-space: pre;
 	word-wrap: normal;
 	
