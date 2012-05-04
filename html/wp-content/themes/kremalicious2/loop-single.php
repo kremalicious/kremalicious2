@@ -81,7 +81,7 @@
 					<footer id="meta" class="hoverbuttons clearfix">
 						<div class="clearfix">
 							<p id="share">
-								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-button"></i>Tweet</a>
+								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
 							</p>
 							<p id="pubdate" class="dimmed">
 								<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
