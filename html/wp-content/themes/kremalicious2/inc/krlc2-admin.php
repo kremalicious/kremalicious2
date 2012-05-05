@@ -92,9 +92,9 @@ add_filter( 'mce_buttons_1', 'krlc2_mce_buttons_1' );
  * {@link http://tinymce.moxiecode.com/examples/example_24.php }
  */
 function krlc2_tiny_mce_before_init( $settings ) {
-  $settings['theme_advanced_buttons1'] = 'formatselect,|,link,unlink,|,bold,italic,|,bullist,numlist,|,styleselect,|,undo,redo,|,spellchecker,';
+  $settings['theme_advanced_buttons1'] = 'formatselect,|,bold,italic,|,bullist,numlist,|,blockquote,|,link,unlink,|,styleselect,|,undo,redo,|,spellchecker,wp_fullscreen';
   $settings['theme_advanced_buttons2'] = '';
-  $settings['theme_advanced_blockformats'] = 'p,blockquote,h1,h2,h3,h4,code,pre,';
+  $settings['theme_advanced_blockformats'] = 'p,h1,h2,h3,h4,code,pre,';
 
   $style_formats = array(
       array( 'title' => 'Button Link',         	'selector' => 'a',  'classes' => 'btn', 'remove' => 'empty' ),
