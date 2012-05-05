@@ -538,9 +538,6 @@ table tbody tr:hover th {
   height: auto;
   line-height: inherit;
   vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
 }
 li[class^="icon-"],
 li[class*=" icon-"] {
