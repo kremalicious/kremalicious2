@@ -695,6 +695,9 @@ li[class*=" icon-"].icon-large:before {
 .icon-github-alt:before {
   content: "\f0a3";
 }
+.icon-info-sign:before {
+  content: "\f05a";
+}
 
 /* ============================================================== */
 /* GRID OVERWRITES */
