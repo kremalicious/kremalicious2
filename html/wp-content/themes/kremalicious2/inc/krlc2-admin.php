@@ -73,21 +73,68 @@ function krlc2_attention_widget_Setup() {
 add_action('wp_dashboard_setup', 'krlc2_attention_widget_Init');
 
 
+/** 
+ * STYLES DROPDOWN FOR EDITOR
+ * ===========================================
+ * adapted from 
+ * http://theme.it/an-alternative-to-the-shortcode-madness-part-1/
+ *
+ * Filter TinyMCE Buttons
+ */
+function krlc2_mce_buttons_1( $buttons ) {
+  array_unshift( $buttons, 'styleselect' );
+  return $buttons;
+}
+add_filter( 'mce_buttons_1', 'krlc2_mce_buttons_1' );
+
 /**
- * allow more tags in TinyMCE including <iframe> and <script>
+ * Add Style Options
+ * {@link http://tinymce.moxiecode.com/examples/example_24.php }
+ */
+function krlc2_tiny_mce_before_init( $settings ) {
+  $settings['theme_advanced_buttons1'] = 'formatselect,|,link,unlink,|,bold,italic,|,bullist,numlist,|,styleselect,|,undo,redo,|,spellchecker,';
+  $settings['theme_advanced_buttons2'] = '';
+  $settings['theme_advanced_blockformats'] = 'p,blockquote,h1,h2,h3,h4,code,pre,';
+
+  $style_formats = array(
+      array( 'title' => 'Button Link',         	'selector' => 'a',  'classes' => 'btn', 'remove' => 'empty' ),
+      array( 'title' => 'Primary Button Link',	'selector' => 'a',  'classes' => 'btn btn-primary', 'remove' => 'empty' ),
+      //array( 'title' => 'Download Button', 	'inline' => 'a',  'classes' => 'btn btn-primary' ),
+  );
+
+  $settings['style_formats'] = json_encode( $style_formats );
+  
+  $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
+  if (isset($settings['extended_valid_elements'])) {
+    $settings['extended_valid_elements'] .= ',' . $ext;
+  } else {
+    $settings['extended_valid_elements'] = $ext;
+  }
+  return $settings;
+}
+add_filter( 'tiny_mce_before_init', 'krlc2_tiny_mce_before_init' );
+
+
+/**
+ * Simplify options for `page` and `post` screens
  * ===========================================
  */
-function roots_change_mce_options($options) {
-  $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
-  if (isset($initArray['extended_valid_elements'])) {
-    $options['extended_valid_elements'] .= ',' . $ext;
-  } else {
-    $options['extended_valid_elements'] = $ext;
-  }
-  return $options;
+function krlc2_post_type_support() {
+	// for posts
+	remove_post_type_support( 'post', 'author' );
+	remove_post_type_support( 'post', 'custom-fields' );
+	remove_post_type_support( 'post', 'excerpt' );
+	remove_post_type_support( 'post', 'trackbacks');
+	
+	// for pages
+	remove_post_type_support( 'page', 'author' );
+	remove_post_type_support( 'page', 'comments' );
+	remove_post_type_support( 'page', 'custom-fields' );
+	remove_post_type_support( 'page', 'discussion' );
+	remove_post_type_support( 'page', 'excerpt' );
+	remove_post_type_support( 'page', 'trackbacks');
 }
-add_filter('tiny_mce_before_init', 'roots_change_mce_options');
-
+add_action('admin_init', 'krlc2_post_type_support');
 
 /**
  * set the post revisions to 3

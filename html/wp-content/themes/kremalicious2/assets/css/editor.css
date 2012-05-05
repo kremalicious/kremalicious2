@@ -10,8 +10,7 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
-body,
-p {
+body {
 	font: 16px/24px Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
 	color: #2e4f5c;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
@@ -22,7 +21,8 @@ p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
 	padding: 0;
 }
 
-a {
+a,
+a.btn {
   text-decoration: none;
   color: #3a9085;
 }
@@ -33,11 +33,15 @@ a:hover {
 p small {
   font-size: .9em;
 }
-.lead {
-  margin-bottom: 18px;
-  font-size: 20px;
-  font-weight: 200;
-  line-height: 27px;
+img {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	border-top: 1px solid rgba(255,255,255,.5);
+	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+	box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 
 @font-face {

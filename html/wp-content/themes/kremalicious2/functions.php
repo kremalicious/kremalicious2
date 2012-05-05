@@ -13,7 +13,7 @@ function kremalicious2_setup() {
   // tell the TinyMCE editor to use editor-style.css
   // if you have issues with getting the editor to show your changes then
   // use this instead: add_editor_style('editor-style.css?' . time());
-  add_editor_style('assets/css/editor.css');
+  add_editor_style('assets/css/editor.css?' . time());
 
   // http://codex.wordpress.org/Post_Thumbnails
   add_theme_support('post-thumbnails');

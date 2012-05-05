@@ -368,7 +368,7 @@ a[rel*="tag"]:hover,
 
 .btn span,
 .inline-download span {
-	font-size: .7em;
+	font-size: .9em;
 	color: rgba(19, 56, 50, .6);
 	margin-left: .3em;
 }
