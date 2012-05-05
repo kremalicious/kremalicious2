@@ -259,6 +259,58 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	padding: 15px 10px;
 }
 
+/* Attention Please! Dashboard Widget */
+
+#krlc2_attention_widget textarea,
+#krlc2_attention_widget .alert {
+	font: 14px/20px 'PT Serif',Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
+}
+
+#krlc2_attention_widget p {
+	margin-bottom: 1.5em;
+}
+
+#krlc2_attention_widget .alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 18px;
+	color: #8a6d3d;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+	background-color: #fcf8e3;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	border: 1px solid #d7cab9;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.attentionMessageStatus {
+	padding: .3em .6em;
+	border-radius: 5px;
+	box-shadow: 0 1px 0 #fff;
+	border: 1px solid #ccc;
+	background: #eee;
+	color: #666;
+}
+
+.attentionMessageStatus.active {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #b5c6a8;
+}
+
+.attentionMessageStatus.inactive {
+	
+	
+}
+
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
 	
 	html,.wp-dialog {

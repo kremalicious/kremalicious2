@@ -7,18 +7,25 @@
 	<?php 
 	
 	/* ===================================================== */
-	/* The Dev Warning */
+	/* Attention Please! Dashboard Widget Output */
 	/* ===================================================== */
 	
-	if ( is_front_page() && !is_paged() ) { ?>
-		
-		<div id="devWarning" class="divider-bottom">
-			<p class="alert alert-block">
-				<i class="icon-warning-sign icon-large"></i>This site is currently undergoing heavy restructuring &amp; maintenance. Please excuse if some parts of it behave somehow funky for you. Oh, and welcome to the new site!
-			</p>
-		</div>
-		
-	<?php } ?>
+	$widget_options = krlc2_attention_widget_Options();
+	
+	if ( $widget_options['attentionMessageShown'] == 1 ) {
+	
+		if ( is_front_page() && !is_paged() ) { ?>
+			
+			<div id="devWarning" class="divider-bottom">
+				<p class="alert alert-block">
+					<i class="icon-warning-sign icon-large"></i>
+					<?php echo $widget_options['attentionMesssage']; ?>
+				</p>
+			</div>
+			
+		<?php } 
+	
+	} ?>
 	
 	<?php if ( is_category('photos') ) { ?>
 	<div class="masonryWrap clearfix">
