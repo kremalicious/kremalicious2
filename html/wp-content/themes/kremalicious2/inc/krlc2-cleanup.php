@@ -89,3 +89,12 @@ function no_self_ping( &$links ) {
             unset($links[$l]);
 }
 add_action( 'pre_ping', 'no_self_ping' );
+
+//clean up the default WordPress style tags
+function roots_clean_style_tag($input) {
+  preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
+  //only display media if it's print
+  $media = $matches[3][0] === 'print' ? ' media="print"' : '';
+  return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
+}
+add_filter('style_loader_tag', 'roots_clean_style_tag');
