@@ -67,7 +67,7 @@ function krlc2_attention_widget_Setup() {
 	 	
  	echo '<p>
  	 		<label for="attentionMesssage">Le Message</label><br />
- 		    <textarea id="attentionMesssage" name="attentionMesssage" class="regular-text" cols="60" rows="4" >'. wp_filter_post_kses( $options['attentionMesssage'] ) .'</textarea><p>';
+ 		    <textarea id="attentionMesssage" name="attentionMesssage" class="regular-text" rows="4" >'. wp_filter_post_kses( $options['attentionMesssage'] ) .'</textarea><p>';
 
 }
 add_action('wp_dashboard_setup', 'krlc2_attention_widget_Init');

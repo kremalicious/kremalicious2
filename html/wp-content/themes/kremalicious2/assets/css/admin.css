@@ -270,6 +270,10 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	margin-bottom: 1.5em;
 }
 
+#krlc2_attention_widget textarea {
+	width: 100%;
+}
+
 #krlc2_attention_widget .alert {
 	padding: 8px 35px 8px 14px;
 	margin-bottom: 18px;
@@ -303,11 +307,6 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	color: #468847;
 	background-color: #dff0d8;
 	border-color: #b5c6a8;
-}
-
-.attentionMessageStatus.inactive {
-	
-	
 }
 
 #poststuff .postarea {
