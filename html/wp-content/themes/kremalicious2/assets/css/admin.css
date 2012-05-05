@@ -313,6 +313,10 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	box-shadow: none;
 }
 
+.cf-nav ul li a.current {
+	border-bottom: 1px solid #F3F7FA;
+}
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
 	

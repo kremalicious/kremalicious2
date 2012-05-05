@@ -19,7 +19,7 @@
 			<div id="devWarning" class="divider-bottom">
 				<p class="alert alert-block">
 					<i class="icon-warning-sign icon-large"></i>
-					<?php echo $widget_options['attentionMesssage']; ?>
+					<?php echo wp_kses_data( $widget_options["attentionMesssage"] ); ?>
 				</p>
 			</div>
 			

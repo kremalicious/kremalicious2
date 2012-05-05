@@ -30,7 +30,7 @@ function krlc2_attention_widget() {
     	echo '<a href="/wp-admin/index.php?edit=krlc2_attention_widget"><strong class="attentionMessageStatus inactive">Inactive</strong></a>';
     }
     echo '</p>';
-	echo '<p class="alert alert-block">'. $widget_options["attentionMesssage"] .'</p>';
+	echo '<p class="alert alert-block">'. wp_kses_data( $widget_options["attentionMesssage"] ) .'</p>';
 }
  
 /**
@@ -67,7 +67,7 @@ function krlc2_attention_widget_Setup() {
 	 	
  	echo '<p>
  	 		<label for="attentionMesssage">Le Message</label><br />
- 		    <textarea id="attentionMesssage" name="attentionMesssage" class="regular-text" rows="4" >'. wp_filter_post_kses( $options['attentionMesssage'] ) .'</textarea><p>';
+ 		    <textarea id="attentionMesssage" name="attentionMesssage" class="regular-text" rows="4" >'. wp_kses_data( $options['attentionMesssage'] ) .'</textarea><p>';
 
 }
 add_action('wp_dashboard_setup', 'krlc2_attention_widget_Init');
