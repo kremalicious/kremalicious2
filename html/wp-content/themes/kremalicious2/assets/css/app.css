@@ -689,6 +689,12 @@ li[class*=" icon-"].icon-large:before {
 .icon-warning-sign:before {
   content: "\f071";
 }
+.icon-github-sign:before {
+  content: "\f092";
+}
+.icon-github-alt:before {
+  content: "\f0a3";
+}
 
 /* ============================================================== */
 /* GRID OVERWRITES */
