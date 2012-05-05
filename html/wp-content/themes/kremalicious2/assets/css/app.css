@@ -265,7 +265,7 @@ a[rel*="tag"],
 #cancel-comment-reply-link,
 .comment-edit-link,
 #post-nav-single a {
-	font-size: 1.1em;
+	font-size: 1em;
 	text-align: center;
 	display: inline-block;
 	padding: .5em 1em;
