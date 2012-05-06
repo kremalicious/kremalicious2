@@ -40,8 +40,9 @@ html,.wp-dialog {
 }
 
 body,#wpbody,.form-table .pre {
-	color: #2e4f5c;
+	color: #496776;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+	font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 @font-face {
@@ -263,7 +264,10 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 #krlc2_attention_widget textarea,
 #krlc2_attention_widget .alert {
-	font: 14px/20px 'PT Serif',Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
+	font: 14px/20px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+	font-style: normal;
+	font-weight: 400;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 }
 
 #krlc2_attention_widget p {
@@ -315,6 +319,11 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 .cf-nav ul li a.current {
 	border-bottom: 1px solid #F3F7FA;
+}
+
+.post-state-format {
+	color: transparent;
+	text-shadow: none;
 }
 
 
