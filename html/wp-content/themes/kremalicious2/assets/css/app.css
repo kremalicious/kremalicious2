@@ -133,8 +133,8 @@ blockquote > p {
 	color: rgba(46, 79, 92, .7);
 }
 
-blockquote > p {
-	padding-left: 1em;
+blockquote {
+	padding-left: 1.5em;
 	border-left: 2px solid #a9b8bd;
 }
 
