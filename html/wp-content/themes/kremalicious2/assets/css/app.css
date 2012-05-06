@@ -1865,7 +1865,8 @@ footer[role="contentinfo"]:hover .facebook i:before,
 /* UNIVERSAL STUFF */
 /* ============================================================== */
 
-.dimmed {
+.dimmed,
+.dimmed p {
 	color: #86949d;
 }
 
