@@ -27,25 +27,27 @@
 	
 	<meta http-equiv="cleartype" content="on">
 	
+	<script type="text/javascript" src="http://use.typekit.com/msu4qap.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/modernizr-2.5.3.min.js"></script>
 
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
-	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>
-	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
-	
-	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
-	<link rel="shortcut icon" href="/favicon.ico">
-	
-	<link rel="image_src" href="/kremalicious512.png" />
-	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 	
   	<?php wp_head(); ?>
+  	
+  	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>
+  	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
+  	
+  	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
+  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png">
+  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+  	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+  	<link rel="shortcut icon" href="/favicon.ico">
+  	
+  	<link rel="image_src" href="/kremalicious512.png" />
 
 </head>
 

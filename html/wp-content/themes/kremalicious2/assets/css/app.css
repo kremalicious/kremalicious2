@@ -30,9 +30,11 @@ body {
 
 /* DEFAULT FONT SETTINGS */
 /* ============================================================== */
-body,button,input,select,textarea {
-	font: 16px/24px 'PT Serif',Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
+body,input,select,textarea {
+	font: 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
 	color: #2e4f5c;
+	font-style: normal;
+	font-weight: 400;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 }
 
@@ -52,7 +54,6 @@ p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
 }
 
 h1,h2,h3,h4,h5,h6,
-nav[role="navigation"] a,
 .btn,
 nav a,
 .inline-download,
@@ -64,7 +65,7 @@ a[rel*="tag"],
 #cancel-comment-reply-link, 
 .comment-edit-link {
 	font-family: 'QlassikBoldRegular', sans-serif;
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 }
 
@@ -103,6 +104,12 @@ p,ul,blockquote,pre,td,th,label {
 
 strong {
 	font-weight: 700;
+	font-style: normal;
+}
+
+em {
+	font-weight: 400;
+	font-style: italic;
 }
 
 /* QUOTES */
@@ -919,6 +926,7 @@ nav[role="navigation"] li.current_page_item a {
 		left: .3em;
 		top: .2em;
 		font-size: 20px;
+		color: #2e4f5c;
 	}
 
 #menubar #searchform input#s {
