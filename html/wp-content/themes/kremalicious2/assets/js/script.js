@@ -20,15 +20,12 @@ $(ASAP = function(){
 	}
 	interface.init();
 	
-	
 });
 
 $(window).load( AfterLoad = function() {
 	
 	siteEffects.init();
 	codeSnippets.init();
-	
-	$('#content [rel="tooltip"]').tooltip();
 
 });
 
@@ -145,6 +142,7 @@ var interface = {
 		this.bannerHomeLink();
 		$('#respond label').inFieldLabels();
 		$('#topicmenu .dropdown-toggle').dropdown();
+		$('#content [rel="tooltip"]').tooltip();
 	}
 		
 }
