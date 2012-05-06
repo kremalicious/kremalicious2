@@ -19,8 +19,7 @@ $(ASAP = function(){
 		photoGrid.init();
 	}
 	interface.init();
-	$('#respond label').inFieldLabels();
-	$('#topicmenu .dropdown-toggle').dropdown();
+	
 	
 });
 
@@ -144,6 +143,8 @@ var interface = {
 	init: function(){
 		this.commentShowup();
 		this.bannerHomeLink();
+		$('#respond label').inFieldLabels();
+		$('#topicmenu .dropdown-toggle').dropdown();
 	}
 		
 }

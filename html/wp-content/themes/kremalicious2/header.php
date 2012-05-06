@@ -89,15 +89,14 @@
 						<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
 						<li class="dropdown" id="topicmenu">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#topicmenu">
-								Topics
-								<b class="caret"></b>
+								<i class="icon-align-justify"></i><b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"> <i class="icon-gift"></i> goodies</a></li>
-								<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>><a href="/photos"> <i class="icon-picture"></i> photos</a></li>
-								<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"> <i class="icon-user"></i> personal</a></li>
-								<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"> <i class="icon-leaf"></i> design</a></li>
-								<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"> <i class="icon-camera-retro"></i> photography</a></li>
+								<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"><i class="icon-gift"></i> goodies</a></li>
+								<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>><a href="/photos"><i class="icon-picture"></i> photos</a></li>
+								<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"><i class="icon-user"></i> personal</a></li>
+								<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"><i class="icon-leaf"></i> design</a></li>
+								<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
 								<li <?php if ( is_category('links') ) echo 'class="current_page_item"';  ?>><a href="/links"> <i class="icon-bookmark"></i> links</a></li>
 							</ul>
 						</li>						
