@@ -126,15 +126,16 @@ em {
 
 /* QUOTES */
 /* ============================================================== */
-blockquote {
+blockquote,
+blockquote > p {
 	font-style: italic;
-	padding-left: 1em;
-	border-left: 2px solid #a9b8bd;
+	padding: 0;
 	color: rgba(46, 79, 92, .7);
 }
 
 blockquote > p {
-	padding: 0;
+	padding-left: 1em;
+	border-left: 2px solid #a9b8bd;
 }
 
 /* LINKS */
