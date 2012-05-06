@@ -30,12 +30,24 @@ body {
 
 /* DEFAULT FONT SETTINGS */
 /* ============================================================== */
-body,input,select,textarea {
+
+body,
+p,
+input,select,textarea {
 	font: 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
 	color: #2e4f5c;
 	font-style: normal;
 	font-weight: 400;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* typekit loading events */
+.wf-loading body,
+.wf-inactive body,
+.wf-loading p,
+.wf-inactive p {
+	font-family: Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+	word-spacing: .1em;
 }
 
 p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
