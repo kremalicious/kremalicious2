@@ -20,6 +20,7 @@ $(ASAP = function(){
 	}
 	interface.init();
 	$('#respond label').inFieldLabels();
+	$('#topicmenu .dropdown-toggle').dropdown();
 	
 });
 
