@@ -967,30 +967,12 @@ nav[role="navigation"] a.dropdown-toggle {
 }
 
 .dropdown-menu {
+	width: 280%;
 	font-size: .9em;
-	position: absolute;
-	top: 100%;
-	left: 0;
 	z-index: 1000;
 	display: none;
 	float: left;
-	min-width: 160px;
-	padding: 4px 0;
-	margin: 1px 0 0;
 	list-style: none;
-	
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
-	
-	box-shadow: 0 1px 4px #b7c1c4, inset 0 1px 0 #d2dadc;
-	border: 1px solid #9eaab2;
-	
-	-webkit-border-radius: 5px;
-	 -moz-border-radius: 5px;
-	      border-radius: 5px;
-	
-	-webkit-background-clip: padding-box;
-	 -moz-background-clip: padding;
-	      background-clip: padding-box;
 }
 
 nav[role="navigation"] .dropdown-menu li {
@@ -1000,10 +982,12 @@ nav[role="navigation"] .dropdown-menu li {
 }
 
 nav[role="navigation"] .dropdown-menu li a {
-	clear: both;
+	float: left;
+	width: 48%;
 	white-space: nowrap;
 	text-align: left;
 	padding: .5em 1em;
+	
 }
 
 .dropdown-menu li > a:hover,
@@ -1031,7 +1015,7 @@ nav[role="navigation"] .dropdown-menu li a {
 #menubar #searchform {
 	position: absolute;
 	right: 0;
-	bottom: .4em;
+	top: 3.5em;
 	padding: 0;
 }
 
@@ -2692,9 +2676,47 @@ pre .regexp {
 		margin-bottom: 0;
 	}
 	
-	.dropdown-menu li {
+	.dropdown-menu {
+		
+		width: 150%;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding: 4px 0;
+		margin: 1px 0 0;
+		z-index: 5;
+		background: #b7c1c4;
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
+		-webkit-box-shadow: 0 1px 4px #b7c1c4, inset 0 1px 0 #d2dadc;
+		-moz-box-shadow: 0 1px 4px #b7c1c4, inset 0 1px 0 #d2dadc;
+		box-shadow: 0 1px 4px #b7c1c4, inset 0 1px 0 #d2dadc;
+
+		border: 1px solid #9eaab2;
+		
+		-webkit-border-radius: 5px;
+		 -moz-border-radius: 5px;
+		      border-radius: 5px;
+		
+		-webkit-background-clip: padding-box;
+		 -moz-background-clip: padding;
+		      background-clip: padding-box;
+	}
+	
+	nav[role="navigation"] .dropdown-menu li {
 		border: none !important;
 		box-shadow: none !important;
+	}
+	
+	nav[role="navigation"] .dropdown-menu li a {
+		float: none;
+		clear: both;
+		display: block;
+		width: 100%;
+	}
+	
+	#menubar #searchform {
+		top: auto;
+		bottom: .4em;
 	}
 	
 	#menubar #searchform #s:focus {

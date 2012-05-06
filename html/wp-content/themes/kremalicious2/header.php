@@ -101,7 +101,7 @@
 								<li <?php if ( is_category('links') ) echo 'class="current_page_item"';  ?>><a href="/links"> <i class="icon-bookmark"></i> links</a></li>
 							</ul>
 						</li>						
-						<li><a href="/about"> <i class="icon-user"></i> About</a></li>
+						<!--<li><a href="/about"> <i class="icon-user"></i> About</a></li>-->
 					</ul>
 				</nav>
 				<?php get_search_form(); ?>
