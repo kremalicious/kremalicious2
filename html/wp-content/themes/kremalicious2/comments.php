@@ -121,6 +121,14 @@
       <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'roots'), wp_login_url(get_permalink())); ?></p>
     <?php } else { ?>
       <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+        <p>
+        	<small class="dimmed">Be nice, don't spam. You can just use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>. Code snippets should be wrapped in <code>&lt;code&gt;</code> tags. Everything in between gets automatically encoded to HTML entities, wrapped in pre tags and syntax highlighted.</small>
+        </p>
+        <p>
+        	<label for="comment"><?php _e('Comment', 'roots'); ?></label>
+        	<textarea name="comment" id="comment" rows="4" tabindex="4"></textarea>
+        </p>
+        
         <?php if (is_user_logged_in()) { ?>
           <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'roots'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'roots'); ?>"><?php _e('Log out &raquo;', 'roots'); ?></a></p>
         <?php } else { ?>
@@ -137,13 +145,7 @@
           	<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3">
           </p>
         <?php } ?>
-        <p>
-        	<small class="dimmed">Be nice, don't spam. You can just use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>. Code snippets should be wrapped in <code>&lt;code&gt;</code> tags. Everything in between gets automatically encoded to HTML entities, wrapped in pre tags and syntax highlighted.</small>
-        </p>
-        <p>
-        	<label for="comment"><?php _e('Comment', 'roots'); ?></label>
-        	<textarea name="comment" id="comment" tabindex="4"></textarea>
-        </p>
+        
         <p>
         	<input name="submit" class="btn btn-primary" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment', 'roots'); ?>">
         </p>

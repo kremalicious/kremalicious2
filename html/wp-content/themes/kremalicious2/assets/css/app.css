@@ -1388,12 +1388,16 @@ body.single-format-image .photoPostWrap {
 
 #comments, #respond, #submit { clear: both; display: block; }
 
-#commentShow {
-	display: block;
-	margin-bottom: 2em;
+#comments h2, 
+#respond h2 {
 	text-align: left;
 	font-size: 1.625em;
 	line-height: 1;
+}
+
+#commentShow {
+	display: block;
+	margin-bottom: 2em;
 }
 
 .js #commentShow {
