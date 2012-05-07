@@ -126,7 +126,7 @@ var interface = {
 		function showTheComments() {
 			
 			if ( $commentStuffHidden ) {
-				$commentStuffHidden.appendTo('#comments');
+				$commentStuffHidden.appendTo('#comments').find('label').inFieldLabels();
 				$commentStuffHidden = null;
 			} else {
 				$commentStuffHidden = $commentStuff.detach();
