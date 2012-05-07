@@ -33,35 +33,12 @@ body {
 
 body,
 input,select,textarea {
-	font: normal 16px/24px Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+	font: normal 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
 	/*color: #2e4f5c;
 	color: rgba(46, 79, 92, .75);*/
 	color: #627b85;
 	font-weight: 400;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
-}
-
-/* typekit loading events */
-.wf-active body {
-	font-family: 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
-}
-
-.js #content h1,
-.js #content h2,
-.js #content p,
-.js #content li {
-	visibility: hidden;
-}
-
-.wf-active #content h1,
-.wf-inactive #content h1,
-.wf-active #content h2,
-.wf-inactive #content h2,
-.wf-active #content p,
-.wf-inactive #content p,
-.wf-active #content li,
-.wf-inactive #content li {
-	visibility: visible;
 }
 
 /* TYPOGRAPHY */
