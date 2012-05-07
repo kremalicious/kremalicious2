@@ -948,13 +948,13 @@ nav[role="navigation"] li.open a.dropdown-toggle {
 
 .dropdown {
   position: relative;
-  width: 19%;
+  width: 20%;
 }
 
 nav[role="navigation"] li a.dropdown-toggle,
 nav[role="navigation"] li.open a.dropdown-toggle {
   color: #657276;
-  padding: .7em .8em .6em 1em;
+  padding: .7em .4em .6em .4em;
   display: inline-block;
 }
 
@@ -2702,6 +2702,11 @@ pre .regexp {
 	
 	.dropdown {
 		width: auto;
+	}
+	
+	nav[role="navigation"] li a.dropdown-toggle,
+	nav[role="navigation"] li.open a.dropdown-toggle {
+	  padding: .7em .8em .6em 1em;
 	}
 	.dropdown-menu {
 		position: absolute;
