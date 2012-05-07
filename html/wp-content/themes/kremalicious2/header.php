@@ -29,6 +29,8 @@
 	
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/modernizr-2.5.3.min.js"></script>
 	
+	<?php wp_head(); ?>
+	
 	<script>
 		TypekitConfig = {
 			kitId: 'msu4qap',
@@ -55,8 +57,6 @@
 			s.parentNode.insertBefore(tk, s);
 		})();
 	</script>
-	
-  	<?php wp_head(); ?>
   	
   	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>
   	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
