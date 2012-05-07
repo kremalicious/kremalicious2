@@ -33,7 +33,7 @@ body {
 
 body,
 input,select,textarea {
-	font: normal 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+	font: normal 16px/24px Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
 	/*color: #2e4f5c;
 	color: rgba(46, 79, 92, .75);*/
 	color: #627b85;
@@ -42,14 +42,25 @@ input,select,textarea {
 }
 
 /* typekit loading events */
+.wf-active body {
+	font-family: 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+}
 
-.js #content .row,
-.wf-loading #content .row {
+.js #content h1,
+.js #content h2,
+.js #content p,
+.js #content li {
 	visibility: hidden;
 }
 
-.wf-active #content .row,
-.wf-inactive #content .row {
+.wf-active #content h1,
+.wf-inactive #content h1,
+.wf-active #content h2,
+.wf-inactive #content h2,
+.wf-active #content p,
+.wf-inactive #content p,
+.wf-active #content li,
+.wf-inactive #content li {
 	visibility: visible;
 }
 
@@ -2913,28 +2924,6 @@ pre .regexp {
 	.no-touch .entry-content pre:hover {
 		margin-right: -10%;
 	}
-	
-	/* typekit loading events */
-	.js #content .row,
-	.wf-loading #content .row {
-		visibility: visible;
-		opacity: 0;
-		-webkit-transition: opacity .15s ease-in-out 0s; /* 150ms should be long enough to combat FOUT */
-		-moz-transition: opacity .15s ease-in-out 0s;
-		-o-transition: opacity .15s ease-in-out 0s;
-		-ms-transition: opacity .15s ease-in-out 0s;
-		transition: opacity .15s ease-in-out 0s;
-	}
-	
-	/*.wf-loading,
-	.wf-inactive { }*/
-	
-	.wf-active #content .row,
-	.wf-inactive #content .row {
-		opacity: 1;
-		-webkit-font-smoothing: subpixel-antialiased; /* in case opacity animation overwrites this */
-		font-smoothing: subpixel-antialiased;
-	}
 
 }
 
@@ -2943,6 +2932,29 @@ pre .regexp {
 
 	.no-touch .entry-content pre:hover {
 		margin-right: -20%;
+	}
+	
+	/* typekit loading events */
+	.js #content h1,
+	.js #content h2,
+	.js #content p,
+	.js #content li {
+		visibility: visible;
+	}
+	.js #content .row,
+	.wf-loading #content .row {
+		opacity: 0;
+		-webkit-transition: opacity .15s ease-in-out 0s; /* 150ms should be long enough to combat FOUT */
+		-moz-transition: opacity .15s ease-in-out 0s;
+		-o-transition: opacity .15s ease-in-out 0s;
+		-ms-transition: opacity .15s ease-in-out 0s;
+		transition: opacity .15s ease-in-out 0s;
+	}
+	.wf-active #content .row,
+	.wf-inactive #content .row {
+		opacity: 1;
+		-webkit-font-smoothing: subpixel-antialiased; /* in case opacity animation overwrites this */
+		font-smoothing: subpixel-antialiased;
 	}
 	
 }
