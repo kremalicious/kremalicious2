@@ -23,9 +23,9 @@ html {
 }
 
 body {
-	-webkit-font-smoothing: subpixel-antialiased; /* reset, just to be safe */
-	font-smoothing: subpixel-antialiased;
-	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	/*text-rendering: optimizeLegibility;*/
 }
 
 /* DEFAULT FONT SETTINGS */
@@ -34,9 +34,8 @@ body {
 body,
 input,select,textarea {
 	font: normal 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
-	/*color: #2e4f5c;
-	color: rgba(46, 79, 92, .75);*/
-	color: #627b85;
+	/*color: #2e4f5c;*/
+	color: rgba(46, 79, 92, .9);
 	font-weight: 400;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
@@ -2914,29 +2913,6 @@ pre .regexp {
 
 	.no-touch .entry-content pre:hover {
 		margin-right: -20%;
-	}
-	
-	/* typekit loading events */
-	.js #content h1,
-	.js #content h2,
-	.js #content p,
-	.js #content li {
-		visibility: visible;
-	}
-	.js #content .row,
-	.wf-loading #content .row {
-		opacity: 0;
-		-webkit-transition: opacity .15s ease-in-out 0s; /* 150ms should be long enough to combat FOUT */
-		-moz-transition: opacity .15s ease-in-out 0s;
-		-o-transition: opacity .15s ease-in-out 0s;
-		-ms-transition: opacity .15s ease-in-out 0s;
-		transition: opacity .15s ease-in-out 0s;
-	}
-	.wf-active #content .row,
-	.wf-inactive #content .row {
-		opacity: 1;
-		-webkit-font-smoothing: subpixel-antialiased; /* in case opacity animation overwrites this */
-		font-smoothing: subpixel-antialiased;
 	}
 	
 }
