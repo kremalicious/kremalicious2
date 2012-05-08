@@ -39,8 +39,8 @@ function krlc2_robots() {
 	echo "Disallow: /tag/\n";
 	echo "Disallow: /type/\n";
 	echo "Disallow: /search/\n";
-	echo "Disallow: /200*/\n";
-	echo "Disallow: /201*/\n";
+	echo "Disallow: /page/\n";
+	echo "Disallow: /20*/\n";
 	echo "Disallow: /comments\n";
 	echo "Disallow: */comments\n";
 	echo "Disallow: */comment-page-*\n";
