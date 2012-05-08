@@ -21,6 +21,14 @@
 	
 	<title><?php wp_title('&brvbar;', true, 'right'); bloginfo('name'); ?></title>
 	
+	<?php if (  (is_home()) || (is_front_page())  ) { ?>
+	<meta name="description" content="<?php bloginfo('description'); ?>">
+	<?php } elseif (is_single()) { ?>
+	<meta name="description" content="<?php the_excerpt();?>">
+	<?php } elseif (is_archive()) { ?>
+	<meta name="description" content="<?php echo strip_tags(category_description()); ?>">
+	<?php } ?>
+	
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
