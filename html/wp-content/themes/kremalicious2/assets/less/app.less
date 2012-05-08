@@ -117,12 +117,12 @@ blockquote,
 blockquote > p {
 	font-style: italic;
 	padding: 0;
-	color: @textColorDimmed;
+	color: @textColorLight;
 }
 
 blockquote {
 	padding-left: 1.5em;
-	border-left: 2px solid #a9b8bd;
+	border-left: 2px solid @textColorDimmed;
 }
 
 /* LINKS */
@@ -144,7 +144,7 @@ h1 a:visited:hover,
 h2 a:visited:hover,
 h3 a:visited:hover {
 	color: @linkColorHover;
-	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
+	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px fade(@linkColorHover, 50%);
 }
 
 a:active {
@@ -167,7 +167,7 @@ h3 a:visited {
 .entry-content ul,
 .entry-content ol {
 	list-style: none;
-	padding-left: 3em;
+	padding-left: 2em;
 }
 
 .entry-content li {
@@ -178,14 +178,13 @@ h3 a:visited {
 .entry-content ul li:before,
 .entry-content ol li:before {
 	position: absolute;
-	left: -3em;
+	left: -2em;
 	top: 0;
 }
 
 .entry-content ul li:before {
 	content: "\f069";
-	color: #a9b7bd;
-	color: rgba(46, 79, 92, .4);
+	color: @textColorDimmed;
 	text-decoration: inherit;
 	display: inline-block;
 	font-size: .8em;
@@ -204,8 +203,7 @@ h3 a:visited {
 	content: counter(ol-counter);
 	counter-increment: ol-counter;
 	font-style: italic;
-	background: #a9b7bd;
-	background: rgba(46, 79, 92, .4);
+	background: @textColorDimmed;
 	-webkit-border-radius: 1.2em;
 	-moz-border-radius: 1.2em;
 	border-radius: 1.2em;
@@ -562,8 +560,7 @@ a[rel^="category "]:before {
   text-decoration: inherit;
   
   margin-right: .5em;
-  color: #a9b7bd;
-  color: rgba(46, 79, 92, .4);
+  color: @textColorDimmed;
   -webkit-transition: color .3s ease-in-out;
   -moz-transition: color .3s ease-in-out;
   -o-transition: color .3s ease-in-out;
@@ -572,6 +569,11 @@ a[rel^="category "]:before {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
+	#menubar [class^="icon-"]:before,
+	#menubar [class*=" icon-"]:before {
+		color: darken(@textColorDimmed,15%)
+	}
+	
 a [class^="icon-"],
 a [class*=" icon-"],
 a[rel^="category "] {
@@ -1702,7 +1704,7 @@ aside[role="complementary"] h1 a {
 
 #tweets li,
 #tweets a {
-	color: @textColorDimmed;
+	color: @textColorLight;
 	-webkit-transition: color .3s ease-in-out;
 	-moz-transition: color .3s ease-in-out;
 	-o-transition: color .3s ease-in-out;
@@ -1741,7 +1743,7 @@ aside[role="complementary"] h1 a {
 }
 
 #tweets .tweet_time a {
-	color: lighten(@textColorDimmed, 15%);
+	color: @textColorDimmed;
 }
 
 #subscribe {
@@ -1866,8 +1868,9 @@ footer[role="contentinfo"]:hover .facebook i:before,
 /* ============================================================== */
 
 .dimmed,
-.dimmed p {
-	color: #86949d;
+.dimmed p
+.dimmed li {
+	color: @textColorLight;
 }
 
 /* universal divider classes */
