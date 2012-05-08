@@ -56,6 +56,7 @@
 			
 			<header role="banner">
 				<h1><a id="logo" class="ir" href="/">kremalicious</a></h1>
+				<p class="hide"><?php bloginfo('description'); ?></p>
 			</header>
 			<div class="col6">
 				<nav role="navigation" class="clearfix alignleft">
