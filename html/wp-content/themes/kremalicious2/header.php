@@ -31,6 +31,8 @@
 	<script src="//use.typekit.com/msu4qap.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/kremalicious2.min.css">
+	
 	<?php wp_head(); ?>
   	
   	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>

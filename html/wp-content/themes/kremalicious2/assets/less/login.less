@@ -13,9 +13,11 @@
 
 */
 
+@import 'variables.less';
+@import 'mixins.less';
 
 body.login {
-	background: #e7eef4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
+	.bodyTexture;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -39,7 +41,7 @@ body.login {
 
 .login #nav a,.login #backtoblog a {
 	text-decoration: none;
-	color: #3a9085 !important;
+	color: @linkColor !important;
 }
 
 #nav {
@@ -91,7 +93,7 @@ input.button-primary,button.button-primary,a.button-primary,.login .button-prima
 	transition: all 0.2s ease-in-out;
 	position: relative;
 	font-size: 1.1em;
-	background-color: #3a9085;
+	background-color: @linkColor;
 	color: #133832;
 	border: 1px solid #3c9e91;
 	border-bottom-color: #246059;
@@ -110,7 +112,7 @@ input.button-primary:hover,button.button-primary:hover,a.button-primary:hover,.l
 }
 
 input.button-primary:active,button.button-primary:active,a.button-primary:active,.login .button-primary:active {
-	background-color: #3a9085;
+	background-color: @linkColor;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 	color: #133832;
 
@@ -170,14 +172,10 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	margin-left: 0;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5) {
 
 	body.login {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAMAAACyRD%2B1AAAARVBMVEXm7fPp8Pbs8%2Fnr8vjl7PLq8ffo7%2FXu9Prh6O7i6e%2Fv9frt9Prj6vDn7vTz9%2Frx9frz9vrw9frk6%2FHf5uzy9vrg5%2B3e5evyfvXWAAABbklEQVR4XuWTV3KEQBBDO0wO5PX9j2r1DmtMrcs%2BgOcLBCV1PwRtHOdpjuK91nmZoqecHimTj9MyV%2FWssk7H6l1%2BpNTIOWK8WGIspYjvDgJBdZ0FSqxxhRfRkInynkmXCWeuAc5b0Kq8ISHU2eRFQtuzY1EfSJncRoE9c3d25SXOpeLJ5qgz9GBZATOVKIS5Q0t7ajD%2BOHOGZ287Iho2SSTrUEmlCKzGYRFbmhkRVfhUA2sUNdWT8%2BVAgjLIrMdUtCMnt64FPE4yyzErtZTzZsvyc9pBJhiB%2FpzWDzLFyJgyovLeugwycZDxmO5JBl%2FETuVtTwD2IuOMjCE4yZhf%2BJL5lRW%2Fk2n5BzK5bflGBmY3MrYd297yRaYPMgHyszMXmVtnjtWggvTy3pl66wxkeGLaCL0K%2F9IZts64nzqjfJFhHjB8LchS3Lx1poDMUdjIZBi%2FvsDpeXWmX2S%2Bdabfyfg%2B5HCR%2BR9%2F09%2BdeSfzCRPyICKqHGZuAAAAAElFTkSuQmCC);
-	
-		-webkit-background-size: 23px 12px;
-		-moz-background-size: 23px 12px;
-		background-size: 23px 12px;
+		.bodyTexture_2x;
 	}
 
 	.login h1 {

@@ -1,11 +1,6 @@
 <?php
 
-function krlc2_scripts_styles() {
-	
-	// Styles
-	wp_enqueue_style('krlc2_h5bp', get_template_directory_uri() . '/assets/css/h5bp.css', false, null);
-	wp_enqueue_style('krlc2_grid', get_template_directory_uri() . '/assets/css/grid.css', false, null);
-	wp_enqueue_style('krlc2_app', get_template_directory_uri() . '/assets/css/app.css', false, null);
+function krlc2_scripts() {
 	
 	// Deregister default jquery, manual call in footer.php
 	if (!is_admin()) {
@@ -23,15 +18,15 @@ function krlc2_scripts_styles() {
 	wp_enqueue_script('krlc2_scripts','','','', true);
 	
 }
-add_action('wp_enqueue_scripts', 'krlc2_scripts_styles', 100);
+add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
 
 
 function krlc2_admin_scripts_styles() {
-	wp_enqueue_style('krlc2_admin_style', get_template_directory_uri() . '/assets/css/admin.css', false, null);
+	wp_enqueue_style('krlc2_admin_style', get_template_directory_uri() . '/assets/css/admin.min.css', false, null);
 }
 add_action('admin_enqueue_scripts', 'krlc2_admin_scripts_styles', 100);
 
 function krlc2_login_scripts_styles() {
-	wp_enqueue_style('krlc2_login_style', get_template_directory_uri() . '/assets/css/login.css', false, null);
+	wp_enqueue_style('krlc2_login_style', get_template_directory_uri() . '/assets/css/login.min.css', false, null);
 }
 add_action('login_enqueue_scripts', 'krlc2_login_scripts_styles', 100);
