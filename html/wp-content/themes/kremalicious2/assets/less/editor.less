@@ -8,15 +8,16 @@ Description:        Used to style the TinyMCE editor
 
 body {
 	.bodyTexture;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
+	.antialiasing;
 }
 
 body {
-	font: 16px/24px Georgia,Palatino,"Palatino Linotype",Times,"Times New Roman",serif;
-	color: #2e4f5c;
-	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @baseFontFamily;
+	font-weight: @baseFontWeight;
+	color: @textColor;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 
 p,blockquote,q,pre,address,hr,code,samp,dl,ol,ul,form,table,fieldset,menu,img {
@@ -47,14 +48,6 @@ img {
 	box-shadow: 0 2px 4px rgba(0,0,0,.3);
 }
 
-@font-face {
-	font-family: 'QlassikBoldRegular';
-	src: url('../fonts/QlassikBold_TB-webfont.eot');
-	src: url('../fonts/QlassikBold_TB-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/QlassikBold_TB-webfont.woff') format('woff'), url('../fonts/QlassikBold_TB-webfont.ttf') format('truetype'), url('../fonts/QlassikBold_TB-webfont.svg#QlassikBoldRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
 h1,
 h2,
 h3,
@@ -62,10 +55,10 @@ h4,
 h5,
 h6,
 .btn {
-  font-family: 'QlassikBoldRegular', sans-serif;
-  font-weight: normal;
+  font-family: @headingsFontFamily;
+  font-weight: @headingsFontWeight;
   font-style: normal;
-  color: #2e4f5c;
+  color: @headingsColor;
 }
 
 h1 {

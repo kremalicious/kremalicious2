@@ -20,14 +20,6 @@ html,.wp-dialog {
 	.bodyTexture;
 }
 
-#adminmenuback {
-	background: transparent url(../img/fabric_plaid.png) left top repeat;
-	
-	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
-	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
-	box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
-}
-
 #adminmenushadow {
 	display: none;
 }
@@ -35,35 +27,32 @@ html,.wp-dialog {
 #adminmenuback,
 #adminmenuwrap {
 	border-color: #bbc4cb;
-}
-
-#adminmenuwrap {
 	background: transparent;
 }
 
+#adminmenuback {
+	background: transparent url(../img/fabric_plaid.png) left top repeat;
+	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
+	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
+	box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
+}
+
 body,#wpbody,.form-table .pre {
-	color: #496776;
+	color: @textColor;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 	font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
-@font-face {
-	font-family: 'QlassikBoldRegular';
-	src: url('../fonts/QlassikBold_TB-webfont.eot');
-	src: url('../fonts/QlassikBold_TB-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/QlassikBold_TB-webfont.woff') format('woff'), url('../fonts/QlassikBold_TB-webfont.ttf') format('truetype'), url('../fonts/QlassikBold_TB-webfont.svg#QlassikBoldRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
 h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
-	color: rgba(46, 79, 92, .9);
-	font-family: 'QlassikBoldRegular', sans-serif;
-	font-weight: normal;
+	color: @headingsColor;
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
 	font-style: normal;
+	.antialiasing;
 }
 
 .postbox h3 {
-	color: rgba(46, 79, 92, .7);
+	color: @textColorLight;
 }
 
 h1,.wrap h2 {
@@ -266,10 +255,12 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 #krlc2_attention_widget textarea,
 #krlc2_attention_widget .alert {
-	font: 14px/20px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+	font: 14px/20px @baseFontFamily;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: @baseFontWeight;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 #krlc2_attention_widget p {
@@ -328,6 +319,13 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	text-shadow: none;
 }
 
+.row-actions a {
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	-ms-transition: none;
+	transition: none;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5) {
 	

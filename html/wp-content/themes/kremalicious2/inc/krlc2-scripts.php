@@ -23,6 +23,10 @@ add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
 
 function krlc2_admin_scripts_styles() {
 	wp_enqueue_style('krlc2_admin_style', get_template_directory_uri() . '/assets/css/admin.min.css', false, null);
+	?>
+	<script src="//use.typekit.com/msu4qap.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<?php 
 }
 add_action('admin_enqueue_scripts', 'krlc2_admin_scripts_styles', 100);
 
