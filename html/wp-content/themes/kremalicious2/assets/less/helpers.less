@@ -1,4 +1,17 @@
 
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 // Quick floats
 .pull-right {
   float: right;
@@ -13,11 +26,6 @@
 }
 .show {
   display: block;
-}
-
-// Visibility
-.invisible {
-  visibility: hidden;
 }
 
 /* For image replacement */
@@ -35,7 +43,3 @@
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/* Contain floats: h5bp.com/q */
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }

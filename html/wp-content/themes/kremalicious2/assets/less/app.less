@@ -34,10 +34,11 @@ body {
 
 body,
 input,select,textarea {
-	font: normal 16px/24px 'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
-	/*color: #2e4f5c;*/
-	color: rgba(46, 79, 92, .9);
-	font-weight: 400;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @baseFontFamily;
+	font-weight: @baseFontWeight;
+	color: @textColor;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 
@@ -62,13 +63,13 @@ a[rel*="tag"],
 #topics a,
 #cancel-comment-reply-link, 
 .comment-edit-link {
-	font-family: 'QlassikBoldRegular', sans-serif;
-	font-weight: 400;
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
 	font-style: normal;
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color: #2e4f5c;
+	color: @headingsColor;
 	line-height: 1.1111em;
 }
 
@@ -116,8 +117,7 @@ blockquote,
 blockquote > p {
 	font-style: italic;
 	padding: 0;
-	/*color: rgba(46, 79, 92, .55);*/
-	color: #8a9da6;
+	color: @textColorDimmed;
 }
 
 blockquote {
@@ -1681,7 +1681,7 @@ aside[role="complementary"] {
 }
 
 aside[role="complementary"] h1 a {
-	color: #a9b8bd;
+	color: @textColorDimmed;
 	border: none;
 	padding-right: .1em;
 }
@@ -1702,7 +1702,7 @@ aside[role="complementary"] h1 a {
 
 #tweets li,
 #tweets a {
-	color: #86949d; /*the .dimmed color*/
+	color: @textColorDimmed;
 	-webkit-transition: color .3s ease-in-out;
 	-moz-transition: color .3s ease-in-out;
 	-o-transition: color .3s ease-in-out;
@@ -1711,13 +1711,14 @@ aside[role="complementary"] h1 a {
 }
 
 #tweets li:hover a,
+#tweets li:hover .tweet_time a,
 .touch #tweets li a {
 	color: @linkColorHover;
 }
 
 #tweets {
 	font-size: .9em;
-	line-height: 20px;
+	line-height: 1.4em;
 	padding-right: 1em;
 	position: relative;
 	margin-bottom: 1em;
@@ -1728,10 +1729,19 @@ aside[role="complementary"] h1 a {
 	margin-bottom: 0;
 }
 
+#tweets li {
+	margin-bottom: 1.5em
+}
+
 .tweet_time {
 	display: block;
 	font-size: .8em;
 	font-style: italic;
+	margin-top: .2em;
+}
+
+#tweets .tweet_time a {
+	color: lighten(@textColorDimmed, 15%);
 }
 
 #subscribe {
@@ -2894,7 +2904,7 @@ pre .regexp {
 	}
 	
 	aside[role="complementary"] #tweetsWrap {
-		padding-top: 1.5em;
+		padding-top: 3em;
 	}
 
 }
