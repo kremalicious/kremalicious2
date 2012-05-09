@@ -1,0 +1,197 @@
+/* ============================================================== */
+/* ICONS */
+/* ============================================================== */
+
+/* 
+   consolidated from FontAwesome
+   http://fortawesome.github.com/Font-Awesome/
+*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-more/font/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-more/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-more/font/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-more/font/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-more/font/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'), url('../fonts/fontawesome-more/font/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+}
+li[class^="icon-"],
+li[class*=" icon-"] {
+  display: block;
+}
+/*  Font Awesome styles
+    ------------------------------------------------------- */
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+a[rel^="category "]:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  
+  margin-right: .5em;
+  color: @textColorDimmed;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  -ms-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+	#menubar [class^="icon-"]:before,
+	#menubar [class*=" icon-"]:before {
+		color: darken(@textColorDimmed,15%)
+	}
+	
+a [class^="icon-"],
+a [class*=" icon-"],
+a[rel^="category "] {
+  display: inline-block;
+  text-decoration: inherit;
+}
+/* makes the font 33% larger relative to the icon container */
+.icon-large:before {
+  vertical-align: top;
+  font-size: 1.3333333333333333em;
+}
+.btn [class^="icon-"],
+.btn [class*=" icon-"],
+a[rel^="category "] {
+  /* keeps button heights with and without icons the same */
+  line-height: .9em;
+}
+li [class^="icon-"],
+li [class*=" icon-"] {
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+}
+li .icon-large[class^="icon-"],
+li .icon-large[class*=" icon-"] {
+  /* 1.5 increased font size for icon-large * 1.25 width */
+  width: 1.875em;
+}
+li[class^="icon-"],
+li[class*=" icon-"] {
+  margin-left: 0;
+  list-style-type: none;
+}
+li[class^="icon-"]:before,
+li[class*=" icon-"]:before {
+  text-indent: -2em;
+  text-align: center;
+}
+li[class^="icon-"].icon-large:before,
+li[class*=" icon-"].icon-large:before {
+  text-indent: -1.3333333333333333em;
+}
+
+/*  Le Icons
+    ------------------------------------------------------- */
+.icon-search:before {
+  content: "\f002";
+}
+.icon-user:before,
+.cat-personal:before {
+  content: "\f007";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-download-alt:before {
+  content: "\f019";
+}
+.icon-download:before {
+  content: "\f01a";
+}
+.icon-bookmark:before,
+.cat-links:before {
+  content: "\f02e";
+}
+.icon-picture:before,
+.cat-photos:before {
+  content: "\f03e";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-asterisk:before {
+  content: "\f069";
+}
+.icon-gift:before,
+.cat-goodies:before {
+  content: "\f06b";
+}
+.icon-leaf:before,
+.cat-design:before {
+  content: "\f06c";
+}
+.icon-comment:before {
+  content: "\f075";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-twitter-sign:before {
+  content: "\f081";
+}
+.icon-facebook-sign:before {
+  content: "\f082";
+}
+.icon-camera-retro:before,
+.cat-photography:before {
+  content: "\f083";
+}
+.icon-comments:before {
+  content: "\f086";
+}
+.icon-external-link:before {
+  content: "\f08e";
+}
+.icon-twitter-alt:before {
+  content: "\f0a6";
+}
+.icon-google-plus-sign:before {
+  content: "\f0ac";
+}
+.icon-google-plus:before {
+  content: "\f0ae";
+}
+.icon-rss-sign:before {
+  content: "\f0b5";
+}
+.icon-warning-sign:before {
+  content: "\f071";
+}
+.icon-github-sign:before {
+  content: "\f092";
+}
+.icon-github-alt:before {
+  content: "\f0a3";
+}
+.icon-info-sign:before {
+  content: "\f05a";
+}
+.icon-align-justify:before {
+  content: "\f039";
+}
+.icon-wordpress-alt:before {
+  content: "\f0ba";
+}
+.icon-remove-circle:before {
+  content: "\f05c";
+}

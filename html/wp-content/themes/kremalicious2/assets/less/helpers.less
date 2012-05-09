@@ -12,6 +12,14 @@
   }
 }
 
+.fade {
+  .opacity(0);
+  .transition(opacity .15s linear);
+  &.in {
+    .opacity(100);
+  }
+}
+
 // Quick floats
 .pull-right {
   float: right;
@@ -26,6 +34,45 @@
 }
 .show {
   display: block;
+}
+
+
+// Dimmed Text
+.dimmed,
+.dimmed p,
+.dimmed li {
+	color: @textColorLight;
+}
+
+// Dashed Dividers
+.divider-top {
+	position: relative;
+	border-top: 1px dashed #afc3cb;
+	padding-top: 1em;
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 1px;
+		border-top: 1px dashed #fff;
+	}
+}	
+
+.divider-bottom {
+	position: relative;
+	border-bottom: 1px dashed #afc3cb;
+	padding-bottom: 1em;
+	&:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 100%;
+		height: 1px;
+		border-bottom: 1px dashed #fff;
+	}
 }
 
 /* For image replacement */
