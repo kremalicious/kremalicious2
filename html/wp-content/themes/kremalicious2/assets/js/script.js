@@ -119,7 +119,12 @@ var interface = {
 			$('html, body').animate({scrollTop: $commentTrigger.offset().top}, 500);
 		});
 		
-		if (location.href.indexOf('#comments') != -1) {
+		// comments paged nav case
+		if ( location.href.indexOf('#comments') != -1 ) {
+			showTheComments();
+		}
+		// comment link case
+		if ( location.href.indexOf('#comment') != -1 ) {
 			showTheComments();
 		}
 		
@@ -128,7 +133,8 @@ var interface = {
 			if ( $commentStuffHidden ) {
 				$commentStuffHidden.appendTo('#comments').find('label').inFieldLabels();
 				$commentStuffHidden = null;
-			} else {
+			}
+			else {
 				$commentStuffHidden = $commentStuff.detach();
 			}
 			$commentTrigger.toggleClass('open');
