@@ -143,12 +143,30 @@ var interface = {
 
 	},
 	
+	toolTips: function() {
+		$('#content [rel="tooltip"]').tooltip();
+	},
+	
+	rememberCloseAlerts: function() {
+		var alertToRemember = $('#content').find('.rememberClose');
+		alertToRemember.bind('close', function () {
+			$.cookie('alertmessage','dismissed');
+		});
+		
+		var alertDismissed = $.cookie('alertmessage');
+		if ( $.cookie('alertmessage') ) {
+			alertToRemember.detach();
+		}
+		
+	},
+	
 	init: function(){
 		this.commentShowup();
 		this.bannerHomeLink();
+		this.toolTips();
+		this.rememberCloseAlerts();
 		$('#respond label').inFieldLabels();
 		$('#topicmenu .dropdown-toggle').dropdown();
-		$('#content [rel="tooltip"]').tooltip();
 	}
 		
 }

@@ -16,11 +16,13 @@
 	
 		if ( is_front_page() && !is_paged() ) { ?>
 			
-			<div id="devWarning" class="divider-bottom">
-				<p class="alert alert-block">
+			<div id="devWarning" class="alert alert-block rememberClose fade in">
+				<a class="close" data-dismiss="alert" href="#">&times;</a>
+				<p>
 					<i class="icon-warning-sign icon-large"></i>
 					<?php echo wp_kses_data( $widget_options["attentionMesssage"] ); ?>
 				</p>
+				<a class="rememberCloseButton" data-dismiss="alert" href="#">Hide this.</a>
 			</div>
 			
 		<?php } 
@@ -33,10 +35,10 @@
 	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>
 	<?php if (!have_posts()) { ?>
-	  <div class="alert alert-block fade in">
-	    <a class="close" data-dismiss="alert">&times;</a>
-	    <p><?php _e('Sorry, no results were found.', 'roots'); ?></p>
-	  </div>
+<div class="alert alert-block fade in">
+<a class="close" data-dismiss="alert">&times;</a>
+<p><?php _e('Sorry, no results were found.', 'roots'); ?></p>
+</div>
 	  <?php get_search_form(); ?>
 	<?php } ?>
 
