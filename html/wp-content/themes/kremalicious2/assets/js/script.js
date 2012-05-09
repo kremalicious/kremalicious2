@@ -26,7 +26,7 @@ $(window).load( AfterLoad = function() {
 	
 	siteEffects.init();
 	codeSnippets.init();
-
+	
 });
 
 var photoGrid = {
@@ -197,14 +197,16 @@ var siteEffects = {
 	},
 	
 	latestTweet: function() {
+
 		$('#tweets').tweet({
 	        username: 'kremalicious',
 	        count: 1,
-	        fetch: 10,
+	        fetch: 100,
 	        template: '{text}{time}',
-	        loading_text: 'loading tweets...',
+	        loading_text: '...',
 	        filter: function(t){ return ! /^@\w+/.test(t.tweet_raw_text); }
 	    });
+	    
 	},
 	
 	init: function(){

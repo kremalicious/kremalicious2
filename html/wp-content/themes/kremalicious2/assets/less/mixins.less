@@ -27,9 +27,9 @@
 
 // Opacity
 .opacity(@opacity) {
-  -moz-opacity: @opacity;
-  -khtml-opacity: @opacity;
-  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity / 100;
+  -khtml-opacity: @opacity / 100;
+  -webkit-opacity: @opacity / 100;
   opacity: @opacity / 100;
   filter: ~"alpha(opacity=@{opacity})";
 }
