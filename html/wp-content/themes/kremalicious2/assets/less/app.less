@@ -2941,11 +2941,10 @@ pre .regexp {
 /* high pixel ratio devices   */
 /* ========================================== */
 
-/*only screen and (-o-min-device-pixel-ratio: 3/2), */
-
 @media
 only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
+@oPixelRatioMQ,
 only screen and (min-device-pixel-ratio: 1.5) {
   	
   	html {
