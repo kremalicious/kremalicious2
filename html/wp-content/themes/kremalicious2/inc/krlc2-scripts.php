@@ -14,7 +14,7 @@ function krlc2_scripts() {
 	}
 	
 	// Scripts, print in wp_footer
-	wp_register_script('krlc2_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, null, true);
+	wp_register_script('krlc2_scripts', get_template_directory_uri() . '/assets/js/kremalicious2.min.js', false, null, true);
 	wp_enqueue_script('krlc2_scripts','','','', true);
 	
 }

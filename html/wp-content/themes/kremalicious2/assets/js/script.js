@@ -15,7 +15,8 @@
 
 $(ASAP = function(){
 	
-	if ( $('#content .format-image').length > 0 ) {
+	// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
+	if ( $('#content .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
 		photoGrid.init();
 	}
 	interface.init();
