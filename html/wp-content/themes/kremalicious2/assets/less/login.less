@@ -15,6 +15,7 @@
 
 @import 'variables.less';
 @import 'mixins.less';
+@import 'helpers.less';
 
 body.login {
 	.bodyTexture;
@@ -51,22 +52,11 @@ body.login {
 	background: rgba(255,255,255,.4);
 	border: 0;
 	border-bottom: 1px solid #AFC3CB;
-
-	-webkit-box-shadow: 0 1px 0 #fff;
-	-moz-box-shadow: 0 1px 0 #fff;
-	box-shadow: 0 1px 0 #fff;
+	.box-shadow(0 1px 0 #fff);
 	padding: .2em .5em;
 	width: 100%;
-
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
+	.border-radius(0);
+	.transition(all .3s ease-in-out);
 }
 
 .login form .input:focus {
@@ -78,17 +68,9 @@ body.login {
 input.button-primary,button.button-primary,a.button-primary,.login .button-primary {
 	display: inline-block;
 	padding: .5em 3em;
-
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	.border-radius(5px);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
-
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
+	.transition(all .2s ease-in-out);
 	position: relative;
 	font-size: 1.1em;
 	background-color: @linkColor;
@@ -113,12 +95,7 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	background-color: @linkColor;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 	color: #133832;
-
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	-ms-transition: none;
-	transition: none;
+	.transition(none);
 	border: 1px solid #3c9e91;
 	border-bottom-color: #246059;
 	top: 1px;
@@ -129,36 +106,14 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 }
 
 .login form {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+	.box-shadow(none);
 	border: none;
 	background: transparent;
 	position: relative;
-	border-bottom: 1px dashed #afc3cb;
-	border-top: 1px dashed #afc3cb;
-	padding: 2em 0;
 	margin: 1em auto;
-}
-
-.login form:before {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -2px;
-	width: 100%;
-	height: 1px;
-	border-bottom: 1px dashed #fff;
-}
-
-.login form:after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 1px;
-	border-top: 1px dashed #fff;
+	.divider-top();
+	.divider-bottom();
+	padding: 3em 0;
 }
 
 #login form p.submit {
@@ -170,7 +125,11 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 	margin-left: 0;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5) {
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+@oPixelRatioMQ,
+only screen and (min-device-pixel-ratio: 1.5) {
 
 	body.login {
 		.bodyTexture_2x;
@@ -178,10 +137,7 @@ input.button-primary:active,button.button-primary:active,a.button-primary:active
 
 	.login h1 {
 		background-image: url(../img/logo@2x.png);
-	
-		-webkit-background-size: 190px 31px;
-		-moz-background-size: 190px 31px;
-		background-size: 190px 31px;
+		.background-size(190px 31px);
 	}
 
 }

@@ -32,9 +32,7 @@ html,.wp-dialog {
 
 #adminmenuback {
 	background: transparent url(../img/fabric_plaid.png) left top repeat;
-	-webkit-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
-	-moz-box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
-	box-shadow: inset -1px 0 10px rgba(0,0,0,.15);
+	.box-shadow(inset -1px 0 10px rgba(0,0,0,.15));
 }
 
 body,#wpbody,.form-table .pre {
@@ -82,11 +80,7 @@ h4 {
 a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a {
 	text-decoration: none;
 	color: @linkColor;
-	-webkit-transition: all .3s ease-in-out 0s;
-	-moz-transition: all .3s ease-in-out 0s;
-	-o-transition: all .3s ease-in-out 0s;
-	-ms-transition: all .3s ease-in-out 0s;
-	transition: all .3s ease-in-out 0s;
+	.transition(all .3s ease-in-out 0s);
 }
 
 a:hover,
@@ -100,22 +94,11 @@ textarea,input[type="text"],input[type="password"],input[type="file"],input[type
 	background: #fff;
 	background: rgba(255,255,255,.4);
 	border: 0;
-
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
+	.border-radius(0);
 	border-bottom: 1px solid #AFC3CB;
-
-	-webkit-box-shadow: 0 1px 0 #fff;
-	-moz-box-shadow: 0 1px 0 #fff;
-	box-shadow: 0 1px 0 #fff;
+	.box-shadow(0 1px 0 #fff);
 	padding: .5em;
-
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
+	.transition(all .3s ease-in-out);
 }
 
 input:focus,textarea:focus,
@@ -132,20 +115,12 @@ a.button-primary,
 .button-primary-disabled {
 	display: inline-block;
 	padding: .5em 3em;
-
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	.border-radius(5px);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
-
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
+	.transition(all .2s ease-in-out);
 	position: relative;
 	font-size: 1.1em;
-	background-color: #3a9085;
+	background-color: @linkColor;
 	color: #133832;
 	border: 1px solid #3c9e91;
 	border-bottom-color: #246059;
@@ -171,12 +146,7 @@ a.button-primary:active {
 	background-color: #3a9085;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 	color: #133832;
-
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	-ms-transition: none;
-	transition: none;
+	.transition(none);
 	border: 1px solid #3c9e91;
 	border-bottom-color: #246059;
 	top: 1px;
@@ -190,7 +160,7 @@ input.button-primary-disabled,
 button.button-primary-disabled,
 a.button-primary-disabled {
 	color: #267166 !important;
-	background-color: #3a9085 !important;
+	background-color: @linkColor !important;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0))) !important;
 }
 
@@ -200,8 +170,8 @@ a.button-primary-disabled {
 
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
 #adminmenu .wp-menu-arrow div {
-	background: #2e4f5c;
-	border-color: #2e4f5c;
+	background: @headingsColor;
+	border-color: @headingsColor;
 }
 
 #adminmenu .wp-submenu ul {
@@ -259,8 +229,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	font-style: normal;
 	font-weight: @baseFontWeight;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	.antialiasing();
 }
 
 #krlc2_attention_widget p {
@@ -283,9 +252,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	border: 1px solid #d7cab9;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	.border-radius(4px);
 	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
@@ -293,8 +260,8 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 .attentionMessageStatus {
 	padding: .3em .6em;
-	border-radius: 5px;
-	box-shadow: 0 1px 0 #fff;
+	.border-radius(5px);
+	.box-shadow(0 1px 0 #fff);
 	border: 1px solid #ccc;
 	background: #eee;
 	color: #666;
@@ -307,7 +274,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 }
 
 #poststuff .postarea {
-	box-shadow: none;
+	.box-shadow(none);
 }
 
 .cf-nav ul li a.current {
@@ -320,14 +287,14 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 }
 
 .row-actions a {
-	-webkit-transition: none;
-	-moz-transition: none;
-	-o-transition: none;
-	-ms-transition: none;
-	transition: none;
+	.transition(none);
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (min-device-pixel-ratio: 1.5) {
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+@oPixelRatioMQ,
+only screen and (min-device-pixel-ratio: 1.5) {
 	
 	html,.wp-dialog {
 		.bodyTexture_2x;
