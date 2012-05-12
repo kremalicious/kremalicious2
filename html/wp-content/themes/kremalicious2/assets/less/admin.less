@@ -89,41 +89,98 @@ a:hover,
 	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
 }
 
-textarea,input[type="text"],input[type="password"],input[type="file"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="url"],select,
-#titlediv #title {
+/* Forms */
+
+textarea, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, #titlediv #title {
 	background: #fff;
 	background: rgba(255,255,255,.4);
-	border: 0;
-	.border-radius(0);
-	border-bottom: 1px solid #AFC3CB;
-	.box-shadow(0 1px 0 #fff);
 	padding: .5em;
+	margin-bottom: .5em;
+	border: 0 !important;
+	border-bottom: 1px solid #AFC3CB !important;
+	.border-radius(0);
+	.box-shadow(0 1px 0 #fff);
 	.transition(all .3s ease-in-out);
 }
 
-input:focus,textarea:focus,
+input:focus,textarea:focus, 
 #titlediv #title:focus {
 	background: rgba(255,255,255,.8);
-	border-bottom-color: #78868c;
+	border-bottom-color: #78868c !important;
 	outline: none;
 }
 
+/* Quick Edit */
+.inline-edit-row fieldset label {
+	margin: .8em 0;
+}
+
+.inline-editor ul.cat-checklist {
+	background: transparent;
+	padding: 0;
+	border: none
+}
+
+.inline-edit-row fieldset ul.cat-checklist label {
+	font-size: 12px
+}
+
 /*Buttons*/
+.btn,
+input.button,
+input.button-secondary,
+a.button, a.button-secondary,
+.wrap .add-new-h2,
+.btn-primary,
 input.button-primary,
 button.button-primary,
 a.button-primary,
 .button-primary-disabled {
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
 	display: inline-block;
-	padding: .5em 3em;
+	padding: 2px 20px;
+	
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+	color: @linkColor;
+	font-weight: bold;
 	.border-radius(5px);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
-	.transition(all .2s ease-in-out);
+	background: rgba(255,255,255,.2) -moz-linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+	background: rgba(255,255,255,.2) -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
+	background: rgba(255,255,255,.2) -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background: rgba(255,255,255,.2) -o-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background: rgba(255,255,255,.2) -ms-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background: rgba(255,255,255,.2) linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	
+	.transition(all 0.2s ease-in-out);
+	
+	border: 2px solid rgba(255,255,255,.3);
 	position: relative;
-	font-size: 1.1em;
+
+}
+
+.btn:hover,
+input.button:hover,
+input.button-secondary:hover,
+a.button, a.button-secondary:hover,
+.wrap .add-new-h2:hover {
+	background-color: rgba(255,255,255,.4);
+	border: 2px solid rgba(255,255,255,.3);
+}
+
+.btn-primary,
+input.button-primary,
+button.button-primary,
+a.button-primary,
+.button-primary-disabled {
 	background-color: @linkColor;
 	color: #133832;
 	border: 1px solid #3c9e91;
 	border-bottom-color: #246059;
+	padding: 5px 40px;
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
 	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
 	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
@@ -219,6 +276,11 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 #titlediv #title-prompt-text, #wp-fullscreen-title-prompt-text {
 	padding: 15px 10px;
+}
+
+/* fix for weird Media Library "Show" Buttons*/
+#media-items .media-item {
+	padding-bottom: 1px;
 }
 
 /* Attention Please! Dashboard Widget */
