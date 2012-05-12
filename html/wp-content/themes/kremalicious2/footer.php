@@ -8,7 +8,7 @@
 			<?php if ( is_singular() OR is_archive() ) { ?>
 				<div class="row divider-top hoverbuttons">
 					<div class="col2">
-						<p id="description" class="dimmed"><?php bloginfo('description'); ?></p>
+						<p id="description"><?php bloginfo('description'); ?></p>
 					</div>
 					
 					<div class="col2">

@@ -78,33 +78,31 @@
 							} ?>
 					</section>
 					
-					<footer id="meta" class="hoverbuttons clearfix">
-						<div class="clearfix">
-							<p id="share">
-								<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
-								<a class="btn socialite googleplus" href="https://plus.google.comshare?url=<?php the_permalink(); ?>" data-size="medium"><i class="icon-google-plus"></i> +1</a>
-							</p>
-							<p id="pubdate" class="dimmed">
-								<time class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
-							</p>
-							<p id="topic">
-								<?php 
-									$parentscategory ="";
-									foreach((get_the_category()) as $category) {
-										if ($category->category_parent == 0) {
-											$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
-										}
-									}
-									echo substr($parentscategory,0,-2);
-								?>
-							</p>
-						</div>
+					<footer id="meta" class="hoverbuttons">
+						
+						<p><?php 
+							$parentscategory ="";
+							foreach((get_the_category()) as $category) {
+								if ($category->category_parent == 0) {
+									$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
+								}
+							}
+							echo substr($parentscategory,0,-2);
+						?>
+							<time id="pubdate" class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
+						</p>
+						<?php $shortURL = wp_get_shortlink(); ?>
+						<p id="sharebuttons">
+							<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php echo urlencode($shortURL); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
+							<a class="btn socialite googleplus" href="https://plus.google.comshare?url=<?php echo urlencode($shortURL); ?>" data-size="medium"><i class="icon-google-plus"></i> +1</a>
+						</p>
+						
+						<p id="shorturl" class="dimmed">You can use this short url: <a href="<?php echo $shortURL ?>"><?php echo $shortURL ?></a></p>
+
 					</footer>
 					
 					<?php comments_template(); ?>
-					
-					
-					
+
 				</div>
 			</div>
 			<div class="row">

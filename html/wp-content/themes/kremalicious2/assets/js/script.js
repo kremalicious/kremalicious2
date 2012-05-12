@@ -175,7 +175,7 @@ var interface = {
 var siteEffects = {
 	
 	socialiteButtons: function() {
-		$('#meta, #tweetsWrap').one('mouseenter', function() {
+		$('#sharebuttons, #tweetsWrap').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},

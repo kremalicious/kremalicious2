@@ -34,6 +34,7 @@ function krlc2_feed_content( $content ) {
     global $post;
     $postTitle 		= $post->post_title;
     $postLink 		= get_permalink($post->ID);
+    $postShortURL 	= wp_get_shortlink($post->ID);
     $featuredImage 	= get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') );
     $photoImage		= get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') );
     $linkURL 		= get_post_meta($post->ID, '_format_link_url', true);
@@ -43,9 +44,12 @@ function krlc2_feed_content( $content ) {
     					<a href="'. $postLink .'" title="Permalink for this post">&#8734;</a>
     				  </p>';
     				  
-    $shareStuff = '<br /><hr /><p id="share">
-    				<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($postTitle) .'&url='. urlencode($postLink) .'&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-sign"></i> Tweet</a>. And you should follow me on Twitter <a href="https://twitter.com/kremalicious">here</a>.
-    			   </p>';
+    $shareStuff = '<br />
+    			   <div><p><small>You can use this short url: <a href="'. $shortURL .'"><strong>'. $shortURL .'</strong></a></small></p></div>
+    			   <hr />
+    			   <div>
+    			     <a href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($postTitle) .'&url='. urlencode($postShortURL) .'&via=kremalicious" data-via="kremalicious">Tweet this</a>, or follow me on Twitter <a href="https://twitter.com/kremalicious">here</a>.
+    			   </div>';
     
     if ( has_post_thumbnail($post->ID) && !has_post_format( 'image', $post->ID ) ) {
     	$content = '<div>' . $featuredImage . '</div>' . $content . $shareStuff;

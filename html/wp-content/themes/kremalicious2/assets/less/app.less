@@ -950,7 +950,7 @@ article.hentry {
 }
 
 .hentry footer {
-	margin: 4em 0 1.5em 0;
+	margin: 1.5em 0 1.5em 0;
 	padding: .5em 0 .3em 0;
 }
 
@@ -968,26 +968,55 @@ article.hentry {
 	font-style: normal;
 }
 
-#meta p {
-	margin-bottom: 0;
-	float: left;
-	width: 33%;
+#meta {
+	.clearfix();
+	.divider-bottom();
+	margin-top: 3em;
+	margin-bottom: 3em;
+	padding-bottom: .5em;
+	color: @textColorLight;
 }
 
-#meta a[rel*="tag"] {
+#meta p:first-child {
+	.divider-bottom();
+	text-align: center;
+}
+
+#meta p:first-child a {
 	font-size: 1em;
 }
 
 #pubdate {
-	font-size: .9em;
-	text-align: center;
+	font-style: italic;
+	margin-left: 1em
 }
 
-#topic {
+#sharebuttons,
+#shorturl {
+	float: left;
+	margin: 0;
+	line-height: 1.5em
+}
+
+#sharebuttons {
+	width: 33%;
+}
+
+#shorturl {
+	font-size: .8em;
+	float: right;
 	text-align: right;
+	width: 64%;
 }
 
+#shorturl a {
+	font-weight: 700
+}
 
+#sharebuttons .socialised {
+	float: left;
+	width: 50%
+}
 
 
 /*	POST FORMATS & TYPES */
@@ -1373,8 +1402,16 @@ aside[role="complementary"] {
 	margin-bottom: 2em;
 }
 
+#description,
 aside[role="complementary"] h1 a {
-	color: @textColorDimmed;
+	color: @textColorLight;
+}
+
+#description  {
+	font-style: italic;
+}
+
+aside[role="complementary"] h1 a {	
 	border: none;
 	padding-right: .1em;
 }
@@ -1384,10 +1421,6 @@ aside[role="complementary"] h1 a {
 		color: @linkColorHover;
 	}
 
-#description  {
-	font-style: italic;
-}
-
 #tweetsWrap,
 #topics {
 	margin-bottom: 1.5em;
@@ -1395,7 +1428,7 @@ aside[role="complementary"] h1 a {
 
 #tweets li,
 #tweets a {
-	color: @textColorLight;
+	color: @textColorDimmed;
 	.transition(color .3s ease-in-out);
 }
 
@@ -1557,10 +1590,6 @@ footer[role="contentinfo"]:hover .facebook i:before,
 
 /* Socialite.js */
 
-#share .socialised {
-	float: left;
-	width: 48%;
-}
 
 /* replicate social buttons, but dim everything */
 .btn.socialite {
@@ -2199,9 +2228,7 @@ pre .regexp {
 @media only screen and (min-width: 480px) {
 
 	.row { max-width: 25em; }
-	
-	#topic { text-align: right; }
-	
+		
 	#menubar #searchform #s:focus {
 		width: 390px;
 	}
