@@ -38,6 +38,7 @@ function krlc2_robots() {
 	echo "Disallow: /author/\n";
 	echo "Disallow: /tag/\n";
 	echo "Disallow: /type/\n";
+	echo "Disallow: /links/\n";
 	echo "Disallow: /search/\n";
 	echo "Disallow: /page/\n";
 	echo "Disallow: /*/page/\n";
