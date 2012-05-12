@@ -56,10 +56,11 @@
 				
 				if (has_post_format( 'link' )) { 
 					
-					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
+					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); 
+					$leTopic 	= get_the_category(); ?>
 					
 					<div class="col1 posttype">
-						<a class="icon-bookmark" rel="tooltip" href="/links" title="Show all link posts"></a>
+						<a class="icon- cat-<?php echo $leTopic[0]->slug; ?>" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
 					</div>
 					<div class="col5">
 						<header>
