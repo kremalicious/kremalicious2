@@ -79,7 +79,6 @@
 								<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"><i class="icon-user"></i> personal</a></li>
 								<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"><i class="icon-leaf"></i> design</a></li>
 								<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
-								<li <?php if ( is_category('links') ) echo 'class="current_page_item"';  ?>><a href="/links"> <i class="icon-bookmark"></i> links</a></li>
 							</ul>
 						</li>						
 						<!--<li><a href="/about"> <i class="icon-user"></i> About</a></li>-->
