@@ -132,7 +132,7 @@ var interface = {
 		function showTheComments() {
 			
 			if ( $commentStuffHidden ) {
-				$commentStuffHidden.insertAfter('#commentShow');
+				$commentStuffHidden.insertAfter('#commentShow').find('label').inFieldLabels();
 				$commentStuffHidden = null;
 			}
 			else {
