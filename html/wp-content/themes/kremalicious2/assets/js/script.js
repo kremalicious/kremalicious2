@@ -110,12 +110,12 @@ var interface = {
 	
 	commentShowup: function(){
 		var $commentStuff 		= $('#commentlistWrap, #respond'),
-			$commentStuffHidden = $commentStuff.detach();
+			$commentStuffHidden = $commentStuff.detach(),
 			$commentTrigger 	= $('#comments #commentShow');
 		
 		$commentTrigger.addClass('btn');
 		
-		$commentTrigger.click (function() {
+		$commentTrigger.click(function() {
 			showTheComments();
 			$('html, body').animate({scrollTop: $commentTrigger.offset().top}, 500);
 		});
@@ -132,7 +132,7 @@ var interface = {
 		function showTheComments() {
 			
 			if ( $commentStuffHidden ) {
-				$commentStuffHidden.appendTo('#comments').find('label').inFieldLabels();
+				$commentStuffHidden.insertAfter('#commentShow');
 				$commentStuffHidden = null;
 			}
 			else {
