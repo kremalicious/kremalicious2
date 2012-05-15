@@ -93,8 +93,8 @@
 						</p>
 						<?php $shortURL = wp_get_shortlink(); ?>
 						<p id="sharebuttons">
-							<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php echo urlencode($shortURL); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
-							<a class="btn socialite googleplus" href="https://plus.google.comshare?url=<?php echo urlencode($shortURL); ?>" data-size="medium"><i class="icon-google-plus"></i> +1</a>
+							<a class="btn socialite twitter" href="https://twitter.com/intent/tweet?source=kremalicious&text=<?php the_title(); ?>&url=<?php echo urlencode(the_permalink()); ?>&via=kremalicious" data-via="kremalicious"><i class="icon-twitter-alt"></i> Tweet</a>
+							<a class="btn socialite googleplus" href="https://plus.google.comshare?url=<?php echo urlencode(the_permalink()); ?>" data-size="medium"><i class="icon-google-plus"></i> +1</a>
 						</p>
 						
 						<p id="shorturl" class="dimmed">You can use this short url: <a href="<?php echo $shortURL ?>"><?php echo $shortURL ?></a></p>
