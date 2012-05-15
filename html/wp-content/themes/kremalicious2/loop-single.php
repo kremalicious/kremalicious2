@@ -16,7 +16,7 @@
 			<div class="row">
 				<header class="col2">
 					<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
-					<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+					<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 				</header>
 		
 		<?php } 
@@ -32,14 +32,14 @@
 					<div class="photoPost">
 						<figure>
 							<?php the_post_thumbnail('photoBig'); ?>
-							<figcaption><?php the_title(); ?></figcaption>
+							<figcaption class="entry-title"><?php the_title(); ?></figcaption>
 							<?php krlc2_post_thumbnail_exif_data(); ?>
 						</figure>
 					</div>
 				</div>
 			</div>
 			<div class="row" id="photoPostContent">
-				<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+				<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 			
 		<?php } else { ?>
 			
@@ -59,7 +59,7 @@
 				<div class="row">
 					<header class="col2">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<p class="byline author vcard dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+						<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 					</header>
 					
 			<?php } ?>
