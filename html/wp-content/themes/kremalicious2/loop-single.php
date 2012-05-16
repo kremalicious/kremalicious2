@@ -30,9 +30,9 @@
 			<div class="row">
 				<div class="col6 photoPostWrap">
 					<div class="photoPost">
-						<figure>
-							<?php the_post_thumbnail('photoBig'); ?>
-							<figcaption class="entry-title"><?php the_title(); ?></figcaption>
+						<figure class="hmedia">
+							<?php the_post_thumbnail('photoBig', array('class' => 'photo')); ?>
+							<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
 							<?php krlc2_post_thumbnail_exif_data(); ?>
 						</figure>
 					</div>
@@ -48,11 +48,11 @@
 				<header class="row featureTitle">
 					<div class="col6">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<?php the_post_thumbnail( 'featureImageBig' ); ?>
+						<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
 					</div>
 				</header>
 				<div class="row">
-					<p class="byline author vcard dimmed col2">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+					<p class="byline author vcard source-org dimmed col2">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
 					
 			<?php } else { ?>
 			
@@ -78,7 +78,7 @@
 							} ?>
 					</section>
 					
-					<footer id="meta" class="hoverbuttons">
+					<footer id="meta" class="entry-meta hoverbuttons">
 						
 						<p><?php 
 							$parentscategory ="";
