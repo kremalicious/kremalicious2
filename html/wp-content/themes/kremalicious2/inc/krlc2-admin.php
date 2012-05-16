@@ -92,13 +92,15 @@ add_filter( 'mce_buttons_1', 'krlc2_mce_buttons_1' );
  * {@link http://tinymce.moxiecode.com/examples/example_24.php }
  */
 function krlc2_tiny_mce_before_init( $settings ) {
-  $settings['theme_advanced_buttons1'] = 'formatselect,|,bold,italic,|,bullist,numlist,|,blockquote,|,link,unlink,|,styleselect,|,undo,redo,|,spellchecker,wp_fullscreen';
+  $settings['theme_advanced_buttons1'] = 'formatselect,|,bold,italic,|,bullist,numlist,blockquote,|,link,unlink,|,styleselect,|,wp_more,|,removeformat,undo,redo,|,spellchecker,wp_fullscreen';
   $settings['theme_advanced_buttons2'] = '';
-  $settings['theme_advanced_blockformats'] = 'p,h1,h2,h3,h4,code,pre,';
+  $settings['theme_advanced_blockformats'] = 'p,h1,h2,h3,h4,pre,';
 
   $style_formats = array(
       array( 'title' => 'Button Link',         	'selector' => 'a',  'classes' => 'btn', 'remove' => 'empty' ),
       array( 'title' => 'Primary Button Link',	'selector' => 'a',  'classes' => 'btn btn-primary', 'remove' => 'empty' ),
+      array( 'title' => 'Download Button',      'selector' => 'a',  'classes' => 'btn btn-block icon-download-alt', 'remove' => 'empty' ),
+      array( 'title' => 'Download Button Primary', 'selector' => 'a',  'classes' => 'btn btn-primary btn-block icon-download-alt', 'remove' => 'empty' ),
       //array( 'title' => 'Download Button', 	'inline' => 'a',  'classes' => 'btn btn-primary' ),
   );
 

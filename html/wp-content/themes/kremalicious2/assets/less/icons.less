@@ -39,7 +39,6 @@ a[rel^="category "]:before {
   font-style: normal;
   display: inline-block;
   text-decoration: inherit;
-  
   margin-right: .5em;
   color: @textColorDimmed;
   .transition(color .3s ease-in-out);
@@ -50,7 +49,11 @@ a[rel^="category "]:before {
 	#menubar [class*=" icon-"]:before {
 		color: darken(@textColorDimmed,15%)
 	}
-	
+
+.btn-primary[class*="icon-"]:before {
+	color: fade(#133832, 80%);
+}
+
 a [class^="icon-"],
 a [class*=" icon-"],
 a[rel^="category "] {
