@@ -21,12 +21,16 @@
 	
 	<title><?php wp_title('&brvbar;', true, 'right'); bloginfo('name'); ?></title>
 	
-	<?php if (  (is_home()) || (is_front_page())  ) { ?>
-	<meta name="description" content="<?php bloginfo('description'); ?>">
-	<?php } elseif (is_single()) { ?>
-	<meta name="description" content="<?php the_excerpt();?>">
+	<?php 
+	if (  (is_home()) || (is_front_page())  ) { ?>
+		<meta name="description" content="<?php bloginfo('description'); ?>">
+	<?php } 
+	elseif ( is_singular() ) { 
+		while( have_posts() ): the_post(); ?>
+		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>">
+		<?php endwhile; ?>
 	<?php } elseif (is_archive()) { ?>
-	<meta name="description" content="<?php echo strip_tags(category_description()); ?>">
+		<meta name="description" content="<?php echo strip_tags(category_description()); ?>">
 	<?php } ?>
 	
 	<meta name="HandheldFriendly" content="True">
@@ -53,7 +57,9 @@
   	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
   	<link rel="shortcut icon" href="/favicon.ico">
   	
+  	<?php if ( !is_singular() ) {  ?>
   	<link rel="image_src" href="/kremalicious512.png" />
+  	<?php } ?>
 
 </head>
 
