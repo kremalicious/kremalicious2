@@ -69,7 +69,7 @@
 		
 		<p id="description" class="dimmed divider-top"><?php bloginfo('description'); ?></p>
 		<p id="subscribe">
-			<a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss-sign"></i> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/100015950464424503954"><i class="icon-google-plus-sign"></i> Google+</a> <!--<a class="btn btn-tag facebook" href="#"><i class="icon-facebook-sign"></i>Facebook</a>-->
+			<a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss-sign"></i> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter-sign"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/100015950464424503954"><i class="icon-google-plus-sign"></i> Google+</a> <a class="btn btn-tag facebook" href="https://www.facebook.com/pages/kremalicious/154539134564052"><i class="icon-facebook-sign"></i> Facebook</a>
 		</p>
 		<div id="tweetsWrap" class="divider-top">
 			<div id="tweets" class="dimmed">
