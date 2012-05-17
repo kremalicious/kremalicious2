@@ -1869,31 +1869,29 @@ aside[role="complementary"] br,
 
 /* ============================================================== */
 /* Pretty Code */
-/* Rainbow v1.1.8 rainbowco.de */
 /* ============================================================== */
 
-pre, code {
+pre, code,
+.syntaxhighlighter {
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	color: #333;
 	background: #f8f8f8;
-	background: rgba(255,255,255,.6);
+	background: rgba(255,255,255,.2);
 	.border-radius(3px);
 	line-height: 18px;
+	font-size: 12px;
 }
 
-pre {
-	padding: .5em;
-	
+pre,
+.syntaxhighlighter {
+	padding: .5em 1em;
 	.border-radius(5px);
-
 	border: 1px solid #c9d7e4;
 	word-wrap: break-word;
 	margin-bottom: 1.5em;
-	
 	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
 	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
 	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
-
 	display: block;
 	width: auto;
 	overflow: auto;
@@ -1904,72 +1902,48 @@ pre {
 
 code {
     border: 1px solid #eaeaea;
-    font-size: 12px;
 }
 
-pre code {
-    border: 0px;
-    padding: 0px;
-    margin: 0px;
+pre code,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table th, 
+.syntaxhighlighter table td,
+.syntaxhighlighter table td:hover,
+.syntaxhighlighter table tbody tr:nth-child(odd) td, 
+.syntaxhighlighter table tbody tr:nth-child(odd) th,
+.syntaxhighlighter .container {
+    border: none;
+    padding: 0;
+    margin: 0;
     .border-radius(0);
     background: none;
 }
 
-pre:hover {
+pre:hover,
+.syntaxhighlighter:hover,
+.syntaxhighlighter div.line:hover {
 	background: #fff;
-	background: rgba(255,255,255,.85);
+	background: rgba(255,255,255,.5);
 }
 
-	.no-touch .entry-content pre:hover {
+	.no-touch .entry-content pre:hover,
+	.no-touch .entry-content .syntaxhighlighter:hover {
 		margin-left: -10%;
 		margin-right: -10%;
 	}
 
-pre .comment {
-    color: #998;
+/* line number column */
+.syntaxhighlighter td.gutter {
+	border-right: 4px solid #e5ebf1 !important;
+	padding-right: .7em !important;
+	color: #bac0c7;
 }
 
-pre .support {
-    color: #0086B3;
+.syntaxhighlighter td.code {
+	padding-left: .5em !important
 }
 
-pre .tag, pre .tag-name {
-    color: navy;
-}
-
-pre .keyword, pre .css-property, pre .vendor-prefix, pre .sass, pre .class, pre .id, pre .css-value, pre .entity.function, pre .storage.function {
-    font-weight: bold;
-}
-
-pre .css-property, pre .css-value, pre .vendor-prefix, pre .support.namespace {
-    color: #333;
-}
-
-pre .constant.numeric, pre .keyword.unit, pre .hex-color {
-    font-weight: normal;
-    color: #099;
-}
-
-pre .entity.class {
-    color: #458;
-}
-
-pre .entity.id, pre .entity.function {
-    color: #900;
-}
-
-pre .attribute, pre .variable {
-    color: teal;
-}
-
-pre .string, pre .support.value  {
-    font-weight: normal;
-    color: #d14;
-}
-
-pre .regexp {
-    color: #009926;
-}
 
 /* ============================================================== */
 /*	ANIMATIONS */

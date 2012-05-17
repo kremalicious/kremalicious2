@@ -17,6 +17,9 @@ function krlc2_scripts() {
 	wp_register_script('krlc2_scripts', get_template_directory_uri() . '/assets/js/kremalicious2.min.js', false, null, true);
 	wp_enqueue_script('krlc2_scripts','','','', true);
 	
+	// prevent syntaxhighlighting core css from loading
+	wp_deregister_style('syntaxhighlighter-core');
+	
 }
 add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
 

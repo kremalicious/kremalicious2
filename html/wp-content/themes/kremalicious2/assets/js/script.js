@@ -26,7 +26,6 @@ $(ASAP = function(){
 $(window).load( AfterLoad = function() {
 	
 	siteEffects.init();
-	codeSnippets.init();
 	
 });
 
@@ -214,35 +213,6 @@ var siteEffects = {
 		this.socialiteButtons();
 		this.searchFancySchmanzy();
 		this.latestTweet();
-	}
-	
-}
-
-var codeSnippets = {
-
-	addCodeAttributes: function() {
-		
-		var codeBlocks = $('#content pre code');
-		
-		if (codeBlocks.length) {
-		
-			codeBlocks.each(function() {
-				if ( !$(this).is('[data-language]') ) {
-		        	if ( $(this).is(':contains(<?php)') ) {
-		        		$(this).attr('data-language', 'php');
-		        	} else if ( $(this).hasClass('css') ) {
-		        		$(this).attr('data-language', 'css');
-		        	} else {
-		        		$(this).attr('data-language', 'generic');
-		        	}
-	        	}
-	        });
-	        
-        }
-	},
-	
-	init: function(){
-		this.addCodeAttributes();
 	}
 	
 }
