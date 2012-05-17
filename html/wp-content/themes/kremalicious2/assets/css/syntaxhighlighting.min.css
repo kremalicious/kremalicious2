@@ -56,13 +56,13 @@
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   color: #333;
   background: #f8f8f8;
-  background: rgba(255, 255, 255, 0.2);
-  line-height: 18px;
-  font-size: 12px;
-  padding: .5em 1em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  line-height: 19px;
+  font-size: 11px;
+  padding: 1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -77,6 +77,9 @@
   overflow: auto;
   white-space: pre;
   word-wrap: normal;
+}
+.syntaxhighlighter,
+.syntaxhighlighter .line {
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   -ms-transition: all 0.3s ease-in-out 0s;
@@ -84,7 +87,7 @@
   transition: all 0.3s ease-in-out 0s;
 }
 .syntaxhighlighter:hover,
-.syntaxhighlighter div.line:hover {
+.syntaxhighlighter .line:hover {
   background: #fff;
   background: rgba(255, 255, 255, 0.5);
 }
@@ -92,13 +95,49 @@
   margin-left: -10%;
   margin-right: -10%;
 }
+@media only screen and (min-width: 769px) {
+  .no-touch .entry-content .syntaxhighlighter:hover {
+    margin-left: -20%;
+    margin-right: -5%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .no-touch .entry-content .syntaxhighlighter:hover {
+    margin-right: -10%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .no-touch .entry-content .syntaxhighlighter:hover {
+    margin-right: -20%;
+  }
+}
 .syntaxhighlighter .gutter {
-  padding-right: .7em !important;
   color: #bac0c7;
+}
+.syntaxhighlighter .line.highlighted.alt1,
+.syntaxhighlighter .line.highlighted.alt2,
+.syntaxhighlighter .line.highlighted {
+  background: rgba(255, 255, 206, 0.4);
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  color: #333;
+}
+.syntaxhighlighter table caption {
+  margin-bottom: 1em;
+  font-style: italic;
+  color: #888;
+}
+.syntaxhighlighter .gutter .line {
+  padding-right: .7em;
+}
+.syntaxhighlighter .code .line {
+  padding-left: .7em;
 }
 .syntaxhighlighter .gutter .line {
   border-right: 4px solid #e5ebf1;
-  padding-right: .5em;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  border-right-color: rgba(255, 255, 206, 0.8);
 }
 .syntaxhighlighter.printing .line .content {
   border: none;
@@ -112,14 +151,15 @@
 }
 .syntaxhighlighter .comments,
 .syntaxhighlighter .comments a {
-  color: #3f5fbf;
+  color: #949696;
 }
 .syntaxhighlighter .string,
 .syntaxhighlighter .string a {
   color: #2a00ff;
 }
 .syntaxhighlighter .keyword {
-  color: #7f0055;
+  color: #6177bf;
+  font-weight: bold;
 }
 .syntaxhighlighter .preprocessor {
   color: #646464;
@@ -128,22 +168,23 @@
   color: #aa7700;
 }
 .syntaxhighlighter .value {
-  color: #009900;
+  color: #5ca241;
 }
 .syntaxhighlighter .functions {
-  color: #ff1493;
+  color: #869d36;
+  font-weight: bold;
 }
 .syntaxhighlighter .constants {
   color: #0066cc;
 }
 .syntaxhighlighter .script {
   font-weight: bold;
-  color: #7f0055;
+  color: #d44950;
   background-color: none;
 }
 .syntaxhighlighter .color1,
 .syntaxhighlighter .color1 a {
-  color: gray;
+  color: #649fd2;
 }
 .syntaxhighlighter .color2,
 .syntaxhighlighter .color2 a {
@@ -153,12 +194,8 @@
 .syntaxhighlighter .color3 a {
   color: red;
 }
-.syntaxhighlighter .keyword {
-  font-weight: bold;
-}
 .syntaxhighlighter .xml .keyword {
   color: #3f7f7f;
-  font-weight: normal;
 }
 .syntaxhighlighter .xml .color1,
 .syntaxhighlighter .xml .color1 a {
