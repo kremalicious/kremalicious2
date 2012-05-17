@@ -10,11 +10,6 @@ require_once locate_template('/inc/krlc2-htaccess.php');
 
 function kremalicious2_setup() {
 
-  // tell the TinyMCE editor to use editor-style.css
-  // if you have issues with getting the editor to show your changes then
-  // use this instead: add_editor_style('editor-style.css?' . time());
-  add_editor_style('assets/css/editor.min.css');
-
   // http://codex.wordpress.org/Post_Thumbnails
   add_theme_support('post-thumbnails');
   // set_post_thumbnail_size(150, 150, false);
