@@ -36,6 +36,7 @@ function krlc2_admin_scripts_styles() {
 }
 add_action('admin_enqueue_scripts', 'krlc2_admin_scripts_styles', 100);
 
+
 function krlc2_login_scripts_styles() {
 	wp_enqueue_style('krlc2_login_style', get_template_directory_uri() . '/assets/css/login.min.css', false, null);
 }
@@ -49,3 +50,13 @@ function krlc2_syntax_theme( $themes ) {
     return $themes;
 }
 add_filter( 'syntaxhighlighter_themes', 'krlc2_syntax_theme' );
+
+// load syntaxhighlighting css in admin area for preview, but only on plugin option page
+function krlc2_syntax_theme_admin() {
+	$screen = get_current_screen();
+	if (is_object($screen) && $screen->id == 'settings_page_syntaxhighlighter') {
+		wp_deregister_style('syntaxhighlighter-core');
+		wp_register_style('syntaxhighlighter-theme-kremalicious2', get_template_directory_uri() . '/assets/css/syntaxhighlighting.min.css', false, null);
+	}
+}
+add_action('admin_enqueue_scripts', 'krlc2_syntax_theme_admin', 100);
