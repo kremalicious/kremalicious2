@@ -1,0 +1,159 @@
+/*
+
+ SYNTAX HIGHLIGHTING CSS FOR KREMALICIOUS.COM
+ -----------------------------------------------------------------
+ 
+ Copyright (c) 2012 Matthias Kretschmann | http://mkretschmann.com
+ 
+ Based on SyntaxHighlighter
+ http://alexgorbatchev.com/SyntaxHighlighter
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+@import 'variables.less';
+@import 'mixins.less';
+
+/* resets */
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table th, 
+.syntaxhighlighter table td,
+.syntaxhighlighter table td:hover,
+.syntaxhighlighter table tbody tr:nth-child(odd) td, 
+.syntaxhighlighter table tbody tr:nth-child(odd) th,
+.syntaxhighlighter .container {
+    border: none;
+    padding: 0;
+    margin: 0;
+    .border-radius(0);
+    background: none;
+}
+
+.syntaxhighlighter {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	color: #333;
+	background: #f8f8f8;
+	background: rgba(255,255,255,.2);
+	line-height: 18px;
+	font-size: 12px;
+	padding: .5em 1em;
+	.border-radius(5px);
+	border: 1px solid #c9d7e4;
+	word-wrap: break-word;
+	margin-bottom: 1.5em;
+	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
+	display: block;
+	width: auto;
+	overflow: auto;
+	white-space: pre;
+	word-wrap: normal;
+	.transition(all .3s ease-in-out 0s);
+}
+
+.syntaxhighlighter:hover,
+.syntaxhighlighter div.line:hover {
+	background: #fff;
+	background: rgba(255,255,255,.5);
+}
+
+	.no-touch .entry-content .syntaxhighlighter:hover {
+		margin-left: -10%;
+		margin-right: -10%;
+	}
+
+.syntaxhighlighter .line.alt1 {}
+.syntaxhighlighter .line.alt2 {}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {}
+.syntaxhighlighter .line.highlighted.number {}
+.syntaxhighlighter table caption {}
+
+.syntaxhighlighter .gutter {
+	padding-right: .7em !important;
+	color: #bac0c7;
+}
+
+.syntaxhighlighter .gutter .line {
+	border-right: 4px solid #e5ebf1;
+	padding-right: .5em;
+}
+
+.syntaxhighlighter .gutter .line.highlighted {}
+
+.syntaxhighlighter.printing .line .content {
+  border: none;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible;
+}
+
+.syntaxhighlighter.collapsed .toolbar {}
+.syntaxhighlighter.collapsed .toolbar a {}
+.syntaxhighlighter.collapsed .toolbar a:hover {}
+.syntaxhighlighter .toolbar {}
+.syntaxhighlighter .toolbar a {}
+.syntaxhighlighter .toolbar a:hover {}
+
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: #333;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #3f5fbf;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: #2a00ff;
+}
+.syntaxhighlighter .keyword {
+  color: #7f0055;
+}
+.syntaxhighlighter .preprocessor {
+  color: #646464;
+}
+.syntaxhighlighter .variable {
+  color: #aa7700;
+}
+.syntaxhighlighter .value {
+  color: #009900;
+}
+.syntaxhighlighter .functions {
+  color: #ff1493;
+}
+.syntaxhighlighter .constants {
+  color: #0066cc;
+}
+.syntaxhighlighter .script {
+  font-weight: bold;
+  color: #7f0055;
+  background-color: none;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: gray;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: #ff1493;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: red;
+}
+
+.syntaxhighlighter .keyword {
+  font-weight: bold;
+}
+.syntaxhighlighter .xml .keyword {
+  color: #3f7f7f;
+  font-weight: normal;
+}
+.syntaxhighlighter .xml .color1, .syntaxhighlighter .xml .color1 a {
+  color: #7f007f;
+}
+.syntaxhighlighter .xml .string {
+  font-style: italic;
+  color: #2a00ff;
+}

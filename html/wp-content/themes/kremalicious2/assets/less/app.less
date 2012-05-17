@@ -1871,8 +1871,7 @@ aside[role="complementary"] br,
 /* Pretty Code */
 /* ============================================================== */
 
-pre, code,
-.syntaxhighlighter {
+pre, code {
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	color: #333;
 	background: #f8f8f8;
@@ -1882,8 +1881,7 @@ pre, code,
 	font-size: 12px;
 }
 
-pre,
-.syntaxhighlighter {
+pre {
 	padding: .5em 1em;
 	.border-radius(5px);
 	border: 1px solid #c9d7e4;
@@ -1904,15 +1902,8 @@ code {
     border: 1px solid #eaeaea;
 }
 
-pre code,
-.syntaxhighlighter code,
-.syntaxhighlighter table,
-.syntaxhighlighter table th, 
-.syntaxhighlighter table td,
-.syntaxhighlighter table td:hover,
-.syntaxhighlighter table tbody tr:nth-child(odd) td, 
-.syntaxhighlighter table tbody tr:nth-child(odd) th,
-.syntaxhighlighter .container {
+/* resets */
+pre code {
     border: none;
     padding: 0;
     margin: 0;
@@ -1920,29 +1911,15 @@ pre code,
     background: none;
 }
 
-pre:hover,
-.syntaxhighlighter:hover,
-.syntaxhighlighter div.line:hover {
+pre:hover {
 	background: #fff;
 	background: rgba(255,255,255,.5);
 }
 
-	.no-touch .entry-content pre:hover,
-	.no-touch .entry-content .syntaxhighlighter:hover {
+	.no-touch .entry-content pre:hover {
 		margin-left: -10%;
 		margin-right: -10%;
 	}
-
-/* line number column */
-.syntaxhighlighter td.gutter {
-	border-right: 4px solid #e5ebf1 !important;
-	padding-right: .7em !important;
-	color: #bac0c7;
-}
-
-.syntaxhighlighter td.code {
-	padding-left: .5em !important
-}
 
 
 /* ============================================================== */

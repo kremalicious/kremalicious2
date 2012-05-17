@@ -19,6 +19,9 @@ function krlc2_scripts() {
 	
 	// prevent syntaxhighlighting core css from loading
 	wp_deregister_style('syntaxhighlighter-core');
+	// register our own theme
+	// http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/adding-a-new-theme/
+	wp_register_style('syntaxhighlighter-theme-kremalicious2', get_template_directory_uri() . '/assets/css/syntaxhighlighting.min.css', false, null);
 	
 }
 add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
@@ -37,3 +40,12 @@ function krlc2_login_scripts_styles() {
 	wp_enqueue_style('krlc2_login_style', get_template_directory_uri() . '/assets/css/login.min.css', false, null);
 }
 add_action('login_enqueue_scripts', 'krlc2_login_scripts_styles', 100);
+
+// add syntax highlighting theme to plugin
+// http://www.viper007bond.com/wordpress-plugins/syntaxhighlighter/adding-a-new-theme/
+function krlc2_syntax_theme( $themes ) {
+    $themes['kremalicious2'] = 'kremalicious2';
+ 
+    return $themes;
+}
+add_filter( 'syntaxhighlighter_themes', 'krlc2_syntax_theme' );
