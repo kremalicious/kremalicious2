@@ -1,16 +1,28 @@
 <!doctype html>
 <!--
-		      ___           ___     
-		     /__/\         /__/|    
-		    |  |::\       |  |:|    
-		    |  |:|:\      |  |:|    
-		  __|__|:|\:\   __|  |:|    
-		 /__/::::| \:\ /__/\_|:|____
-		 \  \:\~~\__\/ \  \:\/:::::/
-		  \  \:\        \  \::/~~~~ 
-		   \  \:\        \  \:\     
-		    \  \:\        \  \:\    
-		     \__\/         \__\/ 
+	      ___           ___     
+	     /__/\         /__/|    
+	    |  |::\       |  |:|    
+	    |  |:|:\      |  |:|    
+	  __|__|:|\:\   __|  |:|    
+	 /__/::::| \:\ /__/\_|:|____
+	 \  \:\~~\__\/ \  \:\/:::::/
+	  \  \:\        \  \::/~~~~ 
+	   \  \:\        \  \:\     
+	    \  \:\        \  \:\    
+	     \__\/         \__\/ 
+	     
+	 YOU EARNED THE GEEK ACHIEVEMENT 
+	 FOR LOOKING AT MY SOURCE
+	 
+	 But because of all the minimizing and caching 
+	 going on you better check out the code on 
+	 github
+	 _____________________________________________
+	 
+	 https://github.com/kremalicious/kremalicious2
+	 
+	 _____________________________________________
 -->
 
 <!--[if IE 8]>    		<html class="no-js lt-ie9" lang="en"> <![endif]-->
