@@ -74,47 +74,14 @@ add_action('wp_dashboard_setup', 'krlc2_attention_widget_Init');
 
 
 /** 
- * STYLES DROPDOWN FOR EDITOR
+ * DEFAULT QUICKTAG BUTTONS FOR HTML EDITOR
  * ===========================================
- * adapted from 
- * http://theme.it/an-alternative-to-the-shortcode-madness-part-1/
- *
- * Filter TinyMCE Buttons
  */
-function krlc2_mce_buttons_1( $buttons ) {
-  array_unshift( $buttons, 'styleselect' );
-  return $buttons;
+function krlc2_quicktags( $qtInit ) {
+	$qtInit['buttons'] = 'strong,em,link,block,ul,ol,li,code,more,close';
+    return $qtInit;
 }
-add_filter( 'mce_buttons_1', 'krlc2_mce_buttons_1' );
-
-/**
- * Add Style Options
- * {@link http://tinymce.moxiecode.com/examples/example_24.php }
- */
-function krlc2_tiny_mce_before_init( $settings ) {
-  $settings['theme_advanced_buttons1'] = 'formatselect,|,bold,italic,|,bullist,numlist,blockquote,|,link,unlink,|,styleselect,|,wp_more,|,removeformat,undo,redo,|,spellchecker,wp_fullscreen';
-  $settings['theme_advanced_buttons2'] = '';
-  $settings['theme_advanced_blockformats'] = 'p,h1,h2,h3,h4,pre,';
-
-  $style_formats = array(
-      array( 'title' => 'Button Link',         	'selector' => 'a',  'classes' => 'btn', 'remove' => 'empty' ),
-      array( 'title' => 'Primary Button Link',	'selector' => 'a',  'classes' => 'btn btn-primary', 'remove' => 'empty' ),
-      array( 'title' => 'Download Button',      'selector' => 'a',  'classes' => 'btn btn-block icon-download-alt', 'remove' => 'empty' ),
-      array( 'title' => 'Download Button Primary', 'selector' => 'a',  'classes' => 'btn btn-primary btn-block icon-download-alt', 'remove' => 'empty' ),
-      //array( 'title' => 'Download Button', 	'inline' => 'a',  'classes' => 'btn btn-primary' ),
-  );
-
-  $settings['style_formats'] = json_encode( $style_formats );
-  
-  $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
-  if (isset($settings['extended_valid_elements'])) {
-    $settings['extended_valid_elements'] .= ',' . $ext;
-  } else {
-    $settings['extended_valid_elements'] = $ext;
-  }
-  return $settings;
-}
-add_filter( 'tiny_mce_before_init', 'krlc2_tiny_mce_before_init' );
+add_filter('quicktags_settings', 'krlc2_quicktags', 10, 1);
 
 
 /**
