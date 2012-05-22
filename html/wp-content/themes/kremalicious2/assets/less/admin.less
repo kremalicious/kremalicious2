@@ -43,9 +43,6 @@ body,#wpbody,.form-table .pre {
 
 h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
 	color: @headingsColor;
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
-	font-style: normal;
 	.antialiasing;
 }
 
@@ -77,10 +74,9 @@ h4 {
 }
 
 /*Links*/
-a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a {
+a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a, .plugins a {
 	text-decoration: none;
 	color: @linkColor;
-	.transition(all .3s ease-in-out 0s);
 }
 
 a:hover,
@@ -265,6 +261,33 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0)));
 }
 
+.plugins tr,
+.plugins td,
+.plugins th,
+.plugins .inactive, .plugins .inactive th, .plugins .inactive td {
+	background: transparent;
+}
+
+.plugins .active td,
+.plugins .active th {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.4)), to(rgba(255,255,255,0)));
+	padding-top: 1em;
+	padding-bottom: 1em
+}
+
+.plugins .inactive td,
+.plugins .inactive th {
+	.opacity(70);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.4)), to(rgba(255,255,255,0)));
+	padding-top: 1em;
+	padding-bottom: 1em
+}
+
+.plugins .inactive:hover td,
+.plugins .inactive:hover th {
+	.opacity(100);
+}
+
 .widget, .postbox, .stuffbox {
 	margin-bottom: 60px;
 }
@@ -287,9 +310,8 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 #krlc2_attention_widget textarea,
 #krlc2_attention_widget .alert {
-	font: 14px/20px @baseFontFamily;
-	font-style: normal;
-	font-weight: @baseFontWeight;
+	font-family: Georgia, serif;
+	font-size: 14px;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 	.antialiasing();
 }
