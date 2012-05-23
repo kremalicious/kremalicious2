@@ -88,3 +88,11 @@ function krlc2_robots() {
 }
 add_action('do_robots', 'krlc2_robots');
 
+/**
+ * WP-CONFIG
+ * ===========================================
+ */
+if (!defined('WP_POST_REVISIONS')) { define('WP_POST_REVISIONS', 3); }
+
+// http://backwpup.com/faq/deactivate-some-backup-destinations/
+if (!defined('BACKWPUP_DESTS')) { define('BACKWPUP_DESTS','S3,DROPBOX'); }

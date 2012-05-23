@@ -104,9 +104,3 @@ function krlc2_post_type_support() {
 	remove_post_type_support( 'page', 'trackbacks');
 }
 add_action('admin_init', 'krlc2_post_type_support');
-
-/**
- * set the post revisions to 3
- * ===========================================
- */
-if (!defined('WP_POST_REVISIONS')) { define('WP_POST_REVISIONS', 3); }
