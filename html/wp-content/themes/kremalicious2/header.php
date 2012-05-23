@@ -51,7 +51,7 @@
 	
 	<meta http-equiv="cleartype" content="on">
 	
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/kremalicious2.min.css">
+	<link rel="stylesheet" href="<?php echo auto_version('/wp-content/themes/kremalicious2/assets/css/kremalicious2.min.css'); ?>">
 	
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/modernizr-2.5.3.min.js"></script>
 	<script src="//use.typekit.com/msu4qap.js"></script>

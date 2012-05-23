@@ -51,6 +51,22 @@ function kremalicious2_setup() {
 }
 add_action('after_setup_theme', 'kremalicious2_setup');
 
+// Autoversioning of css and js files
+// http://derek.io/blog/2009/auto-versioning-javascript-and-css-files/
+/**
+ *  Given a file, i.e. /css/base.css, replaces it with a string containing the
+ *  file's mtime, i.e. /css/base.1221534296.css.
+ *  
+ *  @param $file  The file to be loaded.  Must be an absolute path (i.e.
+ *                starting with slash).
+ */
+function auto_version($file) {
+  if(strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
+    return $file;
+
+  $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
+  return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
+}
 
 // add to virtual robots.txt
 function krlc2_robots() {
