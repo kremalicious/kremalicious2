@@ -79,13 +79,14 @@ h3 {
 	font-size: 1.5em;
 }
 
-p,ul,blockquote,pre,td,th,label, img {
+p,ul,ol,blockquote,pre,td,th,label,img {
 	padding: 0;
 	font-size: 1em;
 	margin: 0 0 1.5em;
 }
 
-p {
+p,
+li {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
@@ -197,9 +198,7 @@ h3 a:visited {
 	text-align: center;
 	line-height: 1.1em;
 	top: .2em;
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.7);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.7);
-	box-shadow: 0 1px 0 rgba(255,255,255,.7);
+	.box-shadow(0 1px 0 rgba(255,255,255,.7));
 }
 
 
@@ -569,7 +568,6 @@ header[role="banner"] h1 {
 	padding: 8px 0 5px 0;
 	.box-sizing(content-box);
 	border-top: 1px solid #9bb6c3;
-	
 	position: relative;		
 }
 
@@ -1007,27 +1005,8 @@ a.photopost {
 	background: #fcfeff;
 	border: 1px solid rgba(158, 170, 178, .6);
 	.border-radius(2px);
-	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
-	.transition(all .3s ease-in-out 0s);
+	.box-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
 }
-	
-	.photoPost figure:before,
-	.photoPost figure:after {
-		content: "";
-		position: absolute;
-		z-index: -2;
-	}
-	
-	.photoPost figure:before {
-		top: 0;
-		bottom: 0;
-		left: 10px;
-		right: 10px;
-		.border-radius( 100px / 10px);
-		.box-shadow(0 0 15px rgba(0,0,0,0.3));
-	}
 
 .photoPost figure img {
 	.box-shadow(none);
@@ -1060,8 +1039,7 @@ a.photoPost:hover figure {
 }
 
 .single .photoPost {
-	margin: 0 auto;
-	display: inline-table;
+	text-align: center;
 }
 
 .single .photoPost figure {
@@ -1920,17 +1898,9 @@ pre:hover {
 
 @keyframes bannerSlideUp {
  from {
-    -webkit-transform: translateY(0);
-   	-moz-transform: translateY(0);
-   	-o-transform: translateY(0);
-   	-ms-transform: translateY(0);
    	transform: translateY(0);
  }
  to {
-    -webkit-transform: translateY(-82px);
-   	-moz-transform: translateY(-82px);
-   	-o-transform: translateY(-82px);
-   	-ms-transform: translateY(-82px);
    	transform: translateY(-82px);
  }
 
@@ -1986,31 +1956,15 @@ pre:hover {
 
 @keyframes bannerFallDown {
  0% {
-    -webkit-transform: translateY(-82px);
-   	-moz-transform: translateY(-82px);
-   	-o-transform: translateY(-82px);
-   	-ms-transform: translateY(-82px);
    	transform: translateY(-82px);
  }
  50% {
-    -webkit-transform: translateY(0);
-   	-moz-transform: translateY(0);
-   	-o-transform: translateY(0);
-   	-ms-transform: translateY(0);
    	transform: translateY(0);
  }
  80% {
-    -webkit-transform: translateY(-10px);
-   	-moz-transform: translateY(-10px);
-   	-o-transform: translateY(-10px);
-   	-ms-transform: translateY(-10px);
    	transform: translateY(-10px);
  }
  100% {
-    -webkit-transform: translateY(0);
-   	-moz-transform: translateY(0);
-   	-o-transform: translateY(0);
-   	-ms-transform: translateY(0);
    	transform: translateY(0);
  }
 
@@ -2386,6 +2340,29 @@ pre:hover {
 	.masonryWrap {
 		width: 100%;
 		margin-left: 0;
+	}
+	
+	.photoPost figure {
+		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+		-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+		.transition(all .3s ease-in-out 0s);
+		
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: -2;
+		}
+		
+		&:before {
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			right: 10px;
+			.border-radius( 100px / 10px);
+			.box-shadow(0 0 15px rgba(0,0,0,0.3));
+		}
 	}
 	
 	#goodiesDownload p {
