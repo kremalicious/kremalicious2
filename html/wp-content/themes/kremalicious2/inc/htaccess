@@ -39,5 +39,14 @@ Redirect 301 /canon-eos-50d-officially-announced-and-new-lens /
 # Easy WordPress Login
 Redirect 301 /login /wp-login.php
 
+# redirect all wordpress feeds to feedburner
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ RewriteCond %{REQUEST_URI}      ^/?(feed.*|comments.*)        [NC]
+ RewriteCond %{HTTP_USER_AGENT} !^.*(FeedBurner|FeedValidator) [NC] 
+ RewriteRule ^feed/?.*$          http://feeds.feedburner.com/kremalicious         [L,NC,R=302]
+ RewriteRule ^comments/?.*$      http://feeds.feedburner.com/kremalicious_comments [L,NC,R=302]
+</IfModule>
+
 
 # END CUSTOM WP STUFF
