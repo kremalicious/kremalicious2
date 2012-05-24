@@ -22,42 +22,4 @@
 
 <?php endwhile; /* End loop */ ?>
 
-	<section class="row" id="work">
-		<div class="col2">
-			<h2><i class="icon-github-alt"></i>Code</h2>
-			<img src="http://placekitten.com/315/200" width="315" height="200" />
-		</div>
-		<div class="col2">
-			<h2>Client Work</h2>
-			<img src="http://placekitten.com/315/200" width="315" height="200" />
-		</div>
-		<div class="col2">
-			<h2>Dribbble</h2>
-			<img src="http://placekitten.com/315/200" width="315" height="200" />
-		</div>
-	</div>
-	
-	<section class="row" id="contact">
-		<div class="col2">
-			<h2>Contact</h2>
-	
-			Twitter
-			Email desk@kremalicious.com
-		</div>
-		<div class="col4">
-			<h2>Where to find me</h2>
-	
-			* Portfolio
-			* Twitter
-			* Google+
-			* Dribbble
-			* Zerply
-			* 500px
-			* Flickr
-			* Github
-		</div>
-	</section>
-
-	Credits/Colophon
-
 </article>
