@@ -238,15 +238,13 @@ textarea::-webkit-input-placeholder {
 .js form p label { position: absolute; top: .6em; left: .6em;}
 
 .btn,
-.pager a,
 .inline-download,
 .download,
 .comment-reply-link,
 a[rel*="tag"],
 #topics a,
 #cancel-comment-reply-link,
-.comment-edit-link,
-#post-nav-single a {
+.comment-edit-link {
 	font-size: 1em;
 	text-align: center;
 	display: inline-block;
@@ -290,29 +288,23 @@ a[rel*="tag"],
 	}
 
 .btn:hover,
-.pager a:hover,
 .comment-reply-link:hover,
 a[rel*="tag"]:hover,
 #topics a:hover,
-.comment-edit-link:hover,
-#post-nav-single a:hover {
+.comment-edit-link:hover {
 	background-color: rgba(255,255,255,.2);
 }
 
 .btn:active,
-.pager a:active,
 .comment-reply-link:active,
 a[rel*="tag"]:active,
 #topics a:active,
 .comment-edit-link:active,
-#post-nav-single a:active,
 .touch .btn:hover,
-.touch .pager a:hover,
 .touch .comment-reply-link:hover,
 .touch a[rel*="tag"]:hover,
 .touch #topics a:hover,
-.touch .comment-edit-link:hover,
-#post-nav-single a:hover {
+.touch .comment-edit-link:hover {
 	.transition(none);
 	top: 1px;
 }
@@ -390,8 +382,7 @@ a[rel*="tag"]:active,
 
 .hoverbuttons .btn,
 .hoverbuttons #topics a,
-.hoverbuttons a[rel*="tag"],
-#post-nav-single a {
+.hoverbuttons a[rel*="tag"] {
 	.box-shadow(none);
 	background: transparent;
 	border-color: transparent;
@@ -401,11 +392,9 @@ a[rel*="tag"]:active,
 	.hoverbuttons:hover .btn,
 	.hoverbuttons #topics:hover a,
 	.hoverbuttons:hover a[rel*="tag"],
-	#post-nav-single:hover a,
 	.touch .hoverbuttons .btn,
 	.touch .hoverbuttons #topics a,
-	.touch .hoverbuttons a[rel*="tag"],
-	.touch #post-nav-single a {
+	.touch .hoverbuttons a[rel*="tag"] {
 		-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
 		-moz-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
 		box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -417,16 +406,9 @@ a[rel*="tag"]:active,
 		background-image: -ms-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
 		background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
 	}
-	
-	#post-nav-single:hover a,
-	.touch #post-nav-single a {
-		border: 2px solid rgba(255,255,255,.3);
-	}
-	
-	
+
 	.hoverbuttons .btn:hover,
-	.hoverbuttons #topics a:hover,
-	#post-nav-single a:hover {
+	.hoverbuttons #topics a:hover {
 		background-color: rgba(255,255,255,.2);
 	}
 
@@ -778,6 +760,12 @@ nav[role="navigation"] .dropdown-menu li a {
 	padding-bottom: 1.5em;
 }
 
+.single .pager {
+	.divider-top();
+	padding-bottom: 0;
+	padding-top: 2em
+}
+
 .pager p {
 	width: 48%;
 	margin: 0;
@@ -785,14 +773,8 @@ nav[role="navigation"] .dropdown-menu li a {
 	font-size: .95em;
 }
 
-.pager i {
-	position: absolute;
-	left: .7em;
-	top: .5em;
-}
-
-.pager i:before {
-	margin: 0;
+.pager a {
+	display: block;
 }
 
 .pager .alignright,
@@ -805,17 +787,24 @@ nav[role="navigation"] .dropdown-menu li a {
 	text-align: left;
 }
 
-.pager .alignleft a {
-	padding-left: 1.5em;
+.single .pager .alignleft a {
+	margin-left: 1.5em;
 }
-.pager .alignright a {
-	padding-right: 1.5em;
+.single .pager .alignright a {
+	margin-right: 2em;
 }
 
-.pager .alignright i {
-	left: auto;
-	right: .7em;
+.single .pager i {
+	position: absolute;
+	left: 0;
+	top: 0;
 }
+
+.single .pager .alignright i {
+	left: auto;
+	right: 0;
+}
+
 
 /* ============================================================== */
 /*	POSTS */
