@@ -1125,6 +1125,10 @@ body.single-format-image .photoPostWrap {
 	color: rgba(46, 79, 92, .4);
 }
 
+#commentShow i:before {
+	margin-right: 0
+}
+
 #commentShow .icon-comments {
 	margin-right: .5em;
 }
@@ -1497,6 +1501,12 @@ footer[role="contentinfo"]:hover .facebook i:before,
 /* replicate social buttons, but dim everything */
 .btn.socialite {
 	font: normal normal normal 11px/18px 'Helvetica Neue',Arial,sans-serif;
+	text-align: left;
+	color: #676767;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+	height: 21px;
+	max-width: 100%;
 	position: relative;
 	background-color: rgba(255,255,255,.4);
 	background-image: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
@@ -1507,20 +1517,15 @@ footer[role="contentinfo"]:hover .facebook i:before,
 	background-image: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 100%);
 	border: 1px solid #dcdcdc;
 	.border-radius(3px);
-	color: #676767;
-	font-weight: bold;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-	height: 21px;
-	max-width: 100%;
 	display: inline-block;
 	vertical-align: top;
-	padding: .1em .5em;
+	padding: 1px 5px;
 	.box-shadow(none);
 }
 
 .btn.socialite i:before {
 	font-size: 1.4em;
-	margin-right: .1em;
+	margin-right: 0;
 }
 
 .btn.socialite.googleplus {
