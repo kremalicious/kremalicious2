@@ -609,8 +609,6 @@ nav[role="navigation"] li.open a.dropdown-toggle {
 nav[role="navigation"] li a.dropdown-toggle,
 nav[role="navigation"] li.open a.dropdown-toggle {
   color: #657276;
-  padding: .7em .6em .6em .6em;
-  margin-left: -.3em;
   display: inline-block;
   .border-radius(3px);
 }
@@ -648,8 +646,8 @@ nav[role="navigation"] li.open a.dropdown-toggle {
 	z-index: 10;
 	display: none;
 	position: absolute;
-	top: 100%;
-	left: -4px;
+	top: 103%;
+	left: -1px;
 	padding: .3em;
 	background: #b7c1c4;
 	.box-shadow(0 1px 8px #9da8ac);
@@ -2314,8 +2312,9 @@ pre:hover {
 	
 	nav[role="navigation"] li a.dropdown-toggle,
 	nav[role="navigation"] li.open a.dropdown-toggle {
-	  padding: .7em .8em .6em 1em;
 	  .border-radius(0);
+	  padding-left: 1em;
+	  padding-right: .8em
 	}
 	
 	.dropdown-menu {
