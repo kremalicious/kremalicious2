@@ -28,16 +28,9 @@
 <?php endwhile; /* End loop */ ?>
 
 	<section id="work">
-		<div class="row">
-			<div class="col2">
-				<h3>Latest Code</h3>
-				<p><a href="https://github.com/kremalicious" title="Github Profile" class="btn btn-tag icon-github-alt">Github</a></p>
-			</div>
-			<p class="col1"><a href="https://github.com/kremalicious/kremalicious2">kremalicious2</a> <small class="dimmed">WordPress theme &amp; site files powering kremalicious.com</small></p>
-			<p class="col1"><a href="https://github.com/kremalicious/wp-icons-template">wp-icons-template</a> <small class="dimmed">Admin icons template &amp; functions for WordPress</small></p>
-			<p class="col1"><a href="https://github.com/kremalicious/csspaperstack">csspaperstack</a> <small class="dimmed">Pure CSS3 based solution for creating the illusion of stacked papers</small></p>
-			<p class="col1"><a href="https://github.com/kremalicious/glassfruit">glassfruit</a> <small class="dimmed">Growl notification style inspired by displays of a particular fruit company</small></p>
-		</div>
+		
+		<?php dynamic_sidebar('about-stuff'); ?>
+		
 		<div class="row">
 			<div class="col2">
 				<h3>Latest Client Work</h3>
