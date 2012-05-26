@@ -67,6 +67,7 @@
 							<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 						</header>
 						<?php if (!is_search()) { ?>
+						<section class="entry-content">
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
 							<p>
 								<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
@@ -76,6 +77,7 @@
 							<p>
 								<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
 							</p>
+						</section>
 						<?php } ?>
 					</div>
 				
@@ -200,7 +202,7 @@
 							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						</header>
 						<?php if ( !is_search() ) { ?>
-							
+							<section class="entry-content">
 							<?php if ( has_post_thumbnail() ) { ?>
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'featureImageStream' ); ?>
@@ -208,7 +210,7 @@
 							<?php } ?>
 							
 							<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
-							
+							</section>
 						<?php } ?>
 					</div>
 
@@ -238,6 +240,3 @@
 		</nav>
 	</div>
 <?php } ?>
-
-
-
