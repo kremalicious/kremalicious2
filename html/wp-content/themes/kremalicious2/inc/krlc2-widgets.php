@@ -12,7 +12,7 @@ function krlc2_widgets_init() {
 	));
 
 	// Register widgets
-	register_widget('GitHubGrubber');
+	register_widget('krlc2_GitHubGrubber');
 }
 add_action('widgets_init', 'krlc2_widgets_init');
 
@@ -24,9 +24,10 @@ add_action('widgets_init', 'krlc2_widgets_init');
  * Author URI: http://whoisowenbyrne.com
  * Version: 1.1
  */
-class GitHubGrubber extends WP_Widget {
+require(dirname(__FILE__) . '/krlc2-grubber.php');
+class krlc2_GitHubGrubber extends WP_Widget {
 
-	function GitHubGrubber() {
+	function krlc2_GitHubGrubber() {
 		$wops = array('description' =>  __('Display a GitHub users public repositories!'));
 		parent::WP_Widget(false, $name = __('krlc2 GitHub Grubber'), $wops);	
 	}
