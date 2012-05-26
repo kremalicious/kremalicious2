@@ -90,38 +90,38 @@ class krlc2_userprofile {
 	        $kremalicious = $user->ID;
 	        
 	        // Email
-	        echo '<a class="btn btn-tag" href="mailto:' . antispambot(get_the_author_meta('user_email', $kremalicious)) . '">Email</a>';
+	        echo '<a class="btn btn-tag icon-envelope" href="mailto:' . antispambot(get_the_author_meta('user_email', $kremalicious)) . '">Email</a>';
 	        // Portfolio site
 	        if ( get_the_author_meta( 'user_url', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('user_url', $kremalicious) .'">Portfolio</a>';
+	        	echo '<a class="btn btn-tag icon-star" href="'. get_the_author_meta('user_url', $kremalicious) .'">Portfolio</a> ';
 	        }
 	        // Twitter
 	        if ( get_the_author_meta( 'twitter', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a>';
+	        	echo '<a class="btn btn-tag icon-twitter-alt" href="https://twitter.com/'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a> ';
 	        }
 	        // Google+
 	        if ( get_the_author_meta( 'googleplus', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('googleplus', $kremalicious) .'">Google+</a>';
+	        	echo '<a class="btn btn-tag icon-google-plus" href="'. get_the_author_meta('googleplus', $kremalicious) .'">Google+</a> ';
 	        }
 	        // Dribbble
 	        if ( get_the_author_meta( 'dribbble', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('dribbble', $kremalicious) .'">Dribbble</a>';
+	        	echo '<a class="btn btn-tag" href="http://dribbble.com/'. get_the_author_meta('dribbble', $kremalicious) .'">Dribbble</a> ';
 	        }
 	        // Github
 	        if ( get_the_author_meta( 'github', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('github', $kremalicious) .'">GitHub</a>';
+	        	echo '<a class="btn btn-tag icon-github-alt" href="https://github.com/'. get_the_author_meta('github', $kremalicious) .'">GitHub</a> ';
 	        }
 	        // Zerply
 	        if ( get_the_author_meta( 'zerply', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('zerply', $kremalicious) .'">Zerply</a>';
+	        	echo '<a class="btn btn-tag" href="http://zerply.com/'. get_the_author_meta('zerply', $kremalicious) .'">Zerply</a> ';
 	        }
 	        // 500px
 	        if ( get_the_author_meta( '500px', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('500px', $kremalicious) .'">500px</a>';
+	        	echo '<a class="btn btn-tag" href="http://500px.com/'. get_the_author_meta('500px', $kremalicious) .'">500px</a> ';
 	        }
 	        // Flickr
 	        if ( get_the_author_meta( 'flickr', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="'. get_the_author_meta('flickr', $kremalicious) .'">Flickr</a>';
+	        	echo '<a class="btn btn-tag icon-flickr-alt" href="http://www.flickr.com/photos/'. get_the_author_meta('flickr', $kremalicious) .'">Flickr</a> ';
 	        }
         }
 	    $list = ob_get_clean();
