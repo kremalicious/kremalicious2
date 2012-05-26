@@ -27,8 +27,6 @@
 
 <?php endwhile; /* End loop */ ?>
 
-<<<<<<< HEAD
-=======
 	<section id="work">
 		<div class="row">
 			<div class="col2">
@@ -66,5 +64,4 @@
 		</div>
 	</div>
 
->>>>>>> aboutpage
 </article>
