@@ -24,7 +24,12 @@ function krlc2_show_github_repos() {
 	
 	// iterate over each remaining repo and output data
     foreach ($myRepos as $myRepo) {
-        echo '<p class="col2"><a href="'.$myRepo['url'].'">'.$myRepo['name'].'</a> <small class="dimmed">'.$myRepo['description'].'</small></p>';
+    	if ( $myRepo['fork'] == true ) {
+	    	echo '<p class="col2 fork">';
+    	} else {
+	    	echo '<p class="col2">';
+    	}
+        echo '<a href="'.$myRepo['url'].'">'.$myRepo['name'].'</a> <small class="dimmed">'.$myRepo['description'].'</small></p>';
     }
 }
 
