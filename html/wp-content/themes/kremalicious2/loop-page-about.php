@@ -44,24 +44,23 @@
 				<h3>Latest Client Work</h3>
 				<p><a href="http://matthiaskretschmann.com" class="btn btn-tag icon-star">Portfolio</a></p>
 			</div>
-			<a href="http://matthiaskretschmann.com/" class="col2">
-				<img src="http://matthiaskretschmann.com/folio/Portfolio-Mr-Reader-Theme-1.png" width="400" height="300" />
-			</a>
-			<a href="http://matthiaskretschmann.com/" class="col2">
-				<img src="http://matthiaskretschmann.com/folio/Portfolio-IPP-Halle-1.png" width="400" height="300" />
-			</a>
+			<div class="col4">
+				<a href="http://matthiaskretschmann.com/" class="col3">
+					<img src="http://matthiaskretschmann.com/folio/Portfolio-Mr-Reader-Theme-1.png" width="400" height="300" />
+				</a>
+				<a href="http://matthiaskretschmann.com/" class="col3">
+					<img src="http://matthiaskretschmann.com/folio/Portfolio-IPP-Halle-1.png" width="400" height="300" />
+				</a>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col2">
-				<h3>Latest Dribbble</h3>
+				<h3>Latest Dribbbles</h3>
 				<p><a href="#" class="btn btn-tag">Dribbble</a></p>
 			</div>
-			<a href="http://dribbble.com/shots/540014-kremalicious2" class="col2">
-				<img src="http://dribbble.com/system/assets/2525/73955/screenshots/540014/dribbble-kremalicious2.png" width="400" height="300" />
-			</a>
-			<a href="http://dribbble.com/shots/497613-GlassFruit-Growl-Style" class="col2">
-				<img src="http://dribbble.com/system/assets/2525/73955/screenshots/497613/dribbble_glassfruit.png" width="400" height="300" />
-			</a>
+			<div class="col4">
+				<?php krlc2_dribbble_shots(); ?>
+			</div>
 		</div>
 	</div>
 
