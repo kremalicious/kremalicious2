@@ -8,7 +8,6 @@ function krlc2_subscribe_buttons() {
 }
 
 // Github Repos
-/*
 function krlc2_show_github_repos() {
 	require_once locate_template('/inc/lib/Github/Autoloader.php');
 	Github_Autoloader::register();
@@ -28,7 +27,6 @@ function krlc2_show_github_repos() {
         echo '<p class="col2"><a href="'.$myRepo['url'].'">'.$myRepo['name'].'</a> <small class="dimmed">'.$myRepo['description'].'</small></p>';
     }
 }
-*/
 
 // Dribbble Shots
 function krlc2_show_dribbble_shots() {

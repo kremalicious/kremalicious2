@@ -29,8 +29,7 @@
 
 	<section id="work">
 	
-		<!--
-<div class="row">
+		<div class="row">
 			<div class="col2">
 				<h3>Latest Code</h3>
 				<p><a href="https://github.com/kremalicious" title="Github Profile" class="btn btn-tag icon-github-alt">Github</a></p>
@@ -39,7 +38,6 @@
 				<?php krlc2_show_github_repos(); ?>
 			</div>
 		</div>
--->
 		<div class="row">
 			<div class="col2">
 				<h3>Latest Client Work</h3>

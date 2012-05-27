@@ -61,7 +61,7 @@ class Github_HttpClient_Curl extends Github_HttpClient
             CURLOPT_URL => $url,
             CURLOPT_PORT => $options['http_port'],
             CURLOPT_USERAGENT => $options['user_agent'],
-            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_FOLLOWLOCATION => false,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_TIMEOUT => $options['timeout']
