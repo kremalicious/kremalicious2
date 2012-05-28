@@ -1202,10 +1202,9 @@ li.comment {
 	border: 1px solid #c0d6e0;
 	position: relative;
 	.transition(background .3s ease-in-out 0s);
-}
-
-	#leAvatar:before,
-	#leAvatar:after {
+	
+	&:before,
+	&:after {
 		content: "";
 		width: 68px;
 		height: 68px;
@@ -1214,15 +1213,17 @@ li.comment {
 		top: 4px;
 	}
 
-	#leAvatar:before {
+	&:before {
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
 		box-shadow: inset 0 1px 0 #fff, inset 0 -1px 7px rgba(0,0,0,.2);
 		border: 1px solid #afc3cb;
 	}
 	
-	#leAvatar:after {
+	&:after {
 		background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0.1)), color-stop(44%,rgba(255,255,255,0.2)), color-stop(45%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
 	}
+	
+}
 	
 	.comment:hover #leAvatar {
 		background-color: #fff;
@@ -1231,6 +1232,8 @@ li.comment {
 #leAvatar img.avatar {
 	margin: 0;
 	.box-shadow(0 1px 2px rgba(0,0,0, .3));
+	width: 68px;
+	height: 68px;
 }
 
 .comment header cite {

@@ -5,7 +5,7 @@
 			
 			<header class="comment-author vcard">
 				<span id="leAvatar">
-					<?php echo get_avatar($comment, $size = '80'); ?>
+					<img data-gravatar_hash="<?php echo md5( strtolower( trim( $comment->comment_author_email ) ) ); ?>" class="load-gravatar avatar photo" height="68" width="68" src="" />
 				</span>
 				<?php printf(__('<cite class="fn">%s</cite>', 'roots'), get_comment_author_link()); ?>
 			</header>

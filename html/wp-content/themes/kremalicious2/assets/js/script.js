@@ -20,7 +20,7 @@ $(ASAP = function(){
 		photoGrid.init();
 	}
 	interface.init();
-	
+    
 });
 
 $(window).load( AfterLoad = function() {
@@ -133,6 +133,7 @@ var interface = {
 			if ( $commentStuffHidden ) {
 				$commentStuffHidden.insertAfter('#commentShow').find('label').inFieldLabels();
 				$commentStuffHidden = null;
+				$('#comments .load-gravatar').async_gravatars({ ssl: true, size: 80 });
 			}
 			else {
 				$commentStuffHidden = $commentStuff.detach();
