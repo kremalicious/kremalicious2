@@ -5,17 +5,18 @@ function krlc2_scripts() {
 	// Deregister default jquery, manual call in footer.php
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', '', '', '', true);
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', '', null, true);
+		wp_enqueue_script( 'jquery','','','', true );
 	}
 	
 	// comment reply script
 	if (is_single() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+		wp_enqueue_script('comment-reply','/wp-includes/js/comment-reply.js','','', true);
 	}
 	
 	// Scripts, print in wp_footer
-	wp_register_script('krlc2_scripts', auto_version('/wp-content/themes/kremalicious2/assets/js/kremalicious2.min.js'), false, null, true);
-	wp_enqueue_script('krlc2_scripts','','','', true);
+	wp_register_script('krlc2_scripts', auto_version('/wp-content/themes/kremalicious2/assets/js/kremalicious2.min.js'), array('jquery'), null, true);
+	wp_enqueue_script('krlc2_scripts','', array('jquery'),'', true);
 	
 	// prevent syntaxhighlighting core css from loading
 	wp_deregister_style('syntaxhighlighter-core');
