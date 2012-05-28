@@ -63,7 +63,8 @@ add_action('admin_enqueue_scripts', 'krlc2_syntax_theme_admin', 100);
 // props: https://gist.github.com/1584783
 function add_async_to_js( $url ) {
     if ( 
-    FALSE === strpos( $url, 'jquery.min' ) or
+    //FALSE === strpos( $url, 'jquery.min' ) and
+    FALSE === strpos( $url, 'comment-reply' ) or
     FALSE === strpos( $url, '.js' )
     ) {
         return $url;
