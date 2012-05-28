@@ -58,3 +58,17 @@ function krlc2_syntax_theme_admin() {
 	}
 }
 add_action('admin_enqueue_scripts', 'krlc2_syntax_theme_admin', 100);
+
+// Add async attribute to some scripts
+// props: https://gist.github.com/1584783
+function add_async_to_js( $url ) {
+    if ( 
+    FALSE === strpos( $url, 'jquery.min' ) or
+    FALSE === strpos( $url, '.js' )
+    ) {
+        return $url;
+    }
+    // Must be a ', not "!
+    return "$url' async='async";
+}
+add_filter( 'clean_url', 'add_async_to_js', 11, 1 );
