@@ -931,11 +931,10 @@ nav[role="navigation"] .dropdown-menu li a {
 }
 
 .hentry footer {
-	margin: 1.5em 0 1.5em 0;
-	padding: .5em 0 .3em 0;
+	margin: 3em 0;
 }
 
-.hentry footer p:last-child {
+.hentry footer p {
 	margin-bottom: 0;
 }
 
@@ -949,56 +948,21 @@ nav[role="navigation"] .dropdown-menu li a {
 	font-style: normal;
 }
 
-#meta {
+.entry-meta {
 	.clearfix();
+	.divider-top();
 	.divider-bottom();
-	margin-top: 3em;
-	margin-bottom: 3em;
-	padding-bottom: .5em;
 	color: @textColorLight;
 }
 
-#meta p:first-child {
-	.divider-bottom();
-	text-align: center;
-	margin-bottom: .85em;
-	padding-bottom: 2.5em;
+.entry-meta a {
+	margin-bottom: 0
 }
 
-#meta p:first-child a {
-	font-size: 1em;
-}
-
-#pubdate {
+.entry-meta time {
 	font-style: italic;
-	margin-left: 1em
-}
-
-#sharebuttons,
-#shorturl {
-	float: left;
-	margin: 0;
-	line-height: 1.5em
-}
-
-#sharebuttons {
-	width: 33%;
-}
-
-#shorturl {
-	font-size: .8em;
 	float: right;
-	text-align: right;
-	width: 64%;
-}
-
-#shorturl a {
-	font-weight: 700
-}
-
-#sharebuttons .socialised {
-	float: left;
-	width: 50%
+	font-size: .9em
 }
 
 
@@ -1558,15 +1522,30 @@ footer[role="contentinfo"]:hover .facebook i:before,
 /*	FOOTER */
 /* ============================================================== */
 
-#content-info #tweets { 
-	padding-right: 0;
+#siteMeta,
+#siteCopyright {
+	.clearfix();
 }
 
 #siteMeta {
-	font-size: .8em;
+	.divider-top();
+	padding-top: 2em
 }
 
-#siteMeta p {
+#siteMeta #tweetsWrap {
+	margin-bottom: 0
+}
+
+#siteMeta #tweets { 
+	padding-right: 0;
+}
+
+#siteCopyright {
+	font-size: .8em;
+	.divider-top();
+}
+
+#siteCopyright p {
 	margin-bottom: 0;
 }
 

@@ -3,7 +3,7 @@
 <?php get_sidebar(); ?>
 
 <section role="main" class="col4">
-	
+	<div id="topPosts">
 	<?php 
 	
 	/* ===================================================== */
@@ -167,6 +167,8 @@
 		</article>
 
 	<?php endwhile; endif; /* End loop */ ?>
+	
+	</div><!-- END #topPosts -->
 	
 	<?php /* Check for paged, so no extensive offset parameter hacking is required */ ?>
 	
