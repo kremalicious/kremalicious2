@@ -75,6 +75,15 @@
 	}
 }
 
+// so we can reset only one item out of multiple
+.no-divider-bottom {
+	border-bottom: none;
+	padding-bottom: 0;
+	&:before {
+		display: none
+	}
+}
+
 // Loading Thingy
 .loading {
 	-webkit-animation: loadingThingy .2s infinite;

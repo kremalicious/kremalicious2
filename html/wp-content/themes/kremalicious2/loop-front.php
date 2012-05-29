@@ -172,7 +172,10 @@
 	
 	<?php 
 		if ($wp_query->max_num_pages > 1) { ?>
-				
+		
+		<header id="olderPosts">
+			<h1>Older Posts</h1>
+		</header>
 		<?php
 		$remainingOffset	= get_option('posts_per_page'); // get the offset from admin settings
 		$remainingPosts 	= new WP_Query(array( 'posts_per_page' => 200, 'offset' => $remainingOffset )); //posts_per_page hack, so offset works
@@ -193,10 +196,10 @@
 					$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); 
 					$leTopic 	= get_the_category(); ?>
 					
-					<div class="col1 posttype">
+					<div class="posttype">
 						<a class="icon- cat-<?php echo $leTopic[0]->slug; ?>" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
 					</div>
-					<h2 class="col5"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
+					<h2 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 					
 					<?php } 
 				
@@ -206,14 +209,14 @@
 					
 					elseif ( has_post_format( 'image' ) ) { ?>
 					
-					<div class="col1 posttype">
+					<div class="posttype">
 						<a class="icon-picture" rel="tooltip" href="/photos" title="Show all photo posts"></a>
 					</div>
-					<figure>
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('photoStreamTiny'); ?>
-						</a>
-					</figure>
+					<a href="<?php the_permalink(); ?>" class="entry-content">
+						<figure>
+							<?php the_post_thumbnail('photoStreamTinySlot'); ?>
+						</figure>
+					</a>
 					
 					<?php }	
 					
@@ -223,10 +226,10 @@
 					
 					elseif ( in_category('goodies') ) { ?>
 					
-					<div class="col1 posttype">
+					<div class="posttype">
 						<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all goodies"></a>
 					</div>
-					<h2 class="col5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					
 					<?php }
 			
@@ -236,7 +239,7 @@
 					
 					else { ?>
 					
-					<div class="col1 posttype">
+					<div class="posttype">
 						<?php if ( in_category('design') ) { ?>
 							<a class="icon-leaf" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
 						<?php } elseif ( in_category('personal') ) { ?>
@@ -247,7 +250,7 @@
 							<a class="icon-asterisk" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
 						<?php } ?>
 					</div>
-					<h2 class="col5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					
 					<?php } ?>
 					

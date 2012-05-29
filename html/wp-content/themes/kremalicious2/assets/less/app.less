@@ -74,8 +74,7 @@ h2 {
 	margin: 0.75em 0;
 }
 
-h3,
-.hentry.remainingPost header h2 {
+h3 {
 	margin: 0 0 1em;
 	font-size: 1.5em;
 }
@@ -823,6 +822,10 @@ nav[role="navigation"] .dropdown-menu li a {
 		padding-top: 0;
 	}
 
+.hentry:last-child {
+	.no-divider-bottom();
+}
+
 .home .hentry p:last-child {
 	margin-bottom: 0;
 }
@@ -865,17 +868,51 @@ nav[role="navigation"] .dropdown-menu li a {
 /*	REMAINING POSTS */
 /* ============================================================== */
 
+#olderPosts {
+	clear: both;
+	.clearfix();
+}
+
+#olderPosts h1 {
+	margin-top: 2em;
+	color: @textColorDimmed;
+	.divider-bottom();
+	.divider-top();
+	margin-bottom: 0;
+}
+
 .hentry.remainingPost {
 	padding: 0;
 }
 
-.hentry.remainingPost header h2 {
-	margin-bottom: 0;
+.remainingPost:first-child {
+	margin-top: 4em
 }
 
-.hentry.remainingPost header h2 a {
+.remainingPost .posttype {
+	margin-top: 1.6em;
+	font-size: 1em;
+	width: 15%;
+	float: left;
+	margin-right: 2%;
+	text-align: left
+}
+
+.remainingPost h2,
+.remainingPost .entry-content {
+	float: left;
+	width: 83%;
+}
+
+.hentry.remainingPost h2 {
+	font-size: 1.2em;
+	margin-bottom: 0;
+	text-align: left
+}
+
+.hentry.remainingPost h2 a {
 	display: block;
-	padding: 1em 0;
+	padding: 1.5em 0;
 	border: none
 }
 
@@ -988,9 +1025,21 @@ h2 a:hover i:before {
 	margin-top: -1.7em;
 }
 
+.format-link header h1,
 .format-link header h2 {
-	font-size: 1.5em;
-	line-height: 1.3em;
+	font-size: 1.3em;
+}
+
+.single .format-link header h1 {
+	font-size: 1.5em
+}
+
+.format-link.remainingPost header h2 a {
+	color: @textColorDimmed
+}
+
+.format-link.remainingPost header h2 a:hover {
+	color: @linkColorHover
 }
 
 /*	PHOTO POST */
@@ -1012,6 +1061,7 @@ a.photopost {
 	border: 1px solid rgba(158, 170, 178, .6);
 	.border-radius(2px);
 	.box-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
+	.transition(background .3s ease-in-out);
 }
 
 .photoPost figure img,
@@ -1033,29 +1083,33 @@ a.photoPost {
 	max-width: 100%;
 }
 
-a.photoPost:hover figure {
+.hentry.remainingPost.format-image a {
+	display: block;
+	line-height: 1em;
+}
+
+a.photoPost:hover figure,
+.hentry.remainingPost.format-image a:hover figure {
 	background: #c4e4df;
 }
 
-.hentry.remainingPost .posttype {
-	margin-top: 1.4em;
-	font-size: 1em;
-}
-
 .hentry.remainingPost.format-image {
-	padding: 1.5em 0
+	padding: 1em 0
 }
 
 .hentry.remainingPost.format-image .posttype {
-	margin-top: -.2em
+	margin-top: 0
 }
 
 .remainingPost figure {
 	padding: .2em;
+	margin: 0
 }
 
 .remainingPost figure img {
-	margin-bottom: .6em
+	border: none;
+	margin: 0;
+	margin-right: .6em;
 }
 
 /* Single View */

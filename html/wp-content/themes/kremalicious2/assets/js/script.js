@@ -36,12 +36,14 @@ var photoGrid = {
 		if ( $('body.blog, body.search').length > 0 ) {
 			// a bit weird logic because we have no dividers we can throw at nextUntil()
 			// but it works, so who would complain
-			var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
+			var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link, article.remainingPost');
 
 		    	noPhotoPhosts.each(function() {
 		    		// only fire when has image sibling
 		    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
-		    			$(this).not('.remainingPost').nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap"></div>');
+		    			$(this).not('.remainingPost')
+		    				.nextUntil(noPhotoPhosts, 'article')
+		    				.wrapAll('<div class="masonryWrap"></div>');
 		    		}
 		    	});
 
