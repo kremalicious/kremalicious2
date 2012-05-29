@@ -74,7 +74,8 @@ h2 {
 	margin: 0.75em 0;
 }
 
-h3 {
+h3,
+.hentry.remainingPost header h2 {
 	margin: 0 0 1em;
 	font-size: 1.5em;
 }
@@ -810,9 +811,11 @@ nav[role="navigation"] .dropdown-menu li a {
 /*	POSTS */
 /* ============================================================== */
 
-article.hentry {
+.hentry {
 	clear: both;
 	padding: 2em 0;
+	.clearfix();
+	.divider-bottom();
 }
 
 	.hentry:first-child,
@@ -832,6 +835,24 @@ article.hentry {
 	margin-top: 0;
 }
 
+.posttype {
+	font-size: 1.5em;
+	text-align: center;
+	margin-bottom: .6em;
+	line-height: 1.5em;
+}
+
+.posttype a {
+	display: inline-block;
+}
+
+.hentry:hover .posttype a,
+.touch .posttype a,
+.hentry:hover .posttype a:before,
+.touch .posttype a:before {
+	color: @linkColor;
+}
+
 .more-link {
 	display: block;
 }
@@ -841,6 +862,22 @@ article.hentry {
 	font-size: .9em;
 }
 
+/*	REMAINING POSTS */
+/* ============================================================== */
+
+.hentry.remainingPost {
+	padding: 0;
+}
+
+.hentry.remainingPost header h2 {
+	margin-bottom: 0;
+}
+
+.hentry.remainingPost header h2 a {
+	display: block;
+	padding: 1em 0;
+	border: none
+}
 
 /*	SINGLE VIEW */
 /* ============================================================== */
@@ -928,28 +965,6 @@ article.hentry {
 }
 
 
-/*	POST FORMATS & TYPES */
-/* ============================================================== */
-
-.posttype {
-	font-size: 1.5em;
-	text-align: center;
-	margin-bottom: .6em;
-	line-height: 1.5em;
-}
-
-.posttype a {
-	display: inline-block;
-}
-
-.hentry:hover .posttype a,
-.touch .posttype a,
-.hentry:hover .posttype a:before,
-.touch .posttype a:before {
-	color: @linkColor;
-}
-
-
 /*	LINK POST */
 /* ============================================================== */
 
@@ -982,13 +997,15 @@ h2 a:hover i:before {
 /* ============================================================== */
 
 .photoPost figure,
+.remainingPost figure,
 a.photopost {
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.photoPost figure {
+.photoPost figure,
+.remainingPost figure {
 	position: relative;
 	padding: .4em;
 	background: #fcfeff;
@@ -997,7 +1014,8 @@ a.photopost {
 	.box-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
 }
 
-.photoPost figure img {
+.photoPost figure img,
+.remainingPost figure img {
 	.box-shadow(none);
 	.border-radius(2px);
 	margin-left: auto;
@@ -1019,12 +1037,35 @@ a.photoPost:hover figure {
 	background: #c4e4df;
 }
 
+.hentry.remainingPost .posttype {
+	margin-top: 1.4em;
+	font-size: 1em;
+}
+
+.hentry.remainingPost.format-image {
+	padding: 1.5em 0
+}
+
+.hentry.remainingPost.format-image .posttype {
+	margin-top: -.2em
+}
+
+.remainingPost figure {
+	padding: .2em;
+}
+
+.remainingPost figure img {
+	margin-bottom: .6em
+}
+
 /* Single View */
 
 .single .photoPostWrap,
 .masonryWrap {
 	width: 120%;
 	margin-left: -10%;
+	.clearfix();
+	.divider-bottom();
 }
 
 .single .photoPost {
@@ -2114,7 +2155,7 @@ pre:hover {
 	
 	/* Masonry Layout for Stream, Search & Archive */
 	
-	.masonryWrap article.hentry {
+	.masonryWrap .hentry {
 		width: 48%;
 		float: left;
 		clear: none;
@@ -2127,11 +2168,11 @@ pre:hover {
 		border: none;
 	}
 	
-		.masonryWrap article.hentry:before {
+		.masonryWrap .hentry:before {
 			display: none;
 		}
 	
-	.masonryWrap article.hentry:last-child {
+	.masonryWrap .hentry:last-child {
 		margin-bottom: 3em;
 	}
 	
@@ -2227,7 +2268,7 @@ pre:hover {
 		.background-size(100% 10em);
 	}
 
-	article.hentry { padding: 3.5em 0; }
+	.hentry { padding: 3.5em 0; }
 	
 	.hentry .children .comment {
 		margin-left: 20%;

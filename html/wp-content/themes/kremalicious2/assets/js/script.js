@@ -41,7 +41,7 @@ var photoGrid = {
 		    	noPhotoPhosts.each(function() {
 		    		// only fire when has image sibling
 		    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
-		    			$(this).nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+		    			$(this).not('.remainingPost').nextUntil(noPhotoPhosts).wrapAll('<div class="masonryWrap"></div>');
 		    		}
 		    	});
 
@@ -52,7 +52,7 @@ var photoGrid = {
 				photoPostSibling
 					.prevAll('article.format-image').andSelf()
 					.nextAll('article.format-image').andSelf()
-					.wrapAll('<div class="masonryWrap clearfix divider-bottom"></div>');
+					.wrapAll('<div class="masonryWrap"></div>');
 			}
 		}
 	},

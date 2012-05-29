@@ -5,7 +5,7 @@
 <section role="main" class="col4">
 	
 	<?php if ( is_category('photos') ) { ?>
-	<div class="masonryWrap clearfix">
+	<div class="masonryWrap">
 	<?php } ?>
 	
 	<?php /* If there are no posts to display, such as an empty archive page */ ?>
@@ -21,7 +21,7 @@
 	<?php 
 		while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix divider-bottom'); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 				<?php 
 				
