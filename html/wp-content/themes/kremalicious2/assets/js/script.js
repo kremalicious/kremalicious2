@@ -222,9 +222,11 @@ var infiniteScroll = {
 	
 	infiniteScrollSetup: function() { 
 		
-		var $scrollContent = $('#main');
+		var $scrollContent 	= $('#main'),
+			$defaultNav		= $('#post-nav-wrap');
 		
 		$scrollContent.after('<nav id="infiniteLoader"><div class="col2"></div><div class="col4"><a href="#" class="btn btn-block">Load more</a></div></nav>');
+		$defaultNav.detach();
 		
 		$scrollContent.infinitescroll({
 			loading: {
