@@ -59,7 +59,16 @@
 		height: 1px;
 		border-top: 1px dashed #fff;
 	}
-}	
+}
+
+// so we can reset only one item out of multiple
+.no-divider-top {
+	border-top: none;
+	padding-top: 0;
+	&:after {
+		display: none
+	}
+}
 
 .divider-bottom {
 	position: relative;

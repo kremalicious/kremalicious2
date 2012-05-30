@@ -754,9 +754,10 @@ nav[role="navigation"] .dropdown-menu li a {
 
 .pager {
 	.divider-top();
+	.clearfix();
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: 4em;
+	margin-top: 2em;
 	
 	& p {
 		width: 48%;
@@ -793,8 +794,6 @@ nav[role="navigation"] .dropdown-menu li a {
 /* infinite loading stuff */
 
 .js #post-nav-wrap { display: none }
-
-#infscr-loading { display: none }
 
 #infiniteLoader {
 	margin-bottom: 0;
@@ -994,12 +993,7 @@ a.photoPost:hover figure {
 	width: 120%;
 	margin-left: -10%;
 	.clearfix();
-	.divider-bottom();
 }
-
-	.masonryWrap:last-child {
-		.no-divider-bottom();
-	}
 	
 .single .photoPost {
 	text-align: center;
@@ -1349,6 +1343,11 @@ aside[role="complementary"] h1 a {
 	min-height: 160px;
 }
 
+aside[role="complementary"] #tweetsWrap {
+	.divider-bottom();
+	padding-top: 2em
+}
+
 #tweets li,
 #tweets a {
 	color: @textColorDimmed;
@@ -1454,6 +1453,13 @@ footer[role="contentinfo"] {
 #siteMeta #tweetsWrap,
 #siteCopyright p {
 	margin-bottom: 0
+}
+
+#siteMeta #tweetsWrap {
+	.divider-top();
+	margin-top: 2em;
+	padding-top: 2em;
+	padding-bottom: 2em;
 }
 
 #siteMeta #tweets { 
@@ -2131,6 +2137,12 @@ pre:hover {
 	.search .masonryWrap {
 		margin-top: 3em;
 		padding-top: 2.25em;
+		.divider-bottom();
+	}
+	
+	.blog .masonryWrap:last-child,
+	.search .masonryWrap:last-child {
+		.no-divider-bottom();
 	}
 	
 	.blog .masonryWrap article.format-image:first-child .posttype,
@@ -2565,7 +2577,14 @@ pre:hover {
 	}
 	
 	aside[role="complementary"] #tweetsWrap {
-		padding-top: 3em;
+		.no-divider-bottom();
+	}
+	
+	#siteMeta #tweetsWrap {
+		.no-divider-top();
+		margin-top: 0;
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 
 }
