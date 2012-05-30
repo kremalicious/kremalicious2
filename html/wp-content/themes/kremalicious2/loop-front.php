@@ -3,7 +3,6 @@
 <?php get_sidebar(); ?>
 
 <section role="main" class="col4">
-	<div id="topPosts">
 	<?php 
 	
 	/* ===================================================== */
@@ -167,10 +166,6 @@
 		</article>
 
 	<?php endwhile; endif; /* End loop */ ?>
-	
-	</div><!-- END #topPosts -->
-		
-	
 
 </section>
 
