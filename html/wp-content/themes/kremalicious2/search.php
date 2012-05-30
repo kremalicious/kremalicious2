@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
-    <?php get_template_part('loop', 'index'); ?>
+    <div class="row">
+		<?php get_sidebar(); ?>
+		<section role="main" id="main" class="col4">
+			<?php get_template_part('loop', 'index'); ?>
+		</section>
+	</div>
     
 <?php get_footer(); ?>
