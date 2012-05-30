@@ -57,6 +57,10 @@
 	<script src="//use.typekit.com/msu4qap.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	
+	<script>
+		var total = <?php echo $wp_query->max_num_pages; ?>;
+	</script>
+	
 	<?php wp_head(); ?>
   	
   	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>

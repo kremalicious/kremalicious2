@@ -26,7 +26,8 @@ $(ASAP = function(){
 $(window).load( AfterLoad = function() {
 	
 	siteEffects.init();
-	
+	//infinitePostScroll.init();
+	infiniteScroll.init();
 });
 
 var photoGrid = {
@@ -36,14 +37,12 @@ var photoGrid = {
 		if ( $('body.blog, body.search').length > 0 ) {
 			// a bit weird logic because we have no dividers we can throw at nextUntil()
 			// but it works, so who would complain
-			var noPhotoPhosts	= $('#topPosts').find('article.format-standard, article.format-link, article.remainingPost');
+			var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
 
 		    	noPhotoPhosts.each(function() {
 		    		// only fire when has image sibling
 		    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
-		    			$(this).not('.remainingPost')
-		    				.nextUntil(noPhotoPhosts, 'article')
-		    				.wrapAll('<div class="masonryWrap"></div>');
+		    			$(this).nextUntil(noPhotoPhosts, 'article').wrapAll('<div class="masonryWrap"></div>');
 		    		}
 		    	});
 
@@ -218,4 +217,66 @@ var siteEffects = {
 		this.latestTweet();
 	}
 	
+}
+
+var infiniteScroll = {
+	
+	infiniteScrollSetup: function() { 
+		
+		$('#main').infinitescroll({
+			itemSelector: '#main article.hentry',
+			nextSelector: '#post-nav a:first',
+			navSelector: '#post-nav',
+		}, function(this) {
+			photoGrid.init();
+		});
+		
+	},
+	
+	init: function(){
+		
+		this.infiniteScrollSetup();
+		
+	}
+	
+}
+
+var infinitePostScroll = {
+	
+	infinitePostScrollSetup: function(){
+		
+		var count = 2;
+		
+        $(window).scroll(function(){
+            if  ($(window).scrollTop() == $(document).height() - $(window).height()){
+               if (count > total){
+               	  	return false;
+               } else {
+               		loadArticle(count);
+               }
+               count++;
+            }
+        }); 
+
+        function loadArticle(pageNumber){    
+            $('a#inifiniteLoader').show('fast');
+            $.ajax({
+                url: "/wp-admin/admin-ajax.php",
+                type:'POST',
+                data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop', 
+                success: function(html){
+                    $('a#inifiniteLoader').hide('1000');
+                    $('section[role="main"]').append(html);
+                    photoGrid.init();
+                }
+            });
+            return false;
+        }
+        
+	},
+	
+	init: function(){
+		this.infinitePostScrollSetup();
+	}
+
 }
