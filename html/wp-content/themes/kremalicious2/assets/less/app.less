@@ -745,66 +745,50 @@ nav[role="navigation"] .dropdown-menu li a {
 	margin-top: 0;
 	padding-top: 2em;
 	word-wrap: break-word;
+	margin-bottom: 0
 }
-
-
 
 /* ============================================================== */
 /*	PRIMARY CONTENT */
 /* ============================================================== */
 
-#main { }
-
 .pager {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-}
-
-.single .pager {
 	.divider-top();
-	padding-bottom: 0;
-	padding-top: 2em
-}
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-top: 4em;
+	
+	& p {
+		width: 48%;
+		margin: 0;
+		position: relative;
+		font-size: .95em;
+	}
+	
+	& .alignright { text-align: right; }
+	
+	& a { display: block; }
+	
+	& .alignleft i { margin-right: .5em; }
+	
+	& .alignright i { margin-left: .5em; }
 
-.pager p {
-	width: 48%;
-	margin: 0;
-	position: relative;
-	font-size: .95em;
+	.single & .alignleft a { margin-left: 1.5em; }
+	
+	.single & .alignright a { margin-right: 2em; }
+	
+	.single & i {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	
+	.single & .alignright i {
+		left: auto;
+		right: 0;
+	}
+	
 }
-
-.pager a {
-	display: block;
-}
-
-.pager .alignright,
-.pager .alignright a {
-	text-align: right;
-}
-
-.pager .alignleft,
-.pager .alignleft a {
-	text-align: left;
-}
-
-.single .pager .alignleft a {
-	margin-left: 1.5em;
-}
-.single .pager .alignright a {
-	margin-right: 2em;
-}
-
-.single .pager i {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.single .pager .alignright i {
-	left: auto;
-	right: 0;
-}
-
 
 /* ============================================================== */
 /*	POSTS */
@@ -832,10 +816,8 @@ nav[role="navigation"] .dropdown-menu li a {
 
 .hentry header {
 	text-align: center;
-}
-
-.hentry header h2 {
-	margin-top: 0;
+	
+	& h2 { margin-top: 0; }
 }
 
 .posttype {
@@ -843,10 +825,8 @@ nav[role="navigation"] .dropdown-menu li a {
 	text-align: center;
 	margin-bottom: .6em;
 	line-height: 1.5em;
-}
-
-.posttype a {
-	display: inline-block;
+	
+	& a { display: inline-block; }
 }
 
 .hentry:hover .posttype a,
@@ -921,7 +901,7 @@ nav[role="navigation"] .dropdown-menu li a {
 
 .single .hentry {
 	border: none;
-	padding-bottom: 1.5em;
+	padding-bottom: 0;
 }
 
 .single .hentry header {
@@ -1521,6 +1501,10 @@ footer[role="contentinfo"]:hover .facebook i:before,
 /* ============================================================== */
 /*	FOOTER */
 /* ============================================================== */
+
+footer[role="contentinfo"] {
+	margin-top: 0
+}
 
 #siteMeta,
 #siteCopyright {
