@@ -29,7 +29,7 @@ function kremalicious2_setup() {
 	////////////////////////////////////////
 	
 	// Reading
-	update_option('posts_per_page', 15);
+	update_option('posts_per_page', 10);
 	update_option('posts_per_rss', 100);
 	
 	// Media

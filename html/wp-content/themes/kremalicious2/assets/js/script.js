@@ -14,11 +14,8 @@
 */
 
 $(ASAP = function(){
-	
-	// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
-	if ( $('#content .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
-		photoGrid.init();
-	}
+
+	photoGrid.init();
 	interface.init();
     
 });
@@ -73,10 +70,12 @@ var photoGrid = {
 	},
 	
 	init: function(){
-						
-		this.photoStreamGridSetup();
-		if ( $('#content .masonryWrap').length > 0 ) {
-			this.masonryLayout();
+		// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
+		if ( $('#content .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
+			this.photoStreamGridSetup();
+			if ( $('#content .masonryWrap').length > 0 ) {
+				this.masonryLayout();
+			}
 		}
 	}
 		
@@ -223,13 +222,31 @@ var infiniteScroll = {
 	
 	infiniteScrollSetup: function() { 
 		
-		$('#main').infinitescroll({
-			itemSelector: '#main article.hentry',
-			nextSelector: '#post-nav a:first',
-			navSelector: '#post-nav',
+		var $scrollContent = $('#main');
+		
+		$scrollContent.after('<nav id="infiniteLoader"><div class="col2"></div><div class="col4"><a href="#" class="btn btn-block">Load more</a></div></nav>');
+		
+		$scrollContent.infinitescroll({
+			loading: {
+				//img: null,
+				msgText: '',
+			},
+			itemSelector	: '#main article.hentry',
+			nextSelector	: '#post-nav a:first',
+			navSelector		: '#post-nav',
+			debug        	: true,
+			behavior 		: 'twitter',
 		}, function(this) {
 			photoGrid.init();
 		});
+		
+		$scrollContent.infinitescroll('binding','unbind');
+		
+		$('#infiniteLoader a').click(function(e) {
+			e.preventDefault();
+			$scrollContent.infinitescroll('retrieve');
+		});
+		
 		
 	},
 	
@@ -239,44 +256,4 @@ var infiniteScroll = {
 		
 	}
 	
-}
-
-var infinitePostScroll = {
-	
-	infinitePostScrollSetup: function(){
-		
-		var count = 2;
-		
-        $(window).scroll(function(){
-            if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-               if (count > total){
-               	  	return false;
-               } else {
-               		loadArticle(count);
-               }
-               count++;
-            }
-        }); 
-
-        function loadArticle(pageNumber){    
-            $('a#inifiniteLoader').show('fast');
-            $.ajax({
-                url: "/wp-admin/admin-ajax.php",
-                type:'POST',
-                data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop', 
-                success: function(html){
-                    $('a#inifiniteLoader').hide('1000');
-                    $('section[role="main"]').append(html);
-                    photoGrid.init();
-                }
-            });
-            return false;
-        }
-        
-	},
-	
-	init: function(){
-		this.infinitePostScrollSetup();
-	}
-
 }

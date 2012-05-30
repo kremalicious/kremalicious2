@@ -28,7 +28,6 @@
 			} ?>
 			<?php get_template_part('loop', 'index'); ?>
 		</section>
-		<a id="inifiniteLoader">Loading...</a>
 	</div>
 
 <?php get_footer(); ?>

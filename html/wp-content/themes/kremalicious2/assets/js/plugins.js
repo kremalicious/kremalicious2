@@ -365,3 +365,43 @@ c._error("end")}})}};if(b.behavior&&this["retrieve_"+b.behavior]!==e)this["retri
 unbind:function(){this._binding("unbind")},update:function(a){d.isPlainObject(a)&&(this.options=d.extend(!0,this.options,a))}};d.fn.infinitescroll=function(a,c){switch(typeof a){case "string":var b=Array.prototype.slice.call(arguments,1);this.each(function(){var c=d.data(this,"infinitescroll");if(!c||!d.isFunction(c[a])||"_"===a.charAt(0))return!1;c[a].apply(c,b)});break;case "object":this.each(function(){var b=d.data(this,"infinitescroll");b?b.update(a):(b=new d.infinitescroll(a,c,this),b.failed||
 d.data(this,"infinitescroll",b))})}return this};var k=d.event,l;k.special.smartscroll={setup:function(){d(this).bind("scroll",k.special.smartscroll.handler)},teardown:function(){d(this).unbind("scroll",k.special.smartscroll.handler)},handler:function(a,c){var b=this,e=arguments;a.type="smartscroll";l&&clearTimeout(l);l=setTimeout(function(){d.event.handle.apply(b,e)},"execAsap"===c?0:100)}};d.fn.smartscroll=function(a){return a?this.bind("smartscroll",a):this.trigger("smartscroll",["execAsap"])}})(window,
 jQuery);
+
+/*
+	--------------------------------
+	Infinite Scroll Behavior
+	Manual / Twitter-style
+	--------------------------------
+	+ https://github.com/paulirish/infinitescroll/
+	+ version 2.0b2.110617
+	+ Copyright 2011 Paul Irish & Luke Shumard
+	+ Licensed under the MIT license
+	
+	+ Documentation: http://infinite-scroll.com/
+	
+*/
+
+$.extend($.infinitescroll.prototype,{
+
+	_setup_twitter: function infscr_setup_twitter () {
+		var opts = this.options,
+			instance = this;
+
+		// Bind nextSelector link to retrieve
+		$(opts.nextSelector).click(function(e) {
+			if (e.which == 1 && !e.metaKey && !e.shiftKey) {
+				e.preventDefault();
+				instance.retrieve();
+			}
+		});
+
+		// Define loadingStart to never hide pager
+		instance.options.loading.start = function (opts) {
+			opts.loading.msg
+				.appendTo(opts.loading.selector)
+				.show(opts.loading.speed, function () {
+                	beginAjax(opts);
+            });
+		}
+	}
+
+});

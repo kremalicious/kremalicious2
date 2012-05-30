@@ -171,19 +171,4 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
     }
 }
 
-// infinite scroll pagination
-
-add_action('wp_ajax_infinite_scroll', 'krlc2_wp_infinitepaginate');           // for logged in user
-add_action('wp_ajax_nopriv_infinite_scroll', 'krlc2_wp_infinitepaginate');    // if user not logged in
-
-function krlc2_wp_infinitepaginate(){
-    $loopFile        = $_POST['loop_file'];
-    $paged           = $_POST['page_no'];
-    $posts_per_page  = get_option('posts_per_page');
-
-    query_posts(array('paged' => $paged, 'post_status' => 'publish' ));
-    get_template_part( $loopFile );
-    exit;
-}
-
 ?>

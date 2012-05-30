@@ -790,7 +790,21 @@ nav[role="navigation"] .dropdown-menu li a {
 	
 }
 
-//.js #post-nav-wrap { display: none }
+/* infinite loading stuff */
+
+.js #post-nav-wrap { display: none }
+
+#infiniteLoader {
+	
+	margin-bottom: 0;
+	.clearfix();
+}
+
+#infiniteLoader .col4 {
+	.divider-top();
+	padding: 2em 0;
+	margin-top: 2em
+}
 
 /* ============================================================== */
 /*	POSTS */
@@ -982,6 +996,10 @@ a.photoPost:hover figure {
 	.divider-bottom();
 }
 
+	.masonryWrap:last-child {
+		.no-divider-bottom();
+	}
+	
 .single .photoPost {
 	text-align: center;
 }
@@ -2097,7 +2115,7 @@ pre:hover {
 		margin-right: 1%;
 		border: none;
 	}
-	
+
 		.masonryWrap .hentry:before {
 			display: none;
 		}
