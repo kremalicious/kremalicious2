@@ -234,7 +234,6 @@ var infiniteScroll = {
 			nextSelector	: '#post-nav a:first',
 			navSelector		: '#post-nav',
 			binder			: $scrollContent,
-			debug        	: true,
 			behavior 		: 'twitter',
 		}, function(this) {
 			photoGrid.init();
@@ -244,7 +243,6 @@ var infiniteScroll = {
 		
 		$('#infiniteLoader a').click(function(e) {
 			e.preventDefault();
-			//$('<span class="loading"> ...</span>').appendTo('#infiniteLoader a');
 			$scrollContent.infinitescroll('retrieve');
 		});
 		
