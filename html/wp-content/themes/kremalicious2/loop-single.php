@@ -16,7 +16,8 @@
 			<div class="row">
 				<header class="col2">
 					<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
-					<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+					<p class="byline author vcard source-org">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+					<p class="time"><?php echo krlc2_post_date(); ?></p>
 				</header>
 		
 		<?php } 
@@ -39,8 +40,8 @@
 				</div>
 			</div>
 			<div class="row" id="photoPostContent">
-				<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
-			
+				<p class="byline author vcard source-org">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+				<p class="time"><?php echo krlc2_post_date(); ?></p>
 		<?php } else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
@@ -52,14 +53,17 @@
 					</div>
 				</header>
 				<div class="row">
-					<p class="byline author vcard source-org dimmed col2">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
-					
+					<div class="col2">
+						<p class="byline author vcard source-org">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+						<p class="time"><?php echo krlc2_post_date(); ?></p>
+					</div>
 			<?php } else { ?>
 			
 				<div class="row">
 					<header class="col2">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<p class="byline author vcard source-org dimmed">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+						<p class="byline author vcard source-org">by <a class="fn" rel="author" href=""><?php the_author() ?></a></p>
+						<p class="time"><?php echo krlc2_post_date(); ?></p>
 					</header>
 					
 			<?php } ?>
@@ -89,7 +93,7 @@
 							}
 							echo substr($parentscategory,0,-2);
 						?>
-							<time id="pubdate" class="updated" datetime="<?php echo get_the_time('c') ?>" pubdate><?php the_date(); ?></time>
+							
 						</p>
 
 					</footer>

@@ -871,7 +871,7 @@ nav[role="navigation"] .dropdown-menu li a {
 
 .single .hentry header {
 	padding-top: 0;
-	padding-bottom: 0;
+	padding-bottom: 1em;
 	border: none;
 }
 
@@ -883,14 +883,23 @@ nav[role="navigation"] .dropdown-menu li a {
 	margin-bottom: 0;
 }
 
-.byline {
-	text-align: center;
+.byline,
+.time,
+time {
 	font-style: italic;
+	font-size: .9em;
+	text-align: center;
+	color: @textColorDimmed;
+}
+
+.byline {
+	margin-bottom: 0
 }
 
 .byline a {
 	display: block;
 	font-style: normal;
+	font-size: 1.1em
 }
 
 .entry-meta {
@@ -905,9 +914,7 @@ nav[role="navigation"] .dropdown-menu li a {
 }
 
 .entry-meta time {
-	font-style: italic;
 	float: right;
-	font-size: .9em
 }
 
 
@@ -1007,7 +1014,9 @@ a.photoPost:hover figure {
 	max-width: 35em;
 }
 
-.single #photoPostContent .byline {
+.single #photoPostContent .byline,
+.single #photoPostContent .time,
+.single #photoPostContent time {
 	text-align: center;
 }
 
@@ -2459,7 +2468,9 @@ pre:hover {
 	
 	.hentry header,
 	.posttype,
-	.byline {
+	.byline,
+	.time,
+	time {
 		text-align: left;
 	}
 	

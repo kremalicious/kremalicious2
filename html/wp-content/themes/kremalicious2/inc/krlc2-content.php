@@ -129,46 +129,39 @@ function krlc2_goodie_download_shortcode( $atts, $content = null ) {
 add_shortcode('download_button', 'krlc2_goodie_download_shortcode');
 
 
-// Grab EXIF Metadata from featured image
-function krlc2_post_thumbnail_exif_data($postID = NULL) {
-    // if $postID not specified, then get global post and assign ID
-    if (!$postID) {
-        global $post;
-        $postID = $post->ID;
-    }
-    if (has_post_thumbnail($postID)) {
-        // get the meta data from the featured image
-        $postThumbnailID = get_post_thumbnail_id( $postID );
-        $photoMeta = wp_get_attachment_metadata( $postThumbnailID );
-        // if the shutter speed is not equal to 0
-        if ($photoMeta['image_meta']['shutter_speed'] != 0) {
-            // Convert the shutter speed to a fraction
-            if ((1 / $photoMeta['image_meta']['shutter_speed']) > 1) {
-                if ((number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1)) == 1.3
-                or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 1.5
-                or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 1.6
-                or number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1) == 2.5) {
-                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 1, '.', '') . "s";
-                } else {
-                    $photoShutterSpeed = "1/" . number_format((1 / $photoMeta['image_meta']['shutter_speed']), 0, '.', '') . "s";
-                }
-            } else {
-                $photoShutterSpeed = $photoMeta['image_meta']['shutter_speed'] . " seconds";
-            }
-            // print our definition list
-        ?>
-        	
-        <p id="exif"><span>ISO<?php echo $photoMeta['image_meta']['iso']; ?></span>  <span><?php echo $photoMeta['image_meta']['focal_length']; ?>mm</span>  <span>&fnof;/<?php echo $photoMeta['image_meta']['aperture']; ?></span>  <span><?php echo $photoShutterSpeed; ?></span></p>
-        	
-        <?php
-        // if shutter speed exif is 0 then echo error message
-        } else {
-            echo '';
-        }
-    // if no featured image, echo error message
-    } else {
-        echo '<p>Featured image not found</p>';
-    }
+// Relative Time
+// props: http://terriswallow.com/weblog/2008/relative-dates-in-wordpress-templates/
+function krlc2_how_long_ago($timestamp){
+	$difference = time() - $timestamp;
+	
+	if($difference >= 60*60*24*365){        // if more than a year ago
+	    $int = intval($difference / (60*60*24*365));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' year' . $s . ' ago';
+	} elseif($difference >= 60*60*24*7*5){  // if more than five weeks ago
+	    $int = intval($difference / (60*60*24*30));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' month' . $s . ' ago';
+	} elseif($difference >= 60*60*24*7){        // if more than a week ago
+	    $int = intval($difference / (60*60*24*7));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' week' . $s . ' ago';
+	} elseif($difference >= 60*60*24){      // if more than a day ago
+	    $int = intval($difference / (60*60*24));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' day' . $s . ' ago';
+	} elseif($difference >= 60*60){         // if more than an hour ago
+	    $int = intval($difference / (60*60));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' hour' . $s . ' ago';
+	} elseif($difference >= 60){            // if more than a minute ago
+	    $int = intval($difference / (60));
+	    $s = ($int > 1) ? 's' : '';
+	    $r = $int . ' minute' . $s . ' ago';
+	} else {                                // if less than a minute ago
+	    $r = 'moments ago';
+	}	
+	return $r;
 }
 
 ?>
