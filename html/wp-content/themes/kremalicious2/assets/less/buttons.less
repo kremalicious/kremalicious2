@@ -1,0 +1,176 @@
+// --------------------------------------------------
+//	BUTTONS, BUTTONS
+// --------------------------------------------------
+
+.btn {
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	font-style: normal;
+	text-align: center;
+	display: inline-block;
+	.ie7-inline-block();
+	padding: .5em 1em;
+	.border-radius(4px);
+	.box-shadow(~"0 1px 0 #fff, 0 -1px 0 #cad1d8");
+	background-color: transparent;
+	background-image: -moz-linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background-image: -o-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background-image: -ms-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	.transition(all 0.2s ease-in-out);
+	border: 2px solid rgba(255,255,255,.3);
+	position: relative;
+	
+	&:hover {
+		background-color: rgba(255,255,255,.2);
+	}
+		
+	&:active {
+		.transition(none);
+		top: 1px;
+	}
+	
+	.hoverbuttons & {
+		.box-shadow(none);
+		background: transparent;
+		border-color: transparent;
+	}
+	
+	.hoverbuttons:hover &,
+	.touch .hoverbuttons & {
+		.box-shadow(~"0 1px 0 #fff, 0 -1px 0 #cad1d8");
+	
+		background-image: -moz-linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
+		background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+		background-image: -o-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+		background-image: -ms-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+		background-image: linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
+	}
+	
+	.hoverbuttons &:hover {
+		background-color: rgba(255,255,255,.2);
+	}
+
+}
+
+.btn-tag {
+	font-size: .9em;
+	line-height: 1.1em;
+	.border-radius(20px);
+	border: none;
+	margin-bottom: .5em;
+	margin-left: .2em;
+	padding: .3em .5em;
+	
+	&:first-child {
+		margin-left: 0;
+	}
+	
+}
+
+.btn-primary,
+a.btn-primary:visited {
+	color: darken(@linkColor, 25%);
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+	background-color: @linkColor;
+	border: 1px solid lighten(@linkColor, 5%);
+	border-bottom-color: darken(@linkColor, 10%);
+	padding: .6em 1em;
+	-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
+       -moz-box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
+            box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
+	
+	&:hover {
+		background-color: lighten(@linkColor, 3%);
+		color: darken(@linkColor, 25%);
+		text-shadow: 0 1px 0 rgba(255,255,255,.3);
+		
+	}
+	
+	&:active {
+		border-color: darken(@linkColor, 5%);
+		border-bottom-color: darken(@linkColor, 10%);
+		.box-shadow(~"0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,.1), inset 0 -1px 6px rgba(0,0,0,.2)");
+	}
+}
+
+.btn.btn-block {
+	display: block;
+}
+
+.btn span {
+	font-size: .9em;
+	color: rgba(19, 56, 50, .6);
+	margin-left: .3em;
+}
+
+// assign default button styles to all this stuff
+.inline-download,
+.download,
+a[rel*="tag"],
+#topics a,
+#cancel-comment-reply-link,
+.comment-edit-link,
+.comment-reply-link {
+	.btn;
+}
+
+a[rel*="tag"],
+#topics a {
+	.btn-tag;
+}
+
+#cancel-comment-reply-link {
+	color: #7f2924;
+}
+
+// hover buttons
+.hoverbuttons {
+	.transition(all 0.2s ease-in-out);
+}
+
+/* Old Download Button Overwrites */
+.inline-download:link {
+	display: block;
+	text-align: center;
+	
+	&::before {
+		font-family: FontAwesome;
+		font-weight: normal;
+		font-style: normal;
+		text-decoration: inherit;
+		content: "\f019";
+		font-size: inherit;
+		margin-right: .5em;
+		line-height: 1em;
+		vertical-align: baseline;
+	}
+
+	img {
+		display: none;
+	}
+}
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+
+}
