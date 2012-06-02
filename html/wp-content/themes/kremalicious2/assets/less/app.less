@@ -564,12 +564,9 @@ nav[role="navigation"] {
 /* ============================================================== */
 
 .pager {
-	.divider-top();
-	.clearfix();
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: 2em;
-	
+		
 	p {
 		width: 48%;
 		margin: 0;
@@ -584,7 +581,7 @@ nav[role="navigation"] {
 	.alignleft i { margin-right: .5em; }
 	
 	.alignright i { margin-left: .5em; }
-
+	
 	.single & .alignleft a { margin-left: 1.5em; }
 	
 	.single & .alignright a { margin-right: 2em; }
@@ -603,18 +600,18 @@ nav[role="navigation"] {
 }
 
 /* infinite loading stuff */
-
-.js #post-nav-wrap { display: none }
-
-#infiniteLoader {
-	margin-bottom: 0;
-	.clearfix();
+.js #post-nav p {
+	width: 100%
 }
 
-#infiniteLoader .col4 {
-	.divider-top();
-	padding: 2em 0;
-	margin-top: 2em
+.js #post-nav .alignright,
+.js #post-nav i {
+	display: none
+}
+
+.js #post-nav .previous a {
+	.btn;
+	.btn-block;
 }
 
 /* ============================================================== */

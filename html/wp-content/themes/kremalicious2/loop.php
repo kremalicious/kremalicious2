@@ -192,14 +192,3 @@
 <?php if ( is_category('photos') ) { ?>
 </div> <!--END #masonryWrap-->
 <?php } ?>
-
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ($wp_query->max_num_pages > 1) { ?>
-	<div id="post-nav-wrap" class="row">
-		<div class="col2"></div>
-		<nav id="post-nav" class="pager clearfix col4">
-			<p class="previous alignleft"><?php next_posts_link('<i class="icon-chevron-left"></i> Older posts'); ?></p>
-			<p class="next alignright"><?php previous_posts_link('Newer posts <i class="icon-chevron-right"></i>'); ?></p>
-		</nav>
-	</div>
-<?php } ?>

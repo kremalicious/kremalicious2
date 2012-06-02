@@ -21,10 +21,10 @@ $(ASAP = function(){
 });
 
 $(window).load( AfterLoad = function() {
-	
+
 	siteEffects.init();
-	//infinitePostScroll.init();
 	infiniteScroll.init();
+	
 });
 
 var photoGrid = {
@@ -223,37 +223,64 @@ var infiniteScroll = {
 	infiniteScrollSetup: function() { 
 		
 		var $scrollContent 	= $('#main'),
-			$defaultNav		= $('#post-nav-wrap');
-		
-		$scrollContent.after('<nav id="infiniteLoader"><div class="col2"></div><div class="col4"><a href="#" class="btn btn-block">Load more</a></div></nav>');
+			loader = $('<span class="loading"> ...</span>');
 		
 		$scrollContent.infinitescroll({
-			loading: {
-				selector	: $('#infiniteLoader a'),
-			},
 			itemSelector	: '#main article.hentry',
 			nextSelector	: '#post-nav a:first',
 			navSelector		: '#post-nav',
 			binder			: $scrollContent,
-			behavior 		: 'twitter',
+			behavior 		: 'krlc2',
 		}, function(this) {
+			// run the photogrid over retrieved items
 			photoGrid.init();
 		});
-		
-		$scrollContent.infinitescroll('binding','unbind');
-		
-		$('#infiniteLoader a').click(function(e) {
-			e.preventDefault();
-			$scrollContent.infinitescroll('retrieve');
-		});
-		
-		
+
 	},
 	
 	init: function(){
-		
 		this.infiniteScrollSetup();
-		
 	}
 	
 }
+
+/*
+	--------------------------------
+	Infinite Scroll Behavior
+	Manual mode with minimal loader
+	
+	Usage: behavior: 'krlc2'
+	--------------------------------
+*/
+$.extend($.infinitescroll.prototype,{
+
+	_setup_krlc2: function infscr_setup_krlc2 () {
+		var opts = this.options,
+			instance = this,
+			loader = $('<span class="loading"> ...</span>');
+		
+		// Bind nextSelector link to retrieve
+		$(opts.nextSelector).click(function(e) {
+			if (e.which == 1 && !e.metaKey && !e.shiftKey) {
+				e.preventDefault();
+				instance.retrieve();
+			}
+		});
+
+		// custom start
+		instance.options.loading.start = function (opts) {
+			loader
+				.appendTo(opts.nextSelector)
+				.show(opts.loading.speed, function () {
+                	beginAjax(opts);
+            });
+		}
+		
+		// custom finish
+		instance.options.loading.finished = function(opts) {
+			loader.detach();
+		};
+		
+	}
+
+});

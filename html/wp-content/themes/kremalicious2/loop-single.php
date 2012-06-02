@@ -103,7 +103,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<nav id="post-nav" class="pager col6">
+				<nav id="post-nav-single" class="pager col6">
 					<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
 					<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
 				</nav>
