@@ -16,3 +16,6 @@
 [submodule "html/wp-content/themes/kremalicious2/assets/js/libs/socialite"]
 	path = html/wp-content/themes/kremalicious2/assets/js/libs/socialite
 	url = https://github.com/dbushell/Socialite.git
+[submodule "html/wp-content/themes/kremalicious2/assets/js/libs/infinitescroll"]
+	path = html/wp-content/themes/kremalicious2/assets/js/libs/infinitescroll
+	url = https://github.com/paulirish/infinite-scroll.git
