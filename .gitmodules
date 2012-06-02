@@ -13,3 +13,6 @@
 [submodule "html/wp-content/plugins/social"]
 	path = html/wp-content/plugins/social
 	url = https://github.com/crowdfavorite/wp-social.git
+[submodule "html/wp-content/themes/kremalicious2/assets/js/libs/socialite"]
+	path = html/wp-content/themes/kremalicious2/assets/js/libs/socialite
+	url = https://github.com/dbushell/Socialite.git
