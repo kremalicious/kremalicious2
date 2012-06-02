@@ -202,7 +202,7 @@ var siteEffects = {
 		$('#tweets').tweet({
 	        username: 'kremalicious',
 	        count: 1,
-	        fetch: 100,
+	        fetch: 10,
 	        template: '{text}{time}',
 	        loading_text: '...',
 	        filter: function(t){ return ! /^@\w+/.test(t.tweet_raw_text); }
