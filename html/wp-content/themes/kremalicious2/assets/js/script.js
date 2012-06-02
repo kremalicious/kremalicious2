@@ -264,6 +264,8 @@ $.extend($.infinitescroll.prototype,{
 			instance = this,
 			loader = $('<span class="loading"> ...</span>');
 		
+		$(opts.nextSelector).parent().parent().addClass('infiniteLoader');
+		
 		// Bind nextSelector link to retrieve
 		$(opts.nextSelector).click(function(e) {
 			if (e.which == 1 && !e.metaKey && !e.shiftKey) {
