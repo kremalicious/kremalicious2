@@ -222,11 +222,16 @@ var infiniteScroll = {
 	
 	infiniteScrollSetup: function() { 
 		
-		var $scrollContent 	= $('#main'),
+		if ( $('body.archive.category-photos').length > 0 ) {
+			var items	= '#main .masonryWrap';
+		} else {
+			var items	= '#main article.hentry';
+		}
+		var	$scrollContent 	= $('#main'),
 			loader = $('<span class="loading"> ...</span>');
 		
 		$scrollContent.infinitescroll({
-			itemSelector	: '#main article.hentry',
+			itemSelector	: items,
 			nextSelector	: '#post-nav a:first',
 			navSelector		: '#post-nav',
 			binder			: $scrollContent,

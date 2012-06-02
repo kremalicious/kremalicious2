@@ -3,7 +3,15 @@
 	<div class="row">
 		<?php get_sidebar(); ?>
 		<section role="main" id="main" class="col4">
+			<?php if ( is_category('photos') ) { ?>
+			<div class="masonryWrap">
+			<?php } ?>
+
 			<?php get_template_part('loop', 'index'); ?>
+			
+			<?php if ( is_category('photos') ) { ?>
+			</div> <!--END #masonryWrap-->
+			<?php } ?>
 		</section>
 	</div>
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
