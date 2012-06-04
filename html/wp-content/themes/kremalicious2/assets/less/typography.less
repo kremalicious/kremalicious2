@@ -1,0 +1,164 @@
+
+/* DEFAULT FONT SETTINGS */
+/* ============================================================== */
+
+body {
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @baseFontFamily;
+	font-weight: @baseFontWeight;
+	color: @textColor;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* TYPOGRAPHY */
+/* ============================================================== */
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	font-style: normal;
+	color: @headingsColor;
+	line-height: 1.1111em;
+}
+
+h1,
+.hentry header h2 {
+	margin: 0 0 0.6667em;
+	font-size: 2.25em;
+}
+
+h2 {
+	font-size: 2em; /* 32px */
+	margin: 0.75em 0;
+}
+
+h3 {
+	margin: 0 0 1em;
+	font-size: 1.5em;
+}
+
+p,ul,ol,blockquote,pre,td,th,label,img {
+	padding: 0;
+	font-size: 1em;
+	margin: 0 0 1.5em;
+}
+
+p,
+li {
+	.hyphens(auto);
+}
+
+strong {
+	font-weight: 700;
+	font-style: normal;
+}
+
+em {
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* QUOTES */
+/* ============================================================== */
+blockquote,
+blockquote > p {
+	font-style: italic;
+	padding: 0;
+	color: @textColorLight;
+}
+
+blockquote {
+	padding-left: 1.5em;
+	border-left: 2px solid @textColorDimmed;
+}
+
+/* LINKS */
+/* ============================================================== */
+a,
+a:visited {
+	text-decoration: none;
+	color: @linkColor;
+	.transition(all .3s ease-in-out 0s);
+	position: relative;
+}
+
+a:hover,
+h1 a:visited:hover,
+h2 a:visited:hover,
+h3 a:visited:hover {
+	color: @linkColorHover;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px fade(@linkColorHover, 50%);
+}
+
+a:active {
+	top: 1px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h1 a:visited,
+h2 a:visited,
+h3 a:visited {
+	color: #2e4f5c;
+	border-bottom: 1px dotted rgba(58, 144, 133, .3);
+}
+
+/* LISTS */
+/* ============================================================== */
+
+.entry-content ul,
+.entry-content ol {
+	list-style: none;
+	padding-left: 2em;
+}
+
+.entry-content li {
+	position: relative;
+	margin-bottom: .5em;
+}
+
+.entry-content ul li:before,
+.entry-content ol li:before {
+	position: absolute;
+	left: -2em;
+	top: 0;
+}
+
+.entry-content ul li:before {
+	content: "\f069";
+	color: @textColorDimmed;
+	text-decoration: inherit;
+	display: inline-block;
+	font-size: .8em;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.entry-content ol {
+	counter-reset: ol-counter;
+}
+
+.entry-content ol li:before {
+	color: #fff;
+	text-shadow: none;
+	content: counter(ol-counter);
+	counter-increment: ol-counter;
+	font-style: italic;
+	background: @textColorDimmed;
+	.border-radius(1.2em);
+	width: 1.2em;
+	display: block;
+	height: 1.2em;
+	text-align: center;
+	line-height: 1.1em;
+	top: .2em;
+	.box-shadow(0 1px 0 rgba(255,255,255,.7));
+}
+
+
+// selection styles
+::-moz-selection { background: #2e4f5c; color: #fff; text-shadow: none; }
+::selection { background: #2e4f5c; color: #fff; text-shadow: none; }
