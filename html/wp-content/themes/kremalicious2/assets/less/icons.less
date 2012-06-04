@@ -1,22 +1,21 @@
-/* ============================================================== */
-/* ICONS */
-/* ============================================================== */
+// ICONS
+//////////////////////
 
-/* 
-   consolidated from FontAwesome
-   http://fortawesome.github.com/Font-Awesome/
-*/
+// consolidated & adapted from FontAwesome 2
+// http://fortawesome.github.com/Font-Awesome/
+//////////////////////
+
 @font-face {
     font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-more/font/fontawesome-webfont.eot');
-    src: url('../fonts/fontawesome-more/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/fontawesome-more/font/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'),
-         url('../fonts/fontawesome-more/font/fontawesome-webfont.svg#FontAwesomeRegular') format('svg'),
-         url('../fonts/fontawesome-more/font/fontawesome-webfont.woff') format('woff'),
-         url('../fonts/fontawesome-more/font/fontawesome-webfont.ttf') format('truetype');
+    src: url('../fonts/fontawesome/font/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontawesome/font/fontawesome-webfont.woff') format('woff'),
+         url('../fonts/fontawesome/font/fontawesome-webfont.ttf') format('truetype'),
+         url('../fonts/fontawesome/font/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
 [class^="icon-"],
 [class*=" icon-"] {
   display: inline;
@@ -29,8 +28,7 @@ li[class^="icon-"],
 li[class*=" icon-"] {
   display: block;
 }
-/*  Font Awesome styles
-    ------------------------------------------------------- */
+
 [class^="icon-"]:before,
 [class*=" icon-"]:before,
 a[rel^="category "]:before {
@@ -39,16 +37,18 @@ a[rel^="category "]:before {
   font-style: normal;
   display: inline-block;
   text-decoration: inherit;
+  font-size: 16px;
   margin-right: .5em;
   color: @textColorDimmed;
   .transition(color .3s ease-in-out);
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
-	#menubar [class^="icon-"]:before,
-	#menubar [class*=" icon-"]:before {
-		color: darken(@textColorDimmed,15%)
-	}
+
+#menubar [class^="icon-"]:before,
+#menubar [class*=" icon-"]:before {
+	color: darken(@textColorDimmed,15%)
+}
 
 .btn-primary[class*="icon-"]:before {
 	color: fade(#133832, 80%);
@@ -60,176 +60,147 @@ a[rel^="category "] {
   display: inline-block;
   text-decoration: inherit;
 }
+
+.icon-medium:before,
+.posttype a:before {
+	font-size: 24px;
+}
+
+.btn-tag i:before {
+	font-size: 14px
+}
+
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
-  vertical-align: top;
-  font-size: 1.3333333333333333em;
-}
-.btn [class^="icon-"],
-.btn [class*=" icon-"],
-a[rel^="category "] {
-  /* keeps button heights with and without icons the same */
-  line-height: .9em;
-}
-li [class^="icon-"],
-li [class*=" icon-"] {
-  display: inline-block;
-  width: 1.25em;
-  text-align: center;
-}
-li .icon-large[class^="icon-"],
-li .icon-large[class*=" icon-"] {
-  /* 1.5 increased font size for icon-large * 1.25 width */
-  width: 1.875em;
-}
-li[class^="icon-"],
-li[class*=" icon-"] {
-  margin-left: 0;
-  list-style-type: none;
-}
-li[class^="icon-"]:before,
-li[class*=" icon-"]:before {
-  text-indent: -2em;
-  text-align: center;
-}
-li[class^="icon-"].icon-large:before,
-li[class*=" icon-"].icon-large:before {
-  text-indent: -1.3333333333333333em;
+  vertical-align: middle;
+  font-size: 4/3em;
 }
 
-/*  Le Icons
-    ------------------------------------------------------- */
+.btn {
+  [class^="icon-"],
+  [class*=" icon-"],
+  a[rel^="category "] {
+  /* keeps button heights with and without icons the same */
+    line-height: .9em;
+  }
+}
+
+li {
+  [class^="icon-"],
+  [class*=" icon-"] {
+    display: inline-block;
+    width: 1.25em;
+    text-align: center;
+  }
+  .icon-large:before,
+  .icon-large:before {
+    /* 1.5 increased font size for icon-large * 1.25 width */
+    width: 1.5*1.25em;
+  }
+}
+
+ul.icons {
+  list-style-type: none;
+  margin-left: 2em;
+  text-indent: -.8em;
+
+  li {
+    [class^="icon-"],
+    [class*=" icon-"] {
+      width: .8em;
+    }
+    .icon-large:before,
+    .icon-large:before {
+      /* 1.5 increased font size for icon-large * 1.25 width */
+      vertical-align: initial;
+//      width: 1.5*1.25em;
+    }
+  }
+}
+
+// Le Icons
+//////////////////////
 
 // social icons
-.icon-rss-sign:before {
-	content: "\f0b5";
-}
-	.icon-rss-sign.colored:before {
-		color: #e15a00;
-	}	
-.icon-twitter-alt:before {
-  content: "\f0a6";
-}
-.icon-twitter-sign:before {
-	content: "\f081";
-}
+.icon-rss:before,
+.icon-rss-sign:before						{ content: "\f09e"; }
+	.icon-rss.colored:before,
+	.icon-rss-sign.colored:before       	{ color: #e15a00; }
+
+.icon-twitter:before						{ content: "\f099"; }
+.icon-twitter-sign:before					{ content: "\f081"; }
 	.icon-twitter-sign.colored:before,
-	.icon-twitter-alt.colored:before {
-		color: #019ad2;
-	}
-.icon-facebook-sign:before {
-	content: "\f082";
-}
-	.icon-facebook-sign.colored:before {
-		color: #3b5998;
-	}
-.icon-google-plus-sign:before {
-  content: "\f0ac";
-}
-.icon-google-plus:before {
-  content: "\f0ae";
-}
-	.icon-google-plus-sign.colored:before,
-	.icon-google-plus.colored:before {
-		color: #c63b1e;
-	}
-.icon-github-sign:before {
-  content: "\f092";
-}
-.icon-github-alt:before {
-  content: "\f0a3";
-}
-.icon-wordpress-alt:before {
-  content: "\f0ba";
-}
-.icon-flickr-alt:before {
-  content: "\f0c1";
-}
+	.icon-twitter.colored:before 			{ color: #019ad2; }
+
+.icon-facebook:before             			{ content: "\f09a"; }
+.icon-facebook-sign:before        			{ content: "\f082"; }
+	.icon-facebook.colored:before,
+	.icon-facebook-sign.colored:before 		{ color: #3b5998; }
+
+.icon-google-plus:before          			{ content: "\f0d5"; }
+.icon-google-plus-sign:before     			{ content: "\f0d4"; }
+	.icon-google-plus.colored:before,
+	.icon-google-plus-sign.colored:before	{ color: #c63b1e; }
+	
+.icon-github:before,
+.icon-github-alt:before               		{ content: "\f09b"; }
+.icon-github-sign:before          			{ content: "\f092"; }
 
 // all the rest
-.icon-search:before {
-  content: "\f002";
-}
-.icon-user:before,
-.cat-personal:before {
-  content: "\f007";
-}
-.icon-home:before {
-  content: "\f015";
-}
-.icon-download-alt:before {
-  content: "\f019";
-}
-.icon-download:before {
-  content: "\f01a";
-}
-.icon-bookmark:before,
-.cat-links:before {
-  content: "\f02e";
-}
-.icon-picture:before,
-.cat-photos:before {
-  content: "\f03e";
-}
-.icon-chevron-left:before {
-  content: "\f053";
-}
-.icon-chevron-right:before {
-  content: "\f054";
-}
-.icon-asterisk:before {
-  content: "\f069";
-}
-.icon-gift:before,
-.cat-goodies:before {
-  content: "\f06b";
-}
-.icon-leaf:before,
-.cat-design:before {
-  content: "\f06c";
-}
-.icon-comment:before {
-  content: "\f075";
-}
-.icon-chevron-up:before {
-  content: "\f077";
-}
-.icon-chevron-down:before {
-  content: "\f078";
-}
-.icon-camera-retro:before,
-.cat-photography:before {
-  content: "\f083";
-}
-.icon-comments:before {
-  content: "\f086";
-}
-.icon-external-link:before {
-  content: "\f08e";
-}
-.icon-warning-sign:before {
-  content: "\f071";
-}
-.icon-info-sign:before {
-  content: "\f05a";
-}
-.icon-align-justify:before {
-  content: "\f039";
-}
-.icon-remove-circle:before {
-  content: "\f05c";
-}
-.icon-heart:before {
-  content: "\f004";
-}
-.icon-envelope:before {
-  content: "\f003";
-}
-.icon-star:before {
-  content: "\f005";
-}
+.icon-search:before               { content: "\f002"; }
 
-/* fixes */
+.icon-user:before,
+.cat-personal:before              { content: "\f007"; }
+
+.icon-home:before                 { content: "\f015"; }
+
+.icon-download-alt:before         { content: "\f019"; }
+.icon-download:before             { content: "\f01a"; }
+
+.icon-bookmark:before,
+.cat-links:before             	  { content: "\f02e"; }
+
+.icon-picture:before,
+.cat-photos:before                { content: "\f03e"; }
+
+.icon-chevron-left:before         { content: "\f053"; }
+.icon-chevron-right:before        { content: "\f054"; }
+
+.icon-asterisk:before             { content: "\f069"; }
+
+.icon-gift:before,
+.cat-goodies:before               { content: "\f06b"; }
+
+.icon-leaf:before,
+.cat-design:before 				  { content: "\f06c"; }
+
+.icon-comment:before              { content: "\f075"; }
+
+.icon-chevron-up:before           { content: "\f077"; }
+.icon-chevron-down:before         { content: "\f078"; }
+
+.icon-camera-retro:before,
+.cat-photography:before           { content: "\f083"; }
+
+.icon-comments:before             { content: "\f086"; }
+
+.icon-external-link:before        { content: "\f08e"; }
+
+.icon-warning-sign:before         { content: "\f071"; }
+
+.icon-info-sign:before            { content: "\f05a"; }
+
+.icon-reorder:before              { content: "\f0c9"; }
+
+.icon-remove-circle:before        { content: "\f05c"; }
+
+.icon-heart:before                { content: "\f004"; }
+
+.icon-envelope-alt:before         { content: "\f0e0"; }
+
+.icon-star:before                 { content: "\f005"; }
+
+// fixes
 .btn.icon-heart.col2 {
 	padding-right: 1em
 }
