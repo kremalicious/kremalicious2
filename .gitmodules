@@ -7,9 +7,6 @@
 [submodule "html/wp-content/themes/kremalicious2/assets/js/libs/tweet"]
 	path = html/wp-content/themes/kremalicious2/assets/js/libs/tweet
 	url = https://github.com/seaofclouds/tweet.git
-[submodule "html/wp-content/themes/kremalicious2/assets/fonts/fontawesome-more"]
-	path = html/wp-content/themes/kremalicious2/assets/fonts/fontawesome-more
-	url = https://github.com/gregoryloucas/Font-Awesome-More.git
 [submodule "html/wp-content/plugins/social"]
 	path = html/wp-content/plugins/social
 	url = https://github.com/crowdfavorite/wp-social.git
