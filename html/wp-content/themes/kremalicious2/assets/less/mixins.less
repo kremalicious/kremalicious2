@@ -171,6 +171,23 @@
   float: left;
 }
 
+// Placeholder text
+// -------------------------
+.placeholder(@color: @placeholderText) {
+  &:-moz-placeholder {
+    color: @color;
+    font-weight: @baseFontWeight;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+    font-weight: @baseFontWeight;
+  }
+  &::-webkit-input-placeholder {
+    color: @color;
+    font-weight: @baseFontWeight;
+  }
+}
+
 // Toggling content
 // --------------------------------------------------
 /* Hide from both screenreaders and browsers: h5bp.com/u */

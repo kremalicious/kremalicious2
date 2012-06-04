@@ -189,7 +189,6 @@
 	
 	.dropdown-menu {
 		width: 300%;
-		padding: 4px;
 		margin-top: -2px;
 		background: #b7c1c4;
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
@@ -214,9 +213,12 @@
 	#menubar #searchform {
 		top: auto;
 		bottom: .4em;
-		
+
 		input#s:focus {
 			width: 280px;
+			border-bottom: 1px solid #7c949d;
+			background: rgba(255,255,255,.4);
+			.box-shadow(0 1px 0 rgba(255,255,255,.5))
 		}
 	}
 	
