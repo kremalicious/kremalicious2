@@ -1,0 +1,160 @@
+/*using 769px here so iPad/portrait gets different view from landscape*/
+@media only screen and (min-width: 769px) { 
+
+	.row { max-width: 51.5em; }
+	
+	.col1, 
+	.col2, 
+	.col3, 
+	.col4, 
+	.col5, 
+	.col6 {
+		padding-right: 2%; }
+	
+	.col1:last-child,
+	.col2:last-child,
+	.col3:last-child,
+	.col4:last-child,
+	.col5:last-child,
+	.col6:last-child {
+		padding-right: 0; }
+	
+	.btn.btn-block.col2 { width: 32%; }
+	.btn.btn-block.col4,
+	.btn.btn-primary.col4 { width: 66%; }
+	
+	nav[role="navigation"] li#home,
+	#home a {
+		width: 17em;
+	}
+	
+	.hentry header,
+	.posttype,
+	.byline,
+	.time,
+	time {
+		text-align: left;
+	}
+	
+	.featureTitle {
+		position: relative;
+		
+		h1,
+		h2 {
+			position: absolute;
+			left: -3px;
+			bottom: 1.5em;
+			padding: .2em .4em;
+			margin-bottom: 0;
+			margin-right: 1em;
+			background-color: #d0d9de;
+			background-color: rgba(208, 217, 222, .8);
+			background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.1) 100%);
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(35%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.1)));
+			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
+			background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
+			background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
+			background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0.1) 100%);
+			border: 1px solid #6f838b;
+			.box-shadow(0 2px 4px rgba(0,0,0,.3));
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			z-index: 0;
+			
+			&:before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: -moz-linear-gradient(-45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 15%, rgba(255,255,255,0) 23%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0) 63%, rgba(255,255,255,0.3) 74%, rgba(255,255,255,0) 100%);
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(15%,rgba(255,255,255,0.4)), color-stop(23%,rgba(255,255,255,0)), color-stop(51%,rgba(255,255,255,0.2)), color-stop(63%,rgba(255,255,255,0)), color-stop(74%,rgba(255,255,255,0.3)), color-stop(100%,rgba(255,255,255,0)));
+				background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.2) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.3) 74%,rgba(255,255,255,0) 100%);
+				background: -o-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.2) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.3) 74%,rgba(255,255,255,0) 100%);
+				background: -ms-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.2) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.3) 74%,rgba(255,255,255,0) 100%);
+				background: linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.2) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.3) 74%,rgba(255,255,255,0) 100%);
+				border-top: 1px solid rgba(255,255,255,.7);
+				z-index: -1;
+			}
+			
+			.single & {
+				font-size: 2.5em;
+			}
+		}
+	}
+
+	/* Comments */
+	.hentry .children .comment {
+		margin-left: 4%;
+		
+		header {
+			margin-right: 0;
+		}
+	}
+	
+	.hentry .comment header {
+		text-align: center;
+		width: 15%;
+		margin-left: -25%;
+		float: left;
+		margin-bottom: 0;
+	}
+	
+	.no-touch .entry-content pre:hover {
+		margin-left: -20%;
+		margin-right: -5%;
+	}
+	
+	#menubar #searchform input#s:focus {
+		width: 450px;
+	}
+	
+	.blog .masonryWrap,
+	.search .masonryWrap {
+		width: 83%;
+		float: right;
+		padding-top: 0;
+		
+		.col5 {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	
+	.blog .masonryWrap article.format-image:first-child .posttype,
+	.search .masonryWrap article.format-image:first-child .posttype {
+		width: 100%;
+		text-align: left;
+		position: absolute;
+		top: -.4em;
+		left: -4em;
+		margin-top: 0;
+	}
+	
+	.format-link .posttype {
+		line-height: 1em;
+	}
+	
+	aside[role="complementary"] {
+		padding-right: 3%;
+		
+		.facebook {
+			margin-left: 0;
+		}
+		
+		#tweetsWrap {
+			.no-divider-bottom();
+		}
+	}
+	
+	#siteMeta #tweetsWrap {
+		.no-divider-top();
+		margin-top: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+}
