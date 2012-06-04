@@ -35,6 +35,8 @@ Redirect 301 /first-wallpaper-chives /chives
 Redirect 301 /new-goodie-niepces-camera-obscura-and-the-history-of-the-first-photograph /niepces-camera-obscura-and-the-history-of-the-first-photograph
 Redirect 301 /4-more-icons-niepces-camera-obscura-v11 /niepces-camera-obscura-and-the-history-of-the-first-photograph
 Redirect 301 /canon-eos-50d-officially-announced-and-new-lens /
+Redirect 301 /apple-touch-icon.png /apple-touch-icon-precomposed.png
+Redirect 301 /home/feed/ /feed
 
 # Easy WordPress Login
 Redirect 301 /login /wp-login.php
