@@ -227,10 +227,12 @@ var infiniteScroll = {
 		} else {
 			var items	= '#main article.hentry';
 		}
-		var	$scrollContent 	= $('#main'),
-			loader = $('<span class="loading"> ...</span>');
+		var	$scrollContent 	= $('#main');
 		
 		$scrollContent.infinitescroll({
+			loading: {
+				img: 'http://cdn.kremalicious.com/wp-content/themes/kremalicious2/assets/img/logo.png'
+			},
 			itemSelector	: items,
 			nextSelector	: '#post-nav a:first',
 			navSelector		: '#post-nav',
