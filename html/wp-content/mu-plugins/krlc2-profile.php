@@ -3,7 +3,7 @@
 Plugin Name: kremalicious2 User Profile
 Plugin URI: http://kremalicious.com
 Description: User Profile Stuff for kremalicious.com
-Version: 0.0.1
+Version: 0.0.2
 Author: Matthias Kretschmann
 Author URI: http://mkretschmann.com
 */
@@ -90,26 +90,26 @@ class krlc2_userprofile {
 	        $kremalicious = $user->ID;
 	        
 	        // Email
-	        echo '<a class="btn btn-tag icon-envelope" href="mailto:' . antispambot(get_the_author_meta('user_email', $kremalicious)) . '">Email</a>';
+	        echo '<a class="btn btn-tag icon-envelope-alt" href="mailto:' . antispambot(get_the_author_meta('user_email', $kremalicious)) . '">Email</a>';
 	        // Portfolio site
 	        if ( get_the_author_meta( 'user_url', $kremalicious) ) {		
 	        	echo '<a class="btn btn-tag icon-star" href="'. get_the_author_meta('user_url', $kremalicious) .'">Portfolio</a> ';
 	        }
 	        // Twitter
 	        if ( get_the_author_meta( 'twitter', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag icon-twitter-alt" href="https://twitter.com/'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a> ';
+	        	echo '<a class="btn btn-tag icon-twitter" href="https://twitter.com/'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a> ';
 	        }
 	        // Google+
 	        if ( get_the_author_meta( 'googleplus', $kremalicious) ) {		
 	        	echo '<a class="btn btn-tag icon-google-plus" href="'. get_the_author_meta('googleplus', $kremalicious) .'">Google+</a> ';
 	        }
-	        // Dribbble
-	        if ( get_the_author_meta( 'dribbble', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag" href="http://dribbble.com/'. get_the_author_meta('dribbble', $kremalicious) .'">Dribbble</a> ';
-	        }
 	        // Github
 	        if ( get_the_author_meta( 'github', $kremalicious) ) {		
 	        	echo '<a class="btn btn-tag icon-github-alt" href="https://github.com/'. get_the_author_meta('github', $kremalicious) .'">GitHub</a> ';
+	        }
+	        // Dribbble
+	        if ( get_the_author_meta( 'dribbble', $kremalicious) ) {		
+	        	echo '<a class="btn btn-tag" href="http://dribbble.com/'. get_the_author_meta('dribbble', $kremalicious) .'">Dribbble</a> ';
 	        }
 	        // Zerply
 	        if ( get_the_author_meta( 'zerply', $kremalicious) ) {		
