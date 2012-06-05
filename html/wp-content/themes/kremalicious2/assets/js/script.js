@@ -231,7 +231,7 @@ var infiniteScroll = {
 		
 		$scrollContent.infinitescroll({
 			loading: {
-				img: 'http://cdn.kremalicious.com/wp-content/themes/kremalicious2/assets/img/logo.png'
+				img: '/wp-content/themes/kremalicious2/assets/img/texture.png'
 			},
 			itemSelector	: items,
 			nextSelector	: '#post-nav a:first',
