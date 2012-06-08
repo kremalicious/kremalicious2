@@ -11,7 +11,7 @@
 	text-align: center;
 	display: inline-block;
 	.ie7-inline-block();
-	padding: .5em 1em;
+	padding: .45em 1em;
 	.border-radius(4px);
 	.box-shadow(~"0 1px 0 #fff, 0 -1px 0 #cad1d8");
 	background-color: transparent;
@@ -31,7 +31,6 @@
 		
 	&:active {
 		.transition(none);
-		top: 1px;
 	}
 	
 	.hoverbuttons & {
@@ -75,28 +74,32 @@
 
 .btn-primary,
 a.btn-primary:visited {
-	color: darken(@linkColor, 25%);
+	padding: .5em 1em;
+	color: darken(@linkColor, 30%);
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	background-color: @linkColor;
-	border: 1px solid lighten(@linkColor, 5%);
-	border-bottom-color: darken(@linkColor, 10%);
-	padding: .6em 1em;
-	-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
-       -moz-box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
-            box-shadow: 0 1px 0 #fff, inset 0 1px 0 lighten(@linkColor, 45%);
+	background-color: #398f85;
+	border: 1px solid rgba(40,101,93,.6);
+	border-bottom-color: rgba(40,101,93,.9);
+	.box-shadow(~"0 1px 4px rgba(30,72,67,.6), inset 0 1px 0 rgba(196,241,235,.75),inset 0 0 18px rgba(43,100,92,.3)");
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
+	background-image: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: -o-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
 	
 	&:hover {
 		background-color: lighten(@linkColor, 3%);
 		color: darken(@linkColor, 25%);
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
-		
 	}
 	
 	&:active {
-		border-color: darken(@linkColor, 5%);
-		border-bottom-color: darken(@linkColor, 10%);
-		.box-shadow(~"0 1px 0 #fff, inset 0 1px 1px rgba(0,0,0,.1), inset 0 -1px 6px rgba(0,0,0,.2)");
+		background-color: lighten(@linkColor, 3%);
+		border-top-color: rgba(40,101,93,.9);
+		.transition(none);
+		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
 	}
+
 }
 
 .btn-block {

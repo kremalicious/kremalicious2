@@ -131,12 +131,13 @@ a.button, a.button-secondary,
 input.button-primary,
 button.button-primary,
 a.button-primary,
-.button-primary-disabled {
+.button-primary-disabled,
+.submitbox .submitdelete {
 	font-size: 12px;
 	line-height: 20px;
 	text-align: center;
 	display: inline-block;
-	padding: 2px 20px;
+	padding: 5px 18px;
 	
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
 	-moz-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
@@ -155,13 +156,13 @@ a.button-primary,
 	
 	border: 2px solid rgba(255,255,255,.3);
 	position: relative;
-
+	.background-clip(padding-box);
 }
 
 .btn:hover,
 input.button:hover,
 input.button-secondary:hover,
-a.button, a.button-secondary:hover,
+a.button:hover, a.button-secondary:hover,
 .wrap .add-new-h2:hover {
 	background-color: rgba(255,255,255,.4);
 	border: 2px solid rgba(255,255,255,.3);
@@ -170,51 +171,59 @@ a.button, a.button-secondary:hover,
 .btn-primary,
 input.button-primary,
 button.button-primary,
-a.button-primary,
-.button-primary-disabled {
-	background-color: @linkColor;
-	color: #133832;
-	border: 1px solid #3c9e91;
-	border-bottom-color: #246059;
-	padding: 5px 40px;
+a.button-primary {
+	display: inline-block;
+	padding: 7px 18px;
+	color: darken(@linkColor, 30%);
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	-webkit-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
-	-moz-box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
-	box-shadow: 0 1px 4px #2e796f, inset 0 1px 0 rgba(255,255,255,.4);
+	background-color: #398f85;
+	border: 1px solid rgba(40,101,93,.6);
+	border-color: rgba(40,101,93,.6);
+	border-bottom-color: rgba(40,101,93,.9);
+	.box-shadow(~"0 1px 4px rgba(30,72,67,.6), inset 0 1px 0 rgba(196,241,235,.75),inset 0 0 18px rgba(43,100,92,.3)");
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
+	background-image: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: -o-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+	.transition(background .2s ease-in-out);
+	
+	&:hover {
+		color: darken(@linkColor, 25%);
+		background-color: lighten(@linkColor, 3%);
+		text-shadow: 0 1px 0 rgba(255,255,255,.3);
+		border: 1px solid rgba(40,101,93,.6);
+		border-bottom-color: rgba(40,101,93,.9);
+	}
+	
+	&:active {
+		color: darken(@linkColor, 25%);
+		background-color: lighten(@linkColor, 3%);
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
+		background-image: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+		background-image: -o-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+		background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+		background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%);
+		border-top-color: rgba(40,101,93,.9);
+		.transition(none);
+		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
+	}	
 }
 
-input.button-primary:hover,
-button.button-primary:hover,
-a.button-primary:hover {
-	background-color: #3e9e92;
-	color: #133832;
-	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	border: 1px solid #3c9e91;
-	border-bottom-color: #246059;
-}
-
-input.button-primary:active,
-button.button-primary:active,
-a.button-primary:active {
-	background-color: #3a9085;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
-	color: #133832;
-	.transition(none);
-	border: 1px solid #3c9e91;
-	border-bottom-color: #246059;
-	top: 1px;
-
-	-webkit-box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
-	box-shadow: 0 1px 0 #fff, inset 0 1px 3px rgba(0,0,0,.3), inset 0 -5px 10px rgba(0,0,0,.2);
-}
-
+// disabled & autosave button state
+// which is really hard to overwrite
 input.button-primary-disabled,
 button.button-primary-disabled,
-a.button-primary-disabled {
+a.button-primary-disabled,
+input.button-primary[disabled] {
 	color: #267166 !important;
-	background-color: @linkColor !important;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0))) !important;
+	background-color: #398f85 !important;
+	.box-shadow(~"0 1px 4px rgba(30,72,67,.6), inset 0 1px 0 rgba(196,241,235,.75),inset 0 0 18px rgba(43,100,92,.3)");
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=) !important;
+	background-image: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%) !important;
+	background-image: -o-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%) !important;
+	background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%) !important;
+	background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(202,254,247,.6) 100%) !important;
 }
 
 #adminmenu a.menu-top,.folded #adminmenu li.menu-top,#adminmenu .wp-submenu .wp-submenu-head {
@@ -292,13 +301,53 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	margin-bottom: 60px;
 }
 
-#titlediv #title {
-	padding: 8px;
-	font-size: 2em;
+// edit screen
+#titlediv {
+	.border-radius(0);
+	border: none;
+	.box-shadow(none)
+	
+	#title {
+		padding: 8px;
+		font-size: 2em;
+	}
+	
+	a.button {
+		padding: 0 15px
+	}
 }
 
 #titlediv #title-prompt-text, #wp-fullscreen-title-prompt-text {
 	padding: 15px 10px;
+}
+
+#minor-publishing,
+.misc-pub-section {
+	.box-shadow(none);
+	border: none;
+}
+
+#minor-publishing-actions {
+	.divider-bottom;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin-bottom: 10px
+}
+
+#major-publishing-actions {
+	.divider-top;
+	margin-top: 15px;
+	padding-top: 20px;
+}
+
+.submitbox .submitdelete {
+	color: #f00;
+	padding: 7px 18px;
+	
+	&:hover {
+		text-shadow: none;
+		border-color: #f00;
+	}
 }
 
 /* fix for weird Media Library "Show" Buttons*/
@@ -375,6 +424,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 }
 
 div.updated, .login .message {
+	font-weight: bold;
 	color: #8a6d3d;
 	padding: .5em .8em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
