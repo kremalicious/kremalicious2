@@ -938,11 +938,9 @@ article#aboutPage {}
 	.opacity(100);
 }
 
-#contact {}
-
-/* ============================================================== */
-/*	SIDEBAR */
-/* ============================================================== */
+/* 	==============================================================
+	SIDEBAR
+	============================================================== */
 
 aside[role="complementary"] {
 	margin-bottom: 2em;
@@ -966,6 +964,46 @@ aside[role="complementary"] h1 a {
 	.touch aside[role="complementary"] h1 a {
 		color: @linkColorHover;
 	}
+
+#subscribe {
+	.divider-bottom;
+	padding-bottom: 0;
+	
+	h2 {
+		font-size: 1em;
+		font-family: @baseFontFamily;
+		font-weight: @baseFontWeight;
+		line-height: @baseLineHeight;
+		font-style: italic;
+		color: lighten(@textColorDimmed, 10%);
+		.divider-bottom;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-bottom: .3em
+	}
+	
+	p {
+		padding: 1em 0 .7em 0;
+		margin: 0
+	}
+	
+	i:before {
+		margin-right: 0;
+	}
+}
+
+.touch #subscribe {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.single #subscribe {
+	.no-divider-bottom;
+}
+
+aside[role="complementary"] #subscribe {
+	margin-top: 2em;
+}
 
 #tweetsWrap,
 #topics {
@@ -1019,21 +1057,6 @@ aside[role="complementary"] #tweetsWrap {
 
 #tweets .tweet_time a {
 	color: @textColorDimmed;
-}
-
-#subscribe {
-	margin-left: -.5em;
-	margin-right: -.5em;
-	margin-bottom: 1em;
-}
-
-	.touch #subscribe {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-#subscribe i:before {
-	margin-right: 0;
 }
 
 aside[role="complementary"]:hover .rss i:before,

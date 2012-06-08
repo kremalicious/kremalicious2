@@ -67,11 +67,11 @@
 		if ( $paged >= 2 || $page >= 2 )
 			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
 		
-		<p id="description" class="dimmed divider-top"><?php bloginfo('description'); ?></p>
+		<p id="description" class="dimmed"><?php bloginfo('description'); ?></p>
 		
 		<?php krlc2_subscribe_buttons(); ?>
 		
-		<div id="tweetsWrap" class="divider-top">
+		<div id="tweetsWrap">
 			<div id="tweets" class="dimmed">
 				<p class="loading">...</p>
 			</div>

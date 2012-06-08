@@ -2,9 +2,12 @@
 
 // Subscribe Buttons
 function krlc2_subscribe_buttons() {
-	echo '<p id="subscribe" class="hoverbuttons">
-			  <a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss"></i> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/100015950464424503954"><i class="icon-google-plus"></i> Google+</a> <a class="btn btn-tag facebook" href="https://www.facebook.com/pages/kremalicious/154539134564052"><i class="icon-facebook"></i> Facebook</a>
-		  </p>';
+	echo '<div id="subscribe">
+		  	<h2>Subscribe</h2>
+			  <p class="hoverbuttons">
+				  <a class="btn btn-tag rss" href="http://kremalicious.com/feed"><i class="icon-rss"></i> RSS</a> <a class="btn btn-tag twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter"></i> Twitter</a> <a class="btn btn-tag google" href="https://plus.google.com/100015950464424503954"><i class="icon-google-plus"></i> Google+</a> <a class="btn btn-tag facebook" href="https://www.facebook.com/pages/kremalicious/154539134564052"><i class="icon-facebook"></i> Facebook</a>
+			  </p>
+		  </div>';
 }
 
 // Post date under single view
