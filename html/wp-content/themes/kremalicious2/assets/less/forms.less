@@ -1,14 +1,75 @@
+/*
+
+ FORMS CSS FOR KREMALICIOUS.COM
+ -----------------------------------------------------------------
+ 
+ Copyright (c) 2012 Matthias Kretschmann | http://mkretschmann.com
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
 
 // Make all forms have space below them
 form {
-  margin: 0 0 @baseLineHeight;
+	margin: 0 0 @baseLineHeight;
 }
 
 fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
+
+label {
+	display: block;
+	color: rgba(46, 79, 92, .7);
+	margin-bottom: 0;
+	// Indicate that 'label' will shift focus to the associated form element
+	cursor: pointer;
+}
+
+// infield labels
+.js form p { position: relative; }
+.js form p label { position: absolute; top: .6em; left: .6em;}
+
+// Correct color not inheriting in IE6/7/8/9
+legend { border: 0; padding: 0; }
+
+// 1. Correct font-size not inheriting in all browsers
+// 2. Remove margins in FF3/4 S5 Chrome
+// 3. Define consistent vertical alignment display in all browsers
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; }
+
+// 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+button, input { line-height: normal; }
+
+// 1. Display hand cursor for clickable form elements
+// 2. Allow styling of clickable form elements in iOS
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+// Re-set default cursor for disabled elements
+button[disabled], input[disabled] { cursor: default; }
+
+// Consistent box sizing and appearance
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+// Remove inner padding and border in FF3/4: h5bp.com/l
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+// 1. Remove default vertical scrollbar in IE6/7/8/9
+// 2. Allow only vertical resizing
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+// Colors for form validity
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
 
 select,
 textarea,
@@ -55,12 +116,3 @@ input[type="color"] {
 	.placeholder(rgba(46, 79, 92, .7));
 }
 
-label {
-	display: block;
-	color: rgba(46, 79, 92, .7);
-	margin-bottom: 0;
-}
-
-/* infield labels */
-.js form p { position: relative; }
-.js form p label { position: absolute; top: .6em; left: .6em;}

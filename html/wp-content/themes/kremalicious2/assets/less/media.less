@@ -1,6 +1,6 @@
 /*
 
- MAIN CSS FOR KREMALICIOUS.COM
+ MEDIA CSS FOR KREMALICIOUS.COM
  -----------------------------------------------------------------
  
  Copyright (c) 2012 Matthias Kretschmann | http://mkretschmann.com
@@ -14,40 +14,24 @@
 */
 
 
-// HTML5
-@import 'html5.less';
+/* ============================================================== */
+/* !IMAGES */
+/* ============================================================== */
 
-// Core variables and mixins
-@import 'variables.less';
-@import 'mixins.less';
+img {
+	// 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+	border: 0; 
+	vertical-align: middle; 
+	border-top: 1px solid rgba(255,255,255,.5);
+	.border-radius(5px);
+	.box-shadow(0 2px 4px rgba(0,0,0,.3));
+}
 
-// Grid system
-@import 'grid.less';
+svg:not(:root) { overflow: hidden; }
 
-// Typography
-@import 'typography.less';
 
-// Forms & Buttons
-@import 'forms.less';
-@import 'buttons.less';
+/* ============================================================== */
+/* !FIGURES */
+/* ============================================================== */
 
-// Media: images, video etc.
-@import 'media.less';
-
-// Icons
-@import 'icons.less';
-
-// App
-@import 'app.less';
-
-// Responsive
-@import 'responsive-480.less';
-@import 'responsive-600.less';
-@import 'responsive-769.less';
-@import 'responsive-1024.less';
-
-// Retina
-@import 'retina.less';
-
-// Print
-@import 'print.less';
+figure { margin: 0; }
