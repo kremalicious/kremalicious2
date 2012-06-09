@@ -39,6 +39,10 @@
 	}
 		
 	&:active {
+		background-color: rgba(255,255,255,.5);
+		border-top-color: rgba(94,131,162,.5);
+		.box-shadow(~"0 1px 0 #fff, inset 0 0 10px rgba(169,196,219,.3)");
+		top: 0;
 		.transition(none);
 	}
 	
@@ -90,8 +94,8 @@ a.btn-primary:visited {
 	&:active {
 		background-color: lighten(@linkColor, 3%);
 		border-top-color: rgba(40,101,93,.9);
-		.transition(none);
 		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
+		.transition(none);
 	}
 
 }
