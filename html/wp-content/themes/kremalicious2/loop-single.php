@@ -16,7 +16,7 @@
 			<div class="row">
 				<header class="col2">
 					<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
-					<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about"><?php the_author(); ?></a></p>
+					<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 					<p class="time"><?php echo krlc2_post_date(); ?></p>
 				</header>
 		
@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<div class="row" id="photoPostContent">
-				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about"><?php the_author(); ?></a></p>
+				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
 		<?php } else { ?>
 			
@@ -54,7 +54,7 @@
 				</header>
 				<div class="row">
 					<div class="col2">
-						<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about"><?php the_author(); ?></a></p>
+						<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 						<p class="time"><?php echo krlc2_post_date(); ?></p>
 					</div>
 			<?php } else { ?>
@@ -62,7 +62,7 @@
 				<div class="row">
 					<header class="col2">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about"><?php the_author(); ?></a></p>
+						<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 						<p class="time"><?php echo krlc2_post_date(); ?></p>
 					</header>
 					
