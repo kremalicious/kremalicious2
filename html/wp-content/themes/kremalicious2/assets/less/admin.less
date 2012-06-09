@@ -137,35 +137,33 @@ a.button-primary,
 	line-height: 20px;
 	text-align: center;
 	display: inline-block;
-	padding: 5px 18px;
-	
-	-webkit-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
-	-moz-box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
-	box-shadow: 0 1px 0 #fff, 0 -1px 0 #cad1d8;
+	padding: 3px 18px;
 	color: @linkColor;
 	font-weight: bold;
+	background-color: rgba(255,255,255,.1);
+	background-image: -moz-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 100%);
+	background-image: -o-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 100%);
+	background-image: -webkit-linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 100%);
+	background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 100%);
+	border: 1px solid rgba(94,131,162,.3);
+	border-bottom-color: rgba(94,131,162,.4);
 	.border-radius(5px);
-	background: rgba(255,255,255,.2) -moz-linear-gradient(top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-	background: rgba(255,255,255,.2) -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.4)), color-stop(100%,rgba(255,255,255,0)));
-	background: rgba(255,255,255,.2) -webkit-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
-	background: rgba(255,255,255,.2) -o-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
-	background: rgba(255,255,255,.2) -ms-linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
-	background: rgba(255,255,255,.2) linear-gradient(top, rgba(255,255,255,0.4) 0%,rgba(255,255,255,0) 100%);
-	
+	.box-shadow(~"0 1px 4px rgba(151,156,159,.4), inset 0 1px 0 #fff, inset 0 0 10px rgba(169,196,219,.3)");
 	.transition(all 0.2s ease-in-out);
-	
-	border: 2px solid rgba(255,255,255,.3);
 	position: relative;
 	.background-clip(padding-box);
-}
-
-.btn:hover,
-input.button:hover,
-input.button-secondary:hover,
-a.button:hover, a.button-secondary:hover,
-.wrap .add-new-h2:hover {
-	background-color: rgba(255,255,255,.4);
-	border: 2px solid rgba(255,255,255,.3);
+	
+	&:hover {
+		background: rgba(255,255,255,.5);
+		border: 1px solid rgba(94,131,162,.3);
+		border-bottom-color: rgba(94,131,162,.4);
+	}
+		
+	&:active {
+		.transition(none);
+		background: rgba(255,255,255,.5);
+	}
+	
 }
 
 .btn-primary,
@@ -311,9 +309,9 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 		padding: 8px;
 		font-size: 2em;
 	}
-	
+		
 	a.button {
-		padding: 0 15px
+		padding: 0 10px;
 	}
 }
 
