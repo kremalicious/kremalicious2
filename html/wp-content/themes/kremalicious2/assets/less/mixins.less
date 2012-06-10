@@ -259,12 +259,24 @@
 }
 
 // Transitions
-.transition(@transition) {
+.transition(@transition: all .2s ease-in-out 0s) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
       -ms-transition: @transition;
        -o-transition: @transition;
           transition: @transition;
+}
+.transition-duration(@duration:.2s) {
+	-webkit-transition-duration: @duration;
+	   -moz-transition-duration: @duration;
+	   	 -o-transition-duration: @duration;
+	        transition-duration: @duration;
+}
+.transition-property(@property: all) {
+	-webkit-transition-property: @property;
+	   -moz-transition-property: @property;
+	     -o-transition-property: @property;
+	        transition-property: @property;
 }
 
 // Animations

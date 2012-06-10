@@ -534,7 +534,7 @@ a.photopost {
 	border: 1px solid rgba(158, 170, 178, .6);
 	.border-radius(2px);
 	.box-shadow(0 1px 4px rgba(0, 0, 0, 0.1));
-	.transition(background .3s ease-in-out);
+	.transition();
 }
 
 .photoPost figure img {
@@ -751,7 +751,7 @@ li.comment {
 	box-shadow: 0 1px 0 #fff, 0 -1px 0 rgba(0,0,0,0.4);
 	border: 1px solid #c0d6e0;
 	position: relative;
-	.transition(background .3s ease-in-out 0s);
+	.transition();
 	
 	&:before,
 	&:after {
@@ -880,7 +880,7 @@ article#aboutPage {}
 
 #work .fork {
 	.opacity(50);
-	.transition(opacity .2s ease-in-out);
+	.transition();
 }
 
 #work .fork:hover {
@@ -971,7 +971,7 @@ aside[role="complementary"] #tweetsWrap {
 #tweets li,
 #tweets a {
 	color: @textColorDimmed;
-	.transition(color .3s ease-in-out);
+	.transition();
 }
 
 #tweets li:hover a,
@@ -1291,7 +1291,7 @@ aside[role="complementary"] br,
 	padding: 5px;
 	font-size: 12px;
 	.opacity(0);
-	.transition(opacity .2s ease-in-out 0s);
+	.transition();
 }
 .tooltip.in {
 	.opacity(85);
@@ -1416,24 +1416,15 @@ aside[role="complementary"] br,
 /* jQuery Masonry */
 .masonry,
 .masonry .masonry-brick {
-  -webkit-transition-duration: 0.7s;
-     -moz-transition-duration: 0.7s;
-       -o-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+	.transition-duration(0.7s);
 }
 
 .masonry {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
+	.transition-property(~"height, width");
 }
 
 .masonry .masonry-brick {
-  -webkit-transition-property: left, right, top;
-     -moz-transition-property: left, right, top;
-       -o-transition-property: left, right, top;
-          transition-property: left, right, top;
+	.transition-property(~"left, right, top");
 }
 
 @keyframes bannerSlideUp {
