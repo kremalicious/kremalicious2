@@ -11,11 +11,7 @@
 			bottom: 0;
 			width: 100%;
 			height: 50px;
-			background: -webkit-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
-			background: -moz-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
-			background: -o-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
-			background: -ms-linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
-			background: linear-gradient(top, rgba(231, 238, 244, 0) 0%, rgba(231, 238, 244, 1) 100%);
+			#gradient > .vertical(rgba(231, 238, 244, 0), rgba(231, 238, 244, 1));
 		}
 	}
 		
@@ -86,15 +82,8 @@
 		
 		h1 {
 			background-color: #d8e2ea;
-			background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 100%);
-			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.15)));
-			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
-			background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
-			background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
-			background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.15) 100%);
-			-webkit-box-shadow: 0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7);
-			-moz-box-shadow: 0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7);
-			box-shadow: 0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7);
+			#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.15));
+			.box-shadow(~"0 2px 4px rgba(111, 131, 139, .6), inset 0 -1px 0 rgba(255,255,255,.5), inset 1px 0 0 rgba(255,255,255,.7), inset -1px 0 0 rgba(255,255,255,.7)");
 			padding-bottom: .7em;
 			
 			&:before {
@@ -120,9 +109,7 @@
 		
 	#logo {
 		background-position: center 6px;
-		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2);
-		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2);
-		box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2);
+		.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2)");
 		border-bottom: 1px solid #8ea8b6;
 		
 		&:before,
@@ -192,9 +179,7 @@
 		margin-top: -2px;
 		background: #b7c1c4;
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
-		-webkit-box-shadow: 0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc;
-		-moz-box-shadow: 0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc;
-		box-shadow: 0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc; 
+		.box-shadow(~"0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc");
 	}
 
 	nav[role="navigation"] .dropdown-menu li {
