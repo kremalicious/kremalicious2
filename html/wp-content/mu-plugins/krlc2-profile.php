@@ -93,15 +93,15 @@ class krlc2_userprofile {
 	        echo '<a class="btn btn-tag icon-envelope-alt" href="mailto:' . antispambot(get_the_author_meta('user_email', $kremalicious)) . '">Email</a>';
 	        // Portfolio site
 	        if ( get_the_author_meta( 'user_url', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag icon-star" href="'. get_the_author_meta('user_url', $kremalicious) .'">Portfolio</a> ';
+	        	echo '<a class="btn btn-tag icon-star" rel="me" href="'. get_the_author_meta('user_url', $kremalicious) .'">Portfolio</a> ';
 	        }
 	        // Twitter
 	        if ( get_the_author_meta( 'twitter', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag icon-twitter" href="https://twitter.com/'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a> ';
+	        	echo '<a class="btn btn-tag icon-twitter" rel="me" href="https://twitter.com/'. get_the_author_meta('twitter', $kremalicious) .'">Twitter</a> ';
 	        }
 	        // Google+
 	        if ( get_the_author_meta( 'googleplus', $kremalicious) ) {		
-	        	echo '<a class="btn btn-tag icon-google-plus" href="'. get_the_author_meta('googleplus', $kremalicious) .'">Google+</a> ';
+	        	echo '<a class="btn btn-tag icon-google-plus" rel="me" href="'. get_the_author_meta('googleplus', $kremalicious) .'">Google+</a> ';
 	        }
 	        // Github
 	        if ( get_the_author_meta( 'github', $kremalicious) ) {		
