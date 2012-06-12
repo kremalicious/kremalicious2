@@ -1,5 +1,5 @@
-<form role="search" method="get" id="searchform" class="icon-search alignright form-search <?php if (is_404() || !have_posts()) { ?> well <?php } ?>" action="<?php echo home_url('/'); ?>">
+<form role="search" method="get" id="searchform" class="icon-search alignright form-search" action="<?php echo home_url('/'); ?>">
   <label class="visuallyhidden" for="s"><?php _e('Search for:', 'roots'); ?></label>
-  <input type="text" value="" name="s" id="s" class="search-query" placeholder="<?php _e('Search', 'roots'); ?> <?php bloginfo('name'); ?>">
-  <input type="submit" id="searchsubmit" value="<?php _e('Search', 'roots'); ?>" class="btn btn-primary">
+  <input type="text" value="" name="s" id="s" class="search-query" placeholder="Search kremalicious.com">
+  <input type="submit" id="searchsubmit" value="Search" class="btn btn-primary">
 </form>
