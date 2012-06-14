@@ -38,9 +38,6 @@ Redirect 301 /canon-eos-50d-officially-announced-and-new-lens /
 Redirect 301 /apple-touch-icon.png /apple-touch-icon-precomposed.png
 Redirect 301 /home/feed/ /feed
 
-# Easy WordPress Login
-Redirect 301 /login /wp-login.php
-
 # redirect all wordpress feeds to feedburner
 <IfModule mod_rewrite.c>
  RewriteEngine on
