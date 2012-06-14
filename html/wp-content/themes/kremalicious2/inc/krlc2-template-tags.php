@@ -59,30 +59,30 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
 }
 
 // Github Repos
-function krlc2_show_github_repos() {
-	require_once locate_template('/inc/lib/Github/Autoloader.php');
-	Github_Autoloader::register();
-	$github = new Github_Client();
-	$myRepos = $github->getRepoApi()->getUserRepos('kremalicious');
-	
+//function krlc2_show_github_repos() {
+//	require_once locate_template('/inc/lib/Github/Autoloader.php');
+//	Github_Autoloader::register();
+//	$github = new Github_Client();
+//	$myRepos = $github->getRepoApi()->getUserRepos('kremalicious');
+//	
 	// Sort all results by pushed date, descending
-	usort($myRepos, function($b,$a) {
-		return strcmp($a['pushed_at'], $b['pushed_at']);
-	});
-	
+//	usort($myRepos, function($b,$a) {
+//		return strcmp($a['pushed_at'], $b['pushed_at']);
+//	});
+//	
 	// limit the array to only 3
-	$myRepos = array_slice($myRepos, 0, 3);
-	
+//	$myRepos = array_slice($myRepos, 0, 3);
+//	
 	// iterate over each remaining repo and output data
-    foreach ($myRepos as $myRepo) {
-    	if ( $myRepo['fork'] == true ) {
-	    	echo '<p class="col2 fork">';
-    	} else {
-	    	echo '<p class="col2">';
-    	}
-        echo '<a href="'.$myRepo['url'].'">'.$myRepo['name'].'</a> <small class="dimmed">'.$myRepo['description'].'</small></p>';
-    }
-}
+//    foreach ($myRepos as $myRepo) {
+//    	if ( $myRepo['fork'] == true ) {
+//	    	echo '<p class="col2 fork">';
+//    	} else {
+//	    	echo '<p class="col2">';
+//    	}
+//        echo '<a href="'.$myRepo['url'].'">'.$myRepo['name'].'</a> <small class="dimmed">'.$myRepo['description'].'</small></p>';
+//    }
+//}
 
 // Dribbble Shots
 function krlc2_show_dribbble_shots() {

@@ -30,15 +30,15 @@
 
 	<section id="work">
 	
-		<div class="row">
+		<!--<div class="row">
 			<div class="col2">
 				<h3>Latest Code</h3>
 				<p><a href="https://github.com/kremalicious" title="GitHub Profile" class="btn btn-tag icon-github-alt">View all GitHub repos</a></p>
 			</div>
 			<div class="col4">
-				<?php krlc2_show_github_repos(); ?>
+				
 			</div>
-		</div>
+		</div>-->
 		<div class="row">
 			<div class="col2">
 				<h3>Latest Work</h3>
