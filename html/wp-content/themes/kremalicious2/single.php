@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<section role="main">
+	<section role="main" id="main">
 		<?php get_template_part('loop', 'single'); ?>
 	</section><!-- /#main -->
 	

@@ -17,7 +17,8 @@ $(ASAP = function(){
 
 	photoGrid.init();
 	interface.init();
-    
+	lightbox.init();
+	
 });
 
 $(window).load( AfterLoad = function() {
@@ -26,6 +27,26 @@ $(window).load( AfterLoad = function() {
 	infiniteScroll.init();
 	
 });
+
+
+var lightbox = {
+
+	initiateLightbox: function() {
+		var $linkedImages = $('#main').find('a[href*=".jpg"],a[href*=".jpeg"],a[href*=".png"]');
+		$linkedImages.addClass('linkedImage');
+		$linkedImages.fancybox({
+	         closeClick : true,
+	         closeBtn: false,
+	         padding: 0
+	     });
+	},
+	
+	init: function(){
+		if ( $('#main img').length > 0 ) {
+			this.initiateLightbox();
+		}
+	}
+}
 
 var photoGrid = {
 	
