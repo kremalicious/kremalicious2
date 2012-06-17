@@ -25,9 +25,9 @@
 	 _____________________________________________
 -->
 
-<!--[if IE 8]>    		<html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if IEMobile 7 ]> 	<html class="no-js iem7" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> 	<html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if IE 8]>			<html class="no-js lt-ie9" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
+<!--[if IEMobile 7 ]>	<html class="no-js iem7" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
+<!--[if gt IE 8]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	
@@ -41,7 +41,7 @@
 		while( have_posts() ): the_post(); ?>
 		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>">
 		<?php endwhile; ?>
-	<?php } elseif (is_archive()) { ?>
+	<?php } elseif (is_category()) { ?>
 		<meta name="description" content="<?php echo strip_tags(category_description()); ?>">
 	<?php } ?>
 	
@@ -72,12 +72,6 @@
   	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo site_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
   	<link rel="apple-touch-icon-precomposed" href="<?php echo site_url('/apple-touch-icon-precomposed.png'); ?>">
   	<link rel="shortcut icon" href="<?php echo site_url('/favicon.ico'); ?>">
-  	
-  	<?php krlc2_twitter_cards_head_tags(); ?>
-  	
-  	<?php if ( !is_singular() ) { ?>
-  		<link rel="image_src" href="/kremalicious512.png" />
-  	<?php } ?>
 
 </head>
 

@@ -16,47 +16,6 @@ function krlc2_post_date() {
 	return $time;
 }
 
-// Twitter Cards
-// https://dev.twitter.com/docs/cards
-function krlc2_twitter_cards_head_tags($postID = NULL) {
-	
-	// only handle single views
-	if ( !is_singular() ) {
-		return;
-	}
-	
-    // if $postID not specified, then get global post and assign ID
-    if (!$postID) {
-        global $post;
-        $postID = $post->ID;
-    }
-    
-    // Grab the values
-    $postURL	 	= get_permalink($postID);
-    $postTitle		= get_the_title($postID);
-    if ( has_post_format( 'image', $postID ) ) {
-    	$imageURL		= wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'large');
-    } else {
-    	$imageURL		= wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'thumbnail');
-    }
-	
-	// Output meta tags
-	if ( has_post_format( 'image', $postID ) ) { ?>
-		<meta name="twitter:card" value="photo">
-	<?php } else { ?>
-		<meta name="twitter:card" value="summary">
-	<?php } ?>
-	<meta name="twitter:site" value="@kremaliciouscom">
-	<meta name="twitter:creator" value="@kremalicious">
-	<meta name="twitter:url" value="<?php echo $postURL ?>">
-	<meta name="twitter:title" value="<?php echo $postTitle ?>">
-	<meta name="twitter:description" value="<?php echo strip_tags(get_the_excerpt()) ?>">
-	<?php if (has_post_thumbnail()) { ?>
-		<meta name="twitter:image" value="<?php echo $imageURL[0] ?>">
-	<?php }
-
-}
-
 // Grab EXIF Metadata from featured image
 function krlc2_post_thumbnail_exif_data($postID = NULL) {
     // if $postID not specified, then get global post and assign ID
