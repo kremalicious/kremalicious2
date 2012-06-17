@@ -62,17 +62,19 @@ function krlc2_socialgraph_head_tags($postID = NULL) {
     }
     
     // Conditionally define the values
-    $ogURL	= get_permalink($postID);
     if ( is_home()) { 
     	$ogTitle		= get_bloginfo('name');
     	$ogDescription 	= get_bloginfo('description');
+    	$ogURL			= get_bloginfo('wpurl');
     } elseif (is_category()) { 
     	$category 		= get_the_category(); 
     	$ogTitle		= $category[0]->cat_name;
     	$ogDescription	= strip_tags(category_description($category[0]->cat_ID));
+    	$ogURL			= get_category_link($category[0]->cat_ID);
     } else { 
     	$ogTitle		= get_the_title($postID);
     	$ogDescription	= strip_tags(get_the_excerpt());
+    	$ogURL			= get_permalink($postID);
     }
     if (is_single() || is_page()) { 
     	$ogType		= 'article';
