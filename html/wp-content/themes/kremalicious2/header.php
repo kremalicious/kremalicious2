@@ -73,8 +73,10 @@
   	<link rel="apple-touch-icon-precomposed" href="<?php echo site_url('/apple-touch-icon-precomposed.png'); ?>">
   	<link rel="shortcut icon" href="<?php echo site_url('/favicon.ico'); ?>">
   	
-  	<?php if ( !is_singular() ) {  ?>
-  	<link rel="image_src" href="/kremalicious512.png" />
+  	<?php krlc2_twitter_cards_head_tags(); ?>
+  	
+  	<?php if ( !is_singular() ) { ?>
+  		<link rel="image_src" href="/kremalicious512.png" />
   	<?php } ?>
 
 </head>

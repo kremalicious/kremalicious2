@@ -11,14 +11,6 @@ function roots_nice_search_redirect() {
 
 add_action('template_redirect', 'roots_nice_search_redirect');
 
-
-// excerpt cleanup
-function krlc2_excerpt_more() {
-  return '<p><a class="more-link" href="' . get_permalink() . '">Continue reading <i class="icon-chevron-right"></i></a></p>';
-}
-add_filter('excerpt_more', 'krlc2_excerpt_more');
-
-
 // remove WordPress version from RSS feed
 function roots_no_generator() { return ''; }
 add_filter('the_generator', 'roots_no_generator');
