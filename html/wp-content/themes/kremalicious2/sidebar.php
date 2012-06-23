@@ -1,5 +1,5 @@
 
-<aside role="complementary" class="col2 hoverbuttons">
+<aside role="complementary">
 
 	<?php if ( is_archive() ) { ?>
 		

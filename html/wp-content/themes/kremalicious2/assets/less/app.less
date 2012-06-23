@@ -14,17 +14,10 @@ body {
 	margin: 0;
 }
 
+#menubar,
+#content,
+footer[role="contentinfo"] 	{ .container }
 
-/* ============================================================== */
-/* !GRID OVERWRITES */
-/* ============================================================== */
-.container { padding: 0 2em; }
-
-.row { 
-	max-width: 20em;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 /* ============================================================== */
 /*	!HEADER */
@@ -38,7 +31,6 @@ body {
 	background: #b7c1c4;
 	border-bottom: 1px solid #9eaab2;
 	.box-shadow(0 1px 4px #b7c1c4);
-	
 	&:before {
 		content: "";
 		position: absolute;
@@ -108,7 +100,6 @@ nav[role="navigation"],
 
 nav[role="navigation"] {
 	width: 100%;
-	
 	li {
 		display: block;
 		float: left;
@@ -284,18 +275,18 @@ nav[role="navigation"] li a.dropdown-toggle {
 }
 
 /* ============================================================== */
-/*	!CONTENT */
+/*	CONTENT */
 /* ============================================================== */
 
 #content {
 	margin-top: 0;
 	padding-top: 2em;
 	word-wrap: break-word;
-	margin-bottom: 0
+	margin-bottom: 0;
 }
 
 /* ============================================================== */
-/*	!PRIMARY CONTENT */
+/*	PRIMARY CONTENT */
 /* ============================================================== */
 
 .pager {
@@ -369,7 +360,7 @@ line-height: 0;
 }
 
 /* ============================================================== */
-/*	!POSTS */
+/*	POSTS */
 /* ============================================================== */
 
 .hentry {
@@ -575,7 +566,7 @@ a.photoPost:hover figure {
 	margin-bottom: 1.5em;
 }
 
-.single #photoPostContent.row {
+.single #photoPostContent.container {
 	max-width: 35em;
 }
 
@@ -847,7 +838,7 @@ article#aboutPage {}
 
 #hello {}
 
-#work .row {
+#work .container {
 	margin-top: 2em;
 	margin-bottom: 2em;
 	.divider-top();
@@ -865,7 +856,7 @@ article#aboutPage {}
 	padding-right: 0;
 }
 
-#work .row .col4 > .col3:nth-child(3) {
+#work .container .col4 > .col3:nth-child(3) {
 	margin-left: 0
 }
 
@@ -1093,7 +1084,7 @@ footer[role="contentinfo"] {
 /*	404 */
 /* ============================================================== */
 
-.error404 #content .row {
+.error404 #content .container {
 	max-width: 35em;
 }
 

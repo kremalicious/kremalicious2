@@ -77,35 +77,33 @@
 
 <body <?php body_class(); ?>>
 
-	<div class="container" id="menubar-wrap">
-		<div class="row" id="menubar">
-			
+	<div id="menubar-wrap">
+		<div id="menubar">
 			<header role="banner">
 				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
 			</header>
-			<div class="col6">
-				<nav role="navigation" class="clearfix alignleft">
-					<ul>
-						<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
-						<li class="dropdown" id="topicmenu">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#topicmenu">
-								<i class="icon-reorder"></i><b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"><i class="icon-gift"></i> goodies</a></li>
-								<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>><a href="/photos"><i class="icon-picture"></i> photos</a></li>
-								<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"><i class="icon-user"></i> personal</a></li>
-								<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"><i class="icon-leaf"></i> design</a></li>
-								<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
-							</ul>
-						</li>						
-						<li <?php if ( is_page('about') ) echo 'class="current_page_item"';  ?>><a href="/about"> <i class="icon-user"></i> About</a></li>
-					</ul>
-				</nav>
-				<?php get_search_form(); ?>
-			</div>
+			<nav role="navigation" class="clearfix alignleft">
+				<ul>
+					<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
+					<li class="dropdown" id="topicmenu">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#topicmenu">
+							<i class="icon-reorder"></i><b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"><i class="icon-gift"></i> goodies</a></li>
+							<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>><a href="/photos"><i class="icon-picture"></i> photos</a></li>
+							<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"><i class="icon-user"></i> personal</a></li>
+							<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"><i class="icon-leaf"></i> design</a></li>
+							<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
+						</ul>
+					</li>						
+					<li <?php if ( is_page('about') ) echo 'class="current_page_item"';  ?>><a href="/about"> <i class="icon-user"></i> About</a></li>
+				</ul>
+			</nav>
+			<?php get_search_form(); ?>
+			
 		</div>
 	</div>
 	
-	<div class="container" id="content" role="document">
+	<div id="content" role="document">
 		

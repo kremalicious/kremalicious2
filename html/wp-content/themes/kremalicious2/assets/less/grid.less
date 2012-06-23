@@ -1,141 +1,65 @@
-/*
- * HS Responsive
- * The Grid Framework
- * http://kremalicious.github.com/hsresponsive
- * 
- * v1.0
- *
- * Copyright 2012, Daniel Ackermann / Matthias Kretschmann
- * Free to use under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
+/////////////////
+// Semantic.gs // for LESS: http://lesscss.org/
+/////////////////
 
+// Defaults which you can freely override
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
 
-/* ============================================================== */
-/*   Grid System */
-/*  ============================================================== */
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
 
-/* apply a natural box layout model to all elements
-   http://paulirish.com/2012/box-sizing-border-box-ftw/  */
-* { .box-sizing(border-box); }
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
 
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// @min-width: 960;
+// @correction: 0.5 / @min-width * 100 * 1%;
 
-
-/*   320px and up */
-/*  ============================================================== */
-
-.container {
-	padding: 0 2%; 		/* always 20px/1000px padding on left & right */
-	width: 100%;
-	margin: 1% auto; }
-
-
-
-.col1, .col2, .col3, .col4, .col5, .col6 {
-	width: 100%;
-	margin-left: 0; }
-
-/* clear trick */
-.container, .row { clear: both }
-.container:before, .row:before, 
-.container:after, .row:after { display: table; content: ""; }
-.container:after, .row:after { clear: both; }
-.container, .row { *zoom: 1; }
-
-/* Responsive Media */
-img, figure, svg, video, audio, embed, object {
-	max-width: 100%;	/* never wider as containing column */
-	height: auto;		/* proportional scaling */
-	margin: 0 auto;		/* center in column */
-	display: block;		/* needed for centering */
-}
-
-
-/*   480px and up */
-/*  ============================================================== */
-@media only screen and (min-width: 480px) {
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+	*zoom:1;
 	
-	.grid2-col1, .grid2-col2 {
-		float: left;
-		margin-left: 2%; }
-	
-	.grid2-col1:first-child, 
-	.grid2-col2 { margin-left: 0; }
-	
-	/* needed double definition so 
-	   IE8 won't ignore the above grid styles */
-	.grid2-col1:nth-child(2n+1) { margin-left: 0; }
-	
-	.grid2-col1 { width: 49%; }		/* 245px/500px */
-	.grid2-col2 { 
-		width: 100%; 
-		margin-left: 0; }
-	
-	/* ensures empty columns won't collapse */
-	.col1, 
-	.col2, 
-	.col3, 
-	.col4, 
-	.col5, 
-	.col6,
-	.grid2-col2,
-	.grid2-col1 { min-height: 1px; }
-	
-}
-
-
-/*   768px and up */
-/*  ============================================================== */
-
-/*using 769px here so iPad/portrait gets a different view as in landscape*/
-@media only screen and (min-width: 769px) {
-	
-	.row {
-	    max-width: 1000px;		/* fluid til 1000px max */
-	    margin: 0 auto;
-	    padding-left: 0;
-	    padding-right: 0;
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
 	}
-	
-	.col1, 
-	.col2, 
-	.col3, 
-	.col4, 
-	.col5, 
-	.col6,
-	.grid2-col2,
-	.grid2-col1:first-child {
-		float: left;
-		margin-left: 2%; }
-	
-	/* needed double definition so 
-	   IE8 won't ignore the above grid styles */
-	.grid2-col1:nth-child(1n+1) {
-		float: left;
-		margin-left: 2%; }
-	
-	.col1:first-child, 
-	.col2:first-child, 
-	.col3:first-child, 
-	.col4:first-child, 
-	.col5:first-child, 
-	.col6 { margin-left: 0; }
-
-	.col1 { width: 15%; }		/* 150px/1000px */
-	.col2 { width: 32%; }		/* 320px/1000px */
-	.col3 { width: 49%; }		/* 490px/1000px */
-	.col4 { width: 66%; }		/* 660px/1000px */
-	.col5 { width: 83%; }		/* 830px/1000px */
-	.col6 { width: 100%; }		/* 1000px/1000px */
-	
+	&:after {
+	    clear:both;
+	}
 }
 
 
-/*   1000px and up  */
-/*  ============================================================== */
-@media only screen and (min-width: 1000px) {
-	
-	
-	
+//////////
+// GRID //
+//////////
 
+body {
+	width: 100%;
+	.clearfix;
+}
+
+.row(@columns:@columns) {
+	display: block;
+	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+	// *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
+	// *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
+	.clearfix;
+}
+.column(@x,@columns:@columns) {
+	display: inline;
+	float: left;
+	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+	// *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
+	// *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
+}
+.push(@offset:1) {
+	margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+.pull(@offset:1) {
+	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }

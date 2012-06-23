@@ -1,9 +1,23 @@
-
 // --------------------------------------------------
-//	CUSTOM STUFF
+//	COMPONENTS
 // --------------------------------------------------
 
-//	Body Background
+
+// Grid components
+// --------------------------------------------------
+.container { 
+	max-width: 20em;
+	margin-left: auto;
+	margin-right: auto;
+	
+	@media only screen and (min-width: 480px) 	{ max-width: 25em; }
+	@media only screen and (min-width: 600px) 	{ max-width: 33.8em; }
+	@media only screen and (min-width: 769px) 	{ max-width: 51.5em; }
+	@media only screen and (min-width: 1400px) 	{ max-width: 52.85em; }
+}
+
+// Body Background
+// --------------------------------------------------
 .bodyTexture {
 	background: @bodyBackground url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
 }
@@ -14,6 +28,7 @@
 }
 
 // mmmmh, antialiasing
+// --------------------------------------------------
 .antialiasing {
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
@@ -21,6 +36,7 @@
 }
 
 // Dimmed Text
+// --------------------------------------------------
 .dimmed {
 	color: @textColorDimmed;
 	p { color: @textColorDimmed; }
@@ -28,6 +44,7 @@
 }
 
 // Dashed Dividers
+// --------------------------------------------------
 .divider-top {
 	position: relative;
 	border-top: 1px dashed #afc3cb;
@@ -42,7 +59,6 @@
 		border-top: 1px dashed #fff;
 	}
 }
-
 // so we can reset only one item out of multiple
 .no-divider-top {
 	border-top: none;
@@ -66,7 +82,6 @@
 		border-bottom: 1px dashed #fff;
 	}
 }
-
 // so we can reset only one item out of multiple
 .no-divider-bottom {
 	border-bottom: none;
@@ -77,6 +92,7 @@
 }
 
 // Loading Thingy
+// --------------------------------------------------
 .loading {
 	.animation(loadingThingy .2s infinite);
 }
@@ -131,9 +147,9 @@
 
 }
 
-// ==================================================
-// UTILITY CLASSES
-// ==================================================
+// --------------------------------------------------
+// UTILITIES
+// --------------------------------------------------
 
 .clearfix {
   *zoom: 1;
@@ -157,12 +173,13 @@
 }
 
 // Quick floats
+// --------------------------------------------------
 .alignleft { float: left; }
 .alignright { float: right; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 // Placeholder text
-// -------------------------
+// --------------------------------------------------
 .placeholder(@color: @placeholderText) {
   &:-moz-placeholder {
     color: @color;
@@ -225,9 +242,9 @@
 }
 
 
-// ==================================================
+// --------------------------------------------------
 // CSS3 PROPERTIES
-// ==================================================
+// --------------------------------------------------
 
 // Opacity
 .opacity(@opacity) {

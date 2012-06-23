@@ -26,17 +26,15 @@
 		
 			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
-				<header class="col2">
+				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
-				<div class="col4">
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-					<footer>
-						<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
-					</footer>
+				<div class="entry-content">
+					<?php the_content(); ?>
 				</div>
+				<footer>
+					<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
+				</footer>
 					
 			</article>
 	      

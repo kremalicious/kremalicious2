@@ -23,27 +23,25 @@
 			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); 
 			$leTopic 	= get_the_category(); ?>
 			
-			<div class="col1 posttype">
+			<div class="posttype">
 				<a class="icon- cat-<?php echo $leTopic[0]->slug; ?>" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
 			</div>
-			<div class="col5">
-				<header>
-					<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
-				</header>
-				<?php if (!is_search()) { ?>
-				<section class="entry-content">
-					<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
-					<p>
-						<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
-						<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
-					</p>
-				<?php } else { ?>
-					<p>
-						<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
-					</p>
-				</section>
-				<?php } ?>
-			</div>
+			<header>
+				<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
+			</header>
+			<?php if (!is_search()) { ?>
+			<section class="entry-content">
+				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+				<p>
+					<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
+					<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
+				</p>
+			<?php } else { ?>
+				<p>
+					<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
+				</p>
+			</section>
+			<?php } ?>
 		
 		<?php } 
 		
@@ -55,28 +53,24 @@
 			
 			if ( is_category('photos') ) { ?>
 			
-				<div class="col6">
-					<a class="photoPost" href="<?php the_permalink(); ?>">
-						<figure>
-							<?php the_post_thumbnail('photoArchive'); ?>
-							<figcaption><?php the_title(); ?></figcaption>
-						</figure>
-					</a>
-				</div>
+				<a class="photoPost" href="<?php the_permalink(); ?>">
+					<figure>
+						<?php the_post_thumbnail('photoArchive'); ?>
+						<figcaption><?php the_title(); ?></figcaption>
+					</figure>
+				</a>
 				
 			<?php } else { ?>
 			
-				<div class="col1 posttype">
+				<div class="posttype">
 					<a class="icon-picture" rel="tooltip" href="/photos" title="Show all photo posts"></a>
 				</div>
-				<div class="col5">
-					<a class="photoPost" href="<?php the_permalink(); ?>">
-						<figure>
-							<?php the_post_thumbnail('photoStream'); ?>
-							<figcaption><?php the_title(); ?></figcaption>
-						</figure>
-					</a>
-				</div>
+				<a class="photoPost" href="<?php the_permalink(); ?>">
+					<figure>
+						<?php the_post_thumbnail('photoStream'); ?>
+						<figcaption><?php the_title(); ?></figcaption>
+					</figure>
+				</a>
 			
 		<?php } 
 		
@@ -89,30 +83,28 @@
 		
 		elseif (in_category('goodies') && is_category('goodies')) { ?>
 
-			<div class="col6">
-				<header>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</header>
-				<?php if ( has_post_thumbnail() ) { ?>
-					<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-						<?php the_post_thumbnail( 'goodieImage' ); ?>
-					</a></p>
-				<?php } else { ?>
-					<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
-				<?php } ?>
+			<header>
+				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			</header>
+			<?php if ( has_post_thumbnail() ) { ?>
+				<p><a href="<?php the_permalink(); ?>" class="goodieImage">
+					<?php the_post_thumbnail( 'goodieImage' ); ?>
+				</a></p>
+			<?php } else { ?>
+				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+			<?php } ?>
+			
+			<footer id="goodiesDownload" class="clearfix">
 				
-				<footer id="goodiesDownload" class="clearfix">
+				<?php 
+					$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
 					
-					<?php 
-						$attachments = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'order' => 'ASC', 'orderby' => 'menu_order ID', 'post_mime_type' => 'application/zip' ) );
-						
-						if ($attachments) {
-							$attachment = array_shift($attachments); ?>
-							<p><a class="btn icon-download-alt" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
-					<?php } ?>
-					<p><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
-				</footer>
-			</div>
+					if ($attachments) {
+						$attachment = array_shift($attachments); ?>
+						<p><a class="btn icon-download-alt" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
+				<?php } ?>
+				<p><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
+			</footer>
 			
 		<?php } 
 		
@@ -123,23 +115,21 @@
 		
 		elseif ( in_category('goodies') ) { ?>
 			
-			<div class="col1 posttype">
+			<div class="posttype">
 				<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all goodies"></a>
 			</div>
-			<div class="col5">
-				<header>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</header>
-				<?php if ( !is_search() ) { ?>
-					<?php if ( has_post_thumbnail() ) { ?>
-						<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-							<?php the_post_thumbnail( 'goodieImage' ); ?>
-						</a></p>
-					<?php } ?>
-					
-					<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+			<header>
+				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			</header>
+			<?php if ( !is_search() ) { ?>
+				<?php if ( has_post_thumbnail() ) { ?>
+					<p><a href="<?php the_permalink(); ?>" class="goodieImage">
+						<?php the_post_thumbnail( 'goodieImage' ); ?>
+					</a></p>
 				<?php } ?>
-			</div>
+				
+				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+			<?php } ?>
 		
 		<?php }
 		
@@ -149,7 +139,7 @@
 		
 		else { ?>
 			
-			<div class="col1 posttype">
+			<div class="posttype">
 				<?php if ( in_category('design') ) { ?>
 					<a class="icon-leaf" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
 				<?php } elseif ( in_category('personal') ) { ?>
@@ -161,12 +151,11 @@
 				<?php } ?>
 			</div>
 			
-			<div class="col5">
-				<header>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				</header>
-				<?php if ( !is_search() ) { ?>
-					<section class="entry-content">
+			<header>
+				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			</header>
+			<?php if ( !is_search() ) { ?>
+				<section class="entry-content">
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'featureImageStream' ); ?>
@@ -174,9 +163,8 @@
 					<?php } ?>
 					
 					<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
-					</section>
-				<?php } ?>
-			</div>
+				</section>
+			<?php } ?>
 
 		<?php } ?>
 		
