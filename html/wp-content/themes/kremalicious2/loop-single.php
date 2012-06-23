@@ -1,7 +1,7 @@
 <?php /* Start loop */ ?>
 <?php while (have_posts()) : the_post(); ?>
 	
-	<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		
 		<?php 
 		
@@ -13,12 +13,13 @@
 			
 			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
 			
-			<header class="col2">
+			<header>
 				<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
+			</header>
+			<div class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
-			</header>
-		
+			</div>
 		<?php } 
 		
 		/* ===================================================== */
@@ -36,31 +37,31 @@
 					</figure>
 				</div>
 			</div>
-			<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
-			<p class="time"><?php echo krlc2_post_date(); ?></p>
+			<div class="entry-meta">
+				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
+				<p class="time"><?php echo krlc2_post_date(); ?></p>
+			</div>
 		<?php } else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-			
 				<header class="featureTitle">
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
 				</header>
-				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
-				<p class="time"><?php echo krlc2_post_date(); ?></p>
 			<?php } else { ?>
-			
 				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
-					<p class="time"><?php echo krlc2_post_date(); ?></p>
 				</header>
-					
 			<?php } ?>
 			
+			<div class="entry-meta">
+				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
+				<p class="time"><?php echo krlc2_post_date(); ?></p>
+			</div>
+						
 		<?php } ?>
 		
-			<section class="entry-content">
+			<div class="entry-content">
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
@@ -69,23 +70,23 @@
 					<?php } else {
 						the_content();
 					} ?>
-			</section>
-			
-			<footer class="entry-meta hoverbuttons">
-				<p><?php 
-					$parentscategory ="";
-					foreach((get_the_category()) as $category) {
-						if ($category->category_parent == 0) {
-							$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
+				
+				<footer>
+					<p><?php 
+						$parentscategory ="";
+						foreach((get_the_category()) as $category) {
+							if ($category->category_parent == 0) {
+								$parentscategory .= ' <a class="icon- cat-'.$category->slug.'" rel="category tag" href="' . get_category_link($category->cat_ID) . '" title="' . $category->name . '">' . $category->name . '</a>, ';
+							}
 						}
-					}
-					echo substr($parentscategory,0,-2);
-				?>
-				</p>
-			</footer>
-			
-			<?php comments_template(); ?>
+						echo substr($parentscategory,0,-2);
+					?>
+					</p>
+				</footer>
+			</div>
 
+			<?php comments_template(); ?>
+			
 		<nav id="post-nav-single" class="pager">
 			<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
 			<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>

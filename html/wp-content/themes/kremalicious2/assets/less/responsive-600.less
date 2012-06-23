@@ -26,6 +26,15 @@
 		.box-shadow(~"0 1px 4px #b7c1c4, inset 0 -1px 0 #c1c8ca");
 		
 		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			width: 100%;
+			height: 5px;
+			background: #d8e2ea;
+			border-bottom: 1px solid #6f838b;
 			background-color: #d8e2ea;
 			background-image: -webkit-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.6) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.4) 74%,rgba(255,255,255,0) 100%);
 			background-image: -moz-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.6) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.4) 74%,rgba(255,255,255,0) 100%);
@@ -33,10 +42,7 @@
 			background-image: -ms-linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.6) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.4) 74%,rgba(255,255,255,0) 100%);
 			background-image: linear-gradient(-45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,.1) 15%,rgba(255,255,255,0) 23%,rgba(255,255,255,0.6) 51%,rgba(255,255,255,0) 63%,rgba(255,255,255,0.4) 74%,rgba(255,255,255,0) 100%);
 			background-repeat: repeat;
-			
 			.background-size(100% 320px);
-			
-			border-bottom: 1px solid #6f838b;
 			.box-shadow(0 1px 4px rgba(111, 131, 139, .8));
 		}
 		

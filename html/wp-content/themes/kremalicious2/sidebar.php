@@ -67,17 +67,18 @@
 		if ( $paged >= 2 || $page >= 2 )
 			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
 		
-		<p id="description" class="dimmed"><?php bloginfo('description'); ?></p>
-		
-		<?php krlc2_subscribe_buttons(); ?>
-		
-		<div id="tweetsWrap">
-			<div id="tweets" class="dimmed">
-				<p class="loading">...</p>
+		<section id="siteMeta">
+			<p id="description" class="dimmed"><?php bloginfo('description'); ?></p>
+			
+			<?php krlc2_subscribe_buttons(); ?>
+			
+			<div id="tweetsWrap">
+				<div id="tweets" class="dimmed">
+					<p class="loading">...</p>
+				</div>
+				<a class="btn socialite twitter-follow" href="https://twitter.com/kremalicious"><i class="icon-twitter"></i> Follow @kremalicious</a>
 			</div>
-			<a class="btn socialite twitter-follow" href="https://twitter.com/kremalicious"><i class="icon-twitter"></i> Follow @kremalicious</a>
-		</div>
-		
+		</section>
 
 	<?php } ?>
 </aside>

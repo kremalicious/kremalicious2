@@ -1,9 +1,38 @@
 /*using 769px here so iPad/portrait gets different view from landscape*/
-@media only screen and (min-width: 769px) { 
+@media only screen and (min-width: 769px) {
 	
-	.btn.btn-block.col2 { width: 32%; }
+	aside[role="complementary"],
+	.single .entry-meta {
+		.column(3)
+	}
+	
+	section[role="main"] {
+		.column(5);
+		.push(1)
+	}
+	
+	.single section[role="main"] {
+		.column(9)
+	}
+	
+	.single .entry-content,
+	#comments {
+		.column(6)
+	}
+	
+	#comments {
+		.push(3)
+	}
+	
+	.posttype {
+		display: inline;
+		float: left;
+		margin-left: -2em;
+	}
+	
+	.btn.btn-block.col2 { width: 30%; float: left; }
 	.btn.btn-block.col4,
-	.btn.btn-primary.col4 { width: 66%; }
+	.btn.btn-primary.col4 { width: 65%; float: left; }
 	
 	nav[role="navigation"] li#home,
 	#home a {
@@ -99,11 +128,6 @@
 		width: 83%;
 		float: right;
 		padding-top: 0;
-		
-		.col5 {
-			width: 100%;
-			margin: 0;
-		}
 	}
 	
 	.blog .masonryWrap article.format-image:first-child .posttype,
@@ -118,25 +142,6 @@
 	
 	.format-link .posttype {
 		line-height: 1em;
-	}
-	
-	aside[role="complementary"] {
-		padding-right: 3%;
-		
-		.facebook {
-			margin-left: 0;
-		}
-		
-		#tweetsWrap {
-			.no-divider-bottom();
-		}
-	}
-	
-	#siteMeta #tweetsWrap {
-		.no-divider-top();
-		margin-top: 0;
-		padding-top: 0;
-		padding-bottom: 0;
 	}
 
 }

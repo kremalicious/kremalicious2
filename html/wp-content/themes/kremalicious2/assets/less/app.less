@@ -16,8 +16,7 @@ body {
 
 #menubar,
 #content,
-footer[role="contentinfo"] 	{ .container }
-
+footer[role="contentinfo"] 		{ .container; .clearfix; }
 
 /* ============================================================== */
 /*	!HEADER */
@@ -25,23 +24,13 @@ footer[role="contentinfo"] 	{ .container }
 
 #menubar-wrap {
 	position: relative;
+	.clearfix;
 	margin-top: 0;
 	margin-bottom: 0;
 	padding-top: 6px;
 	background: #b7c1c4;
 	border-bottom: 1px solid #9eaab2;
 	.box-shadow(0 1px 4px #b7c1c4);
-	&:before {
-		content: "";
-		position: absolute;
-		left: 0;
-		top: 0;
-		display: block;
-		width: 100%;
-		height: 5px;
-		background: #d8e2ea;
-		border-bottom: 1px solid #6f838b;
-	}
 }
 
 #menubar {
@@ -78,7 +67,7 @@ header[role="banner"] {
 
 #logo {
 	display: block;
-	background: url(../img/logo.png) no-repeat center 9px;
+	background: url(../img/logo.png) no-repeat center 12px;
 	min-height: 31px;
 	padding: 8px 0 5px 0;
 	.box-sizing(content-box);
@@ -107,6 +96,18 @@ nav[role="navigation"] {
 		&#home {
 			width: 100%;
 			margin-bottom: .5em;
+			// just to get a nice trigger target 
+			// for slideup animation
+			span {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+			}
 		}
 		
 		a {
@@ -153,6 +154,8 @@ nav[role="navigation"] {
 	}
 	
 }
+
+
 
 /* Topics Dropdown */
 
@@ -364,10 +367,9 @@ line-height: 0;
 /* ============================================================== */
 
 .hentry {
-	clear: both;
-	padding: 2em 0;
-	.clearfix();
 	.divider-bottom();
+	.clearfix();
+	padding: 2em 0;
 }
 
 	.hentry:first-child,
@@ -428,14 +430,6 @@ line-height: 0;
 	}
 }
 
-.hentry footer {
-	margin: 3em 0;
-	
-	p {
-		margin-bottom: 0;
-	}
-}
-
 .byline,
 .time,
 time {
@@ -455,18 +449,17 @@ time {
 	}
 }
 
-.entry-meta {
+.hentry footer {
 	.clearfix();
 	.divider-top();
 	.divider-bottom();
 	color: @textColorLight;
-	
-	 a {
-		margin-bottom: 0
+	margin: 3em 0;
+	p {
+		margin-bottom: 0;
 	}
-	
-	time {
-		float: right;
+	a {
+		margin-bottom: 0
 	}
 }
 
@@ -873,35 +866,40 @@ article#aboutPage {}
 	.opacity(100);
 }
 
-/* 	==============================================================
-	SIDEBAR
-	============================================================== */
+/* ============================================================== */
+/*	SIDEBAR & FOOTER */
+/* ============================================================== */
 
-aside[role="complementary"] {
-	margin-bottom: 2em;
-}
-
-#description,
-aside[role="complementary"] h1 a {
-	color: @textColorLight;
-}
-
-#description  {
-	font-style: italic;
-}
-
-aside[role="complementary"] h1 a {	
-	border: none;
-	padding-right: .1em;
-}
-
-	aside[role="complementary"]:hover h1 a,
-	.touch aside[role="complementary"] h1 a {
-		color: @linkColorHover;
+// Site meta components
+#siteMeta {
+	.divider-top();
+	
+	#description {
+		margin-bottom: 1.5em;
+		font-style: italic;
+		color: @textColorLight;
 	}
+	
+	#subscribe {
+		h2 {
+			display: none;
+		}
+	}
+	
+	#tweetsWrap {
+		.divider-top();
+		.clearfix;
+		margin: 0;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		#tweets { 
+			padding-right: 0;
+		}
+	}
+}
 
+// Subscribe only component
 #subscribe {
-	.divider-bottom;
 	padding-bottom: 0;
 	
 	h2 {
@@ -916,28 +914,25 @@ aside[role="complementary"] h1 a {
 		margin-top: 0;
 		padding-bottom: .3em
 	}
-	
 	p {
-		padding: 1em 0 .7em 0;
-		margin: 0
+		padding-bottom: 1em;
+		margin: 0;
+		.clearfix;
+		a {
+			margin-bottom: .5em;
+			.hide-text;
+			.column(3);
+		}
+		i {
+			display: block;
+			font-size: @baseFontSize;
+		}
+		i:before {
+			margin-right: 0;
+			padding: .25em .7em;
+			font-size: 16px;
+		}
 	}
-	
-	i:before {
-		margin-right: 0;
-	}
-}
-
-.touch #subscribe {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-footer #subscribe {
-	.no-divider-bottom;
-}
-
-aside[role="complementary"] #subscribe {
-	margin-top: 2em;
 }
 
 #tweetsWrap,
@@ -945,8 +940,60 @@ aside[role="complementary"] #subscribe {
 	margin-bottom: 1.5em;
 }
 
+// Tweets area component
 #tweetsWrap {
-	min-height: 160px;
+	min-height: 120px;
+	#tweets {
+		font-size: .9em;
+		line-height: 1.4em;
+		padding-right: 1em;
+		position: relative;
+		margin-bottom: 1em;
+		ul {
+			list-style: none;
+			margin-bottom: 0;
+			li {
+				margin-bottom: 1.5em;
+				color: @textColorDimmed;
+				.transition();
+			}
+		}
+		.tweet_time {
+			display: block;
+			font-size: .8em;
+			font-style: italic;
+			margin-top: .2em;
+			a {
+				color: @textColorDimmed;
+			}
+		}
+	}
+}
+
+// Copyright component
+#siteCopyright {
+	.divider-top;
+	margin-top: 1.5em;
+	padding: 1.5em 0;
+	font-size: .8em;
+	line-height: 1.6em;
+	p {
+		margin-bottom: 0.5em;
+	}
+}
+
+aside[role="complementary"] {
+	margin-bottom: 2em;
+	h1 a {	
+		border: none;
+		padding-right: .1em;
+		color: @textColorLight;
+	}
+}
+
+aside[role="complementary"]:hover h1 a,
+.touch aside[role="complementary"] h1 a {
+	color: @linkColorHover;
 }
 
 aside[role="complementary"] #tweetsWrap {
@@ -954,44 +1001,10 @@ aside[role="complementary"] #tweetsWrap {
 	padding-top: 2em
 }
 
-#tweets li,
-#tweets a {
-	color: @textColorDimmed;
-	.transition();
-}
-
 #tweets li:hover a,
 #tweets li:hover .tweet_time a,
 .touch #tweets li a {
 	color: @linkColorHover;
-}
-
-#tweets {
-	font-size: .9em;
-	line-height: 1.4em;
-	padding-right: 1em;
-	position: relative;
-	margin-bottom: 1em;
-}
-
-#tweets ul {
-	list-style: none;
-	margin-bottom: 0;
-}
-
-#tweets li {
-	margin-bottom: 1.5em
-}
-
-.tweet_time {
-	display: block;
-	font-size: .8em;
-	font-style: italic;
-	margin-top: .2em;
-}
-
-#tweets .tweet_time a {
-	color: @textColorDimmed;
 }
 
 aside[role="complementary"]:hover .rss i:before,
@@ -1022,46 +1035,9 @@ footer[role="contentinfo"]:hover .facebook i:before,
 	color: #3b5998;
 }
 
-	
-/* ============================================================== */
-/*	FOOTER */
-/* ============================================================== */
-
 footer[role="contentinfo"] {
-	margin-top: 0
+	margin-top: 3em
 }
-
-#siteMeta,
-#siteCopyright {
-	.clearfix();
-}
-
-#siteMeta {
-	.divider-top();
-	padding-top: 2em
-}
-
-#siteMeta #tweetsWrap,
-#siteCopyright p {
-	margin-bottom: 0
-}
-
-#siteMeta #tweetsWrap {
-	.divider-top();
-	margin-top: 0;
-	padding-top: 2em;
-	padding-bottom: 2em;
-}
-
-#siteMeta #tweets { 
-	padding-right: 0;
-}
-
-#siteCopyright {
-	font-size: .8em;
-	.divider-top();
-}
-
 
 /* ============================================================== */
 /*	SEARCH RESULTS */
@@ -1342,24 +1318,6 @@ aside[role="complementary"] br,
 #menubar input#s,
 .fade {
 	-webkit-transform: translate3d(0,0,0); }
-	
-
-#home a {
-	width: 100%;
-	position: relative;
-}
-
-/* just to get a nice trigger target */
-#home span {
-	display: block;
-	position: absolute;
-	z-index: 2;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
 
 .bannerSlideUp {
 	.animation(bannerSlideUp .2s alternate ease-out forwards 0s);
