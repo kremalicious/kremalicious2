@@ -1,5 +1,13 @@
 @media only screen and (min-width: 600px) {
 	
+	//////////
+	// GRID //
+	//////////
+	
+	nav[role="navigation"] {
+		.column(12);
+	}
+	
 	body {
 		padding-bottom: 50px;
 		&:after {
@@ -48,40 +56,13 @@
 		
 	}
 	
-	#content { 
-		padding-top: 5em;
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(40%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0)));
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
-		background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
-		background: linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3ffffff', endColorstr='#00ffffff',GradientType=0 );
-		background-repeat: no-repeat;
-		.background-size(100% 10em);
-	}
-
-	.hentry { 
-		padding: 3.5em 0;
-		
-		.children .comment {
-			margin-left: 20%;
-			
-			header {
-				margin-left: 2em;
-				margin-right: 0;
-			}
-		}
-		
-		.comment header {
-			float: left;
-			margin-right: 2em;
-		}
+	section[role="document"] { 
+		padding-top: 4em;
 	}
 				
 	header[role="banner"] {
-		width: 15em;
-		height: 150%;
+		width: 25%;
+		height: 120%;
 		margin-top: 0;
 		
 		h1 {
@@ -112,7 +93,7 @@
 	}
 		
 	#logo {
-		background-position: center 6px;
+		background-position: center 9px;
 		.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.9), 0 1px 0 rgba(255,255,255,.7), inset 0 0 8px rgba(0,0,0,.2)");
 		border-bottom: 1px solid #8ea8b6;
 		
@@ -161,9 +142,8 @@
 		}
 	}
 	
-	nav[role="navigation"] li#home,
-	#home a {
-		width: 16em;
+	nav[role="navigation"] li#home {
+		width: 9em;
 		margin-bottom: 0;
 	}
 	
@@ -210,6 +190,27 @@
 			.box-shadow(0 1px 0 rgba(255,255,255,.5))
 		}
 	}
+	
+	.hentry { 
+		padding: 3.5em 0;
+		
+		.children .comment {
+			margin-left: 20%;
+			
+			header {
+				margin-left: 2em;
+				margin-right: 0;
+			}
+		}
+		
+		.comment header {
+			float: left;
+			margin-right: 2em;
+		}
+	}
+	
+	img.alignleft { margin: 0 1.5em 1.5em 0; float: left; }
+	img.alignright { margin: 0 0 1.5em 1.5em; float: right;	}
 	
 	.single .photoPostWrap,
 	.masonryWrap {

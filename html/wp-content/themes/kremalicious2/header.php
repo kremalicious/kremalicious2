@@ -26,7 +26,6 @@
 -->
 
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
-<!--[if IEMobile 7 ]>	<html class="no-js iem7" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
 <!--[if gt IE 8]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -77,7 +76,7 @@
 
 <body <?php body_class(); ?>>
 
-	<div id="menubar-wrap">
+	<section id="menubar-wrap">
 		<div id="menubar">
 			<header role="banner">
 				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
@@ -103,7 +102,7 @@
 			<?php get_search_form(); ?>
 			
 		</div>
-	</div>
+	</section>
 	
-	<div id="content" role="document">
+	<section role="document">
 		

@@ -16,10 +16,10 @@
 			<header>
 				<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
 			</header>
-			<div class="entry-meta">
+			<aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
-			</div>
+			</aside>
 		<?php } 
 		
 		/* ===================================================== */
@@ -37,11 +37,17 @@
 					</figure>
 				</div>
 			</div>
-			<div class="entry-meta">
+			<aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
-			</div>
-		<?php } else { ?>
+			</aside>
+		<?php } 
+		
+		/* ===================================================== */
+		/* Everything else */
+		/* ===================================================== */
+		
+		else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
 				<header class="featureTitle">
@@ -54,14 +60,14 @@
 				</header>
 			<?php } ?>
 			
-			<div class="entry-meta">
+			<aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
-			</div>
+			</aside>
 						
 		<?php } ?>
 		
-			<div class="entry-content">
+			<section class="entry-content">
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
@@ -71,7 +77,7 @@
 						the_content();
 					} ?>
 				
-				<footer>
+				<footer class="entry-meta">
 					<p><?php 
 						$parentscategory ="";
 						foreach((get_the_category()) as $category) {
@@ -83,7 +89,7 @@
 					?>
 					</p>
 				</footer>
-			</div>
+			</section>
 
 			<?php comments_template(); ?>
 			
