@@ -13,6 +13,18 @@
 
 */
 
+//@codekit-prepend "bootstrap-dropdown.js"
+//@codekit-prepend "libs/infinitescroll/jquery.infinitescroll.js"
+//@codekit-prepend "libs/socialite/socialite.js"
+//@codekit-prepend "libs/tweet/tweet/jquery.tweet.js"
+
+//@codekit-prepend "bootstrap-alert.js"
+//@codekit-prepend "bootstrap-tooltip.js"
+//@codekit-prepend "bootstrap-transition.js"
+//@codekit-prepend "libs/jquery.fancybox.js"
+
+//@codekit-prepend "plugins.js"
+
 $(ASAP = function(){
 
 	photoGrid.init();
