@@ -6,12 +6,12 @@
 	//////////
 	
 	section[role="main"] {
-		.column(8);
+		.column(7);
 		.push(1);
 	}
 	
 	aside[role="complementary"] {
-		.column(3)
+		.column(4)
 	}
 	
 	// Single only
@@ -23,18 +23,14 @@
 				.column(12,12)
 			}
 			aside.entry-meta {
-				.column(3,12)
+				.column(4,12);
 			}
 			.entry-content,
 			#comments {
 				.column(8,12);
-				.push(1);
 			}
 			#comments {
 				.push(4)
-			}
-			nav {
-				clear: both;
 			}
 		}
 		
@@ -43,15 +39,19 @@
 	.posttype {
 		display: inline;
 		float: left;
-		margin-left: -1.5em;
+		margin-left: -2em;
 	}
 	
 	.btn.btn-block.col2 { width: 30%; float: left; }
 	.btn.btn-block.col4,
 	.btn.btn-primary.col4 { width: 65%; float: left; }
 	
+	header[role="banner"] {
+		width: 30%;
+	}
+	
 	nav[role="navigation"] li#home {
-		width: 13em;
+		width: 35%;
 	}
 	
 	.hentry header,
@@ -140,7 +140,6 @@
 	
 	.blog .masonryWrap,
 	.search .masonryWrap {
-
 		padding-top: 0;
 	}
 	
