@@ -13,7 +13,7 @@
 
 */
 .container {
-  max-width: 16em;
+  max-width: 18em;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
@@ -24,7 +24,7 @@
     max-width: 25em;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 650px) {
   .container {
     max-width: 31.2em;
   }
