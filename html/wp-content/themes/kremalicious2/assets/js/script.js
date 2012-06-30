@@ -197,7 +197,9 @@ var interface = {
 	
 	init: function(){
 		this.commentShowup();
-		this.bannerHomeLink();
+		if ( Modernizr.mq('only screen and (min-width: 650px)')  ) {
+			this.bannerHomeLink();
+		}
 		this.toolTips();
 		this.rememberCloseAlerts();
 		$('#respond label').inFieldLabels();

@@ -18,7 +18,7 @@ body {
 // GRID //
 //////////
 
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+* { .box-sizing(border-box); }
 
 #menubar,
 section[role="document"],
@@ -42,7 +42,6 @@ aside[role="complementary"] {
 	.clearfix;
 	margin-top: 0;
 	margin-bottom: 0;
-	padding-top: 6px;
 	background: #b7c1c4;
 	border-bottom: 1px solid #9eaab2;
 	.box-shadow(0 1px 4px #b7c1c4);
@@ -53,24 +52,12 @@ aside[role="complementary"] {
 }
 
 header[role="banner"] {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	margin-top: -1.6em;
-	z-index: 1;
-	
+
 	h1 {
-		font-size: 1.5em;
-		position: absolute;
-		left: 0;
-		top: -1px;
+		padding: .4em 0;
+		margin-bottom: 0;
 		border-bottom-left-radius: 7px;
 		border-bottom-right-radius: 7px;
-		padding: .6em 0 .4em 0;
-		margin-bottom: 0;
-		width: 100%;
-		z-index: 0;
 		border: 1px solid #6f838b;
 		border-top: none;
 		background-color: #d8e2ea;
@@ -80,11 +67,9 @@ header[role="banner"] {
 		#logo {
 			display: block;
 			.logo;
-			background-position: center 12px;
+			background-position: center center;
 			min-height: 31px;
-			padding: 8px 0 5px 0;
 			.box-sizing(content-box);
-			border-top: 1px solid #9bb6c3;
 			position: relative;		
 		}
 	}
@@ -97,6 +82,74 @@ nav a {
 	font-style: normal;
 }
 
+//
+// Dropdown menus
+// --------------------------------------------------
+
+/*.dropdown {
+  position: relative;
+}*/
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  outline: 0;
+}
+
+// Dropdown arrow/caret
+// --------------------
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-top:   4px solid #000;
+  border-right: 4px solid transparent;
+  border-left:  4px solid transparent;
+  content: "";
+  .opacity(30);
+}
+
+// Place the caret
+.dropdown .caret {
+  margin-top: 8px;
+  margin-left: 2px;
+}
+.dropdown a:focus .caret,
+.dropdown a:hover .caret,
+.open .caret {
+  .opacity(100);
+}
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 10;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	border: 1px solid #9eaab2;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	.background-clip(padding-box);
+	background: #b7c1c4;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
+	.box-shadow(~"0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc");
+}
+
+// Open state for the dropdown
+// ---------------------------
+.open {
+  & > .dropdown-menu {
+    display: block;
+  }
+}
+
+// Navigation
+// --------------------------------------------------
+
 nav[role="navigation"],
 #searchform {
 	margin-bottom: 0;
@@ -105,154 +158,85 @@ nav[role="navigation"],
 
 nav[role="navigation"] {
 	width: 100%;
+	margin-top: .5em;
+	position: relative;
+	.clearfix;
+
 	li {
 		display: block;
-		float: left;
-		
-		&#home {
-			width: 100%;
-			margin-bottom: .5em;
-			// just to get a nice trigger target 
-			// for slideup animation
-			span {
-				display: block;
-				position: absolute;
-				z-index: 2;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				cursor: pointer;
-			}
-		}
+		.column(3);
 		
 		a {
 			display: block;
-			padding: .7em 1.5em .6em 1.5em;
+			width: 100%;
+			background: transparent;
+			max-height: 40px;
+			overflow: hidden;
+			padding: .4em 1.5em .3em 1.3em;
 			color: #2e4f5c;
 			text-align: center;
 			text-shadow: 0 1px 0 rgba(255,255,255,.4);
+			
+			&.dropdown-toggle {
+				padding-left: .7em;
+				padding-right: .7em
+			}
 		}
 		
-		a:hover {
-			background: rgba(255,255,255,.1);
+		&:first-child a {
+			margin-left: -.1em
 		}
 		
 		&.current_page_item a,
 		&.open a.dropdown-toggle {
 			color: #657276;
-			display: inline-block;
 			.border-radius(3px);
 			background: -webkit-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			background: -moz-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			background: -o-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			background: -ms-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			background: linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			.box-shadow(~"inset 0 -1px 0 rgba(255,255,255,.5), inset 0 1px 4px rgba(0,0,0,.2), inset 0 1px 10px rgba(0,0,0,.1)");
-		}		
-		
-	}
-	
-	.dropdown-menu li {
-		border: none;
-		float: none;
-		.box-shadow(none);
-		
-		a {
-			float: left;
-			width: 50%;
-			white-space: nowrap;
-			text-align: left;
-			padding: .7em 1em;
-			margin-bottom: .3em;
-			.border-radius(3px);
+			border-color: transparent;
 		}
+		
+		&#home {
+			display: none;
+		}
+		
+		&#topicmenu {
+			.caret {
+				margin-top: 11px;
+				margin-left: 0;
+			}
+			.dropdown-menu {
+				
+				li {
+					.column(6)
+				}
+				a {
+					font-size: 14px;
+					max-height: 100%;
+					overflow: visible;
+					white-space: nowrap;
+					text-align: left;
+					padding: .5em;
+					.border-radius(3px);
+					
+					&:hover {
+						background: rgba(255,255,255,.1);
+					}
+				}
+			}
+		}		
 	}
-	
 }
 
-
-
-/* Topics Dropdown */
-
-.dropdown {
-  position: relative;
-  width: 20%;
-}
-
-nav[role="navigation"] li a.dropdown-toggle {
-	padding-left: .7em;
-	padding-right: .7em
-}
-
-.dropdown-toggle:active,
-.open .dropdown-toggle {
-  outline: 0;
-}
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  vertical-align: top;
-  border-top: 4px solid #000000;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  content: "";
-  .opacity(30);
-}
-
-.dropdown .caret {
-  margin-top: 9px;
-  margin-left: 0;
-}
-
-.dropdown:hover .caret,
-.open .caret {
-	.opacity(100);
-}
-
-.dropdown-menu {
-	width: 520%;
-	font-size: .9em;
-	z-index: 10;
-	display: none;
-	position: absolute;
-	top: 103%;
-	left: -1px;
-	padding: 4px 2px;
-	background: #b7c1c4;
-	.box-shadow(0 1px 8px #9da8ac);
-	border: 1px solid #9eaab2;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	.background-clip(padding-box);
-}
-
-.dropdown-menu i {
-	margin-right: .5em
-}
-
-.dropdown-menu li > a:hover,
-.dropdown-menu .current_page_item > a,
-.dropdown-menu .current_page_item > a:hover {
-  text-decoration: none;
-}
-
-.open {
-  *z-index: 10;
-}
-
-.open .dropdown-menu {
-  display: block;
-}
-
-
-/* GLOBAL SEARCH */
+// Global Search
+// --------------------------------------------------
 #menubar #searchform {
 	position: absolute;
 	right: 1em;
-	top: 3.8em;
+	top: 4em;
 	padding: 0;
 	
 	// the loupe icon

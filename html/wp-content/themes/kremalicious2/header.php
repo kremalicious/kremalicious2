@@ -81,7 +81,7 @@
 			<header role="banner">
 				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
 			</header>
-			<nav role="navigation" class="clearfix alignleft">
+			<nav role="navigation">
 				<ul>
 					<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
 					<li class="dropdown" id="topicmenu">
