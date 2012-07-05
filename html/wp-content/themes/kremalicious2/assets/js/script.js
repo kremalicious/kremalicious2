@@ -235,7 +235,7 @@ var siteEffects = {
 	
 	latestTweet: function() {
 
-		$('#tweets').tweet({
+		$('#tweets').filter(":visible").tweet({
 	        username: 'kremalicious',
 	        count: 1,
 	        fetch: 10,
