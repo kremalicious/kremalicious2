@@ -28,7 +28,10 @@ footer[role="contentinfo"] {
 }
 
 section[role="main"],
-aside[role="complementary"] {
+aside[role="complementary"],
+#siteMeta,
+#siteCopyright,
+.pager {
 	.column(12);
 }
 
@@ -950,8 +953,8 @@ article#aboutPage {}
 #tweetsWrap {
 	min-height: 120px;
 	#tweets {
-		font-size: .9em;
-		line-height: 1.4em;
+		font-size: .85em;
+		line-height: 1.6em;
 		padding-right: 1em;
 		position: relative;
 		margin-bottom: 1em;
@@ -960,7 +963,7 @@ article#aboutPage {}
 			margin-bottom: 0;
 			li {
 				margin-bottom: 1.5em;
-				color: @textColorDimmed;
+				color: lighten(@textColorDimmed, 5%);
 				.transition();
 			}
 		}
@@ -1013,6 +1016,18 @@ aside[role="complementary"] #tweetsWrap {
 	color: @linkColorHover;
 }
 
+footer[role="contentinfo"] {
+	margin-top: 3em;
+	.single & {
+		margin-top: 0;
+		#subscribe {
+			h2 {
+				display: none;
+			}
+		}
+	}
+}
+
 aside[role="complementary"]:hover .rss i:before,
 footer[role="contentinfo"]:hover .rss i:before,
 .touch aside[role="complementary"] .rss i:before,
@@ -1041,12 +1056,7 @@ footer[role="contentinfo"]:hover .facebook i:before,
 	color: #3b5998;
 }
 
-footer[role="contentinfo"] {
-	margin-top: 3em;
-	.single & {
-		margin-top: 0;
-	}
-}
+
 
 /* ============================================================== */
 /*	SEARCH RESULTS */
