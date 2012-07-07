@@ -1,5 +1,4 @@
-/*using 769px here so iPad/portrait gets different view from landscape*/
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 48.063em) {
 	
 	//////////
 	// GRID //
@@ -22,6 +21,30 @@
 			.column(12);
 			.push(0)
 		}
+	}
+	
+	header[role="banner"] {
+		width: 25.5%;
+		h1 {
+			left: .2em;
+		}
+	}
+	
+	nav[role="navigation"] {
+		ul {
+			li {
+				&#home {
+					width: 30%;
+				}
+				&#topicmenu {
+					max-width: 4em;
+				}
+			}
+		}
+	}
+	
+	#menubar #searchform input#s:focus {
+		width: 450px;
 	}
 	
 	// Single only
@@ -58,12 +81,20 @@
 		}
 	}
 	
-	.home.blog #tweetsWrap {
-		display: block;
+	#siteMeta {
+		.no-divider-bottom;
+		#description,
+		#subscribe {
+			.column(12);
+		}
+		#description {
+			margin-bottom: 1.5em;
+		}
+		
 	}
 	
-	.home.blog #subscribe {
-		.no-divider-bottom;
+	.home.blog #tweetsWrap {
+		display: block;
 	}
 	
 	footer[role="contentinfo"] {
@@ -96,14 +127,6 @@
 	.btn.btn-block.col2 { width: 30%; float: left; }
 	.btn.btn-block.col4,
 	.btn.btn-primary.col4 { width: 65%; float: left; }
-	
-	header[role="banner"] {
-		width: 25.5%;
-	}
-	
-	nav[role="navigation"] li#home {
-		width: 35%;
-	}
 	
 	.hentry header,
 	.posttype,
@@ -183,10 +206,6 @@
 	.no-touch .entry-content pre:hover {
 		margin-left: -20%;
 		margin-right: -5%;
-	}
-	
-	#menubar #searchform input#s:focus {
-		width: 450px;
 	}
 	
 	.blog .masonryWrap,

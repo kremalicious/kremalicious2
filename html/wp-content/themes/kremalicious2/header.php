@@ -96,7 +96,7 @@
 							<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
 						</ul>
 					</li>						
-					<li <?php if ( is_page('about') ) echo 'class="current_page_item"';  ?>><a href="/about"> <i class="icon-user"></i> About</a></li>
+					<li id="about" <?php if ( is_page('about') ) echo 'class="current_page_item"';  ?>><a href="/about"> <i class="icon-user"></i> About</a></li>
 				</ul>
 			</nav>
 			<?php get_search_form(); ?>

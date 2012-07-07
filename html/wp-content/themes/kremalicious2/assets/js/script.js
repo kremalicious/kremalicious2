@@ -31,7 +31,9 @@ $(ASAP = function(){
 	interface.init();
 	lightbox.init();
 	
-	new MBP.fastButton($('#nav a, .btn'));
+	if (Modernizr.touch){
+		new MBP.fastButton($('#nav a, .btn'));
+	}
 	
 });
 
@@ -181,7 +183,7 @@ var interface = {
 	},
 	
 	toolTips: function() {
-		$('#content [rel="tooltip"]').tooltip();
+		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
 	
 	rememberCloseAlerts: function() {
@@ -225,10 +227,10 @@ var siteEffects = {
 			searchPlaceholder = globalSearch.attr('placeholder');
 		
 		globalSearch.attr('placeholder', '');
-		globalSearch.blur(function(){
+		globalSearch.focusout(function(){
 			globalSearch.attr('placeholder', '');
 			hiddenMenus.toggleClass('in');
-		}).focus(function() {                
+		}).focusin(function() {                
 		    hiddenMenus.removeClass('in');
 		    globalSearch.attr('placeholder', searchPlaceholder );
 		});
@@ -276,8 +278,8 @@ var infiniteScroll = {
 			navSelector		: '#post-nav',
 			binder			: $scrollContent,
 			behavior 		: 'krlc2',
-		}, function(this) {
-			// run the photogrid over retrieved items
+		}, function($scrollContent) {
+			 //run the photogrid over retrieved items
 			photoGrid.init();
 		});
 
