@@ -92,7 +92,7 @@ function krlc2_show_dribbble_shots() {
 	try {
 	    $my_shots = $dribbble->get_player_shots('kremalicious','1' , '4');
 	    foreach ($my_shots->shots as $shot) {
-	        echo '<a class="col3" href="' . $shot->url . '"><img src="' . $shot->image_url . '" alt="' . $shot->title . '" /></a>';
+	        echo '<a href="' . $shot->url . '"><img src="' . $shot->image_url . '" alt="' . $shot->title . '" /></a>';
 	    }
 	}
 	catch (DribbbleException $e) {

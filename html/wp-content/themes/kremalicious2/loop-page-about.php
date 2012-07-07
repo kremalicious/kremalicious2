@@ -10,11 +10,12 @@
 	</header>
 	
 	<section id="hello">
-	
-		<p>This blog is where I post random stuff mostly about design, front-end development, photography.</p>
-		<p>You can subscribe by clicking one of these buttons:</p>
+		
+		<div id="hello-blog">
+			<p>This blog is where I post random stuff mostly about design, front-end development, photography.</p>
 			
-		<?php krlc2_subscribe_buttons(); ?>
+			<?php krlc2_subscribe_buttons(); ?>
+		</div>
 		
 		<div class="entry-content">
 			<?php the_content(); ?>
@@ -29,19 +30,29 @@
 		<h3>Latest Code</h3>
 		<p><a href="https://github.com/kremalicious" title="GitHub Profile" class="btn btn-tag icon-github-alt">View all GitHub repos</a></p>
 		-->
+		<header>
+			<h3>Latest Work</h3>
+			<p><a href="http://matthiaskretschmann.com" class="btn btn-tag icon-star">View Portfolio</a></p>
+		</header>
 		
-		<h3>Latest Work</h3>
-		<p><a href="http://matthiaskretschmann.com" class="btn btn-tag icon-star">View Portfolio</a></p>
-		<a href="http://matthiaskretschmann.com/" class="col3">
-			<img src="http://matthiaskretschmann.com/folio/Portfolio-Mr-Reader-Theme-1.png" width="400" height="300" />
-		</a>
-		<a href="http://matthiaskretschmann.com/" class="col3">
-			<img src="http://matthiaskretschmann.com/folio/Portfolio-IPP-Halle-1.png" width="400" height="300" />
-		</a>
-
-		<h3>Latest Dribbble</h3>
-		<p><a href="http://dribbble.com/kremalicious" class="btn btn-tag">View all Dribbble shots</a></p>
-		<?php krlc2_show_dribbble_shots(); ?>
+		<div class="work-content">
+			<a href="http://matthiaskretschmann.com/">
+				<img src="http://matthiaskretschmann.com/folio/Portfolio-Mr-Reader-Theme-1.png" width="400" height="300" />
+			</a>
+			<a href="http://matthiaskretschmann.com/">
+				<img src="http://matthiaskretschmann.com/folio/Portfolio-IPP-Halle-1.png" width="400" height="300" />
+			</a>
+		</div>
+		
+		<header>
+			<h3>Latest Dribbble</h3>
+			<p><a href="http://dribbble.com/kremalicious" class="btn btn-tag">View all Dribbble shots</a></p>
+		</header>
+		
+		<div class="work-content">
+			<?php krlc2_show_dribbble_shots(); ?>
+		</div>
+		
 	</section>
 
 </article>

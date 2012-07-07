@@ -5,14 +5,38 @@
 	//////////
 	
 	section[role="main"],
-	.pager {
+	.pager,
+	#hello .entry-content,
+	#work .work-content {
 		.column(7.5); // lets just not talk about those comma values
 		.push(1);
 		float: right;
 	}
 	
-	aside[role="complementary"] {
+	.page section[role="main"] {
+		.column(12);
+	}
+	
+	aside[role="complementary"],
+	#hello-blog,
+	#work header {
 		.column(3.5)
+	}
+	
+	#work {
+		header { clear: both; }
+		.work-content {
+			.no-divider-bottom;
+			margin-bottom: 3em;
+			a {
+				width: 48%;
+				float: left;
+				&:nth-child(even) { float: right; }
+			}
+			img {
+				margin-top: 0;
+			}
+		}
 	}
 	
 	.pager {
@@ -221,8 +245,6 @@
 		top: -.4em;
 		margin-top: 0;
 	}
-	
-	
 	
 
 }

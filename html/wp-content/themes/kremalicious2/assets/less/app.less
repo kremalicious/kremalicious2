@@ -809,32 +809,30 @@ li.comment {
 
 article#aboutPage {}
 
-#hello {}
-
-#work .container {
-	margin-top: 2em;
-	margin-bottom: 2em;
-	.divider-top();
-	overflow: hidden;
-	padding-top: 3em
+#hello,
+#work {
+	margin-bottom: 3em;
+	.clearfix
 }
 
-#work small {
-	display: block;
-	line-height: 1.5em;
-	margin-top: .5em
+#hello {
+	#subscribe {
+		margin-bottom: 1.5em;
+	}
+	.divider-bottom;
+	padding-bottom: 3em
 }
 
-#work a.col3 {
-	padding-right: 0;
-}
-
-#work .container .col4 > .col3:nth-child(3) {
-	margin-left: 0
-}
-
-#work img {
-	margin-bottom: 4%
+#work .work-content {
+	.divider-bottom;
+	margin-bottom: 1.5em;
+	a {
+		display: block;
+	}
+	img {
+		margin: 1.5em auto;
+		display: block;
+	}
 }
 
 #work .fork {
