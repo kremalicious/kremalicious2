@@ -21,9 +21,10 @@ body {
 
 #menubar-wrap {
 	position: relative;
-	.clearfix;
+	z-index: 1;
 	margin-top: 0;
 	margin-bottom: 0;
+	padding-bottom: .5em;
 	background: #b7c1c4;
 	border-bottom: 1px solid #9eaab2;
 	.box-shadow(0 1px 4px #b7c1c4);
@@ -51,7 +52,6 @@ header[role="banner"] {
 			.logo;
 			background-position: center center;
 			min-height: 31px;
-			.box-sizing(content-box);
 			position: relative;		
 		}
 	}
@@ -117,7 +117,6 @@ nav a {
 	border-bottom-right-radius: 5px;
 	.background-clip(padding-box);
 	background: #b7c1c4;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b7c1c4), color-stop(72%,#b7c1c4), color-stop(100%,#9da8ac));
 	.box-shadow(~"0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc");
 }
 
@@ -140,18 +139,24 @@ nav[role="navigation"],
 
 nav[role="navigation"] {
 	width: 100%;
-	margin-top: .5em;
+	margin-top: .7em;
 	position: relative;
 	.clearfix;
 
 	li {
-		display: block;
 		.column(3);
+		display: block;
+		padding: 0;
+		margin-left: 0;
 		
 		a {
+			.border-radius(5px);
+			.btn;
+			margin-bottom: 0;
+			
 			display: block;
 			width: 100%;
-			background: transparent;
+			min-width: 20px;
 			max-height: 40px;
 			overflow: hidden;
 			padding: .4em 1.5em .3em 1.3em;
@@ -160,8 +165,8 @@ nav[role="navigation"] {
 			text-shadow: 0 1px 0 rgba(255,255,255,.4);
 			
 			&.dropdown-toggle {
-				padding-left: .7em;
-				padding-right: .7em
+				//padding-left: .7em;
+				//padding-right: .7em
 			}
 		}
 		
@@ -172,13 +177,18 @@ nav[role="navigation"] {
 		&.current_page_item a,
 		&.open a.dropdown-toggle {
 			color: #657276;
-			.border-radius(3px);
-			background: -webkit-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			background: -moz-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			background: -o-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			background: linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			.box-shadow(~"inset 0 -1px 0 rgba(255,255,255,.5), inset 0 1px 4px rgba(0,0,0,.2), inset 0 1px 10px rgba(0,0,0,.1)");
-			border-color: transparent;
+			background-image: -webkit-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
+			background-image: -moz-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
+			background-image: -o-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
+			background-image: linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
+			.box-shadow(0 1px 0 rgba(255,255,255,.7));
+			border: 1px solid rgba(94,131,162,.4);
+		}
+		
+		&.open a.dropdown-toggle {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-bottom: none;
 		}
 		
 		&#home {
@@ -191,7 +201,7 @@ nav[role="navigation"] {
 				margin-left: 0;
 			}
 			.dropdown-menu {
-				
+				top: 101%;
 				li {
 					.column(6)
 				}
@@ -201,11 +211,16 @@ nav[role="navigation"] {
 					overflow: visible;
 					white-space: nowrap;
 					text-align: left;
-					padding: .5em;
+					padding: .5em 1em;
+					margin: .3em 0;
 					.border-radius(3px);
 					
 					&:hover {
 						background: rgba(255,255,255,.1);
+					}
+					
+					i:before {
+						font-size: 12px;
 					}
 				}
 			}
@@ -218,38 +233,36 @@ nav[role="navigation"] {
 #menubar #searchform {
 	position: absolute;
 	right: 1em;
-	top: 4em;
+	top: 4.25em;
 	padding: 0;
+	margin: 0;
 	
 	// the loupe icon
 	&:before {
 		position: absolute;
 		display: block;
-		left: .3em;
-		top: .3em;
+		left: .8em;
+		top: .45em;
 		font-size: 18px;
-		color: #2e4f5c;
+		z-index: 3;
 	}
 	
 	input#s {
+		.btn;
 		width: 10px;
 		float: right;
-		padding-left: 24px;
-		background: transparent;
-		border-bottom-color: transparent;
+		margin: 0;
 		position: relative;
 		z-index: 2;
-		padding: .3em 0 .3em 24px;
-		.box-shadow(none);
+		padding: .4em .6em .3em 30px;
+		max-height: 40px;
 		color: #000;
+		text-align: left;
 		
 		&:focus {
-			width: 260px;
+			width: 15.8em;
 			background: #fff;
 			background: rgba(255,255,255,.6);
-			border: 0;
-			border-bottom: 1px solid #AFC3CB;
-			padding-right: .5em;
 		}
 	}
 	

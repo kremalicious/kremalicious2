@@ -31,6 +31,8 @@ $(ASAP = function(){
 	interface.init();
 	lightbox.init();
 	
+	new MBP.fastButton($('#nav a, .btn'));
+	
 });
 
 $(window).load( AfterLoad = function() {
@@ -211,7 +213,7 @@ var interface = {
 var siteEffects = {
 	
 	socialiteButtons: function() {
-		$('#sharebuttons, #tweetsWrap').one('mouseenter', function() {
+		$('#tweetsWrap').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},
@@ -227,7 +229,7 @@ var siteEffects = {
 			globalSearch.attr('placeholder', '');
 			hiddenMenus.toggleClass('in');
 		}).focus(function() {                
-		    hiddenMenus.addClass('fade').removeClass('in');
+		    hiddenMenus.removeClass('in');
 		    globalSearch.attr('placeholder', searchPlaceholder );
 		});
 		
