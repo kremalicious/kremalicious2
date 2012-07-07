@@ -11,13 +11,16 @@ only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5),
 @minResolutionMQ {
   	
-  	html {
+  	body {
   		.bodyTexture_2x;
   	}
   	
-	#logo {	
-		background-image: url(../img/logo@2x.png);
-		.background-size(190px 31px);
-	}
+  	header[role="banner"] {
+  		h1 {
+  			#logo {	
+  				.logo_2x;
+  			}
+  		}
+  	}
   
 }

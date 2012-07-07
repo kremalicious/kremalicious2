@@ -22,6 +22,7 @@
 	text-align: center;
 	display: inline-block;
 	padding: .5em 1em;
+	margin-bottom: 1em;
 	background-color: rgba(255,255,255,.1);
 	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
 	#gradient > .vertical(rgba(255,255,255,.6), rgba(255,255,255,0));
@@ -52,7 +53,7 @@
 }
 
 .btn-tag {
-	font-size: .9em;
+	font-size: .8em;
 	line-height: 1.1em;
 	margin-bottom: .5em;
 	margin-left: .2em;
@@ -111,6 +112,9 @@ a[rel*="tag"],
 #topics a {
 	.btn;
 	.btn-tag;
+	&:before {
+		font-size: 12px
+	}
 }
 
 #cancel-comment-reply-link {

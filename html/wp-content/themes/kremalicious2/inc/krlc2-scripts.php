@@ -2,7 +2,7 @@
 
 function krlc2_scripts() {
 	
-	// Deregister default jquery, manual call in footer.php
+	// Deregister default jquery
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', '', null, true);

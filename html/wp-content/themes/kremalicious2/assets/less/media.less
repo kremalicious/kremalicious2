@@ -15,21 +15,26 @@
 
 
 /* ============================================================== */
-/* !IMAGES */
+/* IMAGES */
 /* ============================================================== */
 
 img {
+	max-width: 100%;
+	height: auto;
 	// 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
 	border: 0; 
 	vertical-align: middle;
-	
 	border-top: 1px solid rgba(255,255,255,.5);
 	.border-radius(5px);
 	.box-shadow(0 2px 4px rgba(0,0,0,.3));
 }
 
-img.alignleft { margin: 0 1.5em 1.5em 0; }
-img.alignright { margin: 0 0 1.5em 1.5em; }
+img.alignleft,
+img.alignright {
+	float: none;
+	display: block;
+	margin: 1.5em auto;
+}
 
 a.linkedImage img {
 	border: 2px solid @linkColor;

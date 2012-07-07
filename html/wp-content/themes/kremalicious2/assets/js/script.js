@@ -13,11 +13,27 @@
 
 */
 
+//@codekit-prepend "bootstrap-dropdown.js"
+//@codekit-prepend "libs/infinitescroll/jquery.infinitescroll.js"
+//@codekit-prepend "libs/socialite/socialite.js"
+//@codekit-prepend "libs/tweet/tweet/jquery.tweet.js"
+
+//@codekit-prepend "bootstrap-alert.js"
+//@codekit-prepend "bootstrap-tooltip.js"
+//@codekit-prepend "bootstrap-transition.js"
+//@codekit-prepend "libs/jquery.fancybox.js"
+
+//@codekit-prepend "plugins.js"
+
 $(ASAP = function(){
 
 	photoGrid.init();
 	interface.init();
 	lightbox.init();
+	
+	if (Modernizr.touch){
+		new MBP.fastButton($('#nav a, .btn'));
+	}
 	
 });
 
@@ -53,20 +69,21 @@ var photoGrid = {
 	photoStreamGridSetup: function() {
 		
 		if ( $('body.blog, body.search').length > 0 ) {
-			// a bit weird logic because we have no dividers we can throw at nextUntil()
-			// but it works, so who would complain
-			var noPhotoPhosts	= $('#content').find('article.format-standard, article.format-link');
-
-		    	noPhotoPhosts.each(function() {
-		    		// only fire when has image sibling
-		    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
-		    			$(this).nextUntil(noPhotoPhosts, 'article').wrapAll('<div class="masonryWrap"></div>');
-		    		}
-		    	});
-
-			// used when there's no non-image post before image group on a page
-			var photoPostSibling = $('#content').find('article.format-image:first + article.format-image');
 			
+			var $mainContent = $('section[role="main"]'),
+				// a bit weird logic because we have no dividers we can throw at nextUntil()
+				// but it works, so who would complain
+				noPhotoPhosts	= $mainContent.find('article.format-standard, article.format-link'),
+				// used when there's no non-image post before image group on a page
+				photoPostSibling = $mainContent.find('article.format-image:first + article.format-image');
+
+	    	noPhotoPhosts.each(function() {
+	    		// only fire when has image sibling
+	    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
+	    			$(this).nextUntil(noPhotoPhosts, 'article').wrapAll('<div class="masonryWrap"></div>');
+	    		}
+	    	});
+
 			if ( !photoPostSibling.parent('.masonryWrap').length > 0 ) {
 				photoPostSibling
 					.prevAll('article.format-image').andSelf()
@@ -77,7 +94,7 @@ var photoGrid = {
 	},
 	
 	masonryLayout: function() {
-		var $container = $('#content .masonryWrap');
+		var $container = $('section[role="main"] .masonryWrap');
 		
 		$container.imagesLoaded( function(){
 			$container.masonry({
@@ -92,9 +109,9 @@ var photoGrid = {
 	
 	init: function(){
 		// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
-		if ( $('#content .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
+		if ( $('section[role="main"] .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
 			this.photoStreamGridSetup();
-			if ( $('#content .masonryWrap').length > 0 ) {
+			if ( $('section[role="main"] .masonryWrap').length > 0 ) {
 				this.masonryLayout();
 			}
 		}
@@ -166,7 +183,7 @@ var interface = {
 	},
 	
 	toolTips: function() {
-		$('#content [rel="tooltip"]').tooltip();
+		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
 	
 	rememberCloseAlerts: function() {
@@ -184,7 +201,9 @@ var interface = {
 	
 	init: function(){
 		this.commentShowup();
-		this.bannerHomeLink();
+		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
+			this.bannerHomeLink();
+		}
 		this.toolTips();
 		this.rememberCloseAlerts();
 		$('#respond label').inFieldLabels();
@@ -196,7 +215,7 @@ var interface = {
 var siteEffects = {
 	
 	socialiteButtons: function() {
-		$('#sharebuttons, #tweetsWrap').one('mouseenter', function() {
+		$('#tweetsWrap').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},
@@ -208,11 +227,11 @@ var siteEffects = {
 			searchPlaceholder = globalSearch.attr('placeholder');
 		
 		globalSearch.attr('placeholder', '');
-		globalSearch.blur(function(){
+		globalSearch.focusout(function(){
 			globalSearch.attr('placeholder', '');
 			hiddenMenus.toggleClass('in');
-		}).focus(function() {                
-		    hiddenMenus.addClass('fade').removeClass('in');
+		}).focusin(function() {                
+		    hiddenMenus.removeClass('in');
 		    globalSearch.attr('placeholder', searchPlaceholder );
 		});
 		
@@ -220,7 +239,7 @@ var siteEffects = {
 	
 	latestTweet: function() {
 
-		$('#tweets').tweet({
+		$('#tweets').filter(":visible").tweet({
 	        username: 'kremalicious',
 	        count: 1,
 	        fetch: 10,
@@ -259,8 +278,8 @@ var infiniteScroll = {
 			navSelector		: '#post-nav',
 			binder			: $scrollContent,
 			behavior 		: 'krlc2',
-		}, function(this) {
-			// run the photogrid over retrieved items
+		}, function($scrollContent) {
+			 //run the photogrid over retrieved items
 			photoGrid.init();
 		});
 
