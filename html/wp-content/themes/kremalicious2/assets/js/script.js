@@ -201,7 +201,7 @@ var interface = {
 	
 	init: function(){
 		this.commentShowup();
-		if ( Modernizr.mq('only screen and (min-width: 650px)')  ) {
+		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
 			this.bannerHomeLink();
 		}
 		this.toolTips();

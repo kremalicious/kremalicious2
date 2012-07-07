@@ -173,3 +173,40 @@ li {
 .btn.icon-heart.col2 {
 	padding-right: 1em
 }
+
+// Resets for color animations
+aside[role="complementary"] i,
+footer[role="contentinfo"] i,
+.posttype a {
+	.transition(color .3s ease-in-out);
+	color: @textColorDimmed;
+	&:before { color: inherit; }
+}
+
+aside[role="complementary"]:hover .rss i,
+footer[role="contentinfo"]:hover .rss i,
+.touch aside[role="complementary"] .rss i,
+.touch footer[role="contentinfo"] .rss i {
+	color: #e15a00;
+}
+
+aside[role="complementary"]:hover .twitter i,
+footer[role="contentinfo"]:hover .twitter i,
+.touch aside[role="complementary"] .twitter i,
+.touch footer[role="contentinfo"] .twitter i {
+	color: #019ad2;
+}
+
+aside[role="complementary"]:hover .google i,
+footer[role="contentinfo"]:hover .google i,
+.touch aside[role="complementary"] .google i,
+.touch footer[role="contentinfo"] .google i {
+	color: #c63b1e;
+}
+
+aside[role="complementary"]:hover .facebook i,
+footer[role="contentinfo"]:hover .facebook i,
+.touch aside[role="complementary"] .facebook i,
+.touch footer[role="contentinfo"] .facebook i {
+	color: #3b5998;
+}

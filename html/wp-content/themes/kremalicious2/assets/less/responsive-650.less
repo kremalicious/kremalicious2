@@ -68,6 +68,7 @@
 		left: 3%;
 		z-index: 1;
 		width: 12em;
+		height: 100%;
 		margin-top: 0;
 		
 		h1 {
@@ -158,17 +159,16 @@
 				
 				a {
 					padding: .8em 1em;
-					background: none;
-					border: none;
-					.box-shadow(none);
-					.border-radius(0);
 					max-height: 100%;
 					width: 100%;
 					max-width: 100%;
-					margin-bottom: 0;
 					overflow: visible;
 					
 					&:hover { background-color: rgba(255,255,255,.1) }
+					
+					i:before {
+						font-size: 16px;
+					}
 				}
 				
 				&#home {
@@ -180,16 +180,35 @@
 					span {
 						display: block;
 						position: absolute;
-						z-index: 2;
-						left: 0;
-						top: 0;
-						width: 100%;
+						z-index: 5;
+						left: -.3em;
+						top: -6px;
+						width: 103%;
 						height: 170%;
 						cursor: pointer;
 					}
 				}
 				&#topicmenu {
 					width: 15%;
+					
+					.dropdown-menu {
+						top: 103%;
+						left: -1px;
+						width: 360%;
+						margin-top: -2px;
+						background-color: #b7c1c4;
+						#gradient > .vertical(#b7c1c4, #9da8ac);
+						
+						li {
+							border: none;
+							box-shadow: none;
+							a {
+								display: block;
+								width: 100%;
+								padding: .5em .7em
+							}
+						}
+					}
 				}
 				&#about {
 					width: 26%;
@@ -206,39 +225,18 @@
 	
 	nav[role="navigation"] li a.dropdown-toggle,
 	nav[role="navigation"] li.open a.dropdown-toggle {
-	  .border-radius(0);
 	  padding-left: 1em;
 	  padding-right: .8em
 	}
 	
-	.dropdown-menu {
-		top: 103%;
-		left: -1px;
-		width: 300%;
-		margin-top: -2px;		
-	}
-
-	nav[role="navigation"] .dropdown-menu li {
-		border: none !important;
-		.box-shadow(none);
-	}
-	
-	nav[role="navigation"] .dropdown-menu li a {
-		float: none;
-		clear: both;
-		display: block;
-		width: 100%;
-		padding: .5em .7em
-	}
-	
 	#menubar #searchform {
-		top: auto;
-		bottom: .4em;
+		top: .5em;
 		
 		// the loupe icon
 		&:before {
-			top: .3em;
+			font-size: 18px;
 			color: @headingsColor;
+			top: .35em;
 		}
 		
 		input#s {

@@ -150,9 +150,6 @@ nav[role="navigation"] {
 		margin-left: 0;
 		
 		a {
-			.btn;
-			#gradient > .vertical(rgba(255,255,255,.3), rgba(255,255,255,0));
-			margin-bottom: 0;
 			display: block;
 			width: 100%;
 			min-width: 2em;
@@ -167,6 +164,7 @@ nav[role="navigation"] {
 			
 			i:before {
 				margin: 0;
+				font-size: 20px;
 			}
 			
 		}
@@ -182,8 +180,6 @@ nav[role="navigation"] {
 			background-image: -moz-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			background-image: -o-linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
 			background-image: linear-gradient(top, rgba(145,154,158,1) 0%,rgba(162,173,177,1) 22%,rgba(183,193,196,1) 100%);
-			.box-shadow(0 1px 0 rgba(255,255,255,.7));
-			border: 1px solid rgba(94,131,162,.4);
 		}
 		
 		&#home {
@@ -192,8 +188,8 @@ nav[role="navigation"] {
 		
 		&#topicmenu {
 			.caret {
-				margin-top: 11px;
-				margin-left: 0;
+				margin-top: 10px;
+				margin-left: .3em;
 			}
 			.dropdown-menu {
 				top: 101%;
@@ -206,8 +202,8 @@ nav[role="navigation"] {
 					overflow: visible;
 					white-space: nowrap;
 					text-align: left;
-					padding: .5em 1em;
-					margin: .2em 0;
+					padding: .4em 1em;
+					margin: 0;
 					max-width: 100%;
 					
 					i:before {
@@ -224,7 +220,7 @@ nav[role="navigation"] {
 #menubar #searchform {
 	position: absolute;
 	right: 1.5em;
-	top: 4.25em;
+	top: 4em;
 	padding: 0;
 	margin: 0;
 	
@@ -234,18 +230,17 @@ nav[role="navigation"] {
 		display: block;
 		left: .8em;
 		top: .45em;
-		font-size: 18px;
-		z-index: 3;
+		font-size: 20px;
 	}
 	
 	input[type="search"] {
-		.btn;
-		#gradient > .vertical(rgba(255,255,255,.3), rgba(255,255,255,0));
+		background: transparent;
+		.box-shadow(none);
+		.border-radius(0);
 		width: 1px;
 		float: right;
 		margin: 0;
 		position: relative;
-		z-index: 2;
 		padding: .3em;
 		padding-left: 30px;
 		max-height: 40px;
@@ -256,13 +251,6 @@ nav[role="navigation"] {
 			width: 12.5em;
 			background: #fff;
 			background: rgba(255,255,255,.6);
-			.transition(none);
-		}
-		
-		&:active {
-			background-color: none;
-			.box-shadow(none);
-			.transition(none);
 		}
 	}
 	
@@ -395,9 +383,7 @@ line-height: 0;
 }
 
 .hentry:hover .posttype a,
-.touch .posttype a,
-.hentry:hover .posttype a:before,
-.touch .posttype a:before {
+.touch .posttype a {
 	color: @linkColor;
 }
 
@@ -635,15 +621,12 @@ body.single-format-image .photoPostWrap {
 	padding-right: .6em;
 }
 
-#commentShow i {
-	color: #a9b7bd;
-	color: rgba(46, 79, 92, .4);
-	margin-right: 0;
-}
-
 #commentShow i:before,
 #respond i:before {
-	font-size: 24px
+	color: #a9b7bd;
+	color: rgba(46, 79, 92, .4);
+	font-size: 24px;
+	margin-right: 0;
 }
 
 #commentShow .icon-comments {
@@ -892,7 +875,6 @@ article#aboutPage {}
 
 // Subscribe only component
 #subscribe {
-	
 	h2 {
 		font-size: .8em;
 		font-family: @baseFontFamily;
@@ -1012,40 +994,10 @@ footer[role="contentinfo"] {
 	margin-top: 3em;
 	.single & {
 		margin-top: 0;
-		#subscribe {
-			h2 {
-				display: none;
-			}
-		}
 	}
-}
-
-aside[role="complementary"]:hover .rss i:before,
-footer[role="contentinfo"]:hover .rss i:before,
-.touch aside[role="complementary"] .rss i:before,
-.touch footer[role="contentinfo"] .rss i:before {
-	color: #e15a00;
-}
-
-aside[role="complementary"]:hover .twitter i:before,
-footer[role="contentinfo"]:hover .twitter i:before,
-.touch aside[role="complementary"] .twitter i:before,
-.touch footer[role="contentinfo"] .twitter i:before {
-	color: #019ad2;
-}
-
-aside[role="complementary"]:hover .google i:before,
-footer[role="contentinfo"]:hover .google i:before,
-.touch aside[role="complementary"] .google i:before,
-.touch footer[role="contentinfo"] .google i:before {
-	color: #c63b1e;
-}
-
-aside[role="complementary"]:hover .facebook i:before,
-footer[role="contentinfo"]:hover .facebook i:before,
-.touch aside[role="complementary"] .facebook i:before,
-.touch footer[role="contentinfo"] .facebook i:before {
-	color: #3b5998;
+	.single & #siteMeta {
+		.no-divider-bottom
+	}
 }
 
 
