@@ -994,8 +994,8 @@ function rmEvt(el, evt, fn, bubble) {
   * http://miniapps.co.uk/blog/post/enable-css-active-pseudo-styles-in-mobile-safari/
 */
 
-//MBP.enableActive = function () {
-//  document.addEventListener("touchstart", function() {}, false);
-//};
+MBP.enableActive = function () {
+  document.addEventListener("touchstart", function() {}, false);
+};
 
 })(document);
