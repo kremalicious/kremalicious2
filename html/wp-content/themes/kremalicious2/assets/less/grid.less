@@ -63,3 +63,25 @@ body {
 .pull(@offset:1) {
 	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
 }
+
+
+/////////////////
+// CUSTOM GRID //
+/////////////////
+
+* { .box-sizing(border-box); }
+
+#menubar,
+section[role="document"],
+footer[role="contentinfo"] { 
+	.container; 
+	.clearfix;
+}
+
+section[role="main"],
+aside[role="complementary"],
+#siteMeta,
+#siteCopyright,
+.pager {
+	.column(12);
+}
