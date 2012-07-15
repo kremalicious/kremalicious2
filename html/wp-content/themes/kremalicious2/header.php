@@ -71,6 +71,10 @@
   	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo site_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
   	<link rel="apple-touch-icon-precomposed" href="<?php echo site_url('/apple-touch-icon-precomposed.png'); ?>">
   	<link rel="shortcut icon" href="<?php echo site_url('/favicon.ico'); ?>">
+  	
+  	<!-- Windows 8 Metro Tile Image -->
+  	<meta name="msapplication-TileImage" content="<?php echo site_url('/metro-tile.png'); ?>"/>
+  	<meta name="msapplication-TileColor" content="#c2cbce"/>
 
 </head>
 
