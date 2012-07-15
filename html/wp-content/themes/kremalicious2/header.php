@@ -74,7 +74,7 @@
   	
   	<!-- Windows 8 Metro Tile Image -->
   	<meta name="msapplication-TileImage" content="<?php echo site_url('/metro-tile.png'); ?>"/>
-  	<meta name="msapplication-TileColor" content="#c2cbce"/>
+  	<meta name="msapplication-TileColor" content="#015565"/>
 
 </head>
 
