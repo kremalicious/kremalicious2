@@ -141,4 +141,19 @@ function krlc2_how_long_ago($timestamp){
 	return $r;
 }
 
+// http://digwp.com/2010/02/custom-css-per-post/
+function artStyle() {
+    global $post;
+    if (is_single()) {
+        $currentID = $post->ID;
+        $serverfilepath = TEMPLATEPATH.'/assets/css/poststyle-'.$currentID.'.css';
+        $publicfilepath = get_bloginfo('template_url');
+        $publicfilepath .= '/assets/css/poststyle-'.$currentID.'.css';
+        if (file_exists($serverfilepath)) {
+            echo "<link rel='stylesheet' type='text/css' href='$publicfilepath' media='screen' />"."\n";
+        }
+    }
+}
+add_action('wp_head', 'artStyle');
+
 ?>
