@@ -270,9 +270,6 @@ var infiniteScroll = {
 		var	$scrollContent 	= $('#main');
 		
 		$scrollContent.infinitescroll({
-			loading: {
-				img: '/wp-content/themes/kremalicious2/assets/img/texture.png'
-			},
 			itemSelector	: items,
 			nextSelector	: '#post-nav a:first',
 			navSelector		: '#post-nav',
@@ -321,7 +318,7 @@ $.extend($.infinitescroll.prototype,{
 			loader
 				.appendTo(opts.nextSelector)
 				.show(opts.loading.speed, function () {
-                	beginAjax(opts);
+                	instance.beginAjax(opts);
             });
 		}
 		
