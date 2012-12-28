@@ -157,11 +157,10 @@ body.login {
 	.box-shadow(~"0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9)");
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-@oPixelRatioMQ,
-only screen and (min-device-pixel-ratio: 1.5) {
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
 
 	body.login {
 		.bodyTexture_2x;

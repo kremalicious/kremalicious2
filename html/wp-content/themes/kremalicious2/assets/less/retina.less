@@ -4,23 +4,20 @@
 /* high pixel ratio devices   */
 /* ========================================== */
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-@oPixelRatioMQ,
-only screen and (min-device-pixel-ratio: 1.5),
-@minResolutionMQ {
-  	
-  	body {
-  		.bodyTexture_2x;
-  	}
-  	
-  	header[role="banner"] {
-  		h1 {
-  			#logo {	
-  				.logo_2x;
-  			}
-  		}
-  	}
-  
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+       
+       body {
+       	.bodyTexture_2x;
+       }
+       
+       header[role="banner"] {
+       	h1 {
+       		#logo {	
+       			.logo_2x;
+       		}
+       	}
+       }
 }
