@@ -18,6 +18,12 @@
 
 body.login {
 	.bodyTexture;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	font-family: @baseFontFamily;
+	font-weight: @baseFontWeight;
+	color: @textColor;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 
 #login {
@@ -68,12 +74,18 @@ body.login {
 	outline: none;
 }
 
-input.button-primary,button.button-primary,a.button-primary,.login .button-primary {
-	display: inline-block;
+.wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	font-style: normal;
+	display: block;
 	padding: 7px 40px;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
+	height: 44px;
+	width: 100%;
 	text-align: center;
+	font-weight: 700;
 	.border-radius(5px);
 	color: darken(@linkColor, 30%);
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
@@ -109,20 +121,25 @@ input.button-primary,button.button-primary,a.button-primary,.login .button-prima
 	.box-shadow(none);
 	border: none;
 	background: transparent;
-	margin: 1em auto 5em auto;
-	padding: 3em 0 1em 0;
+	margin: 1em auto;
+	padding: 1em 0;
+	position: relative
+}
+
+.login label {
+	color: @textColorDimmed
 }
 
 #login form p.submit {
-	padding-bottom: .5em;
 	.clearfix;
-	top: -20px;
 	position: relative;
-	float: right;
+	margin-bottom: 2em
 }
 
 #login form p.forgetmenot {
-	float: none
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
 
 #login_error, .login .message {
