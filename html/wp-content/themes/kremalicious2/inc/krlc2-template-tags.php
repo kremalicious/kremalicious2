@@ -3,7 +3,6 @@
 // Subscribe Buttons
 function krlc2_subscribe_buttons() {
 	echo '<div id="subscribe">
-		  	<h2>Subscribe</h2>
 			<p>
 			  <a class="btn rss" href="http://kremalicious.com/feed"><i class="icon-rss"></i> <span>RSS</span></a> <a class="btn twitter" href="https://twitter.com/kremaliciouscom"><i class="icon-twitter"></i> <span>Twitter</span></a> <a class="btn google" href="https://plus.google.com/100015950464424503954" rel="publisher"><i class="icon-google-plus"></i> <span>Google+</span></a> <a class="btn facebook" href="https://www.facebook.com/pages/kremalicious/154539134564052"><i class="icon-facebook"></i> <span>Facebook</span></a>
 			</p>
