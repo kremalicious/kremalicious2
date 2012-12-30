@@ -68,7 +68,7 @@
 			echo '<h1><a rel="tooltip" title="Back To Home" href="/">/</a>' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) ) .'</h1>'; ?>
 		
 		<section id="siteMeta">
-			<p id="description" class="dimmed"><?php bloginfo('description'); ?></p>
+			<p id="description" class="dimmed">Blog of designer &amp; developer <a href="http://matthiaskretschmann.com">Matthias Kretschmann</a></p>
 			
 			<?php krlc2_subscribe_buttons(); ?>
 			
