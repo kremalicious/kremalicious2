@@ -3,7 +3,7 @@
 	<footer role="contentinfo">
 		<?php if ( is_singular() OR is_archive() ) { ?>
 			<section id="siteMeta">
-				<p id="description"><?php bloginfo('description'); ?></p>
+				<p id="description">Blog of designer &amp; developer <a href="http://matthiaskretschmann.com">Matthias Kretschmann</a></p>
 				<?php krlc2_subscribe_buttons(); ?>
 				<div id="tweetsWrap">
 					<div id="tweets" class="dimmed"></div>
