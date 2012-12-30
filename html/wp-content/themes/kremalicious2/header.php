@@ -30,7 +30,15 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title><?php wp_title('&brvbar;', true, 'right'); bloginfo('name'); ?></title>
+	<title>
+		<?php 
+			if (is_front_page()) {
+				bloginfo('name'); echo ' &brvbar; '; bloginfo('description');
+			} else {
+				wp_title('&brvbar;', true, 'right'); bloginfo('name');
+			} 
+		?>
+	</title>
 	
 	<?php 
 	if (  (is_home()) || (is_front_page())  ) { ?>
