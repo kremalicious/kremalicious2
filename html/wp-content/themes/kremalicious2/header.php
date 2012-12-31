@@ -110,8 +110,9 @@
 					</li>						
 				</ul>
 			</nav>
-			<?php get_search_form(); ?>
-			
+			<div id="searchWrap">
+				<?php get_search_form(); ?>
+			</div>
 		</div>
 	</section>
 	

@@ -95,7 +95,6 @@ nav a {
 // Place the caret
 .dropdown .caret {
   margin-top: 8px;
-  margin-left: 2px;
 }
 .dropdown a:focus .caret,
 .dropdown a:hover .caret,
@@ -197,7 +196,7 @@ nav[role="navigation"] {
 		&#topicmenu {
 			.caret {
 				margin-top: 10px;
-				margin-left: .3em;
+				margin-left: 0;
 			}
 			.dropdown-menu {
 				top: 101%;
@@ -208,16 +207,22 @@ nav[role="navigation"] {
 					overflow: visible;
 					white-space: nowrap;
 					text-align: left;
-					padding: .5em 1em;
+					padding: .8em 1em;
 					margin: 0;
 					max-width: 100%;
 					display: block;
 					border-top: 1px solid rgba(255,255,255,.2);
 					border-bottom: 1px solid rgba(0,0,0,.1);
+					text-shadow: 0 1px 0 rgba(255,255,255,.2);
+					color: #657a85;
 					
 					i:before {
 						font-size: 16px;
 						margin-right: 2em
+					}
+					
+					&:hover {
+						color: #2e4f5c
 					}
 				}
 				
@@ -240,10 +245,15 @@ nav[role="navigation"] {
 
 // Global Search
 // --------------------------------------------------
-#menubar #searchform {
+#menubar #searchWrap {
 	position: absolute;
 	right: 1.5em;
-	top: 4em;
+	top: 4.2em;
+	height: 100%;
+}
+
+#menubar #searchform {
+	position: relative;
 	padding: 0;
 	margin: 0;
 	
@@ -265,7 +275,7 @@ nav[role="navigation"] {
 		margin: 0;
 		position: relative;
 		padding: .3em;
-		padding-left: 30px;
+		padding-left: 36px;
 		max-height: 40px;
 		color: #000;
 		text-align: left;
