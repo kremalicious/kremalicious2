@@ -113,13 +113,13 @@ nav a {
 	display: none;
 	float: left;
 	min-width: 160px;
-	padding: 5px 0;
+	padding: 0;
 	border: 1px solid #9eaab2;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	.background-clip(padding-box);
 	background: #b7c1c4;
-	.box-shadow(~"0 1px 8px #9da8ac, inset 0 1px 0 #d2dadc");
+	.box-shadow(~"0 3px 8px rgba(0,0,0,.3), inset 0 1px 0 #d2dadc");
 }
 
 // Open state for the dropdown
@@ -201,21 +201,36 @@ nav[role="navigation"] {
 			}
 			.dropdown-menu {
 				top: 101%;
-				li {
-					.column(6)
-				}
+				
 				a {
-					font-size: 14px;
+					font-size: .9em;
 					max-height: 100%;
 					overflow: visible;
 					white-space: nowrap;
 					text-align: left;
-					padding: .4em 1em;
+					padding: .5em 1em;
 					margin: 0;
 					max-width: 100%;
+					display: block;
+					border-top: 1px solid rgba(255,255,255,.2);
+					border-bottom: 1px solid rgba(0,0,0,.1);
 					
 					i:before {
-						font-size: 12px;
+						font-size: 16px;
+						margin-right: 2em
+					}
+				}
+				
+				li {
+					float: none;
+					width: 100%;
+					
+					&:first-child a {
+						border-top: none
+					}
+					
+					&:last-child a {
+						border-bottom: none
 					}
 				}
 			}
