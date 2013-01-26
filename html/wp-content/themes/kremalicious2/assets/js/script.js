@@ -2,7 +2,7 @@
 
  MAIN JS FOR KREMALICIOUS.COM
  -----------------------------------------------------------------
- 
+
  Copyright (c) 2012 Matthias Kretschmann | http://mkretschmann.com
 
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -31,18 +31,18 @@ $(ASAP = function(){
 	photoGrid.init();
 	interface.init();
 	lightbox.init();
-	
+
 	if (Modernizr.touch){
 		new MBP.fastButton($('#nav a, .btn'));
 	}
-	
+
 });
 
 $(window).load( AfterLoad = function() {
 
 	siteEffects.init();
 	infiniteScroll.init();
-	
+
 });
 
 
@@ -57,7 +57,7 @@ var lightbox = {
 	         padding: 0
 	     });
 	},
-	
+
 	init: function(){
 		if ( $('#main img').length > 0 ) {
 			this.initiateLightbox();
@@ -66,11 +66,11 @@ var lightbox = {
 }
 
 var photoGrid = {
-	
+
 	photoStreamGridSetup: function() {
-		
+
 		if ( $('body.blog, body.search').length > 0 ) {
-			
+
 			var $mainContent = $('section[role="main"]'),
 				// a bit weird logic because we have no dividers we can throw at nextUntil()
 				// but it works, so who would complain
@@ -93,10 +93,10 @@ var photoGrid = {
 			}
 		}
 	},
-	
+
 	masonryLayout: function() {
 		var $container = $('section[role="main"] .masonryWrap');
-		
+
 		$container.imagesLoaded( function(){
 			$container.masonry({
 				itemSelector : 'article',
@@ -107,7 +107,7 @@ var photoGrid = {
 			});
 		});
 	},
-	
+
 	init: function(){
 		// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
 		if ( $('section[role="main"] .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
@@ -117,18 +117,18 @@ var photoGrid = {
 			}
 		}
 	}
-		
+
 }
 
 var interface = {
-	
+
 	bannerHomeLink: function() {
-			
+
 		var $bannerTrigger  = $('#home span'),
 			$banner			= $('header[role="banner"]');
-			
+
 		$bannerTrigger.hover(function() {
-			
+
 			if (Modernizr.cssanimations) {
 				$banner.addClass('bannerSlideUp').removeClass('bannerFallDown');
 			} else {
@@ -136,28 +136,28 @@ var interface = {
 			}
 
 		}, function() {
-			
+
 			if (Modernizr.cssanimations) {
 				$banner.addClass('bannerFallDown').removeClass('bannerSlideUp');
 			} else {
 				$banner.stop().animate({'top':'0'}, 600, 'easeOutBounce');
 			}
-			
+
 		});
 	},
-	
+
 	commentShowup: function(){
 		var $commentStuff 		= $('#commentlistWrap, #respond'),
 			$commentStuffHidden = $commentStuff.detach(),
 			$commentTrigger 	= $('#comments #commentShow');
-		
+
 		$commentTrigger.addClass('btn');
-		
+
 		$commentTrigger.click(function() {
 			showTheComments();
 			$('html, body').animate({scrollTop: $commentTrigger.offset().top}, 500);
 		});
-		
+
 		// comments paged nav case
 		if ( location.href.indexOf('#comments') != -1 ) {
 			showTheComments();
@@ -166,9 +166,9 @@ var interface = {
 		if ( location.href.indexOf('#comment') != -1 ) {
 			showTheComments();
 		}
-		
+
 		function showTheComments() {
-			
+
 			if ( $commentStuffHidden ) {
 				$commentStuffHidden.insertAfter('#commentShow').find('label').inFieldLabels();
 				$commentStuffHidden = null;
@@ -178,28 +178,28 @@ var interface = {
 				$commentStuffHidden = $commentStuff.detach();
 			}
 			$commentTrigger.toggleClass('open');
-			
+
 		}
 
 	},
-	
+
 	toolTips: function() {
 		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
-	
+
 	rememberCloseAlerts: function() {
 		var alertToRemember = $('#content').find('.rememberClose');
 		alertToRemember.bind('close', function () {
 			$.cookie('alertmessage','dismissed');
 		});
-		
+
 		var alertDismissed = $.cookie('alertmessage');
 		if ( $.cookie('alertmessage') ) {
 			alertToRemember.detach();
 		}
-		
+
 	},
-	
+
 	init: function(){
 		this.commentShowup();
 		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
@@ -210,34 +210,34 @@ var interface = {
 		$('#respond label').inFieldLabels();
 		$('#topicmenu .dropdown-toggle').dropdown();
 	}
-		
+
 }
 
 var siteEffects = {
-	
+
 	socialiteButtons: function() {
 		$('#tweetsWrap').one('mouseenter', function() {
 			Socialite.load($(this)[0]);
 		});
 	},
-	
+
 	searchFancySchmanzy: function() {
-		
+
 		var hiddenMenus 	  = $('#menubar nav[role="navigation"]'),
 			globalSearch 	  = $('#menubar #s'),
 			searchPlaceholder = globalSearch.attr('placeholder');
-		
+
 		globalSearch.attr('placeholder', '');
 		globalSearch.focusout(function(){
 			globalSearch.attr('placeholder', '');
 			hiddenMenus.toggleClass('in');
-		}).focusin(function() {                
+		}).focusin(function() {
 		    hiddenMenus.removeClass('in');
 		    globalSearch.attr('placeholder', searchPlaceholder );
 		});
-		
+
 	},
-	
+
 	latestTweet: function() {
 
 		$('#tweets').filter(":visible").tweet({
@@ -248,28 +248,28 @@ var siteEffects = {
 	        loading_text: '...',
 	        filter: function(t){ return ! /^@\w+/.test(t.tweet_raw_text); }
 	    });
-	    
+
 	},
-	
+
 	init: function(){
 		this.socialiteButtons();
 		this.searchFancySchmanzy();
 		this.latestTweet();
 	}
-	
+
 }
 
 var infiniteScroll = {
-	
-	infiniteScrollSetup: function() { 
-		
+
+	infiniteScrollSetup: function() {
+
 		if ( $('body.archive.category-photos').length > 0 ) {
 			var items	= '#main .masonryWrap';
 		} else {
 			var items	= '#main article.hentry';
 		}
 		var	$scrollContent 	= $('#main');
-		
+
 		$scrollContent.infinitescroll({
 			itemSelector	: items,
 			nextSelector	: '#post-nav a:first',
@@ -282,18 +282,18 @@ var infiniteScroll = {
 		});
 
 	},
-	
+
 	init: function(){
 		this.infiniteScrollSetup();
 	}
-	
+
 }
 
 /*
 	--------------------------------
 	Infinite Scroll Behavior
 	Manual mode with minimal loader
-	
+
 	Usage: behavior: 'krlc2'
 	--------------------------------
 */
@@ -303,9 +303,9 @@ $.extend($.infinitescroll.prototype,{
 		var opts = this.options,
 			instance = this,
 			loader = $('<span class="loading"> ...</span>');
-		
+
 		$(opts.nextSelector).parent().parent().addClass('infiniteLoader');
-		
+
 		// Bind nextSelector link to retrieve
 		$(opts.nextSelector).click(function(e) {
 			if (e.which == 1 && !e.metaKey && !e.shiftKey) {
@@ -322,12 +322,12 @@ $.extend($.infinitescroll.prototype,{
                 	instance.beginAjax(opts);
             });
 		}
-		
+
 		// custom finish
 		instance.options.loading.finished = function(opts) {
 			loader.detach();
 		};
-		
+
 	}
 
 });
