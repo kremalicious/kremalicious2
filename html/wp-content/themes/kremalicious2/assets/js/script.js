@@ -19,7 +19,6 @@
 //@codekit-prepend "libs/socialite/socialite.js"
 //@codekit-prepend "libs/tweet/tweet/jquery.tweet.js"
 
-//@codekit-prepend "bootstrap-alert.js"
 //@codekit-prepend "bootstrap-tooltip.js"
 //@codekit-prepend "bootstrap-transition.js"
 //@codekit-prepend "libs/jquery.fancybox.js"
@@ -187,18 +186,18 @@ var interface = {
 		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
 
-	rememberCloseAlerts: function() {
-		var alertToRemember = $('#content').find('.rememberClose');
-		alertToRemember.bind('close', function () {
-			$.cookie('alertmessage','dismissed');
-		});
+	// rememberCloseAlerts: function() {
+	// 	var alertToRemember = $('#content').find('.rememberClose');
+	// 	alertToRemember.bind('close', function () {
+	// 		$.cookie('alertmessage','dismissed');
+	// 	});
 
-		var alertDismissed = $.cookie('alertmessage');
-		if ( $.cookie('alertmessage') ) {
-			alertToRemember.detach();
-		}
+	// 	var alertDismissed = $.cookie('alertmessage');
+	// 	if ( $.cookie('alertmessage') ) {
+	// 		alertToRemember.detach();
+	// 	}
 
-	},
+	// },
 
 	init: function(){
 		this.commentShowup();
@@ -206,7 +205,7 @@ var interface = {
 			this.bannerHomeLink();
 		}
 		this.toolTips();
-		this.rememberCloseAlerts();
+		//this.rememberCloseAlerts();
 		$('#respond label').inFieldLabels();
 		$('#topicmenu .dropdown-toggle').dropdown();
 	}
