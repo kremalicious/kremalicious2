@@ -5,33 +5,33 @@
  * to offer multiple easing options
  *
  * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
+ *
+ * Open source under the BSD License.
+ *
  * Copyright Â© 2008 George McGinley Smith
  * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
+ *
+ * Redistributions of source code must retain the above copyright notice, this list of
  * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
+ * Redistributions in binary form must reproduce the above copyright notice, this list
+ * of conditions and the following disclaimer in the documentation and/or other materials
  * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
+ *
+ * Neither the name of the author nor the names of contributors may be used to endorse
  * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
  * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
  *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
  *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
  * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
  *
 */
 
@@ -75,7 +75,7 @@ jQuery.extend( jQuery.easing,
     // To avoid scope issues, use 'base' instead of 'this'
     // to reference this class from internal events and functions.
     var base = this;
-  
+
     // Access to jQuery and DOM versions of each element
     base.$label = $(label);
     base.label  = label;
@@ -158,7 +158,7 @@ jQuery.extend( jQuery.easing,
           (e.keyCode === 16) || // Skip Shift
           (e.keyCode === 9) // Skip Tab
         ) {
-        return; 
+        return;
       }
 
       if (base.showing) {
@@ -192,18 +192,18 @@ jQuery.extend( jQuery.easing,
 
       // Find the referenced input or textarea element
       $field = $(
-        "input#" + for_attr + "[type='text']," + 
-        "input#" + for_attr + "[type='search']," + 
-        "input#" + for_attr + "[type='tel']," + 
-        "input#" + for_attr + "[type='url']," + 
-        "input#" + for_attr + "[type='email']," + 
-        "input#" + for_attr + "[type='password']," + 
+        "input#" + for_attr + "[type='text']," +
+        "input#" + for_attr + "[type='search']," +
+        "input#" + for_attr + "[type='tel']," +
+        "input#" + for_attr + "[type='url']," +
+        "input#" + for_attr + "[type='email']," +
+        "input#" + for_attr + "[type='password']," +
         "textarea#" + for_attr
       );
 
       if ($field.length === 0) {
         return; // Again, nothing to attach
-      } 
+      }
 
       // Only create object for input[text], input[password], or textarea
       (new $.InFieldLabels(this, $field[0], options));
@@ -322,180 +322,206 @@ $.fn.async_gravatars = function( args ) {
 
 window.MBP = window.MBP || {};
 
-/* 
-   * Fast Buttons - read wiki below before using
-   * https://github.com/h5bp/mobile-boilerplate/wiki/JavaScript-Helper
-*/
+/**
+     * Fast Buttons - read wiki below before using
+     * https://github.com/h5bp/mobile-boilerplate/wiki/JavaScript-Helper
+     */
 
-MBP.fastButton = function (element, handler) {
-  this.handler = handler;
-	
-	if (element.length && element.length > 1) {
-    for (var singleElIdx in element) {
-      this.addClickEvent(element[singleElIdx]);
+    MBP.fastButton = function(element, handler, pressedClass) {
+        this.handler = handler;
+        // styling of .pressed is defined in the project's CSS files
+        this.pressedClass = typeof pressedClass === 'undefined' ? 'pressed' : pressedClass;
+
+        MBP.listenForGhostClicks();
+
+        if (element.length && element.length > 1) {
+            for (var singleElIdx in element) {
+                this.addClickEvent(element[singleElIdx]);
+            }
+        } else {
+            this.addClickEvent(element);
+        }
+    };
+
+    MBP.fastButton.prototype.handleEvent = function(event) {
+        event = event || window.event;
+
+        switch (event.type) {
+            case 'touchstart': this.onTouchStart(event); break;
+            case 'touchmove': this.onTouchMove(event); break;
+            case 'touchend': this.onClick(event); break;
+            case 'click': this.onClick(event); break;
+        }
+    };
+
+    MBP.fastButton.prototype.onTouchStart = function(event) {
+        var element = event.target || event.srcElement;
+        event.stopPropagation();
+        element.addEventListener('touchend', this, false);
+        document.body.addEventListener('touchmove', this, false);
+        this.startX = event.touches[0].clientX;
+        this.startY = event.touches[0].clientY;
+
+        element.className+= ' ' + this.pressedClass;
+    };
+
+    MBP.fastButton.prototype.onTouchMove = function(event) {
+        if (Math.abs(event.touches[0].clientX - this.startX) > 10 ||
+            Math.abs(event.touches[0].clientY - this.startY) > 10) {
+            this.reset(event);
+        }
+    };
+
+    MBP.fastButton.prototype.onClick = function(event) {
+        event = event || window.event;
+        var element = event.target || event.srcElement;
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        }
+        this.reset(event);
+        this.handler.apply(event.currentTarget, [event]);
+        if (event.type == 'touchend') {
+            MBP.preventGhostClick(this.startX, this.startY);
+        }
+        var pattern = new RegExp(' ?' + this.pressedClass, 'gi');
+        element.className = element.className.replace(pattern, '');
+    };
+
+    MBP.fastButton.prototype.reset = function(event) {
+        var element = event.target || event.srcElement;
+        rmEvt(element, 'touchend', this, false);
+        rmEvt(document.body, 'touchmove', this, false);
+
+        var pattern = new RegExp(' ?' + this.pressedClass, 'gi');
+        element.className = element.className.replace(pattern, '');
+    };
+
+    MBP.fastButton.prototype.addClickEvent = function(element) {
+        addEvt(element, 'touchstart', this, false);
+        addEvt(element, 'click', this, false);
+    };
+
+    MBP.preventGhostClick = function(x, y) {
+        MBP.coords.push(x, y);
+        window.setTimeout(function() {
+            MBP.coords.splice(0, 2);
+        }, 2500);
+    };
+
+    MBP.ghostClickHandler = function(event) {
+        if (!MBP.hadTouchEvent && MBP.dodgyAndroid) {
+            // This is a bit of fun for Android 2.3...
+            // If you change window.location via fastButton, a click event will fire
+            // on the new page, as if the events are continuing from the previous page.
+            // We pick that event up here, but MBP.coords is empty, because it's a new page,
+            // so we don't prevent it. Here's we're assuming that click events on touch devices
+            // that occur without a preceding touchStart are to be ignored.
+            event.stopPropagation();
+            event.preventDefault();
+            return;
+        }
+        for (var i = 0, len = MBP.coords.length; i < len; i += 2) {
+            var x = MBP.coords[i];
+            var y = MBP.coords[i + 1];
+            if (Math.abs(event.clientX - x) < 25 && Math.abs(event.clientY - y) < 25) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        }
+    };
+
+    // This bug only affects touch Android 2.3 devices, but a simple ontouchstart test creates a false positive on
+    // some Blackberry devices. https://github.com/Modernizr/Modernizr/issues/372
+    // The browser sniffing is to avoid the Blackberry case. Bah
+    MBP.dodgyAndroid = ('ontouchstart' in window) && (navigator.userAgent.indexOf('Android 2.3') != -1);
+
+    MBP.listenForGhostClicks = (function() {
+        var alreadyRan = false;
+
+        return function() {
+            if(alreadyRan) {
+                return;
+            }
+
+            if (document.addEventListener) {
+                document.addEventListener('click', MBP.ghostClickHandler, true);
+            }
+            addEvt(document.documentElement, 'touchstart', function() {
+                MBP.hadTouchEvent = true;
+            }, false);
+
+            alreadyRan = true;
+        };
+    })();
+
+    MBP.coords = [];
+
+    // fn arg can be an object or a function, thanks to handleEvent
+    // read more about the explanation at: http://www.thecssninja.com/javascript/handleevent
+    function addEvt(el, evt, fn, bubble) {
+        if ('addEventListener' in el) {
+            // BBOS6 doesn't support handleEvent, catch and polyfill
+            try {
+                el.addEventListener(evt, fn, bubble);
+            } catch(e) {
+                if (typeof fn == 'object' && fn.handleEvent) {
+                    el.addEventListener(evt, function(e){
+                        // Bind fn as this and set first arg as event object
+                        fn.handleEvent.call(fn,e);
+                    }, bubble);
+                } else {
+                    throw e;
+                }
+            }
+        } else if ('attachEvent' in el) {
+            // check if the callback is an object and contains handleEvent
+            if (typeof fn == 'object' && fn.handleEvent) {
+                el.attachEvent('on' + evt, function(){
+                    // Bind fn as this
+                    fn.handleEvent.call(fn);
+                });
+            } else {
+                el.attachEvent('on' + evt, fn);
+            }
+        }
     }
-  } else {
-    this.addClickEvent(element);
-  }
-};
- 
-MBP.fastButton.prototype.handleEvent = function(event) {
-	event = event || window.event;
-  switch (event.type) {
-    case 'touchstart': this.onTouchStart(event); break;
-    case 'touchmove': this.onTouchMove(event); break;
-    case 'touchend': this.onClick(event); break;
-    case 'click': this.onClick(event); break;
-  }
-};
 
-MBP.fastButton.prototype.onTouchStart = function(event) {
-  var element = event.srcElement;
-  event.stopPropagation();
-  element.addEventListener('touchend', this, false);
-  document.body.addEventListener('touchmove', this, false);
-  this.startX = event.touches[0].clientX;
-  this.startY = event.touches[0].clientY;
-  element.style.backgroundColor = "rgba(0,0,0,.7)";
-};
-
-MBP.fastButton.prototype.onTouchMove = function(event) {
-  if(Math.abs(event.touches[0].clientX - this.startX) > 10 || 
-    Math.abs(event.touches[0].clientY - this.startY) > 10    ) {
-    this.reset(element);
-  }
-};
-
-MBP.fastButton.prototype.onClick = function(event) {
-	event = event || window.event;
-  var element = event.srcElement;
-  if (event.stopPropagation) { event.stopPropagation(); }
-  this.reset(event);
-  this.handler.apply(event.currentTarget, [event]);
-  if(event.type == 'touchend') {
-    MBP.preventGhostClick(this.startX, this.startY);
-  }
-  element.style.backgroundColor = "";
-};
-
-MBP.fastButton.prototype.reset = function(event) {
-  var element = event.srcElement;
-	rmEvt(element, "touchend", this, false);
-	rmEvt(document.body, "touchmove", this, false);
-  element.style.backgroundColor = "";
-};
-
-MBP.fastButton.prototype.addClickEvent = function(element) {
-  addEvt(element, "touchstart", this, false);
-  addEvt(element, "click", this, false);
-};
-
-MBP.preventGhostClick = function (x, y) {
-  MBP.coords.push(x, y);
-  window.setTimeout(function (){
-    MBP.coords.splice(0, 2);
-  }, 2500);
-};
-
-MBP.ghostClickHandler = function (event) {
-  if (!MBP.hadTouchEvent && 'ontouchstart' in window) {
-    // This is a bit of fun for Android 2.3...
-    // If you change window.location via fastButton, a click event will fire
-    // on the new page, as if the events are continuing from the previous page.
-    // We pick that event up here, but MBP.coords is empty, because it's a new page,
-    // so we don't prevent it. Here's we're assuming that click events on touch devices
-    // that occur without a preceding touchStart are to be ignored. 
-    event.stopPropagation();
-    event.preventDefault();
-    return;
-  }
-  for(var i = 0, len = MBP.coords.length; i < len; i += 2) {
-    var x = MBP.coords[i];
-    var y = MBP.coords[i + 1];
-    if(Math.abs(event.clientX - x) < 25 && Math.abs(event.clientY - y) < 25) {
-      event.stopPropagation();
-      event.preventDefault();
+    function rmEvt(el, evt, fn, bubble) {
+        if ('removeEventListener' in el) {
+            // BBOS6 doesn't support handleEvent, catch and polyfill
+            try {
+                el.removeEventListener(evt, fn, bubble);
+            } catch(e) {
+                if (typeof fn == 'object' && fn.handleEvent) {
+                    el.removeEventListener(evt, function(e){
+                        // Bind fn as this and set first arg as event object
+                        fn.handleEvent.call(fn,e);
+                    }, bubble);
+                } else {
+                    throw e;
+                }
+            }
+        } else if ('detachEvent' in el) {
+            // check if the callback is an object and contains handleEvent
+            if (typeof fn == 'object' && fn.handleEvent) {
+                el.detachEvent("on" + evt, function() {
+                    // Bind fn as this
+                    fn.handleEvent.call(fn);
+                });
+            } else {
+                el.detachEvent('on' + evt, fn);
+            }
+        }
     }
-  }
-};
-
-if (document.addEventListener) {
-  document.addEventListener('click', MBP.ghostClickHandler, true);
-}
-
-addEvt( document.documentElement, 'touchstart', function() {
-  MBP.hadTouchEvent = true;
-}, false);
-                            
-MBP.coords = [];
-
-// fn arg can be an object or a function, thanks to handleEvent
-// read more about the explanation at: http://www.thecssninja.com/javascript/handleevent
-function addEvt(el, evt, fn, bubble) {
-  if("addEventListener" in el) {
-    // BBOS6 doesn't support handleEvent, catch and polyfill
-    try {
-      el.addEventListener(evt, fn, bubble);
-    } catch(e) {
-      if(typeof fn == "object" && fn.handleEvent) {
-        el.addEventListener(evt, function(e){
-        // Bind fn as this and set first arg as event object
-        fn.handleEvent.call(fn,e);
-        }, bubble);
-      } else {
-        throw e;
-      }
-    }
-  } else if("attachEvent" in el) {
-    // check if the callback is an object and contains handleEvent
-    if(typeof fn == "object" && fn.handleEvent) {
-      el.attachEvent("on" + evt, function(){
-        // Bind fn as this
-        fn.handleEvent.call(fn);
-      });
-    } else {
-      el.attachEvent("on" + evt, fn);
-    }
-  }
-}
-
-function rmEvt(el, evt, fn, bubble) {
-  if("removeEventListener" in el) {
-    // BBOS6 doesn't support handleEvent, catch and polyfill
-    try {
-      el.removeEventListener(evt, fn, bubble);
-    } catch(e) {
-      if(typeof fn == "object" && fn.handleEvent) {
-        el.removeEventListener(evt, function(e){
-          // Bind fn as this and set first arg as event object
-          fn.handleEvent.call(fn,e);
-        }, bubble);
-      } else {
-        throw e;
-      }
-    }
-  } else if("detachEvent" in el) {
-    // check if the callback is an object and contains handleEvent
-    if(typeof fn == "object" && fn.handleEvent) {
-      el.detachEvent("on" + evt, function(){
-        // Bind fn as this
-        fn.handleEvent.call(fn);
-      });
-    } else {
-      el.detachEvent("on" + evt, fn);
-    }
-  }
-}
 
 
-/* 
-  * Enable active
-  * Enable CSS active pseudo styles in Mobile Safari
-  * http://miniapps.co.uk/blog/post/enable-css-active-pseudo-styles-in-mobile-safari/
-*/
+    /**
+     * Enable CSS active pseudo styles in Mobile Safari
+     * http://alxgbsn.co.uk/2011/10/17/enable-css-active-pseudo-styles-in-mobile-safari/
+     */
 
-MBP.enableActive = function () {
-  document.addEventListener("touchstart", function() {}, false);
-};
+    MBP.enableActive = function() {
+        document.addEventListener('touchstart', function() {}, false);
+    };
 
 })(document);
