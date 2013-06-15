@@ -28,30 +28,4 @@
 		}
 	}
 
-	/* Stream View */
-	
-	.blog .masonryWrap,
-	.search .masonryWrap {
-		margin-top: 3em;
-		padding-top: 2.25em;
-		.divider-bottom();
-		
-		&:last-child {
-			.no-divider-bottom();
-		}
-	}
-
-	.blog .masonryWrap article.format-image:first-child .posttype,
-	.search .masonryWrap article.format-image:first-child .posttype {
-		width: 200%;
-		float: none;
-		text-align: center;
-		margin-top: -2.25em;
-	}
-	
-	.blog .masonryWrap article.format-image + article.format-image .posttype,
-	.search .masonryWrap article.format-image + article.format-image .posttype {
-		display: none;
-	}
-
 }

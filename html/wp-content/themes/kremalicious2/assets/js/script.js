@@ -66,33 +66,6 @@ var lightbox = {
 
 var photoGrid = {
 
-	photoStreamGridSetup: function() {
-
-		if ( $('body.blog, body.search').length > 0 ) {
-
-			var $mainContent = $('section[role="main"]'),
-				// a bit weird logic because we have no dividers we can throw at nextUntil()
-				// but it works, so who would complain
-				noPhotoPhosts	= $mainContent.find('article.format-standard, article.format-link'),
-				// used when there's no non-image post before image group on a page
-				photoPostSibling = $mainContent.find('article.format-image:first + article.format-image');
-
-	    	noPhotoPhosts.each(function() {
-	    		// only fire when has image sibling
-	    		if ( $(this).nextUntil(noPhotoPhosts).length > 1 ) {
-	    			$(this).nextUntil(noPhotoPhosts, 'article').wrapAll('<div class="masonryWrap"></div>');
-	    		}
-	    	});
-
-			if ( !photoPostSibling.parent('.masonryWrap').length > 0 ) {
-				photoPostSibling
-					.prevAll('article.format-image').andSelf()
-					.nextAll('article.format-image').andSelf()
-					.wrapAll('<div class="masonryWrap"></div>');
-			}
-		}
-	},
-
 	masonryLayout: function() {
 		var $container = $('section[role="main"] .masonryWrap');
 
@@ -109,11 +82,8 @@ var photoGrid = {
 
 	init: function(){
 		// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
-		if ( $('section[role="main"] .format-image').length > 0 && Modernizr.mq('only screen and (min-width: 481px)')  ) {
-			this.photoStreamGridSetup();
-			if ( $('section[role="main"] .masonryWrap').length > 0 ) {
-				this.masonryLayout();
-			}
+		if ( $('section[role="main"] .masonryWrap').length > 0 && Modernizr.mq('only screen and (min-width: 481px)') ) {
+			this.masonryLayout();
 		}
 	}
 
