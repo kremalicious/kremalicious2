@@ -5,11 +5,12 @@
 	<section role="main" id="main">
 		<?php if ( is_category('photos') ) { ?>
 		<div class="masonryWrap">
-		<?php } ?>
-
-		<?php get_template_part('loop', 'index'); ?>
-		
-		<?php if ( is_category('photos') ) { ?>
+    		<div class="grid-sizer"></div>
+    		<?php } ?>
+    
+    		<?php get_template_part('loop', 'index'); ?>
+    		
+    		<?php if ( is_category('photos') ) { ?>
 		</div> <!--END #masonryWrap-->
 		<?php } ?>
 	</section>
