@@ -6,7 +6,14 @@
 				<p id="description">Blog of designer &amp; developer <a href="http://matthiaskretschmann.com">Matthias Kretschmann</a></p>
 				<?php krlc2_subscribe_buttons(); ?>
 				<div id="tweetsWrap">
-					<div id="tweets" class="dimmed"></div>
+					<a class="twitter-timeline" href="https://twitter.com/kremalicious" 
+					    data-widget-id="345994075649998848" 
+					    data-theme="light" 
+					    data-chrome="nofooter noborders noheader transparent" 
+					    data-link-color="#cc0000"
+					    data-tweet-limit="1" 
+					    data-show-replies="false" 
+					    lang="EN"></a>
 					<a class="btn socialite twitter-follow" href="https://twitter.com/kremalicious"><i class="icon-twitter"></i> Follow @kremalicious</a>
 				</div>
 			</section>
