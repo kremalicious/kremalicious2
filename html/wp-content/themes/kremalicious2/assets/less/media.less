@@ -91,3 +91,17 @@ img.aligncenter,
 	line-height: 1.5em;
 	.dimmed
 }
+
+@media @breakpoint2 {
+	img.alignleft,
+	.wp-caption.alignleft { margin: 0 1.5em 1.5em 0; float: left; }
+	
+	img.alignright,
+	.wp-caption.alignright { margin: 0 0 1.5em 1.5em; float: right;	}
+	
+	.single .photoPostWrap,
+	.masonryWrap {
+		width: 100%;
+		margin-left: 0;
+	}
+}
