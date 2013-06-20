@@ -28,7 +28,6 @@
 
 //@codekit-prepend "bootstrap-tooltip.js"
 //@codekit-prepend "bootstrap-transition.js"
-//@codekit-prepend "libs/jquery.fancybox.js"
 
 //@codekit-prepend "plugins.js"
 
