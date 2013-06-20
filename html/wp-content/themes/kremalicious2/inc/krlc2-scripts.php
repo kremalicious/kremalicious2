@@ -24,14 +24,14 @@ add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
 
 
 function krlc2_admin_scripts_styles() {
-	wp_enqueue_style('krlc2_admin_style', auto_version('/wp-content/themes/kremalicious2/assets/css/admin.min.css'), false, null);
+	wp_enqueue_style('krlc2_admin_style', auto_version('/wp-content/themes/kremalicious2/assets/css/wp-admin.min.css'), false, null);
 	wp_enqueue_script('krlc2_quicktags', auto_version('/wp-content/themes/kremalicious2/assets/js/quicktags.js'),array('quicktags'));
 }
 add_action('admin_enqueue_scripts', 'krlc2_admin_scripts_styles', 100);
 
 
 function krlc2_login_scripts_styles() {
-	wp_enqueue_style('krlc2_login_style', auto_version('/wp-content/themes/kremalicious2/assets/css/login.min.css'), false, null);
+	wp_enqueue_style('krlc2_login_style', auto_version('/wp-content/themes/kremalicious2/assets/css/wp-login.min.css'), false, null);
 }
 add_action('login_enqueue_scripts', 'krlc2_login_scripts_styles', 100);
 
@@ -58,9 +58,7 @@ add_action('admin_enqueue_scripts', 'krlc2_syntax_theme_admin', 100);
 // props: https://gist.github.com/1584783
 function add_async_to_js( $url ) {
     if (
-    //FALSE === strpos( $url, 'jquery.min' ) and
-    FALSE === strpos( $url, 'comment-reply' ) or
-    FALSE === strpos( $url, '.js' )
+    	FALSE === strpos( $url, '.js' )
     ) {
         return $url;
     }
