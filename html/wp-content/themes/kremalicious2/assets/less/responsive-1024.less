@@ -3,29 +3,6 @@
 /* LANDSCAPE TABLET/NETBOOK/LAPTOP */
 @media only screen and (min-width: 65.000em) { 
 	
-	//////////
-	// GRID //
-	//////////
-	
-	section[role="main"],
-	.pager,
-	#hello .entry-content,
-	#work .work-content {
-		.column(7.5); // lets just not talk about those comma values
-		.push(1);
-		float: right;
-	}
-	
-	.page section[role="main"] {
-		.column(12);
-	}
-	
-	aside[role="complementary"],
-	#hello-blog,
-	#work header {
-		.column(3.5)
-	}
-	
 	#work {
 		header { clear: both; }
 		.work-content {
@@ -41,14 +18,7 @@
 			}
 		}
 	}
-	
-	.pager {
-		.push(4.5);
-		.single & {
-			.column(12);
-			.push(0)
-		}
-	}
+
 	
 	header[role="banner"] {
 		width: 25.5%;
@@ -73,30 +43,6 @@
 	#menubar #searchform input#s:focus {
 		width: 450px;
 	}
-	
-	// Single only
-	.single section[role="main"] {
-		.column(12);
-		.hentry {
-			.row(12);
-			header {
-				.column(12,12)
-			}
-			aside.entry-meta {
-				.column(3.5,12);
-			}
-			.entry-content,
-			#comments {
-				.column(7.5,12);
-				.push(1);
-				float: right;
-			}
-			#comments {
-				.push(4.5)
-			}
-		}
-		
-	}
 
 	.posttype {
 		display: inline;
@@ -109,11 +55,6 @@
 	}
 	
 	#siteMeta {
-		.no-divider-bottom;
-		#description,
-		#subscribe {
-			.column(12);
-		}
 		#description {
 			margin-bottom: 1.5em;
 		}
@@ -132,7 +73,6 @@
 			#description,
 			#subscribe,
 			#tweetsWrap {
-				.column(4.5);
 				clear: none;
 				.no-divider-top;
 			}
