@@ -1,11 +1,14 @@
-	</section> <!-- END role=document -->
+</section> <!-- END role=document -->
 	
-	<footer role="contentinfo">
-		<?php if ( is_singular() OR is_archive() ) { ?>
-			<section id="siteMeta">
+	<footer role="contentinfo" class="container">
+
+		<section id="siteMeta" class="row">
+			<div class="col3">
 				<p id="description">Blog of designer &amp; developer <a href="http://matthiaskretschmann.com">Matthias Kretschmann</a></p>
 				<?php krlc2_subscribe_buttons(); ?>
-				<div id="tweetsWrap">
+			</div>
+			<div class="col3">
+				<aside id="tweetsWrap">
 					<a class="twitter-timeline" href="https://twitter.com/kremalicious" 
 					    data-widget-id="345994075649998848" 
 					    data-theme="light" 
@@ -15,13 +18,15 @@
 					    data-show-replies="false" 
 					    lang="EN"></a>
 					<a class="btn socialite twitter-follow" href="https://twitter.com/kremalicious"><i class="icon-twitter"></i> Follow @kremalicious</a>
-				</div>
-			</section>
-		<?php } ?>
+				</aside>
+			</div>
+		</section>
 		
-		<section id="siteCopyright" class="dimmed">
-			<p>© 2007-<?php echo date('Y'); ?> <a href="http://matthiaskretschmann.com" rel="me">Matthias Kretschmann</a>.</p>
-			<p class="license">Code snippets: <a rel="item-license" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. Goodies: <a rel="item-license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY NC SA</a>. Hosted by <a href="http://www.mediatemple.net#a_aid=4f37f8fe3e47e" title="Media Temple">(mt)</a></p>
+		<section id="siteCopyright" class="row dimmed">
+			<div class="col6">
+				<p>© 2007-<?php echo date('Y'); ?> <a href="http://matthiaskretschmann.com" rel="me">Matthias Kretschmann</a>.</p>
+				<p class="license">Code snippets: <a rel="item-license" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. Goodies: <a rel="item-license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY NC SA</a>. Hosted by <a href="http://www.mediatemple.net#a_aid=4f37f8fe3e47e" title="Media Temple">(mt)</a></p>
+				</div>
 		</section>
 	</footer>
 	

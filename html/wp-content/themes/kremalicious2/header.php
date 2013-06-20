@@ -88,8 +88,8 @@
 
 <body <?php body_class(); ?>>
 
-	<section id="menubar-wrap">
-		<div id="menubar">
+	<section id="menubar-wrap" class="container">
+		<div id="menubar" class="row">
 			<header role="banner">
 				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
 			</header>
@@ -116,5 +116,5 @@
 		</div>
 	</section>
 	
-	<section role="document">
+	<section role="document" class="container">
 		
