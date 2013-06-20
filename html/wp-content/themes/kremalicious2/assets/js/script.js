@@ -101,25 +101,11 @@ var interface = {
 		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
 
-	// rememberCloseAlerts: function() {
-	// 	var alertToRemember = $('#content').find('.rememberClose');
-	// 	alertToRemember.bind('close', function () {
-	// 		$.cookie('alertmessage','dismissed');
-	// 	});
-
-	// 	var alertDismissed = $.cookie('alertmessage');
-	// 	if ( $.cookie('alertmessage') ) {
-	// 		alertToRemember.detach();
-	// 	}
-
-	// },
-
 	init: function(){
 		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
 			this.bannerHomeLink();
 		}
 		this.toolTips();
-		//this.rememberCloseAlerts();
 		$('#respond label').inFieldLabels();
 		$('#topicmenu .dropdown-toggle').dropdown();
 	}
