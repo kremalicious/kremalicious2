@@ -50,24 +50,24 @@
 		else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-				<header class="featureTitle">
+				<header class="row featureTitle">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
 				</header>
 			<?php } else { ?>
-				<header>
+				<header class="row">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
 			<?php } ?>
 			
-			<aside class="entry-meta">
+			<aside class="row entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
 			</aside>
 						
 		<?php } ?>
 		
-			<section class="entry-content">
+			<section class="row entry-content">
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
@@ -77,7 +77,7 @@
 						the_content();
 					} ?>
 				
-				<footer class="entry-meta">
+				<footer class="row entry-meta">
 					<p><?php 
 						$parentscategory ="";
 						foreach((get_the_category()) as $category) {
@@ -90,12 +90,7 @@
 					</p>
 				</footer>
 			</section>
-			
-		<nav id="post-nav-single" class="pager">
-			<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
-			<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
-		</nav>	
-				
+
 	</article>
     
 <?php endwhile; /* End loop */ ?>

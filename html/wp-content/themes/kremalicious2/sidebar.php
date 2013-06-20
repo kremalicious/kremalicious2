@@ -1,5 +1,5 @@
 
-<aside role="complementary">
+<aside role="complementary" class="row">
 
 	<?php if ( is_archive() ) { ?>
 		
