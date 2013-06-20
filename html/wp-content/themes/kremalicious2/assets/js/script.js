@@ -119,43 +119,6 @@ var interface = {
 		});
 	},
 
-	commentShowup: function(){
-		var $commentStuff 		= $('#commentlistWrap, #respond'),
-			$commentStuffHidden = $commentStuff.detach(),
-			$commentTrigger 	= $('#comments #commentShow');
-
-		$commentTrigger.addClass('btn');
-
-		$commentTrigger.click(function() {
-			showTheComments();
-			$('html, body').animate({scrollTop: $commentTrigger.offset().top}, 500);
-		});
-
-		// comments paged nav case
-		if ( location.href.indexOf('#comments') != -1 ) {
-			showTheComments();
-		}
-		// comment link case
-		if ( location.href.indexOf('#comment') != -1 ) {
-			showTheComments();
-		}
-
-		function showTheComments() {
-
-			if ( $commentStuffHidden ) {
-				$commentStuffHidden.insertAfter('#commentShow').find('label').inFieldLabels();
-				$commentStuffHidden = null;
-				$('#comments .load-gravatar').async_gravatars({ ssl: true, size: 80 });
-			}
-			else {
-				$commentStuffHidden = $commentStuff.detach();
-			}
-			$commentTrigger.toggleClass('open');
-
-		}
-
-	},
-
 	toolTips: function() {
 		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
@@ -174,7 +137,6 @@ var interface = {
 	// },
 
 	init: function(){
-		this.commentShowup();
 		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
 			this.bannerHomeLink();
 		}

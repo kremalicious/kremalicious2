@@ -9,11 +9,6 @@ function krlc2_scripts() {
 		wp_enqueue_script( 'jquery','','','', true );
 	}
 
-	// comment reply script
-	if (is_single() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply','/wp-includes/js/comment-reply.js','','', true);
-	}
-
 	// Scripts, print in wp_footer
 	wp_register_script('krlc2_scripts', auto_version('/wp-content/themes/kremalicious2/assets/js/kremalicious2.min.js'), array('jquery'), null, true);
 	wp_enqueue_script('krlc2_scripts','', array('jquery'),'', true);

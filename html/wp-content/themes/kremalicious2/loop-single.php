@@ -90,8 +90,6 @@
 					</p>
 				</footer>
 			</section>
-
-			<?php comments_template(); ?>
 			
 		<nav id="post-nav-single" class="pager">
 			<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
