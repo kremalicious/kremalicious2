@@ -63,20 +63,6 @@ function krlc2_feed_content( $content ) {
 add_filter( 'the_content_feed', 'krlc2_feed_content' );
 
 
-// escape html entities in comments
-// thanks http://digwp.com/2010/04/wordpress-custom-functions-php-template-part-2/
-function encode_html_code_in_comment($source) {
-	$encoded = preg_replace_callback('/<code>(.*?)<\/code>/ims',
-	create_function('$matches', '$matches[1] = preg_replace(array("/^[\r|\n]+/i", "/[\r|\n]+$/i"), "", $matches[1]); 
-	return "<pre><code>" . htmlentities($matches[1]) . "</"."code></pre>";'), $source);
-	if ($encoded)
-		return $encoded;
-	else
-		return $source;
-}
-add_filter('pre_comment_content', 'encode_html_code_in_comment');
-
-
 // Goodies Download Button Shortcode
 function krlc2_goodie_download_shortcode( $atts, $content = null ) {
  	
