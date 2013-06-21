@@ -25,8 +25,8 @@
 	 _____________________________________________
 -->
 
-<!--[if IE 8]>			<html class="no-js lt-ie9" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
-<!--[if gt IE 8]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
+<!--[if IE 9]>			<html class="no-js lt-ie10" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
+<!--[if gt IE 9]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	
@@ -90,8 +90,8 @@
 
 	<section id="menubar-wrap" class="container">
 		<div id="menubar" class="row">
-			<header role="banner">
-				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
+			<header role="banner" class="banner">
+				<h1 class="banner-title"><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
 			</header>
 			<nav role="navigation" class="fade in">
 				<ul>

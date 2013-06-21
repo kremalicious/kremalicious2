@@ -12,4 +12,23 @@ body {
 	@media @highDPI {
 		.bodyTexture_2x;
 	}
+	
+	@media @breakpoint2 {
+		padding-bottom: 50px;
+		font-size: 18px;
+		line-height: 26px;
+		
+		&:after {
+			content: "";
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			#gradient > .vertical(rgba(231, 238, 244, 0), rgba(231, 238, 244, 1));
+		}
+	}
 }
+
+
+
