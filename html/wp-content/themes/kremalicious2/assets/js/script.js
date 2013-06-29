@@ -13,7 +13,6 @@
 
 */
 
-//@codekit-prepend "bootstrap-dropdown.js"
 //@codekit-prepend "libs/masonry/masonry.js"
 //@codekit-prepend "libs/infinitescroll/jquery.infinitescroll.js"
 //@codekit-prepend "libs/socialite/socialite.js"
