@@ -40,11 +40,6 @@ a[rel^="category "]:before {
   .transition(color .3s ease-in-out);
 }
 
-#menubar [class^="icon-"]:before,
-#menubar [class*=" icon-"]:before {
-	color: darken(@textColorDimmed,15%)
-}
-
 .btn-primary[class*="icon-"]:before {
 	color: fade(#133832, 80%);
 }
@@ -81,19 +76,6 @@ a {
     line-height: .6em;
     &.icon-spin {
       display: inline-block;
-    }
-  }
-}
-
-li {
-  [class^="icon-"],
-  [class*=" icon-"] {
-    display: inline-block;
-    width: 1.25em;
-    text-align: center;
-    &.icon-large {
-      /* increased font size for icon-large */
-      width: 1.25*1.25em;
     }
   }
 }

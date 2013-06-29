@@ -228,3 +228,51 @@ aside[role="complementary"] br,
 #topics br {
 	display: none;
 }
+
+@media only screen and (min-width: 40.625em) {
+	
+	#siteMeta {
+		#description {
+			margin-bottom: 0;
+		}
+	}
+	
+	.hentry { 
+		padding: 3.5em 0;
+	}
+	
+	.photoPost figure {
+		.box-shadow(~"0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff");
+		.transition();
+		
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: -2;
+		}
+		
+		&:before {
+			top: 0;
+			bottom: 0;
+			left: 10px;
+			right: 10px;
+			.border-radius( 100px / 10px);
+			.box-shadow(0 0 15px rgba(0,0,0,0.3));
+		}
+	}
+	
+	#goodiesDownload p {
+		width: 49%;
+		float: left;
+		margin-left: 2%;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	
+	.btn.btn-block.col2 { width: 30%; float: left; }
+	.btn.btn-block.col4,
+	.btn.btn-primary.col4 { width: 65%; float: left; }
+		
+}
