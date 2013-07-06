@@ -94,19 +94,19 @@
     	</h1>
 	    <nav role="navigation" class="nav-main row">
 			<?php
-			    $goodies_id = get_cat_ID( 'Goodies' );
+			    $goodies_id = get_cat_ID( 'goodies' );
 			    $goodies_link = get_category_link( $goodies_id );
 				
-			    $photos_id = get_cat_ID( 'Photos' );
+			    $photos_id = get_cat_ID( 'photos' );
 			    $photos_link = get_category_link( $photos_id );
 				
-			    $personal_id = get_cat_ID( 'Personal' );
+			    $personal_id = get_cat_ID( 'personal' );
 			    $personal_link = get_category_link( $personal_id );
 				
-			    $design_id = get_cat_ID( 'Design' );
+			    $design_id = get_cat_ID( 'design' );
 			    $design_link = get_category_link( $design_id );
 				
-			    $photography_id = get_cat_ID( 'Photography' );
+			    $photography_id = get_cat_ID( 'photography' );
 			    $photography_link = get_category_link( $photography_id );
 			?>
 	    	<ul>

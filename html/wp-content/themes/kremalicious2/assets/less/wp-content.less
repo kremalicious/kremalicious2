@@ -23,6 +23,7 @@
 	h2 { margin-top: 0; }
 }
 
+// post category icons
 .posttype {
 	display: block;
 	width: 20px;
@@ -33,15 +34,23 @@
 	// icon adjustments
 	&:before {
 		font-size: 20px;
+		color: @textColorLight
+	}
+	
+	&:hover:before {
+		color: @linkColor
 	}
 }
 
 .more-link {
 	.btn;
+	background: none;
+	border: none;
+	box-shadow: none;
+	padding: 0;
 	
-	i {
-		margin-left: .5em;
-		font-size: .9em;
+	&:hover {
+		background: none;
 	}
 }
 
@@ -91,24 +100,8 @@ footer.entry-meta {
 
 // LINK POST
 
-h1 i.icon-external-link,
-h2 i.icon-external-link {
-	font-size: .6em;
-	margin-left: .3em;
-}
-
-h1 a:hover i:before,
-h2 a:hover i:before {
-	color: @linkColor;
-}
-
-.more-link i.icon-external-link {
-	font-size: .8em;
-}
-
 .permalink-link {
 	float: right;
-	margin-top: -1.7em;
 }
 
 .format-link header h1,

@@ -24,14 +24,14 @@
 			$leTopic 	= get_the_category(); ?>
 			
 			<header>
-				<a class="icon- cat-<?php echo $leTopic[0]->slug; ?> posttype" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
+				<a class="icon-<?php echo $leTopic[0]->slug; ?> posttype" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
 				<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 			</header>
 			<?php if (!is_search()) { ?>
 			<section class="entry-content">
-				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+				<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
 				<p>
-					<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
+					<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-forward"></i></a>
 					<a class="permalink-link" href="<?php the_permalink(); ?>" rel="tooltip" title="Permalink">&#8734;</a>
 				</p>
 			<?php } else { ?>
@@ -59,12 +59,14 @@
 					</figure>
 				</a>
 			
-			
 		<?php 
 			// Stream layout
 			} else { ?>
-			
-				<a class="icon-picture posttype" rel="tooltip" href="/photos" title="Show all photo posts"></a>
+				<?php
+				    $photos_id = get_cat_ID( 'photos' );
+				    $photos_link = get_category_link( $photos_id );
+				?>
+				<a class="icon-pictures posttype" rel="tooltip" href="<?php echo esc_url( $photos_link ); ?>" title="Show all photo posts"></a>
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
 						<?php the_post_thumbnail('photoStream'); ?>
@@ -91,7 +93,7 @@
 					<?php the_post_thumbnail( 'goodieImage' ); ?>
 				</a></p>
 			<?php } else { ?>
-				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+				<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
 			<?php } ?>
 			
 			<footer id="goodiesDownload" class="clearfix">
@@ -101,7 +103,7 @@
 					
 					if ($attachments) {
 						$attachment = array_shift($attachments); ?>
-						<p><a class="btn icon-download-alt" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
+						<p><a class="btn icon-arrow-down" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
 				<?php } ?>
 				<p><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
 			</footer>
@@ -116,7 +118,7 @@
 		elseif ( in_category('goodies') ) { ?>
 			
 			<header>
-				<a class="icon-gift posttype" rel="tooltip" href="/goodies" title="Show all goodies"></a>
+				<a class="icon-heart posttype" rel="tooltip" href="<?php echo esc_url( $goodies_link ); ?>" title="Show all goodies"></a>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( !is_search() ) { ?>
@@ -126,7 +128,7 @@
 					</a></p>
 				<?php } ?>
 				
-				<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+				<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
 			<?php } ?>
 		
 		<?php }
@@ -139,11 +141,11 @@
 			
 			<header>
 				<?php if ( in_category('design') ) { ?>
-					<a class="icon-leaf posttype" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
+					<a class="icon-leaf posttype" rel="tooltip" href="<?php echo esc_url( $design_link ); ?>" title="Show all posts in 'design'"></a>
 				<?php } elseif ( in_category('personal') ) { ?>
-					<a class="icon-user posttype" rel="tooltip" href="/personal" title="Show all posts in 'personal'"></a>
+					<a class="icon-user posttype" rel="tooltip" href="<?php echo esc_url( $personal_link ); ?>" title="Show all posts in 'personal'"></a>
 				<?php } elseif ( in_category('photography') ) { ?>
-					<a class="icon-camera-retro posttype" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
+					<a class="icon-camera posttype" rel="tooltip" href="<?php echo esc_url( $photography_link ); ?>" title="Show all posts in 'photography'"></a>
 				<?php } else { ?>
 					<a class="icon-asterisk posttype" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
 				<?php } ?>
@@ -157,7 +159,7 @@
 						</a>
 					<?php } ?>
 					
-					<?php the_content('Continue reading <i class="icon-chevron-right"></i>'); ?>
+					<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
 				</section>
 			<?php } ?>
 
