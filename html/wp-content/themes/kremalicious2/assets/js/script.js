@@ -63,38 +63,11 @@ var photoGrid = {
 
 var interface = {
 
-	bannerHomeLink: function() {
-
-		var $bannerTrigger  = $('#home span'),
-			$banner			= $('header[role="banner"]');
-
-		$bannerTrigger.hover(function() {
-
-			if (Modernizr.cssanimations) {
-				$banner.addClass('bannerSlideUp').removeClass('bannerFallDown');
-			} else {
-				$banner.stop().animate({'top':'-82px'}, 100, 'easeInCubic');
-			}
-
-		}, function() {
-
-			if (Modernizr.cssanimations) {
-				$banner.addClass('bannerFallDown').removeClass('bannerSlideUp');
-			} else {
-				$banner.stop().animate({'top':'0'}, 600, 'easeOutBounce');
-			}
-
-		});
-	},
-
 	toolTips: function() {
 		$('section[role="document"] [rel="tooltip"]').tooltip();
 	},
 
 	init: function(){
-		if ( Modernizr.mq('only screen and (min-width: 40.625em)')  ) {
-			this.bannerHomeLink();
-		}
 		this.toolTips();
 		$('#respond label').inFieldLabels();
 	}
