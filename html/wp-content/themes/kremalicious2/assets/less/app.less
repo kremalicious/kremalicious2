@@ -18,27 +18,57 @@
 }
 
 /* ============================================================== */
-/*	SIDEBAR & FOOTER */
+/*	FOOTER */
 /* ============================================================== */
 
-// Site meta components
-#siteMeta {
-	#description {
-		margin-bottom: 1.5em;
-		font-style: italic;
-		color: @textColorLight;
-	}
+// Footer
+footer[role="contentinfo"] {
+	margin-top: 3em;
+	text-align: center;
+	background: rgba(255,255,255,.5);
 	
-	#tweetsWrap {
-		.clearfix;
-		margin: 0;
-		padding-top: 2em;
-		padding-bottom: 2em;
-		#tweets { 
-			padding-right: 0;
-		}
+	.single & {
+		margin-top: 0;
 	}
 }
+
+// Tweets area component
+#tweetsWrap {
+	min-height: 120px;
+	margin-bottom: 1.5em;
+	#tweets {
+		font-size: .85em;
+		line-height: 1.6em;
+		padding-right: 1em;
+		position: relative;
+		margin-bottom: 1em;
+		ul {
+			list-style: none;
+			margin-bottom: 0;
+			li {
+				margin-bottom: 1.5em;
+				color: lighten(@textColorDimmed, 5%);
+				.transition();
+			}
+		}
+		.tweet_time {
+			display: block;
+			font-size: .8em;
+			font-style: italic;
+			margin-top: .2em;
+			a {
+				color: @textColorDimmed;
+			}
+		}
+	}
+	
+	#tweets li:hover a,
+	#tweets li:hover .tweet_time a,
+	.touch & #tweets li a {
+		color: @linkColorHover;
+	}
+}
+
 
 // Subscribe only component
 #subscribe {
@@ -85,71 +115,24 @@
 	}
 }
 
-aside[role="complementary"]:hover #subscribe .rss i,
 footer[role="contentinfo"]:hover #subscribe .rss i,
-.touch aside[role="complementary"] #subscribe .rss i,
 .touch footer[role="contentinfo"] #subscribe .rss i {
 	color: #e15a00;
 }
 
-aside[role="complementary"]:hover #subscribe .twitter i,
 footer[role="contentinfo"]:hover #subscribe .twitter i,
-.touch aside[role="complementary"] #subscribe .twitter i,
 .touch footer[role="contentinfo"] #subscribe .twitter i {
 	color: #019ad2;
 }
 
-aside[role="complementary"]:hover #subscribe .google i,
 footer[role="contentinfo"]:hover #subscribe .google i,
-.touch aside[role="complementary"] #subscribe .google i,
 .touch footer[role="contentinfo"] #subscribe .google i {
 	color: #c63b1e;
 }
 
-aside[role="complementary"]:hover #subscribe .facebook i,
 footer[role="contentinfo"]:hover #subscribe .facebook i,
-.touch aside[role="complementary"] #subscribe .facebook i,
 .touch footer[role="contentinfo"] #subscribe .facebook i {
 	color: #3b5998;
-}
-
-#tweetsWrap,
-#topics {
-	margin-bottom: 1.5em;
-}
-
-// Tweets area component
-#tweetsWrap {
-	min-height: 120px;
-	#tweets {
-		font-size: .85em;
-		line-height: 1.6em;
-		padding-right: 1em;
-		position: relative;
-		margin-bottom: 1em;
-		ul {
-			list-style: none;
-			margin-bottom: 0;
-			li {
-				margin-bottom: 1.5em;
-				color: lighten(@textColorDimmed, 5%);
-				.transition();
-			}
-		}
-		.tweet_time {
-			display: block;
-			font-size: .8em;
-			font-style: italic;
-			margin-top: .2em;
-			a {
-				color: @textColorDimmed;
-			}
-		}
-	}
-}
-
-.home.blog #tweetsWrap {
-	display: none;
 }
 
 // Copyright component
@@ -162,45 +145,7 @@ footer[role="contentinfo"]:hover #subscribe .facebook i,
 	}
 }
 
-aside[role="complementary"] {
-	margin-bottom: 2em;
-	.divider-bottom;
-	.divider-top;
-	h1 {
-		margin-bottom: 0;
-		color: @textColorLight;
-	}
-	h1 a {	
-		border: none;
-		padding-right: .1em;
-		color: @textColorDimmed;
-	}
-}
 
-aside[role="complementary"]:hover h1 a,
-.touch aside[role="complementary"] h1 a {
-	color: @linkColorHover;
-}
-
-aside[role="complementary"] #tweetsWrap {
-	padding-top: 2em
-}
-
-#tweets li:hover a,
-#tweets li:hover .tweet_time a,
-.touch #tweets li a {
-	color: @linkColorHover;
-}
-
-footer[role="contentinfo"] {
-	margin-top: 3em;
-	.single & {
-		margin-top: 0;
-	}
-	.single & #siteMeta {
-		.no-divider-bottom
-	}
-}
 
 
 

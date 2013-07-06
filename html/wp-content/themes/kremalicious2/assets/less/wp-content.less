@@ -9,10 +9,6 @@
 		padding-top: 0;
 	}
 
-.hentry:last-child {
-	.no-divider-bottom();
-}
-
 .home .hentry p:last-child {
 	margin-bottom: 0;
 }
@@ -75,6 +71,8 @@ aside.entry-meta {
 		font-style: italic;
 		text-align: center;
 		color: @textColorDimmed;
+		font-size: .9em;
+		line-height: 1.4em
 	}
 	.byline {
 		margin-bottom: 0;
@@ -115,6 +113,10 @@ footer.entry-meta {
 
 
 // PHOTO POST
+
+.hentry.category-photos {
+	text-align: center
+}
 
 .photoPost figure,
 a.photoPost {

@@ -92,44 +92,7 @@
     	<h1 class="banner-title row">
     	    <a class="banner-logo" class="hide-text" href="<?php echo home_url(); ?>">kremalicious</a>
     	</h1>
-	    <nav role="navigation" class="nav-main row">
-			<?php
-			    $goodies_id = get_cat_ID( 'goodies' );
-			    $goodies_link = get_category_link( $goodies_id );
-				
-			    $photos_id = get_cat_ID( 'photos' );
-			    $photos_link = get_category_link( $photos_id );
-				
-			    $personal_id = get_cat_ID( 'personal' );
-			    $personal_link = get_category_link( $personal_id );
-				
-			    $design_id = get_cat_ID( 'design' );
-			    $design_link = get_category_link( $design_id );
-				
-			    $photography_id = get_cat_ID( 'photography' );
-			    $photography_link = get_category_link( $photography_id );
-			?>
-	    	<ul>
-	    		<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $goodies_link ); ?>">goodies</a>
-	    		</li>
-	    		<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $photos_link ); ?>">photos</a>
-	    		</li>
-	    		<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $personal_link ); ?>">personal</a>
-	    		</li>
-	    		<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $design_link ); ?>">design</a>
-	    		</li>
-	    		<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $photography_link ); ?>">photography</a>
-	    		</li>
-	    		<!--<li>
-	    			<?php get_search_form(); ?>
-	    		</li>	-->			
-	    	</ul>
-	    </nav>
+		<p class="banner-description">Blog of designer &amp; developer <a href="http://matthiaskretschmann.com">Matthias Kretschmann</a></p>
     </header>
     
 	<section role="document" class="container">
