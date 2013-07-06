@@ -1,3 +1,20 @@
+<?php
+    $goodies_id = get_cat_ID( 'goodies' );
+    $goodies_link = get_category_link( $goodies_id );
+	
+    $photos_id = get_cat_ID( 'photos' );
+    $photos_link = get_category_link( $photos_id );
+	
+    $personal_id = get_cat_ID( 'personal' );
+    $personal_link = get_category_link( $personal_id );
+	
+    $design_id = get_cat_ID( 'design' );
+    $design_link = get_category_link( $design_id );
+	
+    $photography_id = get_cat_ID( 'photography' );
+    $photography_link = get_category_link( $photography_id );
+?>
+
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if (!have_posts()) { ?>
 	<div class="alert alert-block fade in">
@@ -62,10 +79,6 @@
 		<?php 
 			// Stream layout
 			} else { ?>
-				<?php
-				    $photos_id = get_cat_ID( 'photos' );
-				    $photos_link = get_category_link( $photos_id );
-				?>
 				<a class="icon-pictures posttype" rel="tooltip" href="<?php echo esc_url( $photos_link ); ?>" title="Show all photo posts"></a>
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
@@ -105,7 +118,7 @@
 						$attachment = array_shift($attachments); ?>
 						<p><a class="btn icon-arrow-down" href="<?php echo wp_get_attachment_url($attachment->ID); ?>">Download <span>zip</span></a></p>
 				<?php } ?>
-				<p><a class="btn icon-info-sign" href="<?php the_permalink(); ?>">Release Post</a></p>
+				<p><a class="btn icon-info" href="<?php the_permalink(); ?>">Release Post</a></p>
 			</footer>
 			
 		<?php } 

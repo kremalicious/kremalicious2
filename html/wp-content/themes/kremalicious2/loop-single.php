@@ -71,7 +71,7 @@
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
-							<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
+							<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-forward"></i></a>
 						</p>
 					<?php } else {
 						the_content();
