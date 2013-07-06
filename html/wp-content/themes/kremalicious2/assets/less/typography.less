@@ -9,9 +9,13 @@ body {
 	font-weight: @baseFontWeight;
 	color: @textColor;
 	
-	@media only screen and (min-width: 87.500em) { 
+	@media @breakpoint3 { 
 		font-size: 125%;
 		line-height: 1.6em;	
+	}
+	
+	@media @highDPI {
+		font-weight: @baseFontWeightRetina;
 	}
 }
 
@@ -251,26 +255,6 @@ pre:hover {
 	background: rgba(255,255,255,.5);
 }
 
-	.no-touch .entry-content pre:hover {
-		margin-left: -10%;
-		margin-right: -10%;
-	}
-
-@media @breakpoint3 {
-	
-	.no-touch .entry-content pre:hover {
-		margin-left: -20%;
-		margin-right: -5%;
-	}
-}
-
-@media only screen and (min-width: 80.000em) { 
-
-	.no-touch .entry-content pre:hover {
-		margin-right: -20%;
-	}
-	
-}
 
 // SELECTION
 /////////////////////////////////////

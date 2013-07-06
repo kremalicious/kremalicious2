@@ -115,13 +115,13 @@
   background-repeat: no-repeat;
 }
 .dimmed {
-  color: #b3bec4;
+  color: #a5b2b8;
 }
 .dimmed p {
-  color: #b3bec4;
+  color: #a5b2b8;
 }
 .dimmed li {
-  color: #b3bec4;
+  color: #a5b2b8;
 }
 .divider-top {
   position: relative;
@@ -215,7 +215,7 @@
 }
 .btn-tag:before {
   content: "#";
-  color: #b3bec4;
+  color: #a5b2b8;
 }
 .btn-primary,
 a.btn-primary:visited {
@@ -327,7 +327,7 @@ a[rel*="tag"],
 a[rel*="tag"]:before,
 #topics a:before {
   content: "#";
-  color: #b3bec4;
+  color: #a5b2b8;
 }
 #cancel-comment-reply-link {
   color: #7f2924;
@@ -399,7 +399,7 @@ html,
 body,
 #wpbody,
 .form-table .pre {
-  color: #56666e;
+  color: #61737c;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
   font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
