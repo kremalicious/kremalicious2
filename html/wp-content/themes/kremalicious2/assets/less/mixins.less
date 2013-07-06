@@ -1,10 +1,10 @@
-// --------------------------------------------------
-//	COMPONENTS
-// --------------------------------------------------
+/////////////////////////////////////
+//	MIXINS
+/////////////////////////////////////
 
 
 // Body Background
-// --------------------------------------------------
+/////////////////////////////////////
 .bodyTexture {
 	background: @bodyBackground url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
 }
@@ -15,7 +15,7 @@
 }
 
 // Logo
-// --------------------------------------------------
+/////////////////////////////////////
 .logo {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAAfCAMAAABu6ofkAAABd1BMVEVbmq20xs7///+IqbQASWC2
 	wMIiaH7BysybsLkdjKhvgoiXucQejKgASGB6jZQohp42nLc2an7e5ecJb4iDk5hSaG8Aboj///+P
@@ -122,7 +122,7 @@
 }
 
 // Dimmed Text
-// --------------------------------------------------
+/////////////////////////////////////
 .dimmed {
 	color: @textColorDimmed;
 	p { color: @textColorDimmed; }
@@ -130,7 +130,7 @@
 }
 
 // Dashed Dividers
-// --------------------------------------------------
+/////////////////////////////////////
 .divider-top {
 	position: relative;
 	border-top: 1px dashed #afc3cb;
@@ -177,104 +177,9 @@
 	}
 }
 
-
-// Utilities
-// --------------------------------------------------
-
-.clearfix {
-  *zoom: 1;
-  clear: both;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.fade {
-  .opacity(0);
-  .transition(opacity .15s ease-in-out);
-  &.in {
-    .opacity(100);
-  }
-}
-
-// Quick floats
-// --------------------------------------------------
-.alignleft { float: left; }
-.alignright { float: right; }
-.aligncenter { display: block; margin-left: auto; margin-right: auto; }
-
-// Placeholder text
-// --------------------------------------------------
-.placeholder(@color: @placeholderText) {
-  &:-moz-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-  &:-ms-input-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-  &::-webkit-input-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-}
-
-// Toggling content
-// --------------------------------------------------
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hide {
-	display: none !important; 
-	visibility: hidden;
-}
-.show {
-	display: block;
-	visibility: visible;
-}
-// Hide only visually, but have it available for screenreaders: h5bp.com/v
-.visuallyhidden { 
-	border: 0; 
-	clip: rect(0 0 0 0); 
-	height: 1px; 
-	margin: -1px; 
-	overflow: hidden; 
-	padding: 0; 
-	position: absolute; 
-	width: 1px;
-	// Extends the .visuallyhidden class to allow the 
-	// element to be focusable when navigated to via the keyboard: h5bp.com/p
-	&.focusable:active, 
-	&.focusable:focus { 
-		clip: auto; 
-		height: auto; 
-		margin: 0; 
-		overflow: visible; 
-		position: static; 
-		width: auto;
-	}
-}
-// Hide visually and from screenreaders, but maintain layout
-.invisible {
-	visibility: hidden;
-}
-// CSS image replacement
-.hide-text {
-	font: 0/0 a;
-	color: transparent;
-	text-shadow: none;
-	background-color: transparent;
-	border: 0;
-}
-
-
-// --------------------------------------------------
+/////////////////////////////////////
 // CSS3 PROPERTIES
-// --------------------------------------------------
+/////////////////////////////////////
 
 // Opacity
 .opacity(@opacity) {

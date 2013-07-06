@@ -115,13 +115,13 @@
   background-repeat: no-repeat;
 }
 .dimmed {
-  color: #8ea0a9;
+  color: #96a6ad;
 }
 .dimmed p {
-  color: #8ea0a9;
+  color: #96a6ad;
 }
 .dimmed li {
-  color: #8ea0a9;
+  color: #96a6ad;
 }
 .divider-top {
   position: relative;
@@ -165,85 +165,6 @@
 .no-divider-bottom::before {
   display: none;
 }
-.clearfix {
-  *zoom: 1;
-  clear: both;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both;
-}
-.fade {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  -webkit-opacity: 0;
-  opacity: 0;
-  -webkit-transition: opacity 0.15s ease-in-out;
-  -moz-transition: opacity 0.15s ease-in-out;
-  -o-transition: opacity 0.15s ease-in-out;
-  transition: opacity 0.15s ease-in-out;
-}
-.fade.in {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-}
-.alignleft {
-  float: left;
-}
-.alignright {
-  float: right;
-}
-.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hide {
-  display: none !important;
-  visibility: hidden;
-}
-.show {
-  display: block;
-  visibility: visible;
-}
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-.invisible {
-  visibility: hidden;
-}
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
 html,
 .wp-dialog {
   background: #e7eef4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
@@ -265,7 +186,7 @@ html,
 body,
 #wpbody,
 .form-table .pre {
-  color: #4f6068;
+  color: #56666e;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
   font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
@@ -280,7 +201,7 @@ h6,
   color: #2e4f5c;
 }
 .postbox h3 {
-  color: #718893;
+  color: #7a8d97;
 }
 h1,
 .wrap h2 {
