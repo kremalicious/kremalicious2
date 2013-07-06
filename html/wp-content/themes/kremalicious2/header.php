@@ -74,14 +74,14 @@
   	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
   	
   	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
-  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo site_url('/apple-touch-icon-144x144-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo site_url('/apple-touch-icon-114x114-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo site_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" href="<?php echo site_url('/apple-touch-icon-precomposed.png'); ?>">
-  	<link rel="shortcut icon" href="<?php echo site_url('/favicon.ico'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url('/apple-touch-icon-144x144-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url('/apple-touch-icon-114x114-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" href="<?php echo home_url('/apple-touch-icon-precomposed.png'); ?>">
+  	<link rel="shortcut icon" href="<?php echo home_url('/favicon.ico'); ?>">
   	
   	<!-- Windows 8 Metro Tile Image -->
-  	<meta name="msapplication-TileImage" content="<?php echo site_url('/metro-tile.png'); ?>"/>
+  	<meta name="msapplication-TileImage" content="<?php echo home_url('/metro-tile.png'); ?>"/>
   	<meta name="msapplication-TileColor" content="#015565"/>
 
 </head>
@@ -90,24 +90,40 @@
     
     <header role="banner" class="banner container">
     	<h1 class="banner-title row">
-    	    <a class="banner-logo" class="hide-text" href="/">kremalicious</a>
+    	    <a class="banner-logo" class="hide-text" href="<?php echo home_url(); ?>">kremalicious</a>
     	</h1>
 	    <nav role="navigation" class="nav-main row">
+			<?php
+			    $goodies_id = get_cat_ID( 'Goodies' );
+			    $goodies_link = get_category_link( $goodies_id );
+				
+			    $photos_id = get_cat_ID( 'Photos' );
+			    $photos_link = get_category_link( $photos_id );
+				
+			    $personal_id = get_cat_ID( 'Personal' );
+			    $personal_link = get_category_link( $personal_id );
+				
+			    $design_id = get_cat_ID( 'Design' );
+			    $design_link = get_category_link( $design_id );
+				
+			    $photography_id = get_cat_ID( 'Photography' );
+			    $photography_link = get_category_link( $photography_id );
+			?>
 	    	<ul>
 	    		<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="/goodies"><i class="icon-gift"></i> goodies</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $goodies_link ); ?>"><i class="icon-gift"></i> goodies</a>
 	    		</li>
 	    		<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="/photos"><i class="icon-picture"></i> photos</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $photos_link ); ?>"><i class="icon-picture"></i> photos</a>
 	    		</li>
 	    		<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="/personal"><i class="icon-user"></i> personal</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $personal_link ); ?>"><i class="icon-user"></i> personal</a>
 	    		</li>
 	    		<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="/design"><i class="icon-leaf"></i> design</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $design_link ); ?>"><i class="icon-leaf"></i> design</a>
 	    		</li>
 	    		<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="/photography"><i class="icon-camera-retro"></i> photography</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $photography_link ); ?>"><i class="icon-camera-retro"></i> photography</a>
 	    		</li>
 	    		<!--<li>
 	    			<?php get_search_form(); ?>
