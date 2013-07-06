@@ -4,6 +4,12 @@
 
 @import 'variables.less';
 @import 'mixins.less';
+@import 'utilities.less';
+@import 'buttons.less';
+
+* {
+	.box-sizing(border-box);
+}
 
 body.login {
 	.bodyTexture;
@@ -18,7 +24,6 @@ body.login {
 #login {
 	padding-top: 10%;
 }
-
 
 .login h1 a {
 	display: none;
@@ -40,11 +45,6 @@ body.login {
 	display: none;
 }
 
-.login #backtoblog {
-	margin: 0;
-	padding: 0;
-}
-
 .login form .input {
 	background: #fff;
 	background: rgba(255,255,255,.4);
@@ -53,7 +53,7 @@ body.login {
 	.box-shadow(0 1px 0 #fff);
 	padding: .2em .5em;
 	width: 100%;
-	.border-radius(0);
+	border-radius: 0;
 	.transition();
 }
 
@@ -64,46 +64,12 @@ body.login {
 }
 
 .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
-	font-style: normal;
+	.btn;
+	.btn-primary;
+	font-size: 12px;
+	line-height: 18px;
+	width: 120px;
 	display: block;
-	padding: 7px 40px;
-	font-size: 14px;
-	line-height: 20px;
-	height: 44px;
-	width: 100%;
-	text-align: center;
-	font-weight: 700;
-	.border-radius(5px);
-	color: darken(@linkColor, 30%);
-	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	background-color: #398f85;
-	border: 1px solid rgba(40,101,93,.6);
-	border-bottom-color: rgba(40,101,93,.9);
-	.box-shadow(~"0 1px 4px rgba(30,72,67,.6), inset 0 1px 0 rgba(196,241,235,.75),inset 0 0 18px rgba(43,100,92,.3)");
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
-	#gradient > .vertical(rgba(202,254,247,.6), rgba(255,255,255,0));
-	.transition();
-	.background-clip(padding-box);
-	
-	&:hover {
-		background-color: lighten(@linkColor, 3%);
-		color: darken(@linkColor, 25%);
-		text-shadow: 0 1px 0 rgba(255,255,255,.3);
-		border: 1px solid rgba(40,101,93,.6);
-		border-bottom-color: rgba(40,101,93,.9);
-	}
-	
-	&:active {
-		color: darken(@linkColor, 25%);
-		background-color: lighten(@linkColor, 3%);
-		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGxpbmVhckdyYWRpZW50IGlkPSJoYXQwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjEwMCUiIHgyPSI1MCUiIHkyPSIwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjYWZlZjciIHN0b3Atb3BhY2l0eT0iMC42Ii8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2hhdDApIiAvPgo8L3N2Zz4=);
-		#gradient > .vertical(rgba(202,254,247,.6), rgba(255,255,255,0));
-		border-top-color: rgba(40,101,93,.9);
-		.transition(none);
-		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
-	}
 }
 
 .login form {
@@ -120,15 +86,28 @@ body.login {
 }
 
 #login form p.submit {
-	.clearfix;
-	position: relative;
-	margin-bottom: 2em
+	float: right
 }
 
-#login form p.forgetmenot {
-	position: absolute;
-	left: 0;
-	bottom: 0;
+.login form .forgetmenot {
+	float: left
+}
+
+.login #backtoblog {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	margin-top: 2em;
+	
+	a {
+		.btn;
+		font-size: 12px;
+		line-height: 18px;
+		width: 100%;
+		background: none;
+		border: none;
+		.box-shadow(none)
+	}
 }
 
 #login_error, .login .message {
@@ -142,7 +121,7 @@ body.login {
 	background-color: #fcf8e3;
 	#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.05));
 	border: 1px solid #d7cab9;
-	.border-radius(4px);
+	border-radius: 4px;
 	.box-shadow(~"0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9)");
 }
 
