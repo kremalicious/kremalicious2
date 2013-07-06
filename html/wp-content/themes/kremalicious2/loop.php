@@ -49,16 +49,20 @@
 		
 		elseif ( has_post_format( 'image' ) ) { 
 			
+			// Photos section layout
 			if ( is_category('photos') ) { ?>
-			
+				
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
 						<?php the_post_thumbnail('photoArchive'); ?>
 						<figcaption><?php the_title(); ?></figcaption>
 					</figure>
 				</a>
-				
-			<?php } else { ?>
+			
+			
+		<?php 
+			// Stream layout
+			} else { ?>
 			
 				<a class="icon-picture posttype" rel="tooltip" href="/photos" title="Show all photo posts"></a>
 				<a class="photoPost" href="<?php the_permalink(); ?>">

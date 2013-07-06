@@ -111,19 +111,19 @@
 			?>
 	    	<ul>
 	    		<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $goodies_link ); ?>"><i class="icon-gift"></i> goodies</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $goodies_link ); ?>">goodies</a>
 	    		</li>
 	    		<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $photos_link ); ?>"><i class="icon-picture"></i> photos</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $photos_link ); ?>">photos</a>
 	    		</li>
 	    		<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $personal_link ); ?>"><i class="icon-user"></i> personal</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $personal_link ); ?>">personal</a>
 	    		</li>
 	    		<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $design_link ); ?>"><i class="icon-leaf"></i> design</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $design_link ); ?>">design</a>
 	    		</li>
 	    		<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>>
-	    		    <a class="nav-main-link" href="<?php echo esc_url( $photography_link ); ?>"><i class="icon-camera-retro"></i> photography</a>
+	    		    <a class="nav-main-link" href="<?php echo esc_url( $photography_link ); ?>">photography</a>
 	    		</li>
 	    		<!--<li>
 	    			<?php get_search_form(); ?>

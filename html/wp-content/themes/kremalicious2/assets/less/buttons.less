@@ -39,17 +39,17 @@
 }
 
 .btn-tag {
-	font-size: .7em;
-	line-height: 1.1em;
-	margin-bottom: .5em;
-	margin-left: .2em;
-	padding: .4em 1em;
-	border-color: rgba(94,131,162,.25);
+	font-family: @headingsFontFamily;
+	font-weight: @headingsFontWeight;
+	font-style: normal;
+	font-size: @baseFontSize;
+	color: @textColorLight;
+	text-transform: lowercase;
 	
-	&:first-child {
-		margin-left: 0;
+	&:before {
+		content: "#";
+		color: @textColorDimmed;
 	}
-	
 }
 
 .btn-primary,
@@ -83,20 +83,13 @@ a.btn-primary:visited {
 
 // assign default button styles to all this stuff
 .inline-download,
-.download,
-#cancel-comment-reply-link,
-.comment-edit-link,
-.comment-reply-link {
+.download {
 	.btn;
 }
 
 a[rel*="tag"],
 #topics a {
-	.btn;
 	.btn-tag;
-	&:before {
-		font-size: 12px
-	}
 }
 
 #cancel-comment-reply-link {

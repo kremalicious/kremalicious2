@@ -23,9 +23,6 @@
 
 // Site meta components
 #siteMeta {
-	.divider-top;
-	.divider-bottom;
-	
 	#description {
 		margin-bottom: 1.5em;
 		font-style: italic;
@@ -33,7 +30,6 @@
 	}
 	
 	#tweetsWrap {
-		.divider-top();
 		.clearfix;
 		margin: 0;
 		padding-top: 2em;
@@ -125,21 +121,25 @@
 // Copyright component
 #siteCopyright {
 	.divider-top;
-	margin-top: 1.5em;
-	padding: 1.5em 0;
-	font-size: .8em;
-	line-height: 1.6em;
 	p {
 		margin-bottom: 0.5em;
+		font-size: .8em;
+		line-height: 1.6em;
 	}
 }
 
 aside[role="complementary"] {
 	margin-bottom: 2em;
+	.divider-bottom;
+	.divider-top;
+	h1 {
+		margin-bottom: 0;
+		color: @textColorLight;
+	}
 	h1 a {	
 		border: none;
 		padding-right: .1em;
-		color: @textColorLight;
+		color: @textColorDimmed;
 	}
 }
 
