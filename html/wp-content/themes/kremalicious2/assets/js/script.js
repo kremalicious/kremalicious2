@@ -13,7 +13,6 @@
 
 */
 
-//@codekit-prepend "libs/masonry/masonry.js"
 //@codekit-prepend "libs/infinitescroll/jquery.infinitescroll.js"
 //@codekit-prepend "libs/socialite/socialite.js"
 
@@ -98,7 +97,6 @@ var interface = {
 		}
 		this.toolTips();
 		$('#respond label').inFieldLabels();
-		$('#topicmenu .dropdown-toggle').dropdown();
 	}
 
 }
