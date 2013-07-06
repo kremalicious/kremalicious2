@@ -23,10 +23,8 @@
 			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); 
 			$leTopic 	= get_the_category(); ?>
 			
-			<div class="posttype">
-				<a class="icon- cat-<?php echo $leTopic[0]->slug; ?>" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
-			</div>
 			<header>
+				<a class="icon- cat-<?php echo $leTopic[0]->slug; ?> posttype" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
 				<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 			</header>
 			<?php if (!is_search()) { ?>
@@ -62,9 +60,7 @@
 				
 			<?php } else { ?>
 			
-				<div class="posttype">
-					<a class="icon-picture" rel="tooltip" href="/photos" title="Show all photo posts"></a>
-				</div>
+				<a class="icon-picture posttype" rel="tooltip" href="/photos" title="Show all photo posts"></a>
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
 						<?php the_post_thumbnail('photoStream'); ?>
@@ -115,10 +111,8 @@
 		
 		elseif ( in_category('goodies') ) { ?>
 			
-			<div class="posttype">
-				<a class="icon-gift" rel="tooltip" href="/goodies" title="Show all goodies"></a>
-			</div>
 			<header>
+				<a class="icon-gift posttype" rel="tooltip" href="/goodies" title="Show all goodies"></a>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( !is_search() ) { ?>
@@ -140,17 +134,15 @@
 		else { ?>
 			
 			<header>
-				<div class="posttype">
-					<?php if ( in_category('design') ) { ?>
-						<a class="icon-leaf" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
-					<?php } elseif ( in_category('personal') ) { ?>
-						<a class="icon-user" rel="tooltip" href="/personal" title="Show all posts in 'personal'"></a>
-					<?php } elseif ( in_category('photography') ) { ?>
-						<a class="icon-camera-retro" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
-					<?php } else { ?>
-						<a class="icon-asterisk" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
-					<?php } ?>
-				</div>
+				<?php if ( in_category('design') ) { ?>
+					<a class="icon-leaf posttype" rel="tooltip" href="/design" title="Show all posts in 'design'"></a>
+				<?php } elseif ( in_category('personal') ) { ?>
+					<a class="icon-user posttype" rel="tooltip" href="/personal" title="Show all posts in 'personal'"></a>
+				<?php } elseif ( in_category('photography') ) { ?>
+					<a class="icon-camera-retro posttype" rel="tooltip" href="/photography" title="Show all posts in 'photography'"></a>
+				<?php } else { ?>
+					<a class="icon-asterisk posttype" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
+				<?php } ?>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( !is_search() ) { ?>

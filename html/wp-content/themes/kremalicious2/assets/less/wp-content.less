@@ -24,15 +24,20 @@
 }
 
 .posttype {
-	font-size: 1.5em;
-	text-align: center;
-	line-height: 1.7em;
+	display: block;
+	width: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: @baseLineHeight;
 	
-	a { display: inline-block; }
+	// icon adjustments
+	&:before {
+		font-size: 20px;
+	}
 }
 
-.hentry:hover .posttype a,
-.touch .posttype a {
+.hentry:hover .posttype:before,
+.touch .posttype:before {
 	color: @linkColor;
 }
 
@@ -83,7 +88,6 @@ footer.entry-meta {
 	.divider-top();
 	.divider-bottom();
 	color: @textColorLight;
-	margin: 3em 0;
 	p {
 		margin-bottom: 0;
 	}
