@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<section role="main" id="main">
+	<section role="main" id="main" class="row">
 		<?php get_template_part('loop', 'single'); ?>
 	</section><!-- /#main -->
 	

@@ -2,7 +2,7 @@
 	
 	<?php get_sidebar(); ?>
 	
-	<section role="main" id="main">
+	<section role="main" id="main" class="row">
 		<?php if ( is_category('photos') ) { ?>
 		<div class="masonryWrap">
     		<div class="grid-sizer"></div>
@@ -17,7 +17,7 @@
 	
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
 	<?php if ($wp_query->max_num_pages > 1) { ?>
-		<nav id="post-nav" class="pager">
+		<nav id="post-nav" class="row pager">
 			<p class="previous alignleft"><?php next_posts_link('<i class="icon-chevron-left"></i> Older posts'); ?></p>
 			<p class="next alignright"><?php previous_posts_link('Newer posts <i class="icon-chevron-right"></i>'); ?></p>
 		</nav>
