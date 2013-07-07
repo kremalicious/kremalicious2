@@ -240,8 +240,8 @@
   vertical-align: middle;
   cursor: pointer;
   display: inline-block;
-  padding: .3em 2em;
-  margin-bottom: 1em;
+  padding: .5em 2em;
+  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(94, 131, 162, 0.3);
   border-bottom-color: rgba(94, 131, 162, 0.4);
@@ -323,8 +323,8 @@ a.btn-primary:visited:active {
   vertical-align: middle;
   cursor: pointer;
   display: inline-block;
-  padding: .3em 2em;
-  margin-bottom: 1em;
+  padding: .5em 2em;
+  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(94, 131, 162, 0.3);
   border-bottom-color: rgba(94, 131, 162, 0.4);
@@ -377,8 +377,8 @@ a.btn-primary:visited:active {
   vertical-align: middle;
   cursor: pointer;
   display: inline-block;
-  padding: .3em 2em;
-  margin-bottom: 1em;
+  padding: .5em 2em;
+  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(94, 131, 162, 0.3);
   border-bottom-color: rgba(94, 131, 162, 0.4);
@@ -529,8 +529,8 @@ body.login {
   vertical-align: middle;
   cursor: pointer;
   display: inline-block;
-  padding: .3em 2em;
-  margin-bottom: 1em;
+  padding: .5em 2em;
+  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(94, 131, 162, 0.3);
   border-bottom-color: rgba(94, 131, 162, 0.4);
@@ -628,8 +628,8 @@ body.login {
   vertical-align: middle;
   cursor: pointer;
   display: inline-block;
-  padding: .3em 2em;
-  margin-bottom: 1em;
+  padding: .5em 2em;
+  margin-bottom: 25px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(94, 131, 162, 0.3);
   border-bottom-color: rgba(94, 131, 162, 0.4);
