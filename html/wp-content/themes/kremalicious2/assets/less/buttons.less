@@ -67,15 +67,21 @@ a.btn-primary:visited {
 }
 
 .btn-tag {
-	font-family: @font-family-base;
 	font-size: @font-size-small;
+	line-height:  @line-height-base;
+	font-family: @headings-font-family;
+	font-weight: @headings-font-weight;
+	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
+    vertical-align: middle;
+	
 	color: @text-color-light;
-	text-transform: lowercase;
 	
 	&:before {
 		content: "#";
 		color: @text-color-dimmed;
-		font-size: .8em;
+		font-size: .9em;
 		margin-right: .1em;
 	}
 	
@@ -112,10 +118,6 @@ a.btn-primary:visited {
 
 a[rel*="tag"] {
 	.btn-tag;
-}
-
-#cancel-comment-reply-link {
-	color: #7f2924;
 }
 
 // Old Download Button Overwrites

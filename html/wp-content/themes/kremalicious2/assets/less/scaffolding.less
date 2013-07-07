@@ -19,29 +19,45 @@ body {
 	text-align: center;
 	background: fade(@brand-dark, 5%);
 	text-shadow: 0 1px 0 rgba(255,255,255,.7);
-
+	
+	.banner-logo {
+		display: block;
+		background-position: center center;
+		position: relative;
+		height: 31px;
+		.ir;
+		.logo;
+	
+		@media @highDPI {
+			.logo_2x
+		}
+	}
+	
 	.banner-title { 
 		margin-top: 0;
-		margin-bottom: @line-height-computed/2;
-	}
-}
-
-.banner-logo {
-	display: block;
-	background-position: center center;
-	position: relative;
-	height: 31px;
-	.ir;
-	.logo;
-	
-	@media @highDPI {
-		.logo_2x
+		margin-bottom: @line-height-computed;
 	}
 }
 
 .banner-description {
-	font-style: italic;
+    .h5;
 	color: @text-color-light;
+	margin-bottom: @line-height-computed/2;
+	padding-bottom: @line-height-computed/2;
+	border-bottom: 3px double fade(@brand-grey, 20%);
+	position: relative;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -4px;
+		width: 100%;
+		height: 1px;
+		background: transparent;
+		border-bottom: 3px double rgba(255,255,255,.7);
+	}
+	
 }
 
 
@@ -103,22 +119,22 @@ body {
 	}
 }
 
-footer[role="contentinfo"]:hover #subscribe .rss i,
-.touch footer[role="contentinfo"] #subscribe .rss i {
+.footer:hover .subscribe .rss i,
+.touch .footer .subscribe .rss i {
 	color: #e15a00;
 }
 
-footer[role="contentinfo"]:hover #subscribe .twitter i,
-.touch footer[role="contentinfo"] #subscribe .twitter i {
+.footer:hover .subscribe .twitter i,
+.touch .footer .subscribe .twitter i {
 	color: #019ad2;
 }
 
-footer[role="contentinfo"]:hover #subscribe .google i,
-.touch footer[role="contentinfo"] #subscribe .google i {
+.footer:hover .subscribe .google i,
+.touch .footer .subscribe .google i {
 	color: #c63b1e;
 }
 
-footer[role="contentinfo"]:hover #subscribe .facebook i,
-.touch footer[role="contentinfo"] #subscribe .facebook i {
+.footer:hover .subscribe .facebook i,
+.touch .footer .subscribe .facebook i {
 	color: #3b5998;
 }

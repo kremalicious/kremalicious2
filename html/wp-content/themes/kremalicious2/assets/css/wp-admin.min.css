@@ -237,15 +237,20 @@ a.btn-primary:visited:active {
   transition: none;
 }
 .btn-tag {
-  font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   font-size: 15px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
   color: #96a6ad;
-  text-transform: lowercase;
 }
 .btn-tag:before {
   content: "#";
   color: #c1cacf;
-  font-size: .8em;
+  font-size: .9em;
   margin-right: .1em;
 }
 .btn-tag:hover {
@@ -401,15 +406,20 @@ a.btn-primary:visited:active {
   margin-left: .3em;
 }
 a[rel*="tag"] {
-  font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   font-size: 15px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
   color: #96a6ad;
-  text-transform: lowercase;
 }
 a[rel*="tag"]:before {
   content: "#";
   color: #c1cacf;
-  font-size: .8em;
+  font-size: .9em;
   margin-right: .1em;
 }
 a[rel*="tag"]:hover {
@@ -417,9 +427,6 @@ a[rel*="tag"]:hover {
 }
 a[rel*="tag"]:hover:before {
   color: #96a6ad;
-}
-#cancel-comment-reply-link {
-  color: #7f2924;
 }
 .inline-download:link {
   display: block;
