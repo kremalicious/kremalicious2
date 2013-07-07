@@ -1,6 +1,4 @@
 <?php get_header(); ?>
-
-	<?php get_sidebar(); ?>
 	
 	<section role="main" id="main" class="row">
 		<?php get_template_part('loop', 'index'); ?>

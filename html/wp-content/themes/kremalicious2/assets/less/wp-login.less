@@ -13,11 +13,11 @@
 
 body.login {
 	.bodyTexture;
-	font-size: @baseFontSize;
-	line-height: @baseLineHeight;
-	font-family: @baseFontFamily;
-	font-weight: @baseFontWeight;
-	color: @textColor;
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+	font-weight: @font-weight-base;
+    line-height: @line-height-computed;
+    color: @text-color;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 
@@ -30,7 +30,7 @@ body.login {
 }
 
 .login h1 {
-	background: url(../img/logo.png) no-repeat center center;
+	background: url('../img/logo.png') no-repeat center center;
 	width: 190px;
 	height: 31px;
 	margin: 16px auto;
@@ -38,7 +38,7 @@ body.login {
 
 .login #nav a,.login #backtoblog a {
 	text-decoration: none;
-	color: @linkColor !important;
+	color: @link-color !important;
 }
 
 #nav {
@@ -82,7 +82,7 @@ body.login {
 }
 
 .login label {
-	color: @textColorDimmed
+	color: @text-color-dimmed;
 }
 
 #login form p.submit {
@@ -125,10 +125,7 @@ body.login {
 	.box-shadow(~"0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9)");
 }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+@media @highDPI {
 
 	body.login {
 		.bodyTexture_2x;

@@ -12,12 +12,12 @@
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
     line-height: 1.4;
 	
-	.opacity(0);
+	opacity: 0;
 	.transition(opacity .2s ease-in-out);
 	// also prevents weird arrow jumping in WebKit
 	-webkit-transform: translate3d(0,0,0);
 	
-    &.in     { .opacity(85); }
+    &.in     { opacity: .85; }
     &.top    { margin-top:  -3px; padding: 5px 0; }
     &.right  { margin-left:  3px; padding: 0 5px; }
     &.bottom { margin-top:   3px; padding: 5px 0; }

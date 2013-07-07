@@ -50,24 +50,24 @@
 		else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-				<header class="row featureTitle">
+				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
 				</header>
 			<?php } else { ?>
-				<header class="row">
+				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>
 			<?php } ?>
 			
-			<aside class="row entry-meta">
+			<aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
 			</aside>
 						
 		<?php } ?>
 		
-			<section class="row entry-content">
+			<section class="entry-content">
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
@@ -77,7 +77,7 @@
 						the_content();
 					} ?>
 				
-				<footer class="row entry-meta">
+				<footer class="entry-meta">
 					<p><?php 
 						$parentscategory ="";
 						foreach((get_the_category()) as $category) {

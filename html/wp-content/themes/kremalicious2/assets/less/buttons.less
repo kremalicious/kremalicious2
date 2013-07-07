@@ -3,20 +3,22 @@
 /////////////////////////////////////
 
 .btn {
-	font-size: .8em;
-	line-height: @baseLineHeight;
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
+	font-size: @font-size-mini;
+	line-height:  @line-height-base;
+	font-family: @headings-font-family;
+	font-weight: @headings-font-weight;
 	font-style: normal;
 	text-align: center;
 	text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
 	display: inline-block;
 	padding: .3em 2em;
 	margin-bottom: 1em;
 	background: rgba(255,255,255,.1);
 	border: 1px solid rgba(94,131,162,.3);
 	border-bottom-color: rgba(94,131,162,.4);
-	border-radius: 3px;
+	border-radius: @border-radius-base;
 	.box-shadow(~"0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 #fff, inset 0 0 10px rgba(169,196,219,.3)");
 	.transition();
 	
@@ -27,6 +29,7 @@
 	&:active {
 		background: transparent;
 		border-top-color: rgba(94,131,162,.5);
+		outline: 0;
 		.box-shadow(0 1px 0 #fff);
 		.transition(none);
 	}
@@ -38,43 +41,56 @@
 	}
 }
 
-.btn-tag {
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
-	font-style: normal;
-	font-size: @baseFontSize;
-	color: @textColorLight;
-	text-transform: lowercase;
-	
-	&:before {
-		content: "#";
-		color: @textColorDimmed;
-	}
-}
-
 .btn-primary,
 a.btn-primary:visited {
-	color: darken(@linkColor, 30%);
+	color: darken(@link-color, 30%);
 	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	background: lighten(@linkColor, 15%);
+	background: lighten(@link-color, 15%);
 	border-color: rgba(40,101,93,.4);
 	border-bottom-color: rgba(40,101,93,.5);
 	.box-shadow(~"0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 rgba(255,255,255,.4)");
 	
 	&:hover {
-		color: darken(@linkColor, 30%);
-		background: lighten(@linkColor, 20%);
+		color: darken(@link-color, 30%);
+		background: lighten(@link-color, 20%);
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
 	}
 	
 	&:active {
-		color: darken(@linkColor, 30%);
-		background: lighten(@linkColor, 15%);
+		color: darken(@link-color, 30%);
+		background: lighten(@link-color, 15%);
 		border-top-color: rgba(40,101,93,.9);
 		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
 		.transition(none);
 	}
 
+}
+
+.btn-tag {
+	font-family: @headings-font-family;
+	font-weight: @headings-font-weight;
+	font-style: normal;
+	font-size: @font-size-base;
+	color: @text-color-light;
+	text-transform: lowercase;
+	
+	&:before {
+		content: "#";
+		color: @text-color-dimmed;
+	}
+}
+
+
+.more-link {
+	.btn;
+	background: none;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	
+	&:hover {
+		background: none;
+	}
 }
 
 .btn-block {
@@ -87,8 +103,7 @@ a.btn-primary:visited {
 	.btn;
 }
 
-a[rel*="tag"],
-#topics a {
+a[rel*="tag"] {
 	.btn-tag;
 }
 
@@ -100,18 +115,6 @@ a[rel*="tag"],
 .inline-download:link {
 	display: block;
 	text-align: center;
-	
-	&::before {
-		font-family: FontAwesome;
-		font-weight: normal;
-		font-style: normal;
-		text-decoration: inherit;
-		content: "\f019";
-		font-size: inherit;
-		margin-right: .5em;
-		line-height: 1em;
-		vertical-align: baseline;
-	}
 
 	img {
 		display: none;

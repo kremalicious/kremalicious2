@@ -32,56 +32,8 @@ footer[role="contentinfo"] {
 	}
 }
 
-// Tweets area component
-#tweetsWrap {
-	min-height: 120px;
-	margin-bottom: 1.5em;
-	#tweets {
-		font-size: .85em;
-		line-height: 1.6em;
-		padding-right: 1em;
-		position: relative;
-		margin-bottom: 1em;
-		ul {
-			list-style: none;
-			margin-bottom: 0;
-			li {
-				margin-bottom: 1.5em;
-				color: lighten(@textColorDimmed, 5%);
-				.transition();
-			}
-		}
-		.tweet_time {
-			display: block;
-			font-size: .8em;
-			font-style: italic;
-			margin-top: .2em;
-			a {
-				color: @textColorDimmed;
-			}
-		}
-	}
-	
-	#tweets li:hover a,
-	#tweets li:hover .tweet_time a,
-	.touch & #tweets li a {
-		color: @linkColorHover;
-	}
-}
-
-
 // Subscribe only component
 #subscribe {
-	h2 {
-		font-size: .8em;
-		font-family: @baseFontFamily;
-		font-weight: @baseFontWeight;
-		line-height: @baseLineHeight;
-		font-style: italic;
-		color: lighten(@textColorDimmed, 10%);
-		margin-bottom: .5em;
-		margin-top: 0;
-	}
 	p {
 		padding-bottom: 1em;
 		margin: 0;
@@ -104,7 +56,7 @@ footer[role="contentinfo"] {
 			
 			// Icon resets for color animations
 			.transition(color .3s ease-in-out);
-			color: @textColorLight;
+			color: @text-color-light;
 			&:before {
 				color: inherit;
 				margin-right: 0;

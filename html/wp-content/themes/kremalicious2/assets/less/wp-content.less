@@ -1,22 +1,24 @@
 .hentry {
 	.divider-bottom();
-	.clearfix();
-	padding: 2em 0;
+	padding: @line-height-computed 0;
+	
+	@media @breakpoint2 {
+		padding: (@line-height-computed * 2) 0;
+	}
+	
+	&:first-child { padding-top: 0;	}
 }
 
-	.hentry:first-child,
-	.search-results .hentry:first-child {
-		padding-top: 0;
-	}
+.entry-title {
+	.h1;
+	text-align: center;
+	margin-top: 0;
+	
+	.format-link & { .h3; }
+}
 
 .home .hentry p:last-child {
 	margin-bottom: 0;
-}
-
-.hentry header {
-	text-align: center;
-	
-	h2 { margin-top: 0; }
 }
 
 // post category icons
@@ -25,30 +27,19 @@
 	width: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: @baseLineHeight;
+	margin-bottom: @line-height-computed;
 	
 	// icon adjustments
 	&:before {
 		font-size: 20px;
-		color: @textColorLight
+		color: @text-color-light
 	}
 	
 	&:hover:before {
-		color: @linkColor
+		color: @link-color
 	}
 }
 
-.more-link {
-	.btn;
-	background: none;
-	border: none;
-	box-shadow: none;
-	padding: 0;
-	
-	&:hover {
-		background: none;
-	}
-}
 
 // SINGLE VIEW
 
@@ -70,7 +61,7 @@ aside.entry-meta {
 	time {
 		font-style: italic;
 		text-align: center;
-		color: @textColorDimmed;
+		color: @text-color-dimmed;
 		font-size: .9em;
 		line-height: 1.4em
 	}
@@ -86,7 +77,7 @@ aside.entry-meta {
 
 // Footer Meta
 footer.entry-meta {
-	color: @textColorLight;
+	color: @text-color-light;
 	p {
 		margin-bottom: 0;
 	}
@@ -147,8 +138,8 @@ a.photoPost {
 	text-align: center;
 	margin-bottom: .5em;
 	color: rgba(46, 79, 92, .7);
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
+	font-family: @headings-font-family;
+	font-weight: @headings-font-weight;
 	font-style: normal;
 	font-size: .9em
 }
@@ -216,11 +207,7 @@ aside[role="complementary"] br,
 }
 
 @media @breakpoint2 {
-	
-	.hentry { 
-		padding: 3.5em 0;
-	}
-	
+
 	.photoPost figure {
 		.box-shadow(~"0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff");
 		.transition();

@@ -1,6 +1,4 @@
 html {
-	// Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
-	-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
 	// remove tap highlight cause we're using the active styles
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	tap-highlight-color: rgba(0,0,0,0);
@@ -18,12 +16,10 @@ body {
 /////////////////////////////////////
 
 .banner {
-    margin-bottom: 2em;
 	text-align: center;
-}
-
-.banner-title {
-	margin-bottom: @baseLineHeight;
+	
+	&,
+	.banner-title { margin-bottom: @line-height-computed; }
 }
 
 .banner-logo {
@@ -41,5 +37,5 @@ body {
 
 .banner-description {
 	font-style: italic;
-	color: @textColorLight;
+	color: @text-color-light;
 }

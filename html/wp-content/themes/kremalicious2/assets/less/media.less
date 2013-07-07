@@ -26,12 +26,12 @@ img {
 }
 
 a.linkedImage img {
-	border: 2px solid @linkColor;
+	border: 2px solid @link-color;
 	.transition(border .2s ease-in-out);
 }
 
 .linkedImage:hover img {
-	border-color: @linkColorHover;
+	border-color: @link-color-hover;
 }
 
 
@@ -68,7 +68,7 @@ img.aligncenter,
 .wp-caption.aligncenter, {
 	float: none;
 	display: block;
-	margin: 1.5em auto;
+	margin: @line-height-computed auto;
 }
 
 .wp-caption {
@@ -78,7 +78,7 @@ img.aligncenter,
 
 .wp-caption-text {
 	font-size: .9em;
-	line-height: 1.5em;
+	line-height: @line-height-computed;
 	.dimmed
 }
 
@@ -86,12 +86,12 @@ img.aligncenter,
 	img.alignleft,
 	img.left, // some old articles markup
 	.imgleft, // some old articles markup
-	.wp-caption.alignleft { margin: 0 1.5em 1.5em 0; float: left; }
+	.wp-caption.alignleft { margin: 0 @line-height-computed @line-height-computed 0; float: left; }
 	
 	img.alignright,
 	img.right, // some old articles markup
 	.imgright, // some old articles markup
-	.wp-caption.alignright { margin: 0 0 1.5em 1.5em; float: right;	}
+	.wp-caption.alignright { margin: 0 0 @line-height-computed @line-height-computed; float: right;	}
 	
 	.single .photoPostWrap,
 	.masonryWrap {

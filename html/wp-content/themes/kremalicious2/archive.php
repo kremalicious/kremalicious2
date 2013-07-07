@@ -1,7 +1,5 @@
 <?php get_header(); ?>
-	
-	<?php get_sidebar(); ?>
-	
+		
 	<section role="main" id="main" class="row">
 		<?php if ( is_category('photos') ) { ?>
 		<div class="masonryWrap">

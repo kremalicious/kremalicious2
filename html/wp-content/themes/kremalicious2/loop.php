@@ -42,7 +42,7 @@
 			
 			<header>
 				<a class="icon-<?php echo $leTopic[0]->slug; ?> posttype" rel="tooltip" title="Show all posts in '<?php echo $leTopic[0]->cat_name; ?>'" href="<?php echo get_category_link($leTopic[0]->term_id); ?>"></a>
-				<h2><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
+				<h2 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h2>
 			</header>
 			<?php if (!is_search()) { ?>
 			<section class="entry-content">
@@ -99,7 +99,7 @@
 		elseif (in_category('goodies') && is_category('goodies')) { ?>
 
 			<header>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( has_post_thumbnail() ) { ?>
 				<p><a href="<?php the_permalink(); ?>" class="goodieImage">
@@ -132,7 +132,7 @@
 			
 			<header>
 				<a class="icon-heart posttype" rel="tooltip" href="<?php echo esc_url( $goodies_link ); ?>" title="Show all goodies"></a>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( !is_search() ) { ?>
 				<?php if ( has_post_thumbnail() ) { ?>
@@ -162,10 +162,10 @@
 				<?php } else { ?>
 					<a class="icon-asterisk posttype" rel="tooltip" href="<?php the_permalink(); ?>" title="Show all posts in"></a>
 				<?php } ?>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			</header>
 			<?php if ( !is_search() ) { ?>
-				<section class="row entry-content">
+				<section class="entry-content">
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'featureImageStream' ); ?>

@@ -115,13 +115,13 @@
   background-repeat: no-repeat;
 }
 .dimmed {
-  color: #a5b2b8;
+  color: #c7cfd3;
 }
 .dimmed p {
-  color: #a5b2b8;
+  color: #c7cfd3;
 }
 .dimmed li {
-  color: #a5b2b8;
+  color: #c7cfd3;
 }
 .divider-top {
   position: relative;
@@ -230,13 +230,15 @@
   border: 0;
 }
 .btn {
-  font-size: .8em;
-  line-height: 28px;
-  font-family: 'brandon-grotesque', sans-serif;
+  font-size: 14px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
   display: inline-block;
   padding: .3em 2em;
   margin-bottom: 1em;
@@ -257,6 +259,7 @@
 .btn:active {
   background: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
+  outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
   box-shadow: 0 1px 0 #ffffff;
   -webkit-transition: none;
@@ -268,18 +271,6 @@
   font-size: .9em;
   color: rgba(19, 56, 50, 0.6);
   margin-left: .3em;
-}
-.btn-tag {
-  font-family: 'brandon-grotesque', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 18px;
-  color: #7a8d97;
-  text-transform: lowercase;
-}
-.btn-tag:before {
-  content: "#";
-  color: #a5b2b8;
 }
 .btn-primary,
 a.btn-primary:visited {
@@ -309,18 +300,82 @@ a.btn-primary:visited:active {
   -o-transition: none;
   transition: none;
 }
+.btn-tag {
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  color: #9caab2;
+  text-transform: lowercase;
+}
+.btn-tag:before {
+  content: "#";
+  color: #c7cfd3;
+}
+.more-link {
+  font-size: 14px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  padding: .3em 2em;
+  margin-bottom: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(94, 131, 162, 0.3);
+  border-bottom-color: rgba(94, 131, 162, 0.4);
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 #fff, inset 0 0 10px rgba(169,196,219,.3);
+  box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 #fff, inset 0 0 10px rgba(169,196,219,.3);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+.more-link:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.more-link:active {
+  background: transparent;
+  border-top-color: rgba(94, 131, 162, 0.5);
+  outline: 0;
+  -webkit-box-shadow: 0 1px 0 #ffffff;
+  box-shadow: 0 1px 0 #ffffff;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.more-link span {
+  font-size: .9em;
+  color: rgba(19, 56, 50, 0.6);
+  margin-left: .3em;
+}
+.more-link:hover {
+  background: none;
+}
 .btn-block {
   display: block;
 }
 .inline-download,
 .download {
-  font-size: .8em;
-  line-height: 28px;
-  font-family: 'brandon-grotesque', sans-serif;
+  font-size: 14px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
   display: inline-block;
   padding: .3em 2em;
   margin-bottom: 1em;
@@ -343,6 +398,7 @@ a.btn-primary:visited:active {
 .download:active {
   background: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
+  outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
   box-shadow: 0 1px 0 #ffffff;
   -webkit-transition: none;
@@ -356,19 +412,17 @@ a.btn-primary:visited:active {
   color: rgba(19, 56, 50, 0.6);
   margin-left: .3em;
 }
-a[rel*="tag"],
-#topics a {
-  font-family: 'brandon-grotesque', sans-serif;
+a[rel*="tag"] {
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 18px;
-  color: #7a8d97;
+  color: #9caab2;
   text-transform: lowercase;
 }
-a[rel*="tag"]:before,
-#topics a:before {
+a[rel*="tag"]:before {
   content: "#";
-  color: #a5b2b8;
+  color: #c7cfd3;
 }
 #cancel-comment-reply-link {
   color: #7f2924;
@@ -376,17 +430,6 @@ a[rel*="tag"]:before,
 .inline-download:link {
   display: block;
   text-align: center;
-}
-.inline-download:link::before {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  content: "\f019";
-  font-size: inherit;
-  margin-right: .5em;
-  line-height: 1em;
-  vertical-align: baseline;
 }
 .inline-download:link img {
   display: none;
@@ -427,11 +470,11 @@ a[rel*="tag"]:before,
 }
 body.login {
   background: #e7eef4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
-  font-size: 18px;
-  line-height: 28px;
   font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 18px;
   font-weight: 300;
-  color: #61737c;
+  line-height: 25px;
+  color: #718690;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 #login {
@@ -441,7 +484,7 @@ body.login {
   display: none;
 }
 .login h1 {
-  background: url(../img/logo.png) no-repeat center center;
+  background: url('../img/logo.png') no-repeat center center;
   width: 190px;
   height: 31px;
   margin: 16px auto;
@@ -476,13 +519,15 @@ body.login {
 }
 .wp-core-ui .button.button-large,
 .wp-core-ui .button-group.button-large .button {
-  font-size: .8em;
-  line-height: 28px;
-  font-family: 'brandon-grotesque', sans-serif;
+  font-size: 14px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
   display: inline-block;
   padding: .3em 2em;
   margin-bottom: 1em;
@@ -516,6 +561,7 @@ body.login {
 .wp-core-ui .button-group.button-large .button:active {
   background: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
+  outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
   box-shadow: 0 1px 0 #ffffff;
   -webkit-transition: none;
@@ -557,7 +603,7 @@ body.login {
   position: relative;
 }
 .login label {
-  color: #a5b2b8;
+  color: #c7cfd3;
 }
 #login form p.submit {
   float: right;
@@ -572,13 +618,15 @@ body.login {
   margin-top: 2em;
 }
 .login #backtoblog a {
-  font-size: .8em;
-  line-height: 28px;
-  font-family: 'brandon-grotesque', sans-serif;
+  font-size: 14px;
+  line-height: 1.4444444444;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
   text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
   display: inline-block;
   padding: .3em 2em;
   margin-bottom: 1em;
@@ -606,6 +654,7 @@ body.login {
 .login #backtoblog a:active {
   background: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
+  outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
   box-shadow: 0 1px 0 #ffffff;
   -webkit-transition: none;
@@ -638,7 +687,7 @@ body.login {
   -webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
   box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 }
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)  {
   body.login {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAMAAACyRD%2B1AAAARVBMVEXm7fPp8Pbs8%2Fnr8vjl7PLq8ffo7%2FXu9Prh6O7i6e%2Fv9frt9Prj6vDn7vTz9%2Frx9frz9vrw9frk6%2FHf5uzy9vrg5%2B3e5evyfvXWAAABbklEQVR4XuWTV3KEQBBDO0wO5PX9j2r1DmtMrcs%2BgOcLBCV1PwRtHOdpjuK91nmZoqecHimTj9MyV%2FWssk7H6l1%2BpNTIOWK8WGIspYjvDgJBdZ0FSqxxhRfRkInynkmXCWeuAc5b0Kq8ISHU2eRFQtuzY1EfSJncRoE9c3d25SXOpeLJ5qgz9GBZATOVKIS5Q0t7ajD%2BOHOGZ287Iho2SSTrUEmlCKzGYRFbmhkRVfhUA2sUNdWT8%2BVAgjLIrMdUtCMnt64FPE4yyzErtZTzZsvyc9pBJhiB%2FpzWDzLFyJgyovLeugwycZDxmO5JBl%2FETuVtTwD2IuOMjCE4yZhf%2BJL5lRW%2Fk2n5BzK5bflGBmY3MrYd297yRaYPMgHyszMXmVtnjtWggvTy3pl66wxkeGLaCL0K%2F9IZts64nzqjfJFhHjB8LchS3Lx1poDMUdjIZBi%2FvsDpeXWmX2S%2Bdabfyfg%2B5HCR%2BR9%2F09%2BdeSfzCRPyICKqHGZuAAAAAElFTkSuQmCC);
     -webkit-background-size: 23px 12px;

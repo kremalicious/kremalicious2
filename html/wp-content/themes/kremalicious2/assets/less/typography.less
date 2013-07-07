@@ -3,11 +3,10 @@
 /////////////////////////////////////
 
 body {
-	font-size: @baseFontSize;
-	line-height: @baseLineHeight;
-	font-family: @baseFontFamily;
-	font-weight: @baseFontWeight;
-	color: @textColor;
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-computed;
+    color: @text-color;
 	
 	@media @breakpoint3 { 
 		font-size: 125%;
@@ -15,7 +14,7 @@ body {
 	}
 	
 	@media @highDPI {
-		font-weight: @baseFontWeightRetina;
+		font-weight: @font-weight-base-retina;
 	}
 }
 
@@ -24,28 +23,31 @@ body {
 /////////////////////////////////////
 
 h1,h2,h3,h4,h5,h6 {
-	font-family: @headingsFontFamily;
-	font-weight: @headingsFontWeight;
-	font-style: normal;
-	color: @headingsColor;
-	line-height: 1.1111em;
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+	color: @headings-color;
 }
 
 h1,
-.hentry header h2 {
-	margin: 0 0 0.6667em;
-	font-size: 2.25em;
-}
-
-h2 {
-	font-size: 2em;
-	margin: 0.75em 0;
-}
-
+h2,
 h3 {
-	margin: 0 0 1em;
-	font-size: 1.5em;
+  margin-top: @line-height-computed;
+  margin-bottom: @line-height-computed;
 }
+h4,
+h5,
+h6 {
+  margin-top: @line-height-computed;
+  margin-bottom: @line-height-computed;
+}
+
+h1, .h1 { font-size: ceil(@font-size-base * 2.70); }
+h2, .h2 { font-size: ceil(@font-size-base * 2.25); }
+h3, .h3 { font-size: ceil(@font-size-base * 1.70); }
+h4, .h4 { font-size: ceil(@font-size-base * 1.25); }
+h5, .h5 { font-size:  @font-size-base; }
+h6, .h6 { font-size: ceil(@font-size-base * 0.85); }
 
 
 // LINKS
@@ -54,7 +56,7 @@ h3 {
 a,
 a:visited {
 	text-decoration: none;
-	color: @linkColor;
+	color: @link-color;
 	.transition();
 	position: relative;
 }
@@ -67,8 +69,8 @@ a:hover,
 h1 a:visited:hover,
 h2 a:visited:hover,
 h3 a:visited:hover {
-	color: @linkColorHover;
-	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px fade(@linkColorHover, 50%);
+	color: @link-color-hover;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px fade(@link-color-hover, 50%);
 }
 
 a:active {
@@ -89,9 +91,7 @@ h3 a:visited {
 /////////////////////////////////////
 
 p,ul,ol,blockquote,pre,td,th,label,img {
-	padding: 0;
-	font-size: 1em;
-	margin: 0 0 1.5em;
+	margin: 0 0 @line-height-computed;
 }
 
 p, li {
@@ -134,20 +134,48 @@ sub { bottom: -0.25em; }
 blockquote,
 blockquote > p {
 	font-style: italic;
-	padding: 0;
-	color: @textColorLight;
+	color: @text-color-light;
 }
 
 blockquote {
-	padding-left: 1.5em;
-	border-left: 2px solid @textColorDimmed;
+    padding: (@line-height-computed / 2) @line-height-computed;
+    margin: 0 0 @line-height-computed;
+	border-left: 2px solid @text-color-dimmed;
+    p {
+      font-size: @font-size-base;
+	  
+	  &:last-child {
+	      margin-bottom: 0;
+	  }
+    }
 }
 
 
 // LISTS
 /////////////////////////////////////
 
-nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: (@line-height-computed / 2);
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+// List options
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+nav ul, nav ol {
+	.list-unstyled;
+}
 
 .entry-content ul,
 .entry-content ol {
@@ -192,7 +220,7 @@ nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
 	content: counter(ol-counter);
 	counter-increment: ol-counter;
 	font-style: italic;
-	background: @textColorDimmed;
+	background: @text-color-dimmed;
 	border-radius: 1.2em;
 	width: 1.2em;
 	display: block;
@@ -208,7 +236,7 @@ nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
 /////////////////////////////////////
 
 pre, code, kbd, samp {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-family: @font-family-monospace;
 	font-size: 14px;
 	color: #333;
 	background: #f8f8f8;

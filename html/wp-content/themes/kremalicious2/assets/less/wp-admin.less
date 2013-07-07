@@ -26,17 +26,17 @@ html,.wp-dialog {
 }
 
 body,#wpbody,.form-table .pre {
-	color: @textColor;
+	color: @text-color;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9);
 	font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
-	color: @headingsColor;
+	color: @headings-color;
 }
 
 .postbox h3 {
-	color: @textColorLight;
+	color: @text-color-light;
 }
 
 h1,.wrap h2 {
@@ -68,12 +68,12 @@ h4 {
 
 a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a, .plugins a {
 	text-decoration: none;
-	color: @linkColor;
+	color: @link-color;
 }
 
 a:hover,
 #adminmenu a:hover {
-	color: @linkColorHover;
+	color: @link-color-hover;
 	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
 }
 
@@ -157,8 +157,8 @@ input.button-primary[disabled] {
 
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
 #adminmenu .wp-menu-arrow div {
-	background: @headingsColor;
-	border-color: @headingsColor;
+	background: @headings-color;
+	border-color: @headings-color;
 }
 
 #adminmenu .wp-submenu ul {
@@ -211,7 +211,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 .plugins .inactive td,
 .plugins .inactive th {
-	.opacity(70);
+	opacity: .7;
 	background: rgba(255,255,255,.2);
 	padding-top: 1em;
 	padding-bottom: 1em
@@ -219,7 +219,7 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 .plugins .inactive:hover td,
 .plugins .inactive:hover th {
-	.opacity(100);
+	opacity: 1;
 }
 
 .widget, .postbox, .stuffbox {
@@ -306,7 +306,6 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
-	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	border: 1px solid #d7cab9;
 	border-radius: 4px;
@@ -356,7 +355,6 @@ div.updated, .login .message {
 	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
-	background-image: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
 	border: 1px solid #d7cab9;
 	border-radius: 4px;
