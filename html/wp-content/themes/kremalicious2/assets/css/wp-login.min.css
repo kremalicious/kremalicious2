@@ -254,10 +254,10 @@
   transition: all 0.2s ease-in-out 0s;
 }
 .btn:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .btn:active {
-  background: transparent;
+  background-color: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
   outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
@@ -285,13 +285,13 @@ a.btn-primary:visited {
 .btn-primary:hover,
 a.btn-primary:visited:hover {
   color: #153531;
-  background: #7ecbc1;
+  background-color: #91d2ca;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .btn-primary:active,
 a.btn-primary:visited:active {
   color: #153531;
-  background: #6cc4b9;
+  background-color: #6cc4b9;
   border-top-color: rgba(40, 101, 93, 0.9);
   -webkit-box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
   box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
@@ -353,10 +353,10 @@ a.btn-primary:visited:active {
   margin: 0;
 }
 .more-link:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .more-link:active {
-  background: transparent;
+  background-color: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
   outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
@@ -404,11 +404,11 @@ a.btn-primary:visited:active {
 }
 .inline-download:hover,
 .download:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .inline-download:active,
 .download:active {
-  background: transparent;
+  background-color: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
   outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
@@ -465,12 +465,12 @@ a[rel*="tag"]:hover:before {
   max-width: 100%;
   position: relative;
   background-color: rgba(255, 255, 255, 0.4);
-  background-image: -webkit-gradient(linear, left rgba(255, 255, 255, 0), left 100%, from(rgba(255, 255, 255, 0.7)), to(#333333));
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0), #333333, 100%);
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0), #333333 100%);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0), #333333 100%);
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.7), 0%, rgba(255, 255, 255, 0), 100%);
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3ffffff', endColorstr='#ff333333', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3ffffff', endColorstr='#00ffffff', GradientType=0);
   border: 1px solid #dcdcdc;
   border-radius: 3px;
   display: inline-block;
@@ -575,11 +575,11 @@ body.login {
 }
 .wp-core-ui .button.button-large:hover,
 .wp-core-ui .button-group.button-large .button:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .wp-core-ui .button.button-large:active,
 .wp-core-ui .button-group.button-large .button:active {
-  background: transparent;
+  background-color: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
   outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;
@@ -598,13 +598,13 @@ body.login {
 .wp-core-ui .button.button-large:hover,
 .wp-core-ui .button-group.button-large .button:hover {
   color: #153531;
-  background: #7ecbc1;
+  background-color: #91d2ca;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .wp-core-ui .button.button-large:active,
 .wp-core-ui .button-group.button-large .button:active {
   color: #153531;
-  background: #6cc4b9;
+  background-color: #6cc4b9;
   border-top-color: rgba(40, 101, 93, 0.9);
   -webkit-box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
   box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
@@ -669,10 +669,10 @@ body.login {
   box-shadow: none;
 }
 .login #backtoblog a:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .login #backtoblog a:active {
-  background: transparent;
+  background-color: transparent;
   border-top-color: rgba(94, 131, 162, 0.5);
   outline: 0;
   -webkit-box-shadow: 0 1px 0 #ffffff;

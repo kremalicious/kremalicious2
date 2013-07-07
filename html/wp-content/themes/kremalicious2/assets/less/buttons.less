@@ -23,11 +23,11 @@
 	.transition();
 	
 	&:hover {
-		background: rgba(255,255,255,.5);
+		background-color: rgba(255,255,255,.5);
 	}
 		
 	&:active {
-		background: transparent;
+		background-color: transparent;
 		border-top-color: rgba(94,131,162,.5);
 		outline: 0;
 		.box-shadow(0 1px 0 #fff);
@@ -52,13 +52,13 @@ a.btn-primary:visited {
 	
 	&:hover {
 		color: darken(@link-color, 30%);
-		background: lighten(@link-color, 20%);
+		background-color: lighten(@link-color, 25%);
 		text-shadow: 0 1px 0 rgba(255,255,255,.3);
 	}
 	
 	&:active {
 		color: darken(@link-color, 30%);
-		background: lighten(@link-color, 15%);
+		background-color: lighten(@link-color, 15%);
 		border-top-color: rgba(40,101,93,.9);
 		.box-shadow(~"0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3)");
 		.transition(none);
@@ -144,7 +144,7 @@ a[rel*="tag"] {
 	max-width: 100%;
 	position: relative;
 	background-color: rgba(255,255,255,.4);
-	#gradient > .vertical(rgba(255,255,255,0.7), rgba(255,255,255,0));
+	#gradient > .vertical(rgba(255,255,255,0.7); 0%; rgba(255,255,255,0); 100%);
 	border: 1px solid #dcdcdc;
 	border-radius: 3px;
 	display: inline-block;
