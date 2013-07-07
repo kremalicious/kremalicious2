@@ -115,13 +115,13 @@
   background-repeat: no-repeat;
 }
 .dimmed {
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 .dimmed p {
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 .dimmed li {
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 .divider-top {
   position: relative;
@@ -305,12 +305,12 @@ a.btn-primary:visited:active {
   font-weight: 500;
   font-style: normal;
   font-size: 18px;
-  color: #9caab2;
+  color: #96a6ad;
   text-transform: lowercase;
 }
 .btn-tag:before {
   content: "#";
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 .more-link {
   font-size: 14px;
@@ -417,12 +417,12 @@ a[rel*="tag"] {
   font-weight: 500;
   font-style: normal;
   font-size: 18px;
-  color: #9caab2;
+  color: #96a6ad;
   text-transform: lowercase;
 }
 a[rel*="tag"]:before {
   content: "#";
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 #cancel-comment-reply-link {
   color: #7f2924;
@@ -474,7 +474,7 @@ body.login {
   font-size: 18px;
   font-weight: 300;
   line-height: 25px;
-  color: #718690;
+  color: #6c818b;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 #login {
@@ -603,7 +603,7 @@ body.login {
   position: relative;
 }
 .login label {
-  color: #c7cfd3;
+  color: #c1cacf;
 }
 #login form p.submit {
   float: right;

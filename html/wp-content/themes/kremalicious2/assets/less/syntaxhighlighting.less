@@ -18,26 +18,24 @@
     margin: 0;
     border-radius: 0;
     background: none;
-    line-height: 19px;
-    font-size: 11px;
+    font-size: 12px;
+	line-height: 18px;
 }
 
 .syntaxhighlighter {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	color: #333;
+	font-family: @font-family-monospace;
+	color: @text-color;
 	background: #f8f8f8;
 	background: rgba(255,255,255,.4);
-	line-height: 19px;
-	font-size: 11px;
+	border-radius: @border-radius-base;
+	
 	padding: 1em;
-	border-radius: 3px;
-	border: 1px solid #c9d7e4;
 	word-wrap: break-word;
 	margin-bottom: 1.5em;
-	.box-shadow(~"0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1)");
 	display: block;
 	width: auto;
-	overflow: auto;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 	white-space: pre;
 	word-wrap: normal;
 }
@@ -50,27 +48,16 @@
 .syntaxhighlighter:hover,
 .syntaxhighlighter .line:hover {
 	background: #fff;
-	background: rgba(255,255,255,.5);
+	background: rgba(255,255,255,.7);
 }
 
-.no-touch .entry-content .syntaxhighlighter:hover {
-	margin-left: -10%;
-	margin-right: -10%;
-	@media only screen and (min-width: 769px) {
-		& {
-			margin-left: -20%;
-			margin-right: -5%;
-		}
-	}
-	@media only screen and (min-width: 1024px) {
-		& {
-			margin-right: -10%;
-		}
-	}
-	@media only screen and (min-width: 1280px) { 
-		& {
-			margin-right: -20%;
-		}
+.entry-content .syntaxhighlighter {
+	margin-left: -4%;
+	margin-right: -4%;
+	
+	@media @breakpoint3 {
+		margin-left: -10%;
+		margin-right: -10%;
 	}
 }
 
@@ -78,7 +65,11 @@
 .syntaxhighlighter .line.alt2 {}
 
 .syntaxhighlighter .gutter {
-	color: #bac0c7;
+	color: @text-color-dimmed;
+	.line {
+		font-size: 10px;
+	}
+	
 }
 
 .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2,
@@ -126,10 +117,10 @@
 .syntaxhighlighter .toolbar a:hover {}
 
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
-  color: #333;
+  color: @text-color;
 }
 .syntaxhighlighter .comments, .syntaxhighlighter .comments a {
-  color: #949696;
+  color: @text-color-dimmed;
 }
 .syntaxhighlighter .string, .syntaxhighlighter .string a {
   color: #2a00ff;

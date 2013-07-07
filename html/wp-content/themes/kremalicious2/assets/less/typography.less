@@ -6,6 +6,7 @@ body {
     font-family: @font-family-base;
     font-size: @font-size-base;
     line-height: @line-height-computed;
+	font-weight: @font-weight-base;
     color: @text-color;
 	
 	@media @breakpoint3 { 
@@ -229,58 +230,6 @@ nav ul, nav ol {
 	line-height: 1.1em;
 	top: .2em;
 	.box-shadow(0 1px 0 rgba(255,255,255,.7));
-}
-
-
-// CODE
-/////////////////////////////////////
-
-pre, code, kbd, samp {
-	font-family: @font-family-monospace;
-	font-size: 14px;
-	color: #333;
-	background: #f8f8f8;
-	background: rgba(255,255,255,.4);
-	border-radius: 3px;
-}
-
-pre {
-	line-height: 19px;
-	font-size: 11px;
-	padding: 1em;
-	border: 1px solid #c9d7e4;
-	word-wrap: break-word;
-	margin-bottom: 1.5em;
-	-webkit-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
-	box-shadow: 0 1px 3px #fff, inset 0 1px 7px rgba(0,0,0,.1);
-	display: block;
-	width: auto;
-	overflow: auto;
-	// Improve readability of pre-formatted text in all browsers
-	white-space: pre; white-space: pre-wrap;
-	word-wrap: normal;
-	.transition();
-}
-
-code {
-    border: 1px solid #eaeaea;
-}
-
-pre code,
-.syntaxhighlighter code {
-	line-height: 19px;
-	font-size: 11px;
-    border: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    background: none;
-}
-
-pre:hover {
-	background: #fff;
-	background: rgba(255,255,255,.5);
 }
 
 
