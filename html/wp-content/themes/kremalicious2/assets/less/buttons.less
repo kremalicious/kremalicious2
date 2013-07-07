@@ -3,7 +3,7 @@
 /////////////////////////////////////
 
 .btn {
-	font-size: @font-size-mini;
+	font-size: @font-size-small;
 	line-height:  @line-height-base;
 	font-family: @headings-font-family;
 	font-weight: @headings-font-weight;
@@ -67,16 +67,22 @@ a.btn-primary:visited {
 }
 
 .btn-tag {
-	font-family: @headings-font-family;
-	font-weight: @headings-font-weight;
-	font-style: normal;
-	font-size: @font-size-base;
+	font-family: @font-family-base;
+	font-size: @font-size-small;
 	color: @text-color-light;
 	text-transform: lowercase;
 	
 	&:before {
 		content: "#";
 		color: @text-color-dimmed;
+		font-size: .8em;
+		margin-right: .1em;
+	}
+	
+	&:hover {
+		color: @link-color;
+		
+		&:before { color: @text-color-light; }
 	}
 }
 
@@ -87,6 +93,7 @@ a.btn-primary:visited {
 	border: none;
 	box-shadow: none;
 	padding: 0;
+	margin: 0;
 	
 	&:hover {
 		background: none;

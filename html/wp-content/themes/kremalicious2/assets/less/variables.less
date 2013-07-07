@@ -20,8 +20,8 @@
 
 @font-size-base:          	18px;
 @font-size-large:         	ceil(@font-size-base * 1.25);
-@font-size-small:         	ceil(@font-size-base * 0.85);
-@font-size-mini:          	ceil(@font-size-base * 0.75);
+@font-size-small:         	ceil(@font-size-base * 0.8);
+@font-size-mini:          	ceil(@font-size-base * 0.7);
 
 @line-height-base:			1.4444444444;	// 26/18
 @line-height-computed:    	floor(@font-size-base * @line-height-base);
@@ -50,7 +50,7 @@
 // Links
 /////////////////////////////////////
 
-@link-color:				@brand-cyan;
+@link-color:				lighten(@brand-cyan, 5%);
 @link-color-hover:			lighten(@link-color, 10%);
 
 

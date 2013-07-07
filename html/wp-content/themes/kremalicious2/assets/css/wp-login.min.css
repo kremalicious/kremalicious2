@@ -230,7 +230,7 @@
   border: 0;
 }
 .btn {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -274,9 +274,9 @@
 }
 .btn-primary,
 a.btn-primary:visited {
-  color: #0e2320;
+  color: #153531;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-  background: #5abdb0;
+  background: #6cc4b9;
   border-color: rgba(40, 101, 93, 0.4);
   border-bottom-color: rgba(40, 101, 93, 0.5);
   -webkit-box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 rgba(255,255,255,.4);
@@ -284,14 +284,14 @@ a.btn-primary:visited {
 }
 .btn-primary:hover,
 a.btn-primary:visited:hover {
-  color: #0e2320;
-  background: #6cc4b9;
+  color: #153531;
+  background: #7ecbc1;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .btn-primary:active,
 a.btn-primary:visited:active {
-  color: #0e2320;
-  background: #5abdb0;
+  color: #153531;
+  background: #6cc4b9;
   border-top-color: rgba(40, 101, 93, 0.9);
   -webkit-box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
   box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
@@ -301,19 +301,25 @@ a.btn-primary:visited:active {
   transition: none;
 }
 .btn-tag {
-  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 18px;
+  font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 15px;
   color: #96a6ad;
   text-transform: lowercase;
 }
 .btn-tag:before {
   content: "#";
   color: #c1cacf;
+  font-size: .8em;
+  margin-right: .1em;
+}
+.btn-tag:hover {
+  color: #41a296;
+}
+.btn-tag:hover:before {
+  color: #96a6ad;
 }
 .more-link {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -339,6 +345,7 @@ a.btn-primary:visited:active {
   border: none;
   box-shadow: none;
   padding: 0;
+  margin: 0;
 }
 .more-link:hover {
   background: rgba(255, 255, 255, 0.5);
@@ -367,7 +374,7 @@ a.btn-primary:visited:active {
 }
 .inline-download,
 .download {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -413,16 +420,22 @@ a.btn-primary:visited:active {
   margin-left: .3em;
 }
 a[rel*="tag"] {
-  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 18px;
+  font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 15px;
   color: #96a6ad;
   text-transform: lowercase;
 }
 a[rel*="tag"]:before {
   content: "#";
   color: #c1cacf;
+  font-size: .8em;
+  margin-right: .1em;
+}
+a[rel*="tag"]:hover {
+  color: #41a296;
+}
+a[rel*="tag"]:hover:before {
+  color: #96a6ad;
 }
 #cancel-comment-reply-link {
   color: #7f2924;
@@ -492,7 +505,7 @@ body.login {
 .login #nav a,
 .login #backtoblog a {
   text-decoration: none;
-  color: #3a9085 !important;
+  color: #41a296 !important;
 }
 #nav {
   display: none;
@@ -519,7 +532,7 @@ body.login {
 }
 .wp-core-ui .button.button-large,
 .wp-core-ui .button-group.button-large .button {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -541,9 +554,9 @@ body.login {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
-  color: #0e2320;
+  color: #153531;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-  background: #5abdb0;
+  background: #6cc4b9;
   border-color: rgba(40, 101, 93, 0.4);
   border-bottom-color: rgba(40, 101, 93, 0.5);
   -webkit-box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 rgba(255,255,255,.4);
@@ -577,14 +590,14 @@ body.login {
 }
 .wp-core-ui .button.button-large:hover,
 .wp-core-ui .button-group.button-large .button:hover {
-  color: #0e2320;
-  background: #6cc4b9;
+  color: #153531;
+  background: #7ecbc1;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 .wp-core-ui .button.button-large:active,
 .wp-core-ui .button-group.button-large .button:active {
-  color: #0e2320;
-  background: #5abdb0;
+  color: #153531;
+  background: #6cc4b9;
   border-top-color: rgba(40, 101, 93, 0.9);
   -webkit-box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
   box-shadow: 0 1px 0 #fff,inset 0 0 18px rgba(43,100,92,.3);
@@ -618,7 +631,7 @@ body.login {
   margin-top: 2em;
 }
 .login #backtoblog a {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
