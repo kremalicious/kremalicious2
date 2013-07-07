@@ -1,81 +1,100 @@
+/////////////////////////////////////
+// Tooltips
+/////////////////////////////////////
+
+// Base class
 .tooltip {
-	position: absolute;
-	z-index: 1020;
-	display: block;
-	visibility: visible;
-	padding: 5px;
-	font-size: 12px;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    visibility: visible;
+    font-size: 11px;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    line-height: 1.4;
+	
 	.opacity(0);
-	.transition();
-	.transition-property(opacity);
-}
-.tooltip.in {
-	.opacity(85);
-}
-.tooltip.top {
-  margin-top: -2px;
-}
-.tooltip.right {
-  margin-left: 2px;
-}
-.tooltip.bottom {
-  margin-top: 2px;
-}
-.tooltip.left {
-  margin-left: -2px;
-}
-.tooltip.top .tooltip-arrow {
-  bottom: 0;
-  left: 50%;
-  margin-left: -5px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #183030;
-}
-.tooltip.left .tooltip-arrow {
-  top: 50%;
-  right: 0;
-  margin-top: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid #183030;
-}
-.tooltip.bottom .tooltip-arrow {
-  top: 0;
-  left: 50%;
-  margin-left: -5px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid #183030;
-}
-.tooltip.right .tooltip-arrow {
-  top: 50%;
-  left: 0;
-  margin-top: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid #183030;
+	.transition(opacity .2s ease-in-out);
+	// also prevents weird arrow jumping in WebKit
+	-webkit-transform: translate3d(0,0,0);
+	
+    &.in     { .opacity(85); }
+    &.top    { margin-top:  -3px; padding: 5px 0; }
+    &.right  { margin-left:  3px; padding: 0 5px; }
+    &.bottom { margin-top:   3px; padding: 5px 0; }
+    &.left   { margin-left: -3px; padding: 0 5px; }
 }
 
+// Wrapper for the tooltip content
 .tooltip-inner {
 	max-width: 200px;
-	padding: 3px 8px;
-	color: #ffffff;
-	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
-	font-size: 11px;
+	padding: 5px 8px;
+	color: @tooltip-color;
 	text-shadow: 0 1px 0 #000;
 	text-align: center;
 	text-decoration: none;
-	background: #2e4f5c;
-	#gradient > .vertical(#2e4f5c, #183030);
-	border: 1px solid #2e4f5c;
-	border-bottom-color: #183030;
-	.box-shadow(~"inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 3px rgba(0,0,0,.3), 0 1px 5px rgba(0,0,0,.3), 0 -2px 8px rgba(0,0,0,.2)");
-	border-radius: 4px;
+	background-color: @tooltip-bg;
+	border-radius: 3px;
 }
 
 .tooltip-arrow {
-  position: absolute;
-  width: 0;
-  height: 0;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.tooltip {
+	&.top .tooltip-arrow {
+		bottom: 0;
+		left: 50%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-top-color: @tooltip-arrow-color;
+	}
+	&.top-left .tooltip-arrow {
+		bottom: 0;
+		left: 5px;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-top-color: @tooltip-arrow-color;
+	}
+	&.top-right .tooltip-arrow {
+		bottom: 0;
+		right: 5px;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-top-color: @tooltip-arrow-color;
+	}
+	&.right .tooltip-arrow {
+		top: 50%;
+		left: 0;
+		margin-top: -@tooltip-arrow-width;
+		border-width: @tooltip-arrow-width @tooltip-arrow-width @tooltip-arrow-width 0;
+		border-right-color: @tooltip-arrow-color;
+	}
+	&.left .tooltip-arrow {
+		top: 50%;
+		right: 0;
+		margin-top: -@tooltip-arrow-width;
+		border-width: @tooltip-arrow-width 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-left-color: @tooltip-arrow-color;
+	}
+	&.bottom .tooltip-arrow {
+		top: 0;
+		left: 50%;
+		margin-left: -@tooltip-arrow-width;
+		border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-bottom-color: @tooltip-arrow-color;
+	}
+	&.bottom-left .tooltip-arrow {
+		top: 0;
+		left: 5px;
+		border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-bottom-color: @tooltip-arrow-color;
+	}
+	&.bottom-right .tooltip-arrow {
+		top: 0;
+		right: 5px;
+		border-width: 0 @tooltip-arrow-width @tooltip-arrow-width;
+		border-bottom-color: @tooltip-arrow-color;
+	}
 }
