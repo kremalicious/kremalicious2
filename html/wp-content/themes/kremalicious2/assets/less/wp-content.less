@@ -47,36 +47,24 @@
 // Aside Meta
 /////////////////////////////////////
 
-aside.entry-meta {
+.entry-meta {
 	.byline,
 	.time,
 	time {
 		font-style: italic;
 		text-align: center;
 		color: @text-color-light;
-		font-size: .9em;
+		font-size: @font-size-small;
 		line-height: 1.4em
 	}
 	.byline {
 		margin-bottom: 0;
 		
-		a {
-			display: block;
-			font-style: normal;
-		}
+		a { font-style: normal; }
 	}
-}
-
-// Footer Meta
-/////////////////////////////////////
-
-footer.entry-meta {
-	color: @text-color-light;
-	p {
-		margin-bottom: 0;
-	}
-	a {
-		margin-bottom: 0
+	
+	.entry-content & {
+		p, a { margin-bottom: 0 }
 	}
 }
 
