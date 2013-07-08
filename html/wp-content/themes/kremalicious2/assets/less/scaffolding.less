@@ -16,8 +16,12 @@ body {
 /////////////////////////////////////
 
 .banner {
-	text-align: center;
 	text-shadow: 0 1px 0 rgba(255,255,255,.7);
+	
+	.row {
+		margin-top: @line-height-computed;
+		margin-bottom: @line-height-computed;
+	}
 	
 	.banner-title { 
 		margin-top: 0;
@@ -57,23 +61,27 @@ body {
 
 .banner-description {
     .h5;
+	.heading-band;
 	color: @text-color-light;
-	margin-bottom: @line-height-computed/2;
-	padding-bottom: @line-height-computed/2;
-	border-bottom: 3px double fade(@brand-grey, 20%);
-	position: relative;
+	margin-bottom: 0;
+}
+
+
+// Category Archive Header
+/////////////////////////////////////
+
+.heading-cat {
+	margin-top: 0;
+	margin-bottom: 0;
 	
-	&:after {
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: -4px;
-		width: 100%;
-		height: 1px;
-		background: transparent;
-		border-bottom: 3px double rgba(255,255,255,.7);
+	.heading-cat-title {
+		margin: 0;
+		.h5;
+		color: @brand-grey-light;
+		.heading-band;
+		
+		a { color: @link-color }
 	}
-	
 }
 
 
@@ -97,17 +105,12 @@ body {
 
 // Subscribe component
 .subscribe {
-	.subscribe-title {
-		margin-top: 0;
-		margin-bottom: @line-height-computed/2;
-		color: @text-color-light;
-	}
+	margin: @line-height-computed auto;
 	p {
-		padding-bottom: 1em;
 		margin: 0;
 		.clearfix;
 		.btn {
-			margin-bottom: .5em;
+			margin-bottom: 0;
 			padding: .3em 1em;
 			&:first-child {
 				margin-left:0

@@ -23,6 +23,20 @@
 	</div>
   <?php get_search_form(); ?>
 <?php } ?>
+	
+<?php if ( is_search() ) { ?>
+	<header>
+		<h1>
+			<?php if ( is_paged() ) { ?>
+				<a rel="tooltip" title="Back to home" href="/">/</a> 
+				<a rel="tooltip" title="Back to first page" href="../../">Search Results for <ins><?php echo get_search_query(); ?></ins> /</a> 
+				<?php global $page, $paged; echo sprintf( __( ' Page %s', 'twentyeleven' ), max( $paged, $page )); ?>
+			<?php } else { ?>
+				<a rel="tooltip" title="Back To Home" href="/">/</a> Search Results for <ins><?php echo get_search_query(); ?></ins>
+			<?php } ?>
+		</h1>
+	</header>
+<?php } ?>
 
 <?php /* Start loop */ ?>
 <?php while (have_posts()) : the_post(); ?>

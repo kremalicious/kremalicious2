@@ -7,7 +7,6 @@
 /////////////////////////////////////
 
 .nav-main {
-    text-align: center;
 	margin-top: 0;
     
 	ul { margin: 0; }
@@ -21,6 +20,8 @@ a.nav-main-link {
     display: block;
     float: left;
 	margin-left: 1em;
+	
+	li:first-child & { margin-left: 0 }
 }
 
 // Pager
@@ -28,7 +29,10 @@ a.nav-main-link {
 
 .pager {
 	.clearfix;
-	
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+	.h6;
 	p {
 		width: 48%;
 		margin: 0;
@@ -46,7 +50,7 @@ a.nav-main-link {
 	
 	.single & .alignleft a { margin-left: 1.5em; }
 	
-	.single & .alignright a { margin-right: 2em; }
+	.single & .alignright a { margin-right: 1.5em; }
 	
 	.single & i {
 		position: absolute;
