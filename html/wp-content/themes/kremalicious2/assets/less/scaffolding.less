@@ -19,23 +19,40 @@ body {
 	text-align: center;
 	text-shadow: 0 1px 0 rgba(255,255,255,.7);
 	
-	.banner-logo {
-		display: block;
-		background-position: center center;
-		position: relative;
-		height: 31px;
-		.ir;
+	.banner-title { 
+		margin-top: 0;
+		margin-bottom: @line-height-computed;
+
+		// display toned down logo
+		// by default
 		.logo;
-	
+		
 		@media @highDPI {
 			.logo_2x
 		}
 	}
 	
-	.banner-title { 
-		margin-top: 0;
-		margin-bottom: @line-height-computed;
+	.banner-logo {
+		.ir;
+		
+		// repeat logo
+		// but display hover version
+		.logo;
+		background-position: center bottom;
+		width: 127px;
+		margin-left: auto;
+		margin-right: auto;
+	
+		@media @highDPI {
+			.logo_2x
+		}
+		
+		// hide by default
+		opacity: 0;
+		// show smooooothly on hover
+		&:hover { opacity: 1 }
 	}
+
 }
 
 .banner-description {
