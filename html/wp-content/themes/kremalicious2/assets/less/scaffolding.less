@@ -48,13 +48,14 @@ body {
 		margin-right: auto;
 	
 		@media @highDPI {
-			.logo_2x
+			.logo_2x;
 		}
 		
 		// hide by default
 		opacity: 0;
 		// show smooooothly on hover
 		&:hover { opacity: 1 }
+		&:active { top: 0 }
 	}
 
 }
