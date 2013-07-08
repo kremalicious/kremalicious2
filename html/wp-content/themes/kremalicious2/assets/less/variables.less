@@ -5,6 +5,7 @@
 @brand-light:           	#e7eef4;
 @brand-cyan:            	#3a9085;
 @brand-grey:            	#56666e;
+@brand-grey-light:			#96a6ad;
 
 
 // Typography
@@ -35,8 +36,8 @@
 /////////////////////////////////////
 
 @text-color:				lighten(@brand-grey, 10%);
-@text-color-light:			lighten(@text-color, 15%);
-@text-color-dimmed:			lighten(@text-color-light, 15%);
+@text-color-light:			@brand-grey-light;
+@text-color-dimmed:			lighten(@brand-grey-light, 5%);
 @headings-color:         	@brand-dark;
 @headings-color-light:		fade(@brand-dark, 80%);
 

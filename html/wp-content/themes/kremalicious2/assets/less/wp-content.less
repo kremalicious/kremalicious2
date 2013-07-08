@@ -9,19 +9,28 @@
 	&:first-child { padding-top: 0;	}
 }
 
+.home .hentry p:last-child {
+	margin-bottom: 0;
+}
+
+// post title
 .entry-title {
 	.h1;
-	color: @headings-color;
 	text-align: center;
+	color: @headings-color;
 	margin-top: 0;
 	margin-bottom: @line-height-computed;
 	
 	.format-link & { .h4; }
 }
 
-.home .hentry p:last-child {
-	margin-bottom: 0;
+// post content
+.entry-content {
+	h1, h2, h3, h4 {
+		.heading-band;
+	}
 }
+
 
 // post category icons
 /////////////////////////////////////

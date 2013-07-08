@@ -115,13 +115,13 @@
   background-repeat: no-repeat;
 }
 .dimmed {
-  color: #c1cacf;
+  color: #a4b2b8;
 }
 .dimmed p {
-  color: #c1cacf;
+  color: #a4b2b8;
 }
 .dimmed li {
-  color: #c1cacf;
+  color: #a4b2b8;
 }
 .divider-top {
   position: relative;
@@ -164,6 +164,15 @@
 }
 .no-divider-bottom::before {
   display: none;
+}
+.heading-band {
+  display: inline-block;
+  clear: both;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 12.5px 25px 12.5px 100%;
+  margin-left: -100%;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .clearfix {
   *zoom: 1;
@@ -307,13 +316,13 @@ a.btn-primary:visited:active {
   font-weight: 500;
   font-style: normal;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   vertical-align: middle;
   color: #96a6ad;
 }
 .btn-tag:before {
   content: "#";
-  color: #c1cacf;
+  color: #a4b2b8;
   font-size: .9em;
   margin-right: .1em;
 }
@@ -431,13 +440,13 @@ a[rel*="tag"] {
   font-weight: 500;
   font-style: normal;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: lowercase;
   vertical-align: middle;
   color: #96a6ad;
 }
 a[rel*="tag"]:before {
   content: "#";
-  color: #c1cacf;
+  color: #a4b2b8;
   font-size: .9em;
   margin-right: .1em;
 }
@@ -623,7 +632,7 @@ body.login {
   position: relative;
 }
 .login label {
-  color: #c1cacf;
+  color: #a4b2b8;
 }
 #login form p.submit {
   float: right;
