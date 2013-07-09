@@ -80,7 +80,7 @@ a:hover,
 // Forms
 /////////////////////////////////////
 
-textarea, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, #titlediv #title {
+textarea, textarea.widefat, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, #titlediv #title {
 	background: #fff;
 	background: rgba(255,255,255,.4);
 	padding: .5em;
@@ -126,8 +126,9 @@ input.button-primary,
 button.button-primary,
 .submitbox .submitdelete {
 	.btn;
+    margin-bottom: 0;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 1;
 }
 
 .wp-core-ui .button-primary,
@@ -137,8 +138,9 @@ button.button-primary,
 a.button-primary {
 	.btn;
 	.btn-primary;
+    margin-bottom: 0;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 1;
 }
 
 // disabled & autosave button state
@@ -177,7 +179,9 @@ div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs l
 
 .widefat td, .widefat th,
 .widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox,
-.widefat {
+.widefat,
+.plugins .inactive td, .plugins .inactive th, .plugins .active td, .plugins .active th,
+.plugins-php .widefat tfoot th, .plugins-php .widefat tfoot td {
 	border: none;
 }
 

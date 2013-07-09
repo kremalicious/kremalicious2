@@ -198,8 +198,9 @@ a.btn-primary:visited:active {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
+  margin-bottom: 0;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
   background: none;
   border: none;
   box-shadow: none;
@@ -274,8 +275,9 @@ a.btn-primary:visited:active {
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
+  margin-bottom: 0;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
 }
 .inline-download:hover,
 .download:hover {
@@ -453,6 +455,7 @@ a:hover,
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9), 0 0 5px rgba(91, 231, 214, 0.5);
 }
 textarea,
+textarea.widefat,
 input[type="text"],
 input[type="password"],
 input[type="file"],
@@ -530,8 +533,9 @@ button.button-primary,
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
+  margin-bottom: 0;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
 }
 .wp-core-ui .button:hover,
 .wp-core-ui .button-secondary:hover,
@@ -616,8 +620,9 @@ a.button-primary {
   border-bottom-color: rgba(40, 101, 93, 0.5);
   -webkit-box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 rgba(255,255,255,.4);
   box-shadow: 0 1px 3px rgba(151,156,159,.1), inset 0 1px 0 rgba(255,255,255,.4);
+  margin-bottom: 0;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
 }
 .wp-core-ui .button-primary:hover,
 .btn-primary:hover,
@@ -755,7 +760,13 @@ ul.add-menu-item-tabs li.tabs,
 #titlediv,
 #poststuff .postarea,
 .stuffbox,
-.widefat {
+.widefat,
+.plugins .inactive td,
+.plugins .inactive th,
+.plugins .active td,
+.plugins .active th,
+.plugins-php .widefat tfoot th,
+.plugins-php .widefat tfoot td {
   border: none;
 }
 .widefat td {
@@ -889,8 +900,9 @@ h3.dashboard-widget-title small,
   -moz-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
+  margin-bottom: 0;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
   color: #f00;
 }
 .submitbox .submitdelete:hover {
