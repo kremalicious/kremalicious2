@@ -17,10 +17,10 @@
 }
 .logo_2x {
   background-image: url('../img/logo@2x.png');
-  -webkit-background-size: 127px 60px;
-  -moz-background-size: 127px 60px;
-  -o-background-size: 127px 60px;
-  background-size: 127px 60px;
+  -webkit-background-size: 127px 120px;
+  -moz-background-size: 127px 120px;
+  -o-background-size: 127px 120px;
+  background-size: 127px 120px;
 }
 .dimmed {
   color: #a4b2b8;
@@ -154,7 +154,6 @@ a.btn-primary:visited:active {
   transition: none;
 }
 .btn-tag {
-  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -323,7 +322,6 @@ a.btn-primary:visited:active {
   margin-left: .3em;
 }
 a[rel*="tag"] {
-  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;

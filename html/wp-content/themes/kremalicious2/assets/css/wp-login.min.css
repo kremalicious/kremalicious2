@@ -17,10 +17,10 @@
 }
 .logo_2x {
   background-image: url('../img/logo@2x.png');
-  -webkit-background-size: 127px 60px;
-  -moz-background-size: 127px 60px;
-  -o-background-size: 127px 60px;
-  background-size: 127px 60px;
+  -webkit-background-size: 127px 120px;
+  -moz-background-size: 127px 120px;
+  -o-background-size: 127px 120px;
+  background-size: 127px 120px;
 }
 .dimmed {
   color: #a4b2b8;
@@ -218,7 +218,6 @@ a.btn-primary:visited:active {
   transition: none;
 }
 .btn-tag {
-  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -342,7 +341,6 @@ a.btn-primary:visited:active {
   margin-left: .3em;
 }
 a[rel*="tag"] {
-  font-size: 15px;
   line-height: 1.4444444444;
   font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -407,23 +405,23 @@ a[rel*="tag"]:hover:before {
 }
 body.login {
   background: #e7eef4 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
-  font-family: 'rooney-web', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 25px;
   color: #6c818b;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 #login {
-  padding-top: 10%;
+  padding-top: 7%;
 }
 .login h1 a {
   display: none;
 }
 .login h1 {
-  background: url('../img/logo.png') no-repeat center center;
-  width: 190px;
-  height: 31px;
+  background: url('../img/logo.png') no-repeat center top;
+  width: 171px;
+  height: 60px;
   margin: 16px auto;
 }
 .login #nav a,
@@ -552,7 +550,9 @@ body.login {
   clear: both;
   margin: 0;
   padding: 0;
-  margin-top: 2em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 .login #backtoblog a {
   font-size: 15px;
@@ -582,8 +582,10 @@ body.login {
   width: 100%;
   background: none;
   border: none;
+  margin: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+  padding: 3em;
 }
 .login #backtoblog a:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -634,9 +636,9 @@ body.login {
   }
   .login h1 {
     background-image: url(../img/logo@2x.png);
-    -webkit-background-size: 190px 31px;
-    -moz-background-size: 190px 31px;
-    -o-background-size: 190px 31px;
-    background-size: 190px 31px;
+    -webkit-background-size: 171px 60px;
+    -moz-background-size: 171px 60px;
+    -o-background-size: 171px 60px;
+    background-size: 171px 60px;
   }
 }
