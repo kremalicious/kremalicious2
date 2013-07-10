@@ -7,9 +7,7 @@
 @import 'utilities.less';
 @import 'buttons.less';
 
-* {
-	.box-sizing(border-box);
-}
+* { .box-sizing(border-box); }
 
 body.login {
 	.bodyTexture;
@@ -22,11 +20,10 @@ body.login {
 }
 
 #login {
-	padding-top: 7%;
-}
-
-.login h1 a {
-	display: none;
+    width: 100%;
+    max-width: 640px;
+    padding: 5%;
+    margin: auto;
 }
 
 .login h1 {
@@ -34,33 +31,70 @@ body.login {
 	width: 171px;
 	height: 60px;
 	margin: 16px auto;
-}
-
-.login #nav a,.login #backtoblog a {
-	text-decoration: none;
-	color: @link-color !important;
+    
+    a { display: none; }
 }
 
 #nav {
 	display: none;
 }
 
-.login form .input {
-	background: #fff;
-	background: rgba(255,255,255,.4);
-	border: 0;
-	border-bottom: 1px solid #AFC3CB;
-	.box-shadow(0 1px 0 #fff);
-	padding: .2em .5em;
-	width: 100%;
-	border-radius: 0;
-	.transition();
-}
+.login form {
+	.box-shadow(none);
+	border: none;
+	background: transparent;
+	margin: 1em auto;
+	padding: 1em 0;
+	position: relative;
+    .clearfix;
+    
+    // layout
+    @media only screen and (min-width: 550px) {
+        p:first-child,
+        p:nth-child(2) { width: 48%; }
+        
+        // username row
+        p:first-child { float: left; }
+        
+        // password row
+        p:nth-child(2) { float: right; }  
+    }
+    
+    @media only screen and (min-width: 1024px) {
+        & { margin-left: -140px }
+        
+        // button
+        .submit {
+            position: absolute;
+            right: -140px;
+            top: 47px;
+            margin-bottom: 0;
+            
+            .button { height: 40px }
+        }  
+    }
+    
+    // labels
+    label { color: @text-color-dimmed; }
+    
+    // input fields
+    .input {
+    	background: #fff;
+    	background: rgba(255,255,255,.4);
+    	border: 0;
+    	border-bottom: 1px solid #AFC3CB;
+    	.box-shadow(0 1px 0 #fff);
+    	padding: .2em .5em;
+    	width: 100%;
+    	border-radius: 0;
+    	.transition();
 
-.login form .input:focus {
-	background: rgba(255,255,255,.8);
-	border-bottom-color: #78868c;
-	outline: none;
+        &:focus {
+        	background: rgba(255,255,255,.8);
+        	border-bottom-color: #78868c;
+        	outline: none;
+        }
+    }
 }
 
 .wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
@@ -70,19 +104,6 @@ body.login {
 	line-height: 18px;
 	width: 120px;
 	display: block;
-}
-
-.login form {
-	.box-shadow(none);
-	border: none;
-	background: transparent;
-	margin: 1em auto;
-	padding: 1em 0;
-	position: relative
-}
-
-.login label {
-	color: @text-color-dimmed;
 }
 
 #login form p.submit {
@@ -111,6 +132,8 @@ body.login {
         margin: 0;
 		.box-shadow(none);
         padding: 3em;
+    	text-decoration: none;
+    	color: @link-color !important;
 	}
 }
 
