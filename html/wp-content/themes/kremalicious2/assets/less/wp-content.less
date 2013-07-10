@@ -7,6 +7,32 @@
 	}
 	
 	&:first-child { padding-top: 0;	}
+    
+	// Masonry Layout for Stream, Search & Archive
+	.masonryWrap & {
+		@media @breakpoint1 {
+            width: 49%;
+    		float: left;
+    		clear: none;
+    		padding-top: 0;
+    		padding-bottom: 0;
+    		margin-bottom: .7em;
+    		margin-top: 0;
+    		margin-left: 0;
+    		margin-right: 1%;
+    		border: none;
+	
+    		&:before { display: none; }
+            
+            &:nth-child(2n+1) {
+                margin-right: 0;
+            }
+
+    		&:last-child {
+    			margin-bottom: 3em;
+    		}
+        }
+	}
 }
 
 .home .hentry p:last-child {

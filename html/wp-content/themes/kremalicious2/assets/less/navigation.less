@@ -24,8 +24,12 @@ a.nav-main-link {
     padding: @line-height-computed/4 @line-height-computed/2;
     display: block;
     float: left;
+    border-radius: @border-radius-base;
 	
 	li:first-child & { margin-left: 0 }
+    
+    // active state
+    .current_page_item & { background: rgba(255,255,255,.7) }
 }
 
 // Pager

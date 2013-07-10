@@ -1,9 +1,5 @@
 <?php get_header(); ?>
-	
-	<header class="heading-cat row">
-		<h1 class="heading-cat-title"><?php single_cat_title('<a rel="tooltip" title="Back To Home" href="/">/</a>'); ?></h1>
-	</header>
-	
+
 	<section role="main" id="main" class="row">
 		<?php if ( is_category('photos') ) { ?>
 		<div class="masonryWrap">

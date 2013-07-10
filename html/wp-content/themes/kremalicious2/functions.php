@@ -18,7 +18,7 @@ function kremalicious2_setup() {
 	add_theme_support('post-thumbnails');
 	add_image_size( 'featureImage', 680, 300, true );
 	add_image_size( 'photoStream', 680, 9999 );
-	add_image_size( 'photoArchive', 300, 9999 );
+	add_image_size( 'photoArchive', 400, 9999 );
 	add_image_size( 'photoBig', 960, 960 );
 	
 	// http://codex.wordpress.org/Post_Formats
