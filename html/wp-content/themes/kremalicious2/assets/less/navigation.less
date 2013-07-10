@@ -8,8 +8,12 @@
 
 .nav-main {
 	margin-top: 0;
+    .textcenter;
     
-	ul { margin: 0; }
+    .row { 
+        margin-top: 0;
+        margin-bottom: 0;
+    }
     li { display: inline-block; }
 }
 
@@ -17,9 +21,9 @@ a.nav-main-link {
 	.btn-tag;
 	.h6;
 	color: @text-color-light;
+    padding: @line-height-computed/4 @line-height-computed/2;
     display: block;
     float: left;
-	margin-left: 1em;
 	
 	li:first-child & { margin-left: 0 }
 }

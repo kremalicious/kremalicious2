@@ -25,7 +25,7 @@ body {
 	
 	.banner-title { 
 		margin-top: 0;
-		margin-bottom: @line-height-computed;
+		margin-bottom: 0;
 
 		// display toned down logo
 		// by default
@@ -60,13 +60,6 @@ body {
 
 }
 
-.banner-description {
-    .h5;
-	.heading-band;
-	color: @text-color-light;
-	margin-bottom: 0;
-}
-
 
 // Category Archive Header
 /////////////////////////////////////
@@ -79,7 +72,6 @@ body {
 		margin: 0;
 		.h5;
 		color: @brand-grey-light;
-		.heading-band;
 		
 		a { color: @link-color }
 	}
@@ -93,6 +85,12 @@ body {
 	text-align: center;
 	background: fade(@brand-dark, 5%);
 	
+    .footer-description {
+        .h5;
+    	color: @text-color-light;
+        line-height: @line-height-computed;
+    }
+    
 	.footer-copyright {
 		.divider-top;
 		padding-top: @line-height-computed;
