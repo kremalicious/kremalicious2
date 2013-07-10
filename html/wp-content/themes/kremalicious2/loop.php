@@ -98,6 +98,7 @@
 					<figure>
 						<?php the_post_thumbnail('photoStream'); ?>
 						<figcaption><?php the_title(); ?></figcaption>
+                        <?php krlc2_post_thumbnail_exif_data(); ?>
 					</figure>
 				</a>
 			

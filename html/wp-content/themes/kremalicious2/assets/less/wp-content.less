@@ -147,6 +147,14 @@ a.photoPost {
 	margin-right: auto;
 }
 
+a.photoPost {
+	max-width: 100%;
+}
+
+a.photoPost:hover figure {
+	background: #c4e4df;
+}
+
 .photoPost figure {
 	position: relative;
 	padding: .4em;
@@ -175,12 +183,15 @@ a.photoPost {
 	font-size: .9em
 }
 
-a.photoPost {
-	max-width: 100%;
-}
+#exif {
+	font-size: @font-size-small;
+	color: #b9c3c9;
+	text-align: center;
+	margin-bottom: .5em;
 
-a.photoPost:hover figure {
-	background: #c4e4df;
+	span {
+		margin-right: 2em;
+	}
 }
 
 .grid-sizer { width: 100%; }
@@ -218,17 +229,6 @@ a.photoPost:hover figure {
 
 .single #photoPostContent .col4 {
 	width: 100%;
-}
-
-#exif {
-	font-size: .9em;
-	color: #b9c3c9;
-	text-align: center;
-	margin-bottom: .5em;
-
-	span {
-		margin-right: 2em;
-	}
 }
 
 @media @breakpoint2 {
