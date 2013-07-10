@@ -138,29 +138,6 @@
 			
 		<?php } 
 		
-		
-		/* ===================================================== */
-		/* Goodies Post Only */
-		/* ===================================================== */
-		
-		elseif ( in_category('goodies') ) { ?>
-			
-			<header>
-				<a class="icon-heart posttype" rel="tooltip" href="<?php echo esc_url( $goodies_link ); ?>" title="Show all goodies"></a>
-				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			</header>
-			<?php if ( !is_search() ) { ?>
-				<?php if ( has_post_thumbnail() ) { ?>
-					<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-						<?php the_post_thumbnail( 'featureImage' ); ?>
-					</a></p>
-				<?php } ?>
-				
-				<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
-			<?php } ?>
-		
-		<?php }
-		
 		/* ===================================================== */
 		/* All the rest */
 		/* ===================================================== */
@@ -170,6 +147,8 @@
 			<header>
 				<?php if ( in_category('design') ) { ?>
 					<a class="icon-leaf posttype" rel="tooltip" href="<?php echo esc_url( $design_link ); ?>" title="Show all posts in 'design'"></a>
+				<?php } elseif ( in_category('goodies') ) { ?>
+					<a class="icon-heart posttype" rel="tooltip" href="<?php echo esc_url( $goodies_link ); ?>" title="Show all goodies"></a>
 				<?php } elseif ( in_category('personal') ) { ?>
 					<a class="icon-user posttype" rel="tooltip" href="<?php echo esc_url( $personal_link ); ?>" title="Show all posts in 'personal'"></a>
 				<?php } elseif ( in_category('photography') ) { ?>
