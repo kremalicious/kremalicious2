@@ -91,7 +91,6 @@ add_filter('quicktags_settings', 'krlc2_quicktags', 10, 1);
 function krlc2_post_type_support() {
 	// for posts
 	remove_post_type_support( 'post', 'author' );
-	remove_post_type_support( 'post', 'custom-fields' );
 	remove_post_type_support( 'post', 'excerpt' );
 	remove_post_type_support( 'post', 'trackbacks');
 	
