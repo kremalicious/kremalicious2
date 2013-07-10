@@ -34,9 +34,9 @@ function krlc2_feed_content( $content ) {
     global $post;
     $postTitle 		= $post->post_title;
     $postLink 		= get_permalink($post->ID);
-    $featuredImage 	= get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') );
+    $featuredImage 	= get_the_post_thumbnail( $post->ID, 'featureImage', array('class' => 'center') );
     $photoImage		= get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') );
-    $linkURL 		= get_post_meta($post->ID, '_format_link_url', true);
+    $linkURL 		= get_post_meta($post->ID, 'format_link_url', true);
     
     $linkPostStuff = '<p>
     					<a class="more-link" href="'.$linkURL.'">Go to source &#187;</a> <br />

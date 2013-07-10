@@ -51,7 +51,7 @@
 		
 		if (has_post_format( 'link' )) { 
 			
-			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); 
+			$linkURL 	= get_post_meta($post->ID, 'format_link_url', true); 
 			$leTopic 	= get_the_category(); ?>
 			
 			<header>
@@ -117,7 +117,7 @@
 			</header>
 			<?php if ( has_post_thumbnail() ) { ?>
 				<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-					<?php the_post_thumbnail( 'goodieImage' ); ?>
+					<?php the_post_thumbnail( 'featureImage' ); ?>
 				</a></p>
 			<?php } else { ?>
 				<?php the_content('Continue reading <i class="icon-arrow-right"></i>'); ?>
@@ -151,7 +151,7 @@
 			<?php if ( !is_search() ) { ?>
 				<?php if ( has_post_thumbnail() ) { ?>
 					<p><a href="<?php the_permalink(); ?>" class="goodieImage">
-						<?php the_post_thumbnail( 'goodieImage' ); ?>
+						<?php the_post_thumbnail( 'featureImage' ); ?>
 					</a></p>
 				<?php } ?>
 				
@@ -182,7 +182,7 @@
 				<section class="entry-content">
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'featureImageStream' ); ?>
+							<?php the_post_thumbnail( 'featureImage' ); ?>
 						</a>
 					<?php } ?>
 					

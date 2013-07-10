@@ -52,7 +52,7 @@
 			<?php if ( has_post_thumbnail() ) { ?>
 				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
+					<?php the_post_thumbnail( 'featureImage', array('class' => 'photo') ); ?>
 				</header>
 			<?php } else { ?>
 				<header>
