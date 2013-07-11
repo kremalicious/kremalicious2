@@ -16,8 +16,8 @@ function kremalicious2_setup() {
 
 	// http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support('post-thumbnails');
-	add_image_size( 'featureImage', 680, 300, true );
-	add_image_size( 'photoStream', 680, 9999 );
+	add_image_size( 'featureImage', 680, 300 );
+	add_image_size( 'photoStream', 680, 680 );
 	add_image_size( 'photoArchive', 400, 9999 );
 	add_image_size( 'photoBig', 960, 960 );
 	

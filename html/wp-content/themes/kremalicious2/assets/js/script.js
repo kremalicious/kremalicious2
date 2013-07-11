@@ -53,8 +53,8 @@ var photoGrid = {
 	},
 
 	init: function(){
-		// only fire when photo post present and screen bigger than 481px (so it won't fire on smartphones in landscape)
-		if ( $('section[role="main"] .masonryWrap').length > 0 && Modernizr.mq('only screen and (min-width: 481px)') ) {
+		// only fire when photo post present and screen bigger than 480px
+		if ( $('section[role="main"] .masonryWrap').length > 0 && Modernizr.mq('only screen and (min-width: 480px)') ) {
 			this.masonryLayout();
 		}
 	}

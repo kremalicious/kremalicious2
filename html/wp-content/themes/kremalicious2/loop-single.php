@@ -28,16 +28,14 @@
 		
 		elseif ( has_post_format( 'image' ) ) { ?>
 			
-			<div class="photoPostWrap">
-				<div class="photoPost">
-					<figure class="hmedia">
-						<?php the_post_thumbnail('photoBig', array('class' => 'photo')); ?>
-						<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
-						<?php krlc2_post_thumbnail_exif_data(); ?>
-					</figure>
-				</div>
+			<div class="photoPost">
+				<figure class="hmedia">
+					<?php the_post_thumbnail('photoBig', array('class' => 'photo')); ?>
+					<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
+					<?php krlc2_post_thumbnail_exif_data(); ?>
+				</figure>
 			</div>
-			<aside class="entry-meta">
+            <aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
 			</aside>
