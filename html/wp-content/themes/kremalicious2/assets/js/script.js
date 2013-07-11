@@ -54,7 +54,7 @@ var photoGrid = {
 
 	init: function(){
 		// only fire when photo post present and screen bigger than 480px
-		if ( $('section[role="main"] .masonryWrap').length > 0 && Modernizr.mq('only screen and (min-width: 480px)') ) {
+		if ( $('#main .masonryWrap').length > 0 && Modernizr.mq('only screen and (min-width: 480px)') ) {
 			this.masonryLayout();
 		}
 	}
@@ -64,12 +64,11 @@ var photoGrid = {
 var interface = {
 
 	toolTips: function() {
-		$('section[role="document"] [rel="tooltip"]').tooltip();
+		$('#main [rel="tooltip"]').tooltip();
 	},
 
 	init: function(){
 		this.toolTips();
-		$('#respond label').inFieldLabels();
 	}
 
 }
