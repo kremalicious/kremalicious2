@@ -69,9 +69,8 @@
 	</script>
 	
 	<?php wp_head(); ?>
-  	
+      	
   	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>
-  	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
   	
   	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
   	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url('/apple-touch-icon-144x144-precomposed.png'); ?>">
