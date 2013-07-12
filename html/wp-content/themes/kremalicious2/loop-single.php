@@ -30,7 +30,12 @@
 			
 			<div class="photoPost">
 				<figure class="hmedia">
-					<?php the_post_thumbnail('photoBig', array('class' => 'photo')); ?>
+                    
+        			<?php if ( has_post_thumbnail() ) { 
+                        the_post_thumbnail( 'photoBig', array('class' => 'photo') ); 
+                    } else {
+                		krlc2_the_post_thumbnail_fallback();
+                    } ?>                    
 					<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
 					<?php krlc2_post_thumbnail_exif_data(); ?>
 				</figure>

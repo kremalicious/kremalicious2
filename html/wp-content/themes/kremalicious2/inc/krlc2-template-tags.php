@@ -15,6 +15,21 @@ function krlc2_post_date() {
 	return $time;
 }
 
+// Fallback for photo posts without post thumbnail set
+function krlc2_the_post_thumbnail_fallback() {
+    // if $postID not specified, then get global post and assign ID
+    if (!$postID) {
+        global $post;
+        $postID = $post->ID;
+    }
+	// find the first <img> in post content
+    $postContent = $post->post_content;
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $postContent, $matches);
+	$postthumbnailURL = $matches [1] [0];
+    
+    echo '<img src="'.$postthumbnailURL.'" />';
+}
+
 // Grab EXIF Metadata from featured image
 function krlc2_post_thumbnail_exif_data($postID = NULL) {
     // if $postID not specified, then get global post and assign ID
@@ -43,16 +58,13 @@ function krlc2_post_thumbnail_exif_data($postID = NULL) {
             }
             // print our definition list
         ?>
-        	
+    	
         <p id="exif"><span>ISO<?php echo $photoMeta['image_meta']['iso']; ?></span>  <span><?php echo $photoMeta['image_meta']['focal_length']; ?>mm</span>  <span>&fnof;/<?php echo $photoMeta['image_meta']['aperture']; ?></span>  <span><?php echo $photoShutterSpeed; ?></span></p>
-        	
+    	
         <?php
         // if shutter speed exif is 0 then echo error message
         } else {
             echo '';
         }
-    // if no featured image, echo error message
-    } else {
-        echo '<p>Featured image not found</p>';
     }
 }
