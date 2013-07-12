@@ -33,7 +33,7 @@ function krlc2_get_socialgraph_image($postID = NULL) {
 	} 
 	// post with post thumbnail but no photo post
 	elseif (!has_post_format( 'image', $postID ) && has_post_thumbnail($postID)) {
-		$src = wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'featureImageStream', '' );
+		$src = wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'featureImage', '' );
 		$socialgraphimage	= $src[0];
 	} 
 	// all other posts
