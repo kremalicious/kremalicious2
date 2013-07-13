@@ -116,8 +116,14 @@
 
 .photoPost {
 	display: block;
-    margin-left: -.45em;
-    margin-right: -.45em;
+    
+    // stretch photos out of container
+    margin-left: -2em;
+    margin-right: -2em;
+    @media @breakpoint2 {
+        margin-left: -5em;
+        margin-right: -5em;
+    }
     
     figure {
     	display: inline-block;
@@ -161,8 +167,8 @@
         
         // show big size on larger screens
         @media @breakpoint3 {
-            margin-left: -5.55em;
-            margin-right: -5.55em;
+            margin-left: -7em;
+            margin-right: -7em;
         }
     }
 }
@@ -217,6 +223,8 @@ a.photoPost {
     		&:last-child { margin-bottom: 3em; }
         }
     }
+    
+    .photoPost { margin: 0 }
 }
 
 .grid-sizer { 
