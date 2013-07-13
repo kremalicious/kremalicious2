@@ -1,6 +1,23 @@
 <?php
 
 //
+// add arrow to link posts
+//
+function krlc2_feed_title_arrow($title) {
+	
+	global $post;
+	
+	if ( has_post_format( 'link', $post->ID ) ) {
+		$title = $title.' &#187;';
+	} else {
+		$title = $title;
+	}
+
+    return $title;
+}
+add_filter('the_title', 'krlc2_feed_title_arrow');
+
+//
 // Goodies Download Button Shortcode
 //
 function krlc2_goodie_download_shortcode( $atts, $content = null ) {

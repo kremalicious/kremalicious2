@@ -14,21 +14,6 @@ function krlc2_feed_linked_title($permalink) {
 }
 add_filter('the_permalink_rss', 'krlc2_feed_linked_title');
 
-// add arrow to link posts in feed
-function krlc2_feed_title_arrow($title) {
-	
-	global $post;
-	
-	if ( has_post_format( 'link', $post->ID ) ) {
-		$title = $title.' &#187;';
-	} else {
-		$title = $title;
-	}
-
-    return $title;
-}
-add_filter('the_title_rss', 'krlc2_feed_title_arrow');
-
 // show post thumbnails in feeds
 // modified from http://digwp.com/2010/06/show-post-thumbnails-in-feeds/
 function krlc2_feed_content( $content ) {
