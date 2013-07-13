@@ -11,7 +11,7 @@
 		
 		if (has_post_format( 'link' )) { 
 			
-			$linkURL 	= get_post_meta($post->ID, '_format_link_url', true); ?>
+			$linkURL 	= get_post_meta($post->ID, 'format_link_url', true); ?>
 			
 			<header>
 				<h1 class="entry-title"><a href="<?php echo $linkURL ?>"><?php the_title(); ?> <i class="icon-external-link"></i></a></h1>
