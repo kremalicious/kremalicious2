@@ -25,8 +25,8 @@
 	 _____________________________________________
 -->
 
-<!--[if IE 8]>			<html class="no-js lt-ie9" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
-<!--[if gt IE 8]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
+<!--[if IE 9]>			<html class="no-js lt-ie10" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <![endif]-->
+<!--[if gt IE 9]><!-->	<html class="no-js" lang="en" <?php krlc2_socialgraph_doctype(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	
@@ -58,7 +58,7 @@
 	
 	<meta http-equiv="cleartype" content="on">
 	
-	<link rel="stylesheet" href="<?php echo site_url(auto_version('/wp-content/themes/kremalicious2/assets/css/kremalicious2.min.css')); ?>">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri().auto_version('/assets/css/kremalicious2.min.css'); ?>">
 	
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/modernizr-2.6.1.min.js"></script>
 	<script src="//use.typekit.com/msu4qap.js"></script>
@@ -69,52 +69,70 @@
 	</script>
 	
 	<?php wp_head(); ?>
-  	
+      	
   	<link rel="alternate"  href="http://kremalicious.com/feed/" type="application/rss+xml" title="Posts Feed"/>
-  	<link rel="alternate"  href="http://kremalicious.com/comments/feed/" type="application/rss+xml" title="Comments Feed"/>
   	
   	<!-- Explicit touch icon declarations, otherwise won't work on Android -->
-  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo site_url('/apple-touch-icon-144x144-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo site_url('/apple-touch-icon-114x114-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo site_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
-  	<link rel="apple-touch-icon-precomposed" href="<?php echo site_url('/apple-touch-icon-precomposed.png'); ?>">
-  	<link rel="shortcut icon" href="<?php echo site_url('/favicon.ico'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo home_url('/apple-touch-icon-144x144-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo home_url('/apple-touch-icon-114x114-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo home_url('/apple-touch-icon-72x72-precomposed.png'); ?>">
+  	<link rel="apple-touch-icon-precomposed" href="<?php echo home_url('/apple-touch-icon-precomposed.png'); ?>">
+  	<link rel="shortcut icon" href="<?php echo home_url('/favicon.ico'); ?>">
   	
   	<!-- Windows 8 Metro Tile Image -->
-  	<meta name="msapplication-TileImage" content="<?php echo site_url('/metro-tile.png'); ?>"/>
+  	<meta name="msapplication-TileImage" content="<?php echo home_url('/metro-tile.png'); ?>"/>
   	<meta name="msapplication-TileColor" content="#015565"/>
 
 </head>
 
 <body <?php body_class(); ?>>
-
-	<section id="menubar-wrap">
-		<div id="menubar">
-			<header role="banner">
-				<h1><a id="logo" class="hide-text" href="/">kremalicious</a></h1>
-			</header>
-			<nav role="navigation" class="fade in">
-				<ul>
-					<li id="home"><a href="/"><i class="icon-home"></i> Home<span></span></a></li>
-					<li class="dropdown" id="topicmenu">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#topicmenu">
-							<i class="icon-reorder"></i><b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>><a href="/goodies"><i class="icon-gift"></i> goodies</a></li>
-							<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>><a href="/photos"><i class="icon-picture"></i> photos</a></li>
-							<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>><a href="/personal"><i class="icon-user"></i> personal</a></li>
-							<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>><a href="/design"><i class="icon-leaf"></i> design</a></li>
-							<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>><a href="/photography"><i class="icon-camera-retro"></i> photography</a></li>
-						</ul>
-					</li>						
-				</ul>
-			</nav>
-			<div id="searchWrap">
-				<?php get_search_form(); ?>
-			</div>
+    
+    <header role="banner" class="banner container">
+		<div class="row">
+	    	<h1 class="banner-title">
+	    	    <a class="banner-logo" class="hide-text" href="<?php echo home_url(); ?>">kremalicious</a>
+	    	</h1>
 		</div>
-	</section>
+    </header>
+    
+    <nav role="navigation" class="nav-main container">
+		<?php
+		    $goodies_id = get_cat_ID( 'goodies' );
+		    $goodies_link = get_category_link( $goodies_id );
 	
-	<section role="document">
+		    $photos_id = get_cat_ID( 'photos' );
+		    $photos_link = get_category_link( $photos_id );
+	
+		    $personal_id = get_cat_ID( 'personal' );
+		    $personal_link = get_category_link( $personal_id );
+	
+		    $design_id = get_cat_ID( 'design' );
+		    $design_link = get_category_link( $design_id );
+	
+		    $photography_id = get_cat_ID( 'photography' );
+		    $photography_link = get_category_link( $photography_id );
+		?>
+    	<ul class="row">
+    		<li <?php if ( is_category('goodies') ) echo 'class="current_page_item"';  ?>>
+    		    <a class="nav-main-link" href="<?php echo esc_url( $goodies_link ); ?>">goodies</a>
+    		</li>
+    		<li <?php if ( is_category('photos') ) echo 'class="current_page_item"';  ?>>
+    		    <a class="nav-main-link" href="<?php echo esc_url( $photos_link ); ?>">photos</a>
+    		</li>
+    		<li <?php if ( is_category('personal') ) echo 'class="current_page_item"';  ?>>
+    		    <a class="nav-main-link" href="<?php echo esc_url( $personal_link ); ?>">personal</a>
+    		</li>
+    		<li <?php if ( is_category('design') ) echo 'class="current_page_item"';  ?>>
+    		    <a class="nav-main-link" href="<?php echo esc_url( $design_link ); ?>">design</a>
+    		</li>
+    		<li <?php if ( is_category('photography') ) echo 'class="current_page_item"';  ?>>
+    		    <a class="nav-main-link" href="<?php echo esc_url( $photography_link ); ?>">photography</a>
+    		</li>
+    		<!--<li>
+    			<?php get_search_form(); ?>
+    		</li>	-->			
+    	</ul>
+    </nav>
+    
+	<section role="document" class="container">
 		

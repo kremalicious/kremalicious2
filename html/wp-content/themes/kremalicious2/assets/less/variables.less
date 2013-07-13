@@ -1,37 +1,79 @@
+// Colors
+/////////////////////////////////////
 
-// Accent colors
-// -------------------------
-
-
-// Scaffolding
-// -------------------------
-@bodyBackground:        #e7eef4;
-@textColor:				#4f6068;
-@textColorLight:		lighten(@textColor, 15%);
-@textColorDimmed:		lighten(@textColorLight, 10%);
-
-// Links
-// -------------------------
-@linkColor:				#3a9085;
-@linkColorHover:		lighten(@linkColor, 10%);
+@brand-dark:            	#015565;
+@brand-light:           	#e7eef4;
+@brand-cyan:            	#3a9085;
+@brand-grey:            	#56666e;
+@brand-grey-light:			#96a6ad;
 
 
 // Typography
-// -------------------------
-@baseFontSize:          16px;
-@baseLineHeight:        24px;
-@baseFontWeight: 		300;
-@baseFontFamily:        'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+/////////////////////////////////////
 
-@headingsFontFamily:    'cronos-pro', sans-serif;
-@headingsFontWeight:    600;
-@headingsColor:         #2e4f5c;
+@font-family-sans-serif:	'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-serif:  		'rooney-web',Georgia,Palatino,'Palatino Linotype',Times,'Times New Roman',serif;
+@font-family-monospace:   	Menlo, Monaco, Consolas, 'Courier New', monospace;
 
-//////////
-// GRID //
-//////////
+@font-family-base:        	@font-family-serif;
+@font-weight-base:			300;
+@font-weight-base-retina:	400;
 
-@columns: 12;
-@column-width: 75;
-@gutter-width: 40;
-@total-width: 100%;
+@font-size-base:          	18px;
+@font-size-large:         	ceil(@font-size-base * 1.25);
+@font-size-small:         	ceil(@font-size-base * 0.8);
+@font-size-mini:          	ceil(@font-size-base * 0.7);
+
+@line-height-base:			1.4444444444;	// 26/18
+@line-height-computed:    	floor(@font-size-base * @line-height-base);
+
+@headings-font-family:    	@font-family-sans-serif;
+@headings-font-weight:    	500;
+@headings-line-height:    	1.1;
+
+
+// Text Colors
+/////////////////////////////////////
+
+@text-color:				lighten(@brand-grey, 10%);
+@text-color-light:			@brand-grey-light;
+@text-color-dimmed:			lighten(@brand-grey-light, 5%);
+@headings-color:         	@brand-dark;
+
+
+// Scaffolding
+/////////////////////////////////////
+
+@body-bg:        			@brand-light;
+@border-radius-base:		3px;
+
+
+// Links
+/////////////////////////////////////
+
+@link-color:				lighten(@brand-cyan, 5%);
+@link-color-hover:			lighten(@link-color, 10%);
+
+
+// Responsive breakpoints
+/////////////////////////////////////
+
+@breakpoint1:           	~"only screen and (min-width: 30em)";
+@breakpoint2:           	~"only screen and (min-width: 40.625em)";
+@breakpoint3:           	~"only screen and (min-width: 87.500em)";
+
+
+// High dpi media query
+/////////////////////////////////////
+
+@highDPI:					~"print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) ";
+
+
+// Component Variables
+/////////////////////////////////////
+
+// Tooltips
+@tooltip-color:				#fff;
+@tooltip-bg:				fade(@brand-dark, 80%);
+@tooltip-arrow-color:		@tooltip-bg;
+@tooltip-arrow-width:		5px;

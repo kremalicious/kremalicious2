@@ -1,136 +1,44 @@
-// --------------------------------------------------
-//	COMPONENTS
-// --------------------------------------------------
+/////////////////////////////////////
+//	MIXINS
+/////////////////////////////////////
 
 
 // Body Background
-// --------------------------------------------------
+/////////////////////////////////////
 .bodyTexture {
-	background: @bodyBackground url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC%2B5dbKAAAAQlBMVEXz9%2Fri6e%2Fg5%2B3f5uzh6O7j6vDu9Prr8vjs8%2Fnq8ffp8Pbw9frk6%2FHt9Pro7%2FXl7PLm7fPx9frz9vrv9frn7vTe5eu8h4seAAAAfUlEQVR4Xq3PRw7DUAgE0KH%2F6prc%2F6pBlmUl%2B7AcpMeA4fAaOyoxVezRCvrKik22A5jEy2xMEzgWWUsF3MT0ncuMXqLGWpCznvAWHWFqgZ7OsW9K6bzS8XTKwuQAmoy4HXocGrcz%2FHLuPr2m89unffcJ4DQhvY5k9PT5118fSvoHiNG1QV4AAAAASUVORK5CYII%3D) left top repeat;
+	background: @body-bg data-uri('../img/texture.png') left top repeat;
 }
 
 .bodyTexture_2x {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAYCAMAAACyRD%2B1AAAARVBMVEXm7fPp8Pbs8%2Fnr8vjl7PLq8ffo7%2FXu9Prh6O7i6e%2Fv9frt9Prj6vDn7vTz9%2Frx9frz9vrw9frk6%2FHf5uzy9vrg5%2B3e5evyfvXWAAABbklEQVR4XuWTV3KEQBBDO0wO5PX9j2r1DmtMrcs%2BgOcLBCV1PwRtHOdpjuK91nmZoqecHimTj9MyV%2FWssk7H6l1%2BpNTIOWK8WGIspYjvDgJBdZ0FSqxxhRfRkInynkmXCWeuAc5b0Kq8ISHU2eRFQtuzY1EfSJncRoE9c3d25SXOpeLJ5qgz9GBZATOVKIS5Q0t7ajD%2BOHOGZ287Iho2SSTrUEmlCKzGYRFbmhkRVfhUA2sUNdWT8%2BVAgjLIrMdUtCMnt64FPE4yyzErtZTzZsvyc9pBJhiB%2FpzWDzLFyJgyovLeugwycZDxmO5JBl%2FETuVtTwD2IuOMjCE4yZhf%2BJL5lRW%2Fk2n5BzK5bflGBmY3MrYd297yRaYPMgHyszMXmVtnjtWggvTy3pl66wxkeGLaCL0K%2F9IZts64nzqjfJFhHjB8LchS3Lx1poDMUdjIZBi%2FvsDpeXWmX2S%2Bdabfyfg%2B5HCR%2BR9%2F09%2BdeSfzCRPyICKqHGZuAAAAAElFTkSuQmCC);
+	background-image: url('../img/texture@2x.png');
 	.background-size(23px 12px);
 }
 
 // Logo
-// --------------------------------------------------
+/////////////////////////////////////
 .logo {
-	background-image: url(data:image/png;base64,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
-	Ev8/mKzKwhzuoCsAAAAASUVORK5CYII=);
+	display: block;
+	background-image: data-uri('../img/logo.png');
 	background-repeat: no-repeat;
+	background-position: center top;
+	height: 60px;
 }
 
 .logo_2x {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXwAAAA+CAMAAAAf3lArAAAAwFBMVEUASWAAfZpcc3pXbXSsytT9
-	/v6sztkolrEBTWQAfZr+/v9bd4D6+/toq7////8Af56YsLpNiZslbH/H1twpaXpKnLP////i7O//
-	//8NXnX///9wqr3///9tkJ1unq1WbXSqtrkAR17///////8AAAAAPlMAQVYAjq0AiqoAfZkAWXAA
-	h6UAU2sAX3dkeX8AZX5wg4iAkZYAcYsAd5MAa4R5i5CGlpsASF8Ag6CNnKCmsrWXpamSoaUATmSc
-	qa2hrbGgJSjNAAAAJXRSTlPSk9u1dGrU+avOnYoM6IV12uMwzxHiIMQ0SrClVKWl/v52vboABWE1
-	AwAAC6NJREFUeNrtmg1bGjsThhEFlS8RKAsIpSx7Xq0oIipIRf3//+pkJpM8IaGL2MPrOdfFo93u
-	TGcnyZ0h2d2SSfb6Mm0Pv1Y8zI6VstnDYi3Za/fwQV5hn0zGk7FWds///wW/nSX0IsHfP2wne+0c
-	fs1Bb4u/P+73D/fVv2v4xf5Yw39Scoq/r7Qv/p3Cbxxa9PdPrBX8h8leO4PfyFr0IsPf0G8ke+0C
-	vrAfa/YzkoN/X/s7hn/ooF8sFswf+Pf0dwm/CPYLLVQ/il8r2esfhd8W9lz2SyXBj+In+nv4/wz8
-	9mGW1pFiQxZ8Zs9lv2Qtlg79WRxPJrFSv0/HPf4/gt/ui+Qepuiyf3l58WpfwX9i+OOt4bcHpOSL
-	9PXtZ8Ib+r6jbC1paPYzYR/ST5KnCV05HtNxG/iDv0jJlwntfz18sIfGteJYlvslsQ/pzxT8p8/B
-	L37x4Iv/MvjMfgxhq2X0byvsF7r0vcfdjz9u9f5HSr5IX99+JlzvxyF7u+S8Wfqy54b0t4L/178H
-	/gBGKATsEH5Ws59AT27dE/tg0Vcb7lOsNNHb7ri0zeD38K1qQP+kRAd5qmX2ir638Pzn4c9N+5s7
-	09sx/CJeGjN3RR63mG+kNfAbsuFO5J5nm8HP5/OvhD8niXFUJaVEI2A38A8N+3ujGZc94BN7rPoM
-	v/R5+Bj818PvDkkp0QjYDfzJ2KCfiRZAj8r3Sh+v90nYdP8D8F9fbfutLiklGgG7ga8QMnqQF/YM
-	XwT6gM/sZQK2gP9KMtaA1HY2oIGV56oZe72/vWIhOdx++7gqSCtKCUBKBK0fUqOtHY118BsCX8CT
-	CLKHnugvXwT+Mo6x4eJY+gT8OWlgR3Eyh8SVMXamvQIW/kHSgHXiRIkL7qD9AVpa34MBBSMg7A+y
-	rB1SA/lOGj78RnEM9iBP6DX897D0l+9/CP/Gg18UgzoKoe9e98mfWfGvWoC/zt27IYlRtGyBCpIA
-	9PY3/SlKdDik9txVbRV+LSvsgd6wF/Tvwar/FhfoUmy4fPyYMHj09HXeE/avK7KuOZv094ll7wbO
-	PcPShxcXo33vYyDNzZ10YQC3C2XWZXmlMfU03jlE3pqBj7tMh32A/v3dq30Fv1ABfDpuDf+aBg8+
-	0tMBn0NwQQMDKVUDJA/dvWtSWAlhczcbApAS8DEk1AjmP9MQ+GD/5LHHigP2uNdf4OUOKfhOQyp5
-	DD6Ef0Pr0U01GorgUkZU5dVKY6ix+5b8w+rtDetWom6EGonTsPuGLrjZAL9B13o98AMoPwVQS/TT
-	SIEvc9WnfPW+mayMZe8t+H7dk8zSo7ygf6/pQ0SftSV8Hhv3tE1nDFrkuapstHlQfFrX/voNfZSu
-	yUIU4Afu3q2ShX9N14oR9MDr7W/7gxnCkOQDqqoi0gWgioRXxAxeK6DwUfcuevrrTSTLDm+3vOHi
-	OImtPgD/NoQvRK+jLrZtcl1fK5c6LXWjawoY8KDI3++QP+l2zgnPOVuIgsStGF8PNHySXwlBD9ID
-	JKW0hJUUQ7Jns0JTnTYLVZmhDP6jkNj7d/fCHrK1r9f86PPwMXgRj62HYXYR6Lm6CM0y7pb2N8+v
-	Vb7zph8FwZ0GP+wBPicp/YE/HBLPeLWkCyCqK10I/KJhf+8t+JY9lh2UPq86PWy1OEJbwK+5IyB/
-	yQuFq6ROJfSc3OfshWWjPPjiJrH7+x2JveFMoLn0AKRMq6c7txByQ5KG33DZews+Y4fYdOjP7v8Q
-	/p3t6QF3+ygcQRK62FgHn2CKhShPG+HDgCQ6CHBTpveTVJNPaIuk4ReZ/T3q3il8U/S/gN+Fr+iT
-	noItV3bdVPYy+DbrhDp31+/Cvy5UROe330Pc54+Pd4/WoiAXfk0uJn3XSR/RjjcTjrE5wE1JAnzT
-	gyoP725AHWi473ay3sMV0ffX+18BfoGv6Sv4mAHg3wjfV75p/Y9+qOJqRQEW/qML/xEWooj8AUWy
-	KJUmxWbINuyBiQ6mSlp6BPz1k1I5v4NOzyz82gQPV37hgzyxx8KPyo+V7vVWe2+2XWgDfGFh9Jgv
-	OH4vNND3EPf5dOrCVzLwzxg85MEPZwIGKT06CVMKfNUB7e9GU1s4jwp/TeAXmT3qPmRPv5gArPoW
-	/j2O28H3VG4Z//Rxuho69WThq3MHvmtNLZLkQBqwl2tSnOi3bNED9Gp9AOcxKcNJIVUiqhN8cuX1
-	Qk+zXxj2gG9Y/yLRDKD27Y5LC9j9fSLHcMNNhz/lHxadTdsgnQYf/IA7tBDVdsnDjXbEANuwB/CF
-	AWFKgW/9SbMzzJ9L3ZBONXxar+XRymVPEvT616t9WfRrDcDHcbPQ0zqrzOen1v/wsBr68KBcdVdH
-	jPtBiXHDCpGcTglDOc/XPZCE1IOP83PwVcIQPnqg6ReGQ7rBz1cfeALONHwqfFQ9bjOx3pN4Bix6
-	po+3O67cXXcjfNVt89jPUNpC+iGEr0OhrsX9zUR9W7Es5TZDKMt17L7w2hHDsg17AF8YgPm8WPFP
-	tV/ULQxZEdGfnhj45p2CLPhL3OILeqFPf/zSn5HW00+DjxG0WJWIjTNnBBC5fiq1XDUZt/I78Cko
-	hH82pY9NVGmxfpIu0E46W+giFf7PhzAleiAqUfu5Tpk/cQx/RoUP9Fh1UPgitlD6Gv5Stlococ5H
-	4IuRYyg9HgGfJlDoCnGHli3xHp/lxA34nPTBZQvDaw7RCJDoICUuVHNCPfDUpA+5wF9y4Qt5KXws
-	O0Dv4wf82fbwQ6JNfwR+6PPz8zbwgUS4NsX9TPLaSTXSAtLhw39KOvPmWcGvSuH77EEeAnu96BP9
-	JJnNtttwMRzikIRQ6Ayk4aqF8Mn9zbP8hEcMQS6uee2QXzrzUww0F/Q2DEDK0O/Ap7NTc18gNULw
-	ufAD+NhwlX4IeZQ+HnL/AP7zh+EfPY+UThufgt/lM31x43REOuKk8KcYojAAKdk4SvOXuc506Z/x
-	nFQZfs6B/wL2qHzQd0rffcq14vdD2HU3wyekxhqNlHlh/B78bnnEOjgTGdzkBHyVbw38VvmZpS4+
-	0GnKXUnKqA7O2mSYoBobI/4XNMcBIwRoypRSMXZTjlSU+EnanzfJlV+fFhh+94XZv5gfFvZbzV7o
-	Az+es5g++BN80kfgEwfAJ134flEzujLS+AL4sMKE0fFIS1IcR01Oav1nrtGG8WyUBAEjT5wSfr4Y
-	/lyV04xs1mqO4TfrDB/k8YQF9D8EPxZ9u+7UY/2SYYajaCN8JmEsNi4Cv6iSv7q8vLy6Ur8sg5vO
-	GTcswDcJc/kro0ul43xFkkbHejK/a0PYcnPHMs8aGqKvTIA6cabUpuSm8E/ibw3LI1ff4ibDTwr6
-	PSYprHzAF/n3O8sfn4fPLIx1SdLwGbN3fzasH19qrcAnhwc/nM1mx1zM4VGHqpH9UdlEwTgS49L9
-	oAUBw4hbY6mUQ0oJvwj+3DA/gr8a5xINv1tX8Am8CIWPyiet3Gzi1eYyoU2Xtl0cN0sgB/A9P9Qd
-	xvkyCAbwYYUJkxZdzPyPy/kh/yev0B/WyX/hGkfcnDYMrSQMGA6RUp63U/yKfiT9/1aNhoWSwC91
-	3qjywZ7xg75Gj3Wf/O79Tu0z8MPv/bLR9f1QqzB0JM4KnVeSwELC8OJCE0mbFRMFowUDza0JCFOm
-	+rtDKFciT4bdEbEH+nDJF/zrS78ne+7Kbc8/Bh8qdSufgI+LO4yj0vLmNFfgKBgtGGguJQAp0/1N
-	6X8h13S/KFuoLwU7/bjfF2H4VmT5pc9PWq40/WSvjcqY3exFyNNvauXbpyx7w6MUKy0WOMadZK8P
-	wk9acd1QR+Gj8iHzoOuW/h7+5+GzunH07rFn9KnLzrstfUqxWMhxrw/Dx51c3XDHVxYEPiT0/WW/
-	ZrGridjrw/BxhxTH9V/4pk5K5YM9XvEYxXGy19bwk1KuE8dRXSHmmgd4CBuvSPZeh35nv9pvCx/4
-	/1SlZK+t4eNBoFDobKnhHv6n9Dd8IjXmPV7J3gAAAABJRU5ErkJggg==);
-	.background-size(190px 31px);
-	background-repeat: no-repeat;
+	background-image: url('../img/logo@2x.png');
+	.background-size(128px 120px);
 }
 
 // Dimmed Text
-// --------------------------------------------------
+/////////////////////////////////////
 .dimmed {
-	color: @textColorDimmed;
-	p { color: @textColorDimmed; }
-	li { color: @textColorDimmed; }
+	color: @text-color-dimmed;
+	p { color: @text-color-dimmed; }
+	li { color: @text-color-dimmed; }
 }
 
 // Dashed Dividers
-// --------------------------------------------------
+/////////////////////////////////////
 .divider-top {
 	position: relative;
 	border-top: 1px dashed #afc3cb;
@@ -177,276 +85,46 @@
 	}
 }
 
-// Loading Thingy
-// --------------------------------------------------
-.loading {
-	.animation(loadingThingy .2s infinite);
-}
 
-@keyframes "loadingThingy" {
- from {
- 	.opacity(100)
- }
- to {
- 	.opacity(0)
- }
+// Heading band
+/////////////////////////////////////
 
-}
-
-@-moz-keyframes loadingThingy {
- from {
- 	.opacity(100)
- }
- to {
- 	.opacity(0)
- }
-
-}
-
-@-webkit-keyframes "loadingThingy" {
- from {
- 	.opacity(100)
- }
- to {
- 	.opacity(0)
- }
-
-}
-
-@-ms-keyframes "loadingThingy" {
- from {
- 	.opacity(100)
- }
- to {
- 	.opacity(0)
- }
-
-}
-
-@-o-keyframes "loadingThingy" {
- from {
- 	.opacity(100)
- }
- to {
- 	.opacity(0)
- }
-
-}
-
-// Utilities
-// --------------------------------------------------
-
-.clearfix {
-  *zoom: 1;
-  clear: both;
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.fade {
-  .opacity(0);
-  .transition(opacity .15s ease-in-out);
-  &.in {
-    .opacity(100);
-  }
-}
-
-// Quick floats
-// --------------------------------------------------
-.alignleft { float: left; }
-.alignright { float: right; }
-.aligncenter { display: block; margin-left: auto; margin-right: auto; }
-
-// Placeholder text
-// --------------------------------------------------
-.placeholder(@color: @placeholderText) {
-  &:-moz-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-  &:-ms-input-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-  &::-webkit-input-placeholder {
-    color: @color;
-    font-weight: @baseFontWeight;
-  }
-}
-
-// Toggling content
-// --------------------------------------------------
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-.hide {
-	display: none !important; 
-	visibility: hidden;
-}
-.show {
-	display: block;
-	visibility: visible;
-}
-// Hide only visually, but have it available for screenreaders: h5bp.com/v
-.visuallyhidden { 
-	border: 0; 
-	clip: rect(0 0 0 0); 
-	height: 1px; 
-	margin: -1px; 
-	overflow: hidden; 
-	padding: 0; 
-	position: absolute; 
-	width: 1px;
-	// Extends the .visuallyhidden class to allow the 
-	// element to be focusable when navigated to via the keyboard: h5bp.com/p
-	&.focusable:active, 
-	&.focusable:focus { 
-		clip: auto; 
-		height: auto; 
-		margin: 0; 
-		overflow: visible; 
-		position: static; 
-		width: auto;
-	}
-}
-// Hide visually and from screenreaders, but maintain layout
-.invisible {
-	visibility: hidden;
-}
-// CSS image replacement
-.hide-text {
-	font: 0/0 a;
-	color: transparent;
-	text-shadow: none;
-	background-color: transparent;
-	border: 0;
+.heading-band {
+	display: inline-block;
+	clear: both;
+	background: rgba(255,255,255,.55);
+	padding: @line-height-computed/2 @line-height-computed @line-height-computed/2 100%;
+	margin-left: -100%;
+	.border-right-radius(@border-radius-base);
 }
 
 
-// --------------------------------------------------
+/////////////////////////////////////
 // CSS3 PROPERTIES
-// --------------------------------------------------
+/////////////////////////////////////
 
-// Opacity
-.opacity(@opacity) {
-	     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacity})"; // IE 8
-	   -moz-opacity: @opacity / 100;
-	 -khtml-opacity: @opacity / 100;
-	-webkit-opacity: @opacity / 100;
-	        opacity: @opacity / 100;
-}
-
-// Border Radius
-.border-radius(@radius) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
-     -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-          background-clip: padding-box;
-}
-
-// Single Corner Border Radius
-.border-top-left-radius(@radius) {
-  -webkit-border-top-left-radius: @radius;
-      -moz-border-radius-topleft: @radius;
-          border-top-left-radius: @radius;
-}
-.border-top-right-radius(@radius) {
-  -webkit-border-top-right-radius: @radius;
-      -moz-border-radius-topright: @radius;
-          border-top-right-radius: @radius;
-}
-.border-bottom-right-radius(@radius) {
-  -webkit-border-bottom-right-radius: @radius;
-      -moz-border-radius-bottomright: @radius;
-          border-bottom-right-radius: @radius;
-}
-.border-bottom-left-radius(@radius) {
-  -webkit-border-bottom-left-radius: @radius;
-      -moz-border-radius-bottomleft: @radius;
-          border-bottom-left-radius: @radius;
-}
-
-// Single Side Border Radius
+// Single side border-radius
 .border-top-radius(@radius) {
-  .border-top-right-radius(@radius);
-  .border-top-left-radius(@radius);
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
 }
 .border-right-radius(@radius) {
-  .border-top-right-radius(@radius);
-  .border-bottom-right-radius(@radius);
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
 }
 .border-bottom-radius(@radius) {
-  .border-bottom-right-radius(@radius);
-  .border-bottom-left-radius(@radius);
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
 }
 .border-left-radius(@radius) {
-  .border-top-left-radius(@radius);
-  .border-bottom-left-radius(@radius);
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
 }
 
 // Drop shadows
 .box-shadow(@shadow) {
-  -webkit-box-shadow: @shadow;
-     -moz-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
-}
-
-// Gradients
-#gradient {
-	.vertical(@startColor: #555, @endColor: #333) {
-		background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
-		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
-		background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-		background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
-		background-image: linear-gradient(top, @startColor, @endColor); // The standard
-		background-repeat: repeat-x;
-		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
-	}
-	.horizontal(@startColor: #555, @endColor: #333) {
-		background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
-		background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
-		background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-		background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
-		background-image: linear-gradient(left, @startColor, @endColor); // Le standard
-		background-repeat: repeat-x;
-		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
-	}
-	.directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
-		background-repeat: repeat-x;
-		background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
-		background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-		background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
-		background-image: linear-gradient(@deg, @startColor, @endColor); // The standard
-	}
-	.vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
-		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
-		background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
-		background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
-		background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
-		background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
-		background-repeat: no-repeat;
-		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
-	}
-	.radial(@innerColor: #555, @outerColor: #333)  {
-		background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
-		background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
-		background-image: -moz-radial-gradient(circle, @innerColor, @outerColor);
-		background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
-		background-repeat: no-repeat;
-	}
-	.striped(@color, @angle: -45deg) {
-		background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
-		background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-		background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-		background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-		background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-	}
 }
 
 // Transitions
@@ -456,17 +134,59 @@
        -o-transition: @transition;
           transition: @transition;
 }
-.transition-duration(@duration:.2s) {
-	-webkit-transition-duration: @duration;
-	   -moz-transition-duration: @duration;
-	   	 -o-transition-duration: @duration;
-	        transition-duration: @duration;
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+     -moz-transition-delay: @transition-delay;
+       -o-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
 }
-.transition-property(@property: all) {
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+     -moz-transition-duration: @transition-duration;
+       -o-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+.transition-property(@property) {
 	-webkit-transition-property: @property;
 	   -moz-transition-property: @property;
 	     -o-transition-property: @property;
 	        transition-property: @property;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.skew(@x, @y) {
+  -webkit-transform: skew(@x, @y);
+     -moz-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew(@x, @y);
+          transform: skew(@x, @y);
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
 }
 
 // Animations
@@ -483,38 +203,6 @@
           animation-delay: @delay;
 }
 
-// Transformations
-.rotate(@degrees) {
-  -webkit-transform: rotate(@degrees);
-     -moz-transform: rotate(@degrees);
-       -o-transform: rotate(@degrees);
-          transform: rotate(@degrees);
-}
-.scale(@ratio) {
-  -webkit-transform: scale(@ratio);
-     -moz-transform: scale(@ratio);
-       -o-transform: scale(@ratio);
-          transform: scale(@ratio);
-}
-.translate(@x, @y) {
-  -webkit-transform: translate(@x, @y);
-     -moz-transform: translate(@x, @y);
-       -o-transform: translate(@x, @y);
-          transform: translate(@x, @y);
-}
-.skew(@x, @y) {
-  -webkit-transform: skew(@x, @y);
-     -moz-transform: skew(@x, @y);
-       -o-transform: skew(@x, @y);
-          transform: skew(@x, @y);
-}
-.translate3d(@x, @y, @z) {
-  -webkit-transform: translate(@x, @y, @z);
-     -moz-transform: translate(@x, @y, @z);
-       -o-transform: translate(@x, @y, @z);
-          transform: translate(@x, @y, @z);
-}
-
 // Backface visibility
 // Prevent browsers from flickering when using CSS 3D transforms.
 // Default value is `visible`, but can be changed to `hidden
@@ -526,7 +214,6 @@
 }
 
 // Background clipping
-// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
 .background-clip(@clip) {
   -webkit-background-clip: @clip;
      -moz-background-clip: @clip;
@@ -534,13 +221,12 @@
 }
 
 // Background sizing
-.background-size(@size){
+.background-size(@size) {
   -webkit-background-size: @size;
      -moz-background-size: @size;
        -o-background-size: @size;
           background-size: @size;
 }
-
 
 // Box sizing
 .box-sizing(@boxmodel) {
@@ -566,13 +252,13 @@
 }
 
 // CSS3 Content Columns
-.content-columns(@columnCount, @columnGap: @gridGutterWidth) {
-  -webkit-column-count: @columnCount;
-     -moz-column-count: @columnCount;
-          column-count: @columnCount;
-  -webkit-column-gap: @columnGap;
-     -moz-column-gap: @columnGap;
-          column-gap: @columnGap;
+.content-columns(@column-count, @column-gap: @grid-gutter-width) {
+  -webkit-column-count: @column-count;
+     -moz-column-count: @column-count;
+          column-count: @column-count;
+  -webkit-column-gap: @column-gap;
+     -moz-column-gap: @column-gap;
+          column-gap: @column-gap;
 }
 
 // Optional hyphenation
@@ -583,4 +269,81 @@
       -ms-hyphens: @mode;
        -o-hyphens: @mode;
           hyphens: @mode;
+}
+
+// GRADIENTS
+/////////////////////////////////////
+
+#gradient {
+
+  // Horizontal gradient, from left to right
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .horizontal(@start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) {
+    background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
+    background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  // Vertical gradient, from top to bottom
+  //
+  // Creates two color stops, start and end, by specifying a color and position for each color stop.
+  // Color stops are not available in IE9 and below.
+  .vertical(@start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) {
+    background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @start-color, @start-percent, @end-color, @end-percent); // Safari 5.1+, Chrome 10+
+    background-image:  -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+  }
+
+  .directional(@start-color: #555, @end-color: #333, @deg: 45deg) {
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1+, Chrome 10+
+    background-image: -moz-linear-gradient(@deg, @start-color, @end-color); // FF 3.6+
+    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10
+  }
+  .horizontal-three-colors(@start-color: #00b3ee, @mid-color: #7a43b6, @color-stop: 50%, @end-color: #c3325f) {
+    background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+    background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+    background-image: -moz-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+
+  .vertical-three-colors(@start-color: #00b3ee, @mid-color: #7a43b6, @color-stop: 50%, @end-color: #c3325f) {
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+    background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-image: -moz-linear-gradient(top, @start-color, @mid-color @color-stop, @end-color);
+    background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+    background-repeat: no-repeat;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+  }
+  .radial(@inner-color: #555, @outer-color: #333) {
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
+    background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+    background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
+    background-image: radial-gradient(circle, @inner-color, @outer-color);
+    background-repeat: no-repeat;
+  }
+  .striped(@color: #555, @angle: 45deg) {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  }
+}
+
+// Reset filters for IE
+//
+// When you need to remove a gradient background, don't forget to use this to reset
+// the IE filter for IE9 and below.
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }

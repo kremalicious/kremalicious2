@@ -4,23 +4,22 @@ if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 
 require_once locate_template('/inc/krlc2-cleanup.php');
 require_once locate_template('/inc/krlc2-scripts.php');
-require_once locate_template('/inc/krlc2-admin.php');
 require_once locate_template('/inc/krlc2-content.php');
+require_once locate_template('/inc/krlc2-feed.php');
 require_once locate_template('/inc/krlc2-template-tags.php');
 require_once locate_template('/inc/krlc2-socialgraph.php');
 require_once locate_template('/inc/krlc2-htaccess.php');
+
+require_once locate_template('/inc/krlc2-admin.php');
+require_once locate_template('/inc/krlc2-login.php');
 
 function kremalicious2_setup() {
 
 	// http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support('post-thumbnails');
-	// set_post_thumbnail_size(150, 150, false);
-	add_image_size( 'featureImageBig', 960, 300, true );
-	add_image_size( 'featureImageStream', 540, 9999, true );
-	add_image_size( 'goodieImage', 650, 9999, true );
-	add_image_size( 'photoStream', 520, 9999 );
-	add_image_size( 'photoStreamTinySlot', 245, 45, true );
-	add_image_size( 'photoArchive', 300, 9999 );
+	add_image_size( 'featureImage', 680, 300 );
+	add_image_size( 'photoStream', 680, 680 );
+	add_image_size( 'photoArchive', 400, 9999 );
 	add_image_size( 'photoBig', 960, 960 );
 	
 	// http://codex.wordpress.org/Post_Formats
@@ -56,19 +55,12 @@ add_action('after_setup_theme', 'kremalicious2_setup');
 
 // Autoversioning of css and js files
 // http://derek.io/blog/2009/auto-versioning-javascript-and-css-files/
-/**
- *  Given a file, i.e. /css/base.css, replaces it with a string containing the
- *  file's mtime, i.e. /css/base.1221534296.css.
- *  
- *  @param $file  The file to be loaded.  Must be an absolute path (i.e.
- *                starting with slash).
- */
-function auto_version($file) {
-  if(strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
-    return $file;
+function auto_version($filepath) {
+  if(strpos($filepath, '/') !== 0 || !file_exists(get_template_directory() . $filepath) )
+    return $filepath;
 
-  $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
-  return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
+  $mtime = filemtime(get_template_directory() . $filepath);
+  return $filepath . '?v=' . $mtime;
 }
 
 // add to virtual robots.txt

@@ -1,0 +1,166 @@
+/////////////////////////////////////
+// LOGIN PAGE CSS FOR KREMALICIOUS.COM
+/////////////////////////////////////
+
+@import 'variables.less';
+@import 'mixins.less';
+@import 'utilities.less';
+@import 'buttons.less';
+
+* { .box-sizing(border-box); }
+
+body.login {
+	.bodyTexture;
+    font-family: @font-family-sans-serif;
+    font-size: @font-size-base;
+	font-weight: @headings-font-weight;
+    line-height: @line-height-computed;
+    color: @text-color;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+
+#login {
+    width: 100%;
+    max-width: 640px;
+    padding: 5%;
+    margin: auto;
+}
+
+.login h1 {
+	background: url('../img/logo.png') no-repeat center top;
+	width: 171px;
+	height: 60px;
+	margin: 16px auto;
+    
+    a { display: none; }
+}
+
+#nav {
+	display: none;
+}
+
+.login form {
+	.box-shadow(none);
+	border: none;
+	background: transparent;
+	margin: 1em auto;
+	padding: 1em 0;
+	position: relative;
+    .clearfix;
+    
+    // layout
+    @media only screen and (min-width: 550px) {
+        p:first-child,
+        p:nth-child(2) { width: 48%; }
+        
+        // username row
+        p:first-child { float: left; }
+        
+        // password row
+        p:nth-child(2) { float: right; }  
+    }
+    
+    @media only screen and (min-width: 1024px) {
+        & { margin-left: -140px }
+        
+        // button
+        .submit {
+            position: absolute;
+            right: -140px;
+            top: 47px;
+            margin-bottom: 0;
+            
+            .button { height: 40px }
+        }  
+    }
+    
+    // labels
+    label { color: @text-color-dimmed; }
+    
+    // input fields
+    .input {
+    	background: #fff;
+    	background: rgba(255,255,255,.4);
+    	border: 0;
+    	border-bottom: 1px solid #AFC3CB;
+    	.box-shadow(0 1px 0 #fff);
+    	padding: .2em .5em;
+    	width: 100%;
+    	border-radius: 0;
+    	.transition();
+
+        &:focus {
+        	background: rgba(255,255,255,.8);
+        	border-bottom-color: #78868c;
+        	outline: none;
+        }
+    }
+}
+
+.wp-core-ui .button.button-large, .wp-core-ui .button-group.button-large .button {
+	.btn;
+	.btn-primary;
+	font-size: 12px;
+	line-height: 18px;
+	width: 120px;
+	display: block;
+}
+
+#login form p.submit {
+	float: right
+}
+
+.login form .forgetmenot {
+	float: left
+}
+
+.login #backtoblog {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+	
+	a {
+		.btn;
+		font-size: 12px;
+		line-height: 18px;
+		width: 100%;
+		background: none;
+		border: none;
+        margin: 0;
+		.box-shadow(none);
+        padding: 3em;
+    	text-decoration: none;
+    	color: @link-color !important;
+	}
+}
+
+#login_error, .login .message {
+	margin-left: 0;
+}
+
+.login .message {
+	color: #8a6d3d;
+	padding: .5em .8em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+	background-color: #fcf8e3;
+	#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,0.05));
+	border: 1px solid #d7cab9;
+	border-radius: 4px;
+	.box-shadow(~"0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9)");
+}
+
+@media @highDPI {
+
+	body.login {
+		.bodyTexture_2x;
+	}
+
+	.login h1 {
+		background-image: url(../img/logo@2x.png);
+		.background-size(171px 60px);
+	}
+
+}

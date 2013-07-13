@@ -1,56 +1,41 @@
-/*
-
- MEDIA CSS FOR KREMALICIOUS.COM
- -----------------------------------------------------------------
- 
- Copyright (c) 2012 Matthias Kretschmann | http://mkretschmann.com
-
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-*/
+/////////////////////////////////////
+// MEDIA CSS FOR KREMALICIOUS.COM
+/////////////////////////////////////
 
 
-/* ============================================================== */
-/* IMAGES */
-/* ============================================================== */
+// IMAGES
+/////////////////////////////////////
 
 img,
 figure,
 .wp-caption {
 	max-width: 100%;
 	height: auto;
-	.border-radius(5px);
+	border-radius: 5px;
 	display: block;
 	margin-left: auto;
-	margin-right: auto
+	margin-right: auto;
 }
 
 img {
-	// 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
-	border: 0; 
 	vertical-align: middle;
-	border-top: 1px solid rgba(255,255,255,.5);
-	.box-shadow(0 2px 4px rgba(0,0,0,.3));
+	.box-shadow(0 1px 3px rgba(0,0,0,.3));
 }
 
 a.linkedImage img {
-	border: 2px solid @linkColor;
+	border: 2px solid @link-color;
 	.transition(border .2s ease-in-out);
 }
 
 .linkedImage:hover img {
-	border-color: @linkColorHover;
+	border-color: @link-color-hover;
 }
 
 
 // smiley reset
 .wp-smiley {
 	display: inline;
-	.border-radius(0);
+	border-radius: 0;
 	.box-shadow(none);
 	margin: 0;
 	vertical-align: baseline;
@@ -59,26 +44,28 @@ a.linkedImage img {
 svg:not(:root) { overflow: hidden; }
 
 
-/* ============================================================== */
-/* FIGURES */
-/* ============================================================== */
+// FIGURES
+/////////////////////////////////////
 
 figure { margin: 0; }
 
 
-/* ============================================================== */
-/* WORDPRESS MEDIA */
-/* ============================================================== */
+// WORDPRESS MEDIA 
+/////////////////////////////////////
 
 img.alignleft,
+img.left, // some old articles markup
+.imgleft, // some old articles markup
 .wp-caption.alignleft,
 img.alignright,
+img.right, // some old articles markup
+.imgright, // some old articles markup
 .wp-caption.alignright,
 img.aligncenter,
 .wp-caption.aligncenter, {
 	float: none;
 	display: block;
-	margin: 1.5em auto;
+	margin: @line-height-computed auto;
 }
 
 .wp-caption {
@@ -88,6 +75,18 @@ img.aligncenter,
 
 .wp-caption-text {
 	font-size: .9em;
-	line-height: 1.5em;
+	line-height: @line-height-computed;
 	.dimmed
+}
+
+@media @breakpoint2 {
+	img.alignleft,
+	img.left, // some old articles markup
+	.imgleft, // some old articles markup
+	.wp-caption.alignleft { margin: 0 @line-height-computed @line-height-computed 0; float: left; }
+	
+	img.alignright,
+	img.right, // some old articles markup
+	.imgright, // some old articles markup
+	.wp-caption.alignright { margin: 0 0 @line-height-computed @line-height-computed; float: right;	}
 }

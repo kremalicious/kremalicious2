@@ -1,0 +1,379 @@
+/////////////////////////////////////
+// ADMIN AREA CSS FOR KREMALICIOUS.COM
+/////////////////////////////////////
+
+@import 'variables.less';
+@import 'mixins.less';
+@import 'buttons.less';
+
+html,.wp-dialog {
+	.bodyTexture;
+}
+
+#adminmenushadow {
+	display: none;
+}
+
+#adminmenuback,
+#adminmenuwrap {
+	border-color: #bbc4cb;
+	background: transparent;
+}
+
+#adminmenuback {
+	background: transparent url(../img/fabric_plaid.png) left top repeat;
+	.box-shadow(inset -1px 0 10px rgba(0,0,0,.15));
+}
+
+body,#wpbody,.form-table .pre {
+	color: @text-color;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+	font: 13px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,.wrap h2,.postbox h3 {
+	color: @headings-color;
+}
+
+.postbox h3 {
+	color: @text-color-light;
+}
+
+h1,.wrap h2 {
+	margin: 0;
+	font-size: 2.25em;
+	line-height: 1em;
+	margin-bottom: 0.6667em;
+}
+
+h2 {
+	font-size: 1.625em;
+	line-height: 1;
+	margin: 0.8462em 0;
+}
+
+h3 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin: 1em 0;
+}
+
+h4 {
+	font-size: 1.3em;
+}
+
+
+// Links
+/////////////////////////////////////
+
+a,#adminmenu a,#the-comment-list p.comment-author strong a,#media-upload a.del-link,#media-items a.delete,.plugins a.delete,.ui-tabs-nav a, .plugins a {
+	text-decoration: none;
+	color: @link-color;
+}
+
+a:hover,
+#adminmenu a:hover {
+	color: @link-color-hover;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px rgba(91, 231, 214, .5);
+}
+
+// Forms
+/////////////////////////////////////
+
+textarea, textarea.widefat, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select, #titlediv #title {
+	background: #fff;
+	background: rgba(255,255,255,.4);
+	padding: .5em;
+	margin-bottom: .5em;
+	border: 0 !important;
+	border-bottom: 1px solid #AFC3CB !important;
+	border-radius: 0;
+	.box-shadow(0 1px 0 #fff);
+	.transition();
+}
+
+input:focus,textarea:focus, 
+#titlediv #title:focus {
+	background: rgba(255,255,255,.8);
+	border-bottom-color: #78868c !important;
+	outline: none;
+}
+
+/* Quick Edit */
+.inline-edit-row fieldset label {
+	margin: .8em 0;
+}
+
+.inline-editor ul.cat-checklist {
+	background: transparent;
+	padding: 0;
+	border: none
+}
+
+.inline-edit-row fieldset ul.cat-checklist label {
+	font-size: 12px
+}
+
+/*Buttons*/
+.wp-core-ui .button,
+.wp-core-ui .button-secondary,
+.btn,
+input.button,
+input.button-secondary,
+a.button, a.button-secondary,
+.wrap .add-new-h2,
+input.button-primary,
+button.button-primary,
+.submitbox .submitdelete {
+	.btn;
+    margin-bottom: 0;
+	font-size: 12px;
+	line-height: 1;
+}
+
+.wp-core-ui .button-primary,
+.btn-primary,
+input.button-primary,
+button.button-primary,
+a.button-primary {
+	.btn;
+	.btn-primary;
+    margin-bottom: 0;
+	font-size: 12px;
+	line-height: 1;
+}
+
+// disabled & autosave button state
+// which is really hard to overwrite
+input.button-primary-disabled,
+button.button-primary-disabled,
+a.button-primary-disabled,
+input.button-primary[disabled] {
+	color: #267166 !important;
+	background: #398f85 !important;
+}
+
+#adminmenu a.menu-top,.folded #adminmenu li.menu-top,#adminmenu .wp-submenu .wp-submenu-head {
+	border-bottom-color: #cbcdcd;
+}
+
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow div {
+	background: @headings-color;
+	border-color: @headings-color;
+}
+
+#adminmenu .wp-submenu ul {
+	background-color: rgba(255,255,255,0.9);
+}
+
+.alternate,.alt {
+	background: rgba(255,255,255,.4);
+}
+
+#post-body,.widefat,
+.widget, #widget-list .widget-top, .postbox, .menu-item-settings,
+div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs li.tabs, .wp-tab-active {
+	background: transparent;
+}
+
+.widefat td, .widefat th,
+.widget, #widget-list .widget-top, .postbox, #titlediv, #poststuff .postarea, .stuffbox,
+.widefat,
+.plugins .inactive td, .plugins .inactive th, .plugins .active td, .plugins .active th,
+.plugins-php .widefat tfoot th, .plugins-php .widefat tfoot td {
+	border: none;
+}
+
+.widefat td {
+	padding: 15px 7px 5px;
+}
+
+.widefat th input {
+	margin: 6px 0 0 8px;
+}
+
+.widget .widget-top, .postbox h3, .stuffbox h3, .widefat thead tr th, .widefat tfoot tr th, h3.dashboard-widget-title, h3.dashboard-widget-title span, h3.dashboard-widget-title small, .find-box-head, .sidebar-name, #nav-menu-header, #nav-menu-footer, .menu-item-handle, #fullscreen-topbar {
+	background: rgba(255,255,255,.6);
+	border: none;
+	box-shadow: none;
+}
+
+.plugins tr,
+.plugins td,
+.plugins th,
+.plugins .inactive, .plugins .inactive th, .plugins .inactive td {
+	background: transparent;
+}
+
+.plugins .active td,
+.plugins .active th {
+	background: rgba(255,255,255,.4);
+	padding-top: 1em;
+	padding-bottom: 1em
+}
+
+.plugins .inactive td,
+.plugins .inactive th {
+	opacity: .7;
+	background: rgba(255,255,255,.2);
+	padding-top: 1em;
+	padding-bottom: 1em
+}
+
+.plugins .inactive:hover td,
+.plugins .inactive:hover th {
+	opacity: 1;
+}
+
+.widget, .postbox, .stuffbox {
+	margin-bottom: 60px;
+}
+
+// edit screen
+#titlediv {
+	border-radius: 0;
+	border: none;
+	.box-shadow(none)
+	
+	#title {
+		padding: 8px;
+		font-size: 2em;
+	}
+		
+	a.button {
+		padding: 0 10px;
+	}
+}
+
+#titlediv #title-prompt-text, #wp-fullscreen-title-prompt-text {
+	padding: 15px 10px;
+}
+
+#minor-publishing,
+.misc-pub-section {
+	.box-shadow(none);
+	border: none;
+}
+
+#minor-publishing-actions {
+	.divider-bottom;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin-bottom: 10px
+}
+
+#major-publishing-actions {
+	.divider-top;
+	margin-top: 15px;
+	padding-top: 20px;
+}
+
+.submitbox .submitdelete {
+	.btn;
+	color: #f00;
+	
+	&:hover {
+		text-shadow: none;
+		color: #f00;
+	}
+}
+
+/* fix for weird Media Library "Show" Buttons*/
+#media-items .media-item {
+	padding-bottom: 1px;
+}
+
+/* Attention Please! Dashboard Widget */
+
+#krlc2_attention_widget textarea,
+#krlc2_attention_widget .alert {
+	font-family: Georgia, serif;
+	font-size: 14px;
+	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+}
+
+#krlc2_attention_widget p {
+	margin-bottom: 1.5em;
+}
+
+#krlc2_attention_widget textarea {
+	width: 100%;
+}
+
+#krlc2_attention_widget .alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 18px;
+	color: #8a6d3d;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+	background-color: #fcf8e3;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	border: 1px solid #d7cab9;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.attentionMessageStatus {
+	padding: .3em .6em;
+	border-radius: 5px;
+	.box-shadow(0 1px 0 #fff);
+	border: 1px solid #ccc;
+	background: #eee;
+	color: #666;
+}
+
+.attentionMessageStatus.active {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #b5c6a8;
+}
+
+#poststuff .postarea {
+	.box-shadow(none);
+}
+
+.cf-nav ul li a.current {
+	border-bottom: 1px solid #F3F7FA;
+}
+
+.post-state-format {
+	color: transparent;
+	text-shadow: none;
+}
+
+.row-actions a {
+	.transition(none);
+}
+
+div.updated, .login .message {
+	font-weight: bold;
+	color: #8a6d3d;
+	padding: .5em .8em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+	background-color: #fcf8e3;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.05) 100%);
+	border: 1px solid #d7cab9;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+	
+	html,.wp-dialog {
+		.bodyTexture_2x;
+	}
+
+}

@@ -1,5 +1,5 @@
 
-<aside role="complementary">
+<aside role="complementary" class="row">
 
 	<?php if ( is_archive() ) { ?>
 		
@@ -29,24 +29,6 @@
 				}
 			?>
 		</h1>
-		<div class="dimmed">
-			<?php echo category_description(); ?>
-		</div>
-		
-		<footer id="topics" class="divider-top divider-bottom">
-		
-			<?php 
-			
-				$cats 		= get_categories('orderby=slug&style=none&depth=1&title_li=');
-				
-                foreach ($cats as $cat) {
-                	if ( !$cat->category_parent > 0 ) {
-                		echo '<a class="icon- cat-'.$cat->slug.'" rel="category tag" href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a>';
-                	}
-                }
-			
-			?>
-		</footer>
 		
 	<?php } elseif ( is_search() ) { ?>
 		<header>

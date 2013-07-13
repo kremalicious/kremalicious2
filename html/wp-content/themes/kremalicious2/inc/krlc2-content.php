@@ -1,83 +1,8 @@
 <?php
 
-// Add stuff to the RSS Feed items like post thumbnails, custom fields etc.
-
-// Construct the source linked title for link posts
-function krlc2_feed_linked_title($permalink) {
-	global $wp_query;
-	if ( $url = get_post_meta($wp_query->post->ID, '_format_link_url', true) ) {
-		return $url;
-	}
-	return $permalink;
-}
-add_filter('the_permalink_rss', 'krlc2_feed_linked_title');
-
-// add arrow to link posts in feed
-function krlc2_feed_title_arrow($title) {
-	
-	global $post;
-	
-	if ( has_post_format( 'link', $post->ID ) ) {
-		$title = $title.' &#187;';
-	} else {
-		$title = $title;
-	}
-
-    return $title;
-}
-add_filter('the_title_rss', 'krlc2_feed_title_arrow');
-
-// show post thumbnails in feeds
-// modified from http://digwp.com/2010/06/show-post-thumbnails-in-feeds/
-function krlc2_feed_content( $content ) {
-
-    global $post;
-    $postTitle 		= $post->post_title;
-    $postLink 		= get_permalink($post->ID);
-    $featuredImage 	= get_the_post_thumbnail( $post->ID, 'featureImageStream', array('class' => 'center') );
-    $photoImage		= get_the_post_thumbnail( $post->ID, 'photoStream', array('class' => 'center') );
-    $linkURL 		= get_post_meta($post->ID, '_format_link_url', true);
-    
-    $linkPostStuff = '<p>
-    					<a class="more-link" href="'.$linkURL.'">Go to source &#187;</a> <br />
-    					<a href="'. $postLink .'" title="Permalink for this post">&#8734;</a>
-    				  </p>';
-    				  
-    $shareStuff = '<br />
-    			   <hr />
-    			   <div>
-    			     <a href="https://twitter.com/intent/tweet?source=kremalicious&text='.urlencode($postLink) .'&url='. urlencode($postLink) .'&via=kremalicious" data-via="kremalicious">Tweet this</a>, or follow me on Twitter <a href="https://twitter.com/kremalicious">here</a>.
-    			   </div>';
-    
-    if ( has_post_thumbnail($post->ID) && !has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . $featuredImage . '</div>' . $content . $shareStuff;
-    } elseif ( has_post_thumbnail($post->ID) && has_post_format( 'image', $post->ID ) ) {
-    	$content = '<div>' . $photoImage . '</div>' . $content . $shareStuff;    
-    } elseif ( has_post_format( 'link' ) ) {
-    	$content = $content . $linkPostStuff . $shareStuff;
-    } else {
-        $content = $content . $shareStuff;
-    }
-    return $content;
-}
-add_filter( 'the_content_feed', 'krlc2_feed_content' );
-
-
-// escape html entities in comments
-// thanks http://digwp.com/2010/04/wordpress-custom-functions-php-template-part-2/
-function encode_html_code_in_comment($source) {
-	$encoded = preg_replace_callback('/<code>(.*?)<\/code>/ims',
-	create_function('$matches', '$matches[1] = preg_replace(array("/^[\r|\n]+/i", "/[\r|\n]+$/i"), "", $matches[1]); 
-	return "<pre><code>" . htmlentities($matches[1]) . "</"."code></pre>";'), $source);
-	if ($encoded)
-		return $encoded;
-	else
-		return $source;
-}
-add_filter('pre_comment_content', 'encode_html_code_in_comment');
-
-
+//
 // Goodies Download Button Shortcode
+//
 function krlc2_goodie_download_shortcode( $atts, $content = null ) {
  	
  	extract( shortcode_atts( array(
@@ -106,8 +31,10 @@ function krlc2_goodie_download_shortcode( $atts, $content = null ) {
 add_shortcode('download_button', 'krlc2_goodie_download_shortcode');
 
 
+//
 // Relative Time
 // props: http://terriswallow.com/weblog/2008/relative-dates-in-wordpress-templates/
+//
 function krlc2_how_long_ago($timestamp){
 	$difference = time() - $timestamp;
 	
@@ -141,7 +68,42 @@ function krlc2_how_long_ago($timestamp){
 	return $r;
 }
 
+
+//
+// Get the Attachment ID from an Image URL
+// thanks to 
+// http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+//
+function pn_get_attachment_id_from_url( $attachment_url = '' ) {
+	global $wpdb;
+	$attachment_id = false;
+
+	// If there is no url, return.
+	if ( '' == $attachment_url )
+		return;
+ 
+	// Get the upload directory paths
+	$upload_dir_paths = wp_upload_dir();
+ 
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+ 
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+ 
+		// Remove the upload path base directory from the attachment URL
+		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+ 
+		// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+ 
+	}
+	return $attachment_id;
+}
+
+//
 // http://digwp.com/2010/02/custom-css-per-post/
+//
 function artStyle() {
     global $post;
     if (is_single()) {

@@ -28,16 +28,15 @@
 		
 		elseif ( has_post_format( 'image' ) ) { ?>
 			
-			<div class="photoPostWrap">
-				<div class="photoPost">
-					<figure class="hmedia">
-						<?php the_post_thumbnail('photoBig', array('class' => 'photo')); ?>
-						<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
-						<?php krlc2_post_thumbnail_exif_data(); ?>
-					</figure>
-				</div>
+			<div class="photoPost">
+				<figure class="hmedia">
+                    
+        			<?php krlc2_the_post_thumbnail('photoBig'); ?>                    
+					<figcaption class="entry-title fn"><?php the_title(); ?></figcaption>
+					<?php krlc2_post_thumbnail_exif_data(); ?>
+				</figure>
 			</div>
-			<aside class="entry-meta">
+            <aside class="entry-meta">
 				<p class="byline author vcard source-org">by <a class="fn" rel="author" href="/about/"><?php the_author(); ?></a></p>
 				<p class="time"><?php echo krlc2_post_date(); ?></p>
 			</aside>
@@ -50,9 +49,9 @@
 		else { ?>
 			
 			<?php if ( has_post_thumbnail() ) { ?>
-				<header class="featureTitle">
+				<header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<?php the_post_thumbnail( 'featureImageBig', array('class' => 'photo') ); ?>
+					<?php the_post_thumbnail( 'featureImage', array('class' => 'photo') ); ?>
 				</header>
 			<?php } else { ?>
 				<header>
@@ -71,7 +70,7 @@
 				<?php if (has_post_format( 'link' )) {
 						the_content(); ?>
 						<p>
-							<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-external-link"></i></a>
+							<a class="more-link" href="<?php echo $linkURL ?>">Go to source <i class="icon-forward"></i></a>
 						</p>
 					<?php } else {
 						the_content();
@@ -91,13 +90,6 @@
 				</footer>
 			</section>
 
-			<?php comments_template(); ?>
-			
-		<nav id="post-nav-single" class="pager">
-			<p class="previous alignleft"><?php previous_post_link('<i class="icon-chevron-left"></i> %link'); ?> </p>
-			<p class="next alignright"><?php next_post_link('%link <i class="icon-chevron-right"></i>'); ?> </p>
-		</nav>	
-				
 	</article>
     
 <?php endwhile; /* End loop */ ?>

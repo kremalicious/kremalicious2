@@ -1,101 +1,71 @@
-/////////////////
-// Semantic.gs // for LESS: http://lesscss.org/
-/////////////////
-
-// Defaults which you can freely override
-@column-width: 60;
-@gutter-width: 20;
-@columns: 12;
-
-// Utility variable — you should never need to modify this
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
-
-// Set @total-width to 100% for a fluid layout
-@total-width: @gridsystem-width;
-
-// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
-// @min-width: 960;
-// @correction: 0.5 / @min-width * 100 * 1%;
-
-// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix() {
-	*zoom:1;
-	
-	&:before,
-	&:after {
-	    content:"";
-	    display:table;
-	}
-	&:after {
-	    clear:both;
-	}
+// Prevents padding to be added
+* {
+	.box-sizing(border-box);
 }
 
+// 320px and up
+.container {
+	padding: 0 4%;
+	width: 100%; }
 
-//////////
-// GRID //
-//////////
+.row {
+	margin-top: @line-height-computed;
+	margin-bottom: @line-height-computed;
+}
 
-body {
+.col1, .col2, .col3, .col4, .col5, .col6 {
 	width: 100%;
-	.clearfix;
+	margin-left: 0;
+	// ensures empty columns won't collapse
+	min-height: 1px; }
+
+// clear trick
+.container:before, .row:before,
+.container:after, .row:after { display: table; content: ""; }
+.container:after, .row:after { clear: both; }
+.container, .row { *zoom: 1; }
+
+@media @breakpoint1 {
+
+	.col1,
+	.col2,
+	.col3,
+	.col4,
+	.col5,
+	.col6 {  }
+
 }
 
-.row(@columns:@columns) {
-	display: block;
-	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
-	// *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
-	// *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
-	.clearfix;
-}
-.column(@x,@columns:@columns) {
-	display: inline;
-	float: left;
-	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-	margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
-	// *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
-	// *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
-}
-.push(@offset:1) {
-	margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}
-.pull(@offset:1) {
-	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}
+@media @breakpoint2 {
 
+	.row {
+	    max-width: 37.8em;
+	    margin: @line-height-computed*2 auto;
+	    padding-left: 0;
+	    padding-right: 0;
+	}
 
-/////////////////
-// CUSTOM GRID //
-/////////////////
+	.col1,
+	.col2,
+	.col3,
+	.col4,
+	.col5,
+	.col6 {
+		float: left;
+		margin-left: 4%; }
 
-* { .box-sizing(border-box); }
+	.col1:first-child,
+	.col2:first-child,
+	.col3:first-child,
+	.col4:first-child,
+	.col5:first-child,
+	.col6 { margin-left: 0; }
 
+	.col1 { width: 13%; }
+	.col2 { width: 30%; }
+	.col3 { width: 48%; }
+	.col4 { width: 65%; }
+	.col5 { width: 82%; }
+	.col6 { width: 100%; }
 
-// Grid container
-// --------------------------------------------------
-.container { 
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-	
-	@media only screen and (min-width: 30em) 		{ max-width: 25em; }
-	@media only screen and (min-width: 40.625em) 	{ max-width: 31.2em; }
-	@media only screen and (min-width: 48.063em) 	{ max-width: 55.6em; }
-}
-
-#menubar,
-section[role="document"],
-footer[role="contentinfo"] { 
-	.container; 
-	.clearfix;
-}
-
-section[role="main"],
-aside[role="complementary"],
-#siteMeta,
-#siteCopyright,
-.pager {
-	.column(12);
 }
