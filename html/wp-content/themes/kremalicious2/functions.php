@@ -5,6 +5,7 @@ if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 require_once locate_template('/inc/krlc2-cleanup.php');
 require_once locate_template('/inc/krlc2-scripts.php');
 require_once locate_template('/inc/krlc2-content.php');
+require_once locate_template('/inc/krlc2-feed.php');
 require_once locate_template('/inc/krlc2-template-tags.php');
 require_once locate_template('/inc/krlc2-socialgraph.php');
 require_once locate_template('/inc/krlc2-htaccess.php');
