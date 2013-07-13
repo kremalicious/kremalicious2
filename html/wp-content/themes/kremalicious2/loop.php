@@ -85,7 +85,7 @@
 				
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
-						<?php the_post_thumbnail('photoArchive'); ?>
+						<?php krlc2_the_post_thumbnail('photoArchive'); ?>
 						<figcaption><?php the_title(); ?></figcaption>
 					</figure>
 				</a>
@@ -96,13 +96,7 @@
 				<a class="icon-pictures posttype" rel="tooltip" href="<?php echo esc_url( $photos_link ); ?>" title="Show all photo posts"></a>
 				<a class="photoPost" href="<?php the_permalink(); ?>">
 					<figure>
-                        
-            			<?php if ( has_post_thumbnail() ) { 
-                            the_post_thumbnail( 'photoStream' ); 
-                        } else {
-                    		krlc2_the_post_thumbnail_fallback();
-                        } ?>
-                        
+            			<?php krlc2_the_post_thumbnail('photoStream'); ?>
 						<figcaption><?php the_title(); ?></figcaption>
                         <?php krlc2_post_thumbnail_exif_data(); ?>
 					</figure>

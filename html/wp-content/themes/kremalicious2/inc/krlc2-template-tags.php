@@ -1,6 +1,8 @@
 <?php
 
+//
 // Subscribe Buttons
+//
 function krlc2_subscribe_buttons() {
 	echo '<aside class="subscribe">
 			<p>
@@ -9,28 +11,39 @@ function krlc2_subscribe_buttons() {
 		  </aside>';
 }
 
+//
 // Post date under single view
+//
 function krlc2_post_date() {
 	$time = '<time rel="tooltip" title="'. get_the_date() .'" datetime="'. get_the_time('c') .'" pubdate>' . krlc2_how_long_ago(get_the_time('U')) .'</time>';
 	return $time;
 }
 
+//
 // Fallback for photo posts without post thumbnail set
-function krlc2_the_post_thumbnail_fallback() {
-    // if $postID not specified, then get global post and assign ID
-    if (!$postID) {
-        global $post;
-        $postID = $post->ID;
-    }
-	// find the first <img> in post content
-    $postContent = $post->post_content;
-	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $postContent, $matches);
-	$postthumbnailURL = $matches [1] [0];
-    
-    echo '<img src="'.$postthumbnailURL.'" />';
+//
+function krlc2_the_post_thumbnail($size = 'full') {
+	if ( has_post_thumbnail() ) {
+		$imageID = get_post_thumbnail_id();
+		$postthumbnail = wp_get_attachment_image($imageID, $size);
+	} else {
+		global $post, $posts;
+		$postthumbnailURL = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$postthumbnailURL = $matches [1] [0];
+        
+        // make sure to grab the set size and not the size of embedded image
+		$imageID = pn_get_attachment_id_from_url($postthumbnailURL);
+		$postthumbnail = wp_get_attachment_image($imageID, $size);
+	}
+    echo $postthumbnail;
 }
 
+//
 // Grab EXIF Metadata from featured image
+//
 function krlc2_post_thumbnail_exif_data($postID = NULL) {
     // if $postID not specified, then get global post and assign ID
     if (!$postID) {
