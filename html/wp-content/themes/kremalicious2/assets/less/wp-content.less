@@ -158,6 +158,12 @@
     .single & {
     	text-align: center;
         figure { margin-bottom: 1.5em; }
+        
+        // show big size on larger screens
+        @media @breakpoint3 {
+            margin-left: -5.55em;
+            margin-right: -5.55em;
+        }
     }
 }
 
