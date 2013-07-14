@@ -22,7 +22,7 @@ body {
     
 	@media @breakpoint3 { 
 		font-size: 125%;
-		line-height: 1.5em;	
+		line-height: 1.6em;	
 	}
 }
 
@@ -150,12 +150,8 @@ blockquote {
     padding: (@line-height-computed / 2) @line-height-computed;
     margin: 0 0 @line-height-computed;
 	border-left: 2px solid @text-color-dimmed;
-    p {
-      font-size: @font-size-base;
-	  
-	  &:last-child {
-	      margin-bottom: 0;
-	  }
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
