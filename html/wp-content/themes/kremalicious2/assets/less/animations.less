@@ -1,11 +1,16 @@
-/* Buttery Smooth(tm) */
-/*.masonry,
-.masonry .masonry-brick,
-#menubar input#s,
-.fade {
-	-webkit-transform: translate3d(0,0,0); }*/
+// Buttery Smooth(tm)
+////////////////////////////////////
 
-/* jQuery Masonry */
+.gpuacceleration {
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+
+// Masonry
+////////////////////////////////////
+
 .masonry,
 .masonry .masonry-brick {
 	.transition-duration(0.7s);
@@ -21,9 +26,11 @@
 
 
 // Loading Thingy
-// --------------------------------------------------
+////////////////////////////////////
+
 .loading {
 	.animation(loadingThingy .2s infinite);
+    .gpuacceleration;
 }
 
 @keyframes "loadingThingy" {
