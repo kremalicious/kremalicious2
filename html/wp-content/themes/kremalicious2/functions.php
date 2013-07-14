@@ -33,8 +33,11 @@ function kremalicious2_setup() {
 	update_option('posts_per_rss', 100);
 	
 	// Media
-	update_option('medium_size_w', 540);
-	update_option('medium_size_h', 540);
+	update_option('thumbnail_size_w', 300);
+	update_option('thumbnail_size_h', 300);
+    update_option('thumbnail_crop', 0);
+	update_option('medium_size_w', 680);
+	update_option('medium_size_h', 680);
 	update_option('large_size_w', 960);
 	update_option('large_size_h', 960);
 	update_option('upload_path', 'media');
