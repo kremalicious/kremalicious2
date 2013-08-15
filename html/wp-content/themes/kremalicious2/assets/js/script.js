@@ -81,26 +81,26 @@ var siteEffects = {
 		});
 	},
 
-	searchFancySchmanzy: function() {
-
-		var hiddenMenus 	  = $('#menubar nav[role="navigation"]'),
-			globalSearch 	  = $('#menubar #s'),
-			searchPlaceholder = globalSearch.attr('placeholder');
-
-		globalSearch.attr('placeholder', '');
-		globalSearch.focusout(function(){
-			globalSearch.attr('placeholder', '');
-			hiddenMenus.toggleClass('in');
-		}).focusin(function() {
-		    hiddenMenus.removeClass('in');
-		    globalSearch.attr('placeholder', searchPlaceholder );
-		});
-
-	},
+	// searchFancySchmanzy: function() {
+	// 
+	// 	var hiddenMenus 	  = $('#menubar nav[role="navigation"]'),
+	// 		globalSearch 	  = $('#menubar #s'),
+	// 		searchPlaceholder = globalSearch.attr('placeholder');
+	// 
+	// 	globalSearch.attr('placeholder', '');
+	// 	globalSearch.focusout(function(){
+	// 		globalSearch.attr('placeholder', '');
+	// 		hiddenMenus.toggleClass('in');
+	// 	}).focusin(function() {
+	// 	    hiddenMenus.removeClass('in');
+	// 	    globalSearch.attr('placeholder', searchPlaceholder );
+	// 	});
+	// 
+	// },
 
 	init: function(){
 		this.socialiteButtons();
-		this.searchFancySchmanzy();
+		//this.searchFancySchmanzy();
 	}
 
 }
