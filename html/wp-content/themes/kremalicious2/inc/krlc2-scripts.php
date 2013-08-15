@@ -5,7 +5,7 @@ function krlc2_scripts() {
 	// Deregister default jquery
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', get_template_directory_uri() . '/assets/js/libs/jquery-2.0.2.min.js', '', null, true);
+		wp_register_script('jquery', get_template_directory_uri() . '/assets/js/libs/jquery.min.js', '', null, true);
 		wp_enqueue_script( 'jquery','','','', true );
 	}
 
