@@ -61,8 +61,8 @@
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri().auto_version('/assets/css/kremalicious2.min.css'); ?>">
 	
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/modernizr-2.6.1.min.js"></script>
-	<script src="//use.typekit.com/msu4qap.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
+	<script data-cfasync="false" src="//use.typekit.com/msu4qap.js"></script>
+	<script data-cfasync="false">try{Typekit.load();}catch(e){}</script>
 	
 	<script>
 		var total = <?php echo $wp_query->max_num_pages; ?>;
