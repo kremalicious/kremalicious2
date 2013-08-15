@@ -1,9 +1,9 @@
 .hentry {
 	.divider-bottom();
-	padding: @line-height-computed 0;
+	padding: @line-height-computed*2 0;
 	
 	@media @breakpoint2 {
-		padding: (@line-height-computed * 2) 0;
+		padding: (@line-height-computed * 4) 0;
 	}
 	
 	&:first-child { padding-top: 0;	}
@@ -40,7 +40,8 @@
 	width: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: @line-height-computed;
+	margin-bottom: @line-height-computed/2;
+	margin-top: -@line-height-computed;
 	
 	// icon adjustments
 	&:before {
@@ -51,6 +52,14 @@
 	&:hover:before {
 		color: @link-color
 	}
+	
+	// hide by default, show on hover or touch
+	opacity: 0;
+	
+	.hentry:hover &,
+	.touch .hentry:hover & {
+		opacity: 1;
+	}	
 }
 
 // POST META
