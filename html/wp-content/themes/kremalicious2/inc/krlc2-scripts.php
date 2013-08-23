@@ -25,7 +25,6 @@ add_action('wp_enqueue_scripts', 'krlc2_scripts', 100);
 
 function krlc2_admin_scripts_styles() {
 	wp_enqueue_style('krlc2_admin_style', get_template_directory_uri().auto_version('/assets/css/wp-admin.min.css'), false, null);
-	wp_enqueue_script('krlc2_quicktags', get_template_directory_uri().auto_version('/wp-content/themes/kremalicious2/assets/js/quicktags.js'),array('quicktags'));
 }
 add_action('admin_enqueue_scripts', 'krlc2_admin_scripts_styles', 100);
 
@@ -53,16 +52,3 @@ function krlc2_syntax_theme_admin() {
 	}
 }
 add_action('admin_enqueue_scripts', 'krlc2_syntax_theme_admin', 100);
-
-// Add async attribute to some scripts
-// props: https://gist.github.com/1584783
-// function add_async_to_js( $url ) {
-//     if (
-//     	FALSE === strpos( $url, '.js' )
-//     ) {
-//         return $url;
-//     }
-//     // Must be a ', not "!
-//     return "$url' async='async";
-// }
-// add_filter( 'clean_url', 'add_async_to_js', 11, 1 );

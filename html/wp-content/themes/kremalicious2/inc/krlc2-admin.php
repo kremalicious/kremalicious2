@@ -73,17 +73,6 @@ function krlc2_attention_widget_Setup() {
 add_action('wp_dashboard_setup', 'krlc2_attention_widget_Init');
 
 
-/** 
- * DEFAULT QUICKTAG BUTTONS FOR HTML EDITOR
- * ===========================================
- */
-function krlc2_quicktags( $qtInit ) {
-	$qtInit['buttons'] = 'strong,em,link,block,ul,ol,li,code,more,close';
-    return $qtInit;
-}
-add_filter('quicktags_settings', 'krlc2_quicktags', 10, 1);
-
-
 /**
  * Simplify options for `page` and `post` screens
  * ===========================================
