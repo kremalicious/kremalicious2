@@ -10,7 +10,7 @@
 * { .box-sizing(border-box); }
 
 body.login {
-	.bodyTexture;
+	background: @body-bg;
     font-family: @font-family-sans-serif;
     font-size: @font-size-base;
 	font-weight: @headings-font-weight;
@@ -58,20 +58,6 @@ body.login {
         
         // password row
         p:nth-child(2) { float: right; }  
-    }
-    
-    @media only screen and (min-width: 1024px) {
-        & { margin-left: -140px }
-        
-        // button
-        .submit {
-            position: absolute;
-            right: -140px;
-            top: 47px;
-            margin-bottom: 0;
-            
-            .button { height: 40px }
-        }  
     }
     
     // labels

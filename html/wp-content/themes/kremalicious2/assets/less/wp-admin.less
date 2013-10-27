@@ -6,8 +6,8 @@
 @import 'mixins.less';
 @import 'buttons.less';
 
-html,.wp-dialog {
-	.bodyTexture;
+html,body,.wp-dialog {
+	background: @body-bg;
 }
 
 #adminmenushadow {
@@ -365,15 +365,4 @@ div.updated, .login .message {
 	-webkit-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 	-moz-box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
 	box-shadow: 0 1px 7px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.9);
-}
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-	
-	html,.wp-dialog {
-		.bodyTexture_2x;
-	}
-
 }
