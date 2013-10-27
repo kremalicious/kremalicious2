@@ -17,12 +17,12 @@ html,body,.wp-dialog {
 #adminmenuback,
 #adminmenuwrap {
 	border-color: #bbc4cb;
-	background: transparent;
+	background: none;
+    box-shadow: none;
 }
 
-#adminmenuback {
-	background: transparent url(../img/fabric_plaid.png) left top repeat;
-	.box-shadow(inset -1px 0 10px rgba(0,0,0,.15));
+#adminmenu a.menu-top, .folded #adminmenu li.menu-top, #adminmenu .wp-submenu .wp-submenu-head {
+    border-color: transparent;
 }
 
 body,#wpbody,.form-table .pre {
@@ -153,10 +153,6 @@ input.button-primary[disabled] {
 	background: #398f85 !important;
 }
 
-#adminmenu a.menu-top,.folded #adminmenu li.menu-top,#adminmenu .wp-submenu .wp-submenu-head {
-	border-bottom-color: #cbcdcd;
-}
-
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.current a.menu-top, .folded #adminmenu li.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, #adminmenu .wp-menu-arrow, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
 #adminmenu .wp-menu-arrow div {
 	background: @headings-color;
@@ -164,14 +160,14 @@ input.button-primary[disabled] {
 }
 
 #adminmenu .wp-submenu ul {
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(255,255,255,.9);
 }
 
 .alternate,.alt {
 	background: rgba(255,255,255,.4);
 }
 
-#post-body,.widefat,
+#post-body,.widefat,table.widefat,
 .widget, #widget-list .widget-top, .postbox, .menu-item-settings,
 div.tabs-panel, .wp-tab-panel, ul.category-tabs li.tabs, ul.add-menu-item-tabs li.tabs, .wp-tab-active {
 	background: transparent;
