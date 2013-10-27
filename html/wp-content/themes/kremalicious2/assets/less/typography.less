@@ -8,8 +8,8 @@ body {
     color: @text-color;
 	word-wrap: break-word;
 	
-    font-size: 16px;
-    line-height: 24px;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
     
     padding-left: 2%;
     padding-right: 2%;
@@ -66,7 +66,7 @@ a,
 a:visited {
 	text-decoration: none;
 	color: @link-color;
-	.transition();
+	.transition;
 	position: relative;
 }
 
@@ -79,7 +79,6 @@ h1 a:visited:hover,
 h2 a:visited:hover,
 h3 a:visited:hover {
 	color: @link-color-hover;
-	text-shadow: 0 1px 0 rgba(255,255,255,.9), 0 0 5px fade(@link-color-hover, 50%);
 }
 
 a:active {
@@ -92,7 +91,7 @@ h3 a,
 h1 a:visited,
 h2 a:visited,
 h3 a:visited {
-	color: #2e4f5c;
+	color: @headings-color;
 }
 
 
@@ -222,7 +221,6 @@ nav ul, nav ol {
 
 .entry-content ol li:before {
 	color: #fff;
-	text-shadow: none;
 	content: counter(ol-counter);
 	counter-increment: ol-counter;
 	font-style: italic;
@@ -241,8 +239,8 @@ nav ul, nav ol {
 // SELECTION
 /////////////////////////////////////
 
-::-moz-selection { background: #2e4f5c; color: #fff; text-shadow: none; }
-::selection { background: #2e4f5c; color: #fff; text-shadow: none; }
+::-moz-selection { background: #2e4f5c; color: #fff; }
+::selection { background: #2e4f5c; color: #fff; }
 
 
 // TABLES
