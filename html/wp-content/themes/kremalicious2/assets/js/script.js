@@ -26,8 +26,8 @@ $(ASAP = function(){
 	photoGrid.init();
 	interface.init();
 
-	if (Modernizr.touch){
-		new MBP.fastButton($('#nav a, .btn'));
+	if (Modernizr.touch) {
+  		new MBP.enableActive();
 	}
 
 });
