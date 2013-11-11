@@ -87,9 +87,6 @@ module.exports = function(grunt){
         // image optimization
         imagemin: {
             assets: {
-                options: {
-                    optimizationLevel: 7
-                },
                 files: [
                     {
                         expand: true,
@@ -100,9 +97,6 @@ module.exports = function(grunt){
                 ]
             },
             touchicons: {
-                options: {
-                    optimizationLevel: 7
-                },
                 files: [
                     {
                         expand: true,
