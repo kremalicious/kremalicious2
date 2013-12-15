@@ -1,5 +1,7 @@
 # kremalicious2
 
+**Deprecated: kremalicious.com is now generated with the help of Jekyll & Grunt. [kremalicious3 on GitHub](https://github.com/kremalicious/kremalicious3)**
+
 The site repository for kremalicious.com with the WordPress theme.
 
 You shouldn't use this theme on your own site. It wasn't coded with portability in mind and there's a lot of personalized, hardcoded stuff in there to save database queries. I don't even use a wp_nav_menu, so be warned.
